@@ -9,3 +9,5 @@ Archive/**
 build
 .images
 
+libs/micropython
+libs/micropython/**
