@@ -1,8 +1,9 @@
 esp32_toolchain.cmake
 libmicroros.a
 
+include/**
+!include/README.md
 
-include
 micro_ros_dev/**
 micro_ros_src/**
 micro_ros_src

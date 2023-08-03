@@ -35,6 +35,8 @@ set(MIDDLEWARE "microxrcedds")
 endif()
 
 # message(FATAL_ERROR "Failed to get cmake properties")
+message ("\r\n Component Dir is ${COMPONENT_DIR}")  
+message ("\r\n Extensions Dir is ${EXTENSIONS_DIR}")  
 
 externalproject_add(libmicroros_project
     PREFIX     ${CMAKE_BINARY_DIR}/libmicroros-prefix
