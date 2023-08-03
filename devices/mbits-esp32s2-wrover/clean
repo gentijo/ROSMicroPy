@@ -1,0 +1,4 @@
+#!/bin/bash
+clear
+idf.py clean && idf.py fullclean && idf.py reconfigure
+
