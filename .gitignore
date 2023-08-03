@@ -1,0 +1,11 @@
+
+*.a
+*.out
+
+archive/**
+Archive/**
+00-archive/**
+
+build
+.images
+
