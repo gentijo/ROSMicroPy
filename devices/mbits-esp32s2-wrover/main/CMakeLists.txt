@@ -13,7 +13,7 @@ idf_component_register (
     INCLUDE_DIRS 
         "./"
         ${PROJECT_DIR}../../../libs/micropython/
-        ${PROJECT_DIR}../../../extra_packages/microros/include
+#        ${PROJECT_DIR}../../../extra_packages/microros/include
         ${CMAKE_BINARY_DIR}
 
         
