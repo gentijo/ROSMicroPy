@@ -101,6 +101,8 @@ void mp_task(void *pvParameter) {
     size_t mp_task_heap_size;
     void *mp_task_heap = NULL;
 
+    printf("In MP Task");
+    
     #if CONFIG_SPIRAM_USE_MALLOC
     // SPIRAM is issued using MALLOC, fallback to normal allocation rules
     mp_task_heap = NULL;
@@ -232,13 +234,15 @@ void boardctrl_startup(void) {
     }
 }
 
-void app_main(void) {
+void mp_app_main(void) {
     // Hook for a board to run code at start up.
     // This defaults to initialising NVS.
+    printf("in Mp App Main");
+
     MICROPY_BOARD_STARTUP();
 
     // Create and transfer control to the MicroPython task.
-    xTaskCreatePinnedToCore(mp_task, "mp_task", MP_TASK_STACK_SIZE / sizeof(StackType_t), NULL, MP_TASK_PRIORITY, &mp_main_task_handle, MP_TASK_COREID);
+    xTaskCreatePinnedToCore(mp_task, "mp_task", MP_TASK_STACK_SIZE / sizeof(StackType_t), NULL, CONFIG_MICRO_ROS_APP_TASK_PRIO, &mp_main_task_handle, MP_TASK_COREID);
 }
 
 void nlr_jump_fail(void *val) {
