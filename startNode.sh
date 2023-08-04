@@ -1,4 +1,4 @@
-export NODENAME=rosberrypy
+export NODENAME=microrospy
 
 docker rm $NODENAME
 
@@ -6,9 +6,9 @@ docker run -it \
  --name $NODENAME \
  -h $NODENAME \
  --privileged  \
- -v `pwd`:/opt/rosberrypy  \
+ -v `pwd`:/opt/rosmicropy  \
  -v /dev:/dev \
- rosberrypy.img bash 
+ rosmicropy.img bash 
 
  
 
