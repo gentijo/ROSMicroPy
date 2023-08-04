@@ -8,12 +8,14 @@ message ("\r\n Component Dir is ${COMPONENT_DIR}")
 
 idf_component_register (
     SRCS 
-        "ros_app.cpp" 
+        "ros_app.c" 
 
     INCLUDE_DIRS 
         "./"
         ${PROJECT_DIR}../../../libs/micropython/
         ${PROJECT_DIR}../../../extra_packages/microros/include
+        ${PROJECT_DIR}../../../components/network_interfaces
+
         ${CMAKE_BINARY_DIR}
 
         
