@@ -2,3 +2,6 @@
 	path = libs/micropython
 	url = https://github.com/micropython/micropython.git
 
+[submodule "extra_packages/libmicroros"]
+	path = extra_packages/libmicroros
+	url = https://github.com/micro-ROS/micro_ros_espidf_component.git
