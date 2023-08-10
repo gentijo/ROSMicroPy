@@ -99,7 +99,7 @@
 	  {
 		"label": "OpenOCD",
 		"type": "shell",
-		"command": ". /opt/esp/idf/export.sh && openocd -f interface/ftdi/esp32_devkitj_v1.cfg -f  board/esp32-wrover-kit-1.8v.cfg",
+		"command": ". /opt/esp/idf/export.sh && openocd -f interface/ftdi/esp32_devkitj_v1.cfg -f  board/esp32-wrover-kit-3.3v.cfg",
 		"isBackground": true,
 		"problemMatcher": {
 		  "pattern": {
