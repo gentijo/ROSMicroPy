@@ -131,22 +131,11 @@ set(MICROPY_SOURCE_PORT
     ${MICROPY_PORT_DIR}/mpthreadport.c
     ${MICROPY_PORT_DIR}/machine_rtc.c
     ${MICROPY_PORT_DIR}/machine_sdcard.c
-)
-
-set(MICROPY_SOURCE_QSTR
-    ${MICROPY_SOURCE_PY}
-    ${MICROPY_SOURCE_EXTMOD}
-    ${MICROPY_SOURCE_USERMOD}
-    ${MICROPY_SOURCE_SHARED}
-    ${MICROPY_SOURCE_LIB}
-    ${MICROPY_SOURCE_PORT}
-    ${MICROPY_SOURCE_BOARD}
 
 #
 # Bind Python to ROS
     ${MICROPY_UROS_DIR}/mp_uros.cpp
     ${MICROPY_UROS_DIR}/mp_uros_module.c
-
 )
 
 set(MICROPY_SOURCE_QSTR
@@ -157,7 +146,12 @@ set(MICROPY_SOURCE_QSTR
     ${MICROPY_SOURCE_LIB}
     ${MICROPY_SOURCE_PORT}
     ${MICROPY_SOURCE_BOARD}
+
+
+
+
 )
+
 
 set(IDF_COMPONENTS
     app_update
