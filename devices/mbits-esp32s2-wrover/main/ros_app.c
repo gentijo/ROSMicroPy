@@ -14,6 +14,13 @@
 #include <rclc/rclc.h>
 #include <rclc/executor.h>
 #include <geometry_msgs/geometry_msgs/msg/twist.h>
+#include "rosidl_typesupport_microxrcedds_c/message_type_support.h"
+
+#include "py/runtime.h"
+
+extern rosidl_message_type_support_t mpy_uros_type_support;
+
+void mp_app_main(void);
 
 
 #ifdef CONFIG_MICRO_ROS_ESP_XRCE_DDS_MIDDLEWARE
@@ -26,27 +33,35 @@
 #define DOMAIN_ID 3
 
 rcl_publisher_t publisher;
-geometry_msgs__msg__Twist msg;
+
 
 void timer_callback(rcl_timer_t * timer, int64_t last_call_time)
 {
 	RCLC_UNUSED(last_call_time);
 
-	printf("Timer Task \r\n");
+//	printf("Timer Task \r\n");
 
-	if (timer != NULL) {
-		msg.angular.x=0x10;
-        msg.angular.y=0x20;
-        msg.angular.z=0x30;
-        msg.linear.x=0x40;
-        msg.linear.y=0x50;
-        msg.linear.z=0x60;
+	// if (timer != NULL) {
 
-        printf("Publishing: Twist Msg\n");
+	// 	printf("Publishing: ROS_MP Msg\n");
 
-		RCSOFTCHECK(rcl_publish(&publisher, &msg, NULL));
+	// 	mp_obj_dict_t *linear = mp_obj_new_dict(3);	
+	// 	linear = mp_obj_dict_store(linear, mp_obj_new_str("x",1), mp_obj_new_float(0x40));
+	// 	linear = mp_obj_dict_store(linear, mp_obj_new_str("x",1), mp_obj_new_float(0x40));
+	// 	linear = mp_obj_dict_store(linear, mp_obj_new_str("x",1), mp_obj_new_float(0x40));
 
-	}
+	// 	mp_obj_dict_t *angular = mp_obj_new_dict(3);
+	// 	angular = mp_obj_dict_store(angular, mp_obj_new_str("x",1), mp_obj_new_float(0x40));
+	// 	angular = mp_obj_dict_store(angular, mp_obj_new_str("x",1), mp_obj_new_float(0x40));
+	// 	angular = mp_obj_dict_store(angular, mp_obj_new_str("x",1), mp_obj_new_float(0x40));
+
+	// 	mp_obj_dict_t *twist = mp_obj_new_dict(2);
+	// 	twist = mp_obj_dict_store(twist, mp_obj_new_str("linear",6), linear);
+	// 	twist = mp_obj_dict_store(twist, mp_obj_new_str("angular",7), angular);
+
+	// 	RCSOFTCHECK(rcl_publish(&publisher, &twist, NULL));
+
+//	}
 }
 
 void micro_ros_task(void * arg)
@@ -74,11 +89,25 @@ void micro_ros_task(void * arg)
 	RCCHECK(rclc_node_init_default(&node, "rosbot", "", &support));
 
 	// create publisher
-	RCCHECK(rclc_publisher_init_default(
+	// RCCHECK(rclc_publisher_init_default(
+	// 	&publisher,
+	// 	&node,
+	// 	ROSIDL_GET_MSG_TYPE_SUPPORT(geometry_msgs, msg, Twist),
+	// 	"rosbot_twist_publisher"));
+	// 		&mpy_uros_type_support,
+
+	// create publisher
+	rclc_publisher_init_default(
 		&publisher,
 		&node,
-		ROSIDL_GET_MSG_TYPE_SUPPORT(geometry_msgs, msg, Twist),
-		"rosbot_twist_publisher"));
+		&mpy_uros_type_support,
+		"rosbot_twist_publisher");
+
+
+	int freeMem = esp_get_free_heap_size();
+	printf("\r\nFree memory %d\r\n", freeMem);
+	
+	mp_obj_dict_t *linear = mp_obj_new_dict(3);
 
 	// create timer,
 	rcl_timer_t timer;
@@ -111,7 +140,10 @@ void app_main(void)
 #if defined(CONFIG_MICRO_ROS_ESP_NETIF_WLAN) || defined(CONFIG_MICRO_ROS_ESP_NETIF_ENET)
     ESP_ERROR_CHECK(uros_network_interface_initialize());
 #endif
+	mp_app_main();
 
+	const TickType_t xDelay = 2000 / portTICK_PERIOD_MS;
+	vTaskDelay( xDelay );
     //pin micro-ros task in APP_CPU to make PRO_CPU to deal with wifi:
     xTaskCreate(micro_ros_task,
             "uros_task",
@@ -119,4 +151,6 @@ void app_main(void)
             NULL,
             CONFIG_MICRO_ROS_APP_TASK_PRIO,
             NULL);
+
+
 }

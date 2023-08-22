@@ -7,13 +7,20 @@ endif()
 
 get_filename_component(MICROPY_PORT_DIR ${PROJECT_DIR}/../../extra_packages/micropython/ports/esp32 ABSOLUTE)
 
-get_filename_component(MICROPY_UROS_DIR ${PROJECT_DIR}/../../extra_packages/micropython/mp_uros ABSOLUTE)
+get_filename_component(MICROPY_UROS_BASE_DIR ${PROJECT_DIR}/../../extra_packages/micropython ABSOLUTE)
+get_filename_component(MICROPY_UROS_MODULE_DIR ${MICROPY_UROS_BASE_DIR}/mp_uros_modules ABSOLUTE)
+get_filename_component(MICROPY_UROS_TYPE_SUPPORT_DIR ${MICROPY_UROS_BASE_DIR}/mp_uros_type_support ABSOLUTE)
 
+get_filename_component(MICROROS_INC_DIR ${PROJECT_DIR}/../../extra_packages/libmicroros/include ABSOLUTE)
 
 message ("\r\n Project Dir: ${PROJECT_DIR}")
 message ("\r\n CMake Source Dir: ${CMAKE_SOURCE_DIR}")
 message ("\r\n Micropython Dir: ${MICROPY_DIR}")
 message ("\r\n Micropython Port Dir: ${MICROPY_PORT_DIR}")
+message ("\r\n MicroROS INC Dir: ${MICROROS_INC_DIR}")
+message ("\r\n MICROPY_UROS_BASE_DIR : ${MICROPY_UROS_BASE_DIR}")
+message ("\r\n MICROPY_UROS_MODULE_DIR : ${MICROPY_UROS_MODULE_DIR}")
+message ("\r\n MICROPY_UROS_TYPE_SUPPORT_DIR : ${MICROPY_UROS_TYPE_SUPPORT_DIR}")
 
 # Set the board if it's not already set.
 if(NOT MICROPY_BOARD)
@@ -132,11 +139,31 @@ set(MICROPY_SOURCE_PORT
     ${MICROPY_PORT_DIR}/machine_rtc.c
     ${MICROPY_PORT_DIR}/machine_sdcard.c
 
-#
-# Bind Python to ROS
-    ${MICROPY_UROS_DIR}/mp_uros.cpp
-    ${MICROPY_UROS_DIR}/mp_uros_module.c
 )
+
+set(MICROPY_UROS_MODULES
+    #
+    # Bind Python to ROS
+    ${MICROPY_UROS_MODULE_DIR}/mp_uros_module.c
+    ${MICROPY_UROS_MODULE_DIR}/mp_uros.cpp
+)
+
+set(MICROPY_UROS_TYPESUPPORT
+    #
+    # Bind Python to ROS
+    ${MICROPY_UROS_TYPE_SUPPORT_DIR}/mp_uros_type_support.c
+
+)
+
+message ("MICROPY_SOURCE_PY: ${MICROPY_SOURCE_PY}")
+message ("MICROPY_SOURCE_EXTMOD : ${MICROPY_SOURCE_EXTMOD}")
+message ("MICROPY_SOURCE_USERMOD : ${MICROPY_SOURCE_USERMOD}")
+message ("MICROPY_SOURCE_SHARED : ${MICROPY_SOURCE_SHARED}")
+
+message ("MICROPY_SOURCE_LIB : ${MICROPY_SOURCE_LIB}")
+message ("MICROPY_SOURCE_PORT : ${MICROPY_SOURCE_PORT}")
+message ("MICROPY_SOURCE_BOARD : ${MICROPY_SOURCE_BOARD}")
+message ("MICROPY_UROS_DIR : ${MICROPY_UROS_DIR}")
 
 set(MICROPY_SOURCE_QSTR
     ${MICROPY_SOURCE_PY}
@@ -146,9 +173,7 @@ set(MICROPY_SOURCE_QSTR
     ${MICROPY_SOURCE_LIB}
     ${MICROPY_SOURCE_PORT}
     ${MICROPY_SOURCE_BOARD}
-
-
-
+    ${MICROPY_UROS_MODULES}
 
 )
 
@@ -220,6 +245,8 @@ idf_component_register(
         ${MICROPY_SOURCE_DRIVERS}
         ${MICROPY_SOURCE_PORT}
         ${MICROPY_SOURCE_BOARD}
+        ${MICROPY_UROS_MODULES}
+        ${MICROPY_UROS_TYPESUPPORT}
     INCLUDE_DIRS
         ${MICROPY_INC_CORE}
         ${MICROPY_INC_USERMOD}
@@ -227,10 +254,14 @@ idf_component_register(
         ${MICROPY_BOARD_DIR}
         ${CMAKE_BINARY_DIR}
         ${MICROPY_PORT_DIR}
-        ${MICROPY_UROS_DIR}
+        ${MICROPY_UROS_MODULE_DIR}
+        ${MICROPY_UROS_TYPE_SUPPORT_DIR}
+
+        ${MICROROS_INC_DIR}/rosidl_runtime_c
 
     REQUIRES
         ${IDF_COMPONENTS}
+        libmicroros
 )
 
 # Set the MicroPython target as the current (main) IDF component target.

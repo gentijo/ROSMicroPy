@@ -1,7 +1,3 @@
-// generated from rosidl_generator_c/resource/idl__functions.c.em
-// with input from geometry_msgs:msg/Twist.idl
-// generated code does not contain a copyright notice
-#include "geometry_msgs/msg/detail/twist__functions.h"
 
 #include <assert.h>
 #include <stdbool.h>
@@ -9,98 +5,95 @@
 #include <string.h>
 
 #include "rcutils/allocator.h"
+#include "py/runtime.h"
 
 
-// Include directives for member types
-// Member `linear`
-// Member `angular`
-#include "geometry_msgs/msg/detail/vector3__functions.h"
+ROSIDL_TYPESUPPORT_MICROXRCEDDS_C_EXPORT_mpy_uros_msgs
+size_t mpy_uros_typesupport_get_serialized_size(const void * mp_obj, size_t current_alignment);
 
-bool
-geometry_msgs__msg__Twist__init(geometry_msgs__msg__Twist * msg)
+ROSIDL_TYPESUPPORT_MICROXRCEDDS_C_EXPORT_mpy_uros_msgs
+static uint32_t mpy_uros_typesupport_get_initial_serialized_size(const void * mp_obj);
+static size_t mp_uros_typesupport_max_serialized_size();
+
+bool mpy_uros_msg_init(mp_obj_t *msg)
 {
   if (!msg) {
     return false;
   }
-  // linear
-  if (!geometry_msgs__msg__Vector3__init(&msg->linear)) {
-    geometry_msgs__msg__Twist__fini(msg);
-    return false;
-  }
-  // angular
-  if (!geometry_msgs__msg__Vector3__init(&msg->angular)) {
-    geometry_msgs__msg__Twist__fini(msg);
-    return false;
-  }
+  // // linear
+  // if (!geometry_msgs__msg__Vector3__init(&msg->linear)) {
+  //   mpy_uros_msg_fini(msg);
+  //   return false;
+  // }
+  // // angular
+  // if (!geometry_msgs__msg__Vector3__init(&msg->angular)) {
+  //   mpy_uros_msg_fini(msg);
+  //   return false;
+  // }
   return true;
 }
 
-void
-geometry_msgs__msg__Twist__fini(geometry_msgs__msg__Twist * msg)
+void mpy_uros_msg_fini(mp_obj_t * msg)
 {
   if (!msg) {
     return;
   }
-  // linear
-  geometry_msgs__msg__Vector3__fini(&msg->linear);
-  // angular
-  geometry_msgs__msg__Vector3__fini(&msg->angular);
+  // // linear
+  // geometry_msgs__msg__Vector3__fini(&msg->linear);
+  // // angular
+  // geometry_msgs__msg__Vector3__fini(&msg->angular);
 }
 
-bool
-geometry_msgs__msg__Twist__are_equal(const geometry_msgs__msg__Twist * lhs, const geometry_msgs__msg__Twist * rhs)
+bool mpy_uros_msg_are_equal(const (mp_obj_t *lhs, const mp_obj_t *rhs)
 {
   if (!lhs || !rhs) {
     return false;
   }
-  // linear
-  if (!geometry_msgs__msg__Vector3__are_equal(
-      &(lhs->linear), &(rhs->linear)))
-  {
-    return false;
-  }
-  // angular
-  if (!geometry_msgs__msg__Vector3__are_equal(
-      &(lhs->angular), &(rhs->angular)))
-  {
-    return false;
-  }
+  // // linear
+  // if (!geometry_msgs__msg__Vector3__are_equal(
+  //     &(lhs->linear), &(rhs->linear)))
+  // {
+  //   return false;
+  // }
+  // // angular
+  // if (!geometry_msgs__msg__Vector3__are_equal(
+  //     &(lhs->angular), &(rhs->angular)))
+  // {
+  //   return false;
+  // }
   return true;
 }
 
-bool
-geometry_msgs__msg__Twist__copy(
-  const geometry_msgs__msg__Twist * input,
-  geometry_msgs__msg__Twist * output)
+bool mpy_uros_msg_copy(const (mp_obj_t * input, mp_obj_t *output)
 {
   if (!input || !output) {
     return false;
   }
-  // linear
-  if (!geometry_msgs__msg__Vector3__copy(
-      &(input->linear), &(output->linear)))
-  {
-    return false;
-  }
-  // angular
-  if (!geometry_msgs__msg__Vector3__copy(
-      &(input->angular), &(output->angular)))
-  {
-    return false;
-  }
+  // // linear
+  // if (!geometry_msgs__msg__Vector3__copy(
+  //     &(input->linear), &(output->linear)))
+  // {
+  //   return false;
+  // }
+  // // angular
+  // if (!geometry_msgs__msg__Vector3__copy(
+  //     &(input->angular), &(output->angular)))
+  // {
+  //   return false;
+  // }
   return true;
 }
 
-geometry_msgs__msg__Twist *
-geometry_msgs__msg__Twist__create()
+mp_obj_t *mpy_uros_msg_create()
 {
   rcutils_allocator_t allocator = rcutils_get_default_allocator();
-  geometry_msgs__msg__Twist * msg = (geometry_msgs__msg__Twist *)allocator.allocate(sizeof(geometry_msgs__msg__Twist), allocator.state);
+  mp_obj_t * msg = (mp_obj_t *)allocator.allocate(sizeof(mp_obj_t), allocator.state);
   if (!msg) {
     return NULL;
   }
+
   memset(msg, 0, sizeof(geometry_msgs__msg__Twist));
-  bool success = geometry_msgs__msg__Twist__init(msg);
+  bool success = mpy_uros_msg_init(msg);
   if (!success) {
     allocator.deallocate(msg, allocator.state);
     return NULL;
@@ -108,23 +101,23 @@ geometry_msgs__msg__Twist__create()
   return msg;
 }
 
-void
-geometry_msgs__msg__Twist__destroy(geometry_msgs__msg__Twist * msg)
+void mpy_uros_msg_destroy(mp_obj_t * msg)
 {
   rcutils_allocator_t allocator = rcutils_get_default_allocator();
   if (msg) {
-    geometry_msgs__msg__Twist__fini(msg);
+    mpy_uros_msg_fini(msg);
   }
   allocator.deallocate(msg, allocator.state);
 }
 
 
-bool
-geometry_msgs__msg__Twist__Sequence__init(geometry_msgs__msg__Twist__Sequence * array, size_t size)
+bool mpy_uros_msg_Sequence__init(mp_obj_t * array, size_t size)
 {
+
   if (!array) {
     return false;
   }
+  
   rcutils_allocator_t allocator = rcutils_get_default_allocator();
   geometry_msgs__msg__Twist * data = NULL;
 
@@ -136,7 +129,7 @@ geometry_msgs__msg__Twist__Sequence__init(geometry_msgs__msg__Twist__Sequence * 
     // initialize all array elements
     size_t i;
     for (i = 0; i < size; ++i) {
-      bool success = geometry_msgs__msg__Twist__init(&data[i]);
+      bool success = mpy_uros_msg_init(&data[i]);
       if (!success) {
         break;
       }
@@ -144,7 +137,7 @@ geometry_msgs__msg__Twist__Sequence__init(geometry_msgs__msg__Twist__Sequence * 
     if (i < size) {
       // if initialization failed finalize the already initialized array elements
       for (; i > 0; --i) {
-        geometry_msgs__msg__Twist__fini(&data[i - 1]);
+        mpy_uros_msg_fini(&data[i - 1]);
       }
       allocator.deallocate(data, allocator.state);
       return false;
@@ -156,8 +149,7 @@ geometry_msgs__msg__Twist__Sequence__init(geometry_msgs__msg__Twist__Sequence * 
   return true;
 }
 
-void
-geometry_msgs__msg__Twist__Sequence__fini(geometry_msgs__msg__Twist__Sequence * array)
+void mpy_uros_msg_Sequence__fini(mp_obj_t * array)
 {
   if (!array) {
     return;
@@ -169,7 +161,7 @@ geometry_msgs__msg__Twist__Sequence__fini(geometry_msgs__msg__Twist__Sequence * 
     assert(array->capacity > 0);
     // finalize all array elements
     for (size_t i = 0; i < array->capacity; ++i) {
-      geometry_msgs__msg__Twist__fini(&array->data[i]);
+      mpy_uros_msg_fini(&array->data[i]);
     }
     allocator.deallocate(array->data, allocator.state);
     array->data = NULL;
@@ -182,15 +174,15 @@ geometry_msgs__msg__Twist__Sequence__fini(geometry_msgs__msg__Twist__Sequence * 
   }
 }
 
-geometry_msgs__msg__Twist__Sequence *
-geometry_msgs__msg__Twist__Sequence__create(size_t size)
+mpy_uros_msg_Sequence *
+mpy_uros_msg_Sequence__create(size_t size)
 {
   rcutils_allocator_t allocator = rcutils_get_default_allocator();
-  geometry_msgs__msg__Twist__Sequence * array = (geometry_msgs__msg__Twist__Sequence *)allocator.allocate(sizeof(geometry_msgs__msg__Twist__Sequence), allocator.state);
+  mpy_uros_msg_Sequence * array = (mpy_uros_msg_Sequence *)allocator.allocate(sizeof(mpy_uros_msg_Sequence), allocator.state);
   if (!array) {
     return NULL;
   }
-  bool success = geometry_msgs__msg__Twist__Sequence__init(array, size);
+  bool success = mpy_uros_msg_Sequence__init(array, size);
   if (!success) {
     allocator.deallocate(array, allocator.state);
     return NULL;
@@ -198,18 +190,16 @@ geometry_msgs__msg__Twist__Sequence__create(size_t size)
   return array;
 }
 
-void
-geometry_msgs__msg__Twist__Sequence__destroy(geometry_msgs__msg__Twist__Sequence * array)
+void mpy_uros_msg_Sequence__destroy(mp_obj_t * array)
 {
   rcutils_allocator_t allocator = rcutils_get_default_allocator();
   if (array) {
-    geometry_msgs__msg__Twist__Sequence__fini(array);
+    mpy_uros_msg_Sequence__fini(array);
   }
   allocator.deallocate(array, allocator.state);
 }
 
-bool
-geometry_msgs__msg__Twist__Sequence__are_equal(const geometry_msgs__msg__Twist__Sequence * lhs, const geometry_msgs__msg__Twist__Sequence * rhs)
+bool mpy_uros_msg_Sequence__are_equal(const mp_obj_t * lhs, const mp_obj_t * rhs)
 {
   if (!lhs || !rhs) {
     return false;
@@ -218,17 +208,14 @@ geometry_msgs__msg__Twist__Sequence__are_equal(const geometry_msgs__msg__Twist__
     return false;
   }
   for (size_t i = 0; i < lhs->size; ++i) {
-    if (!geometry_msgs__msg__Twist__are_equal(&(lhs->data[i]), &(rhs->data[i]))) {
+    if (!mpy_uros_msg_are_equal(&(lhs->data[i]), &(rhs->data[i]))) {
       return false;
     }
   }
   return true;
 }
 
-bool
-geometry_msgs__msg__Twist__Sequence__copy(
-  const geometry_msgs__msg__Twist__Sequence * input,
-  geometry_msgs__msg__Twist__Sequence * output)
+bool mpy_uros_msg_Sequence__copy( const mpy_uros_msg_Sequence * input, mpy_uros_msg_Sequence * output)
 {
   if (!input || !output) {
     return false;
@@ -247,12 +234,12 @@ geometry_msgs__msg__Twist__Sequence__copy(
     // to fulfill the allocation request, invalidating output->data.
     output->data = data;
     for (size_t i = output->capacity; i < input->size; ++i) {
-      if (!geometry_msgs__msg__Twist__init(&output->data[i])) {
+      if (!mpy_uros_msg_init(&output->data[i])) {
         // If initialization of any new item fails, roll back
         // all previously initialized items. Existing items
         // in output are to be left unmodified.
         for (; i-- > output->capacity; ) {
-          geometry_msgs__msg__Twist__fini(&output->data[i]);
+          mpy_uros_msg_fini(&output->data[i]);
         }
         return false;
       }
@@ -261,7 +248,7 @@ geometry_msgs__msg__Twist__Sequence__copy(
   }
   output->size = input->size;
   for (size_t i = 0; i < input->size; ++i) {
-    if (!geometry_msgs__msg__Twist__copy(
+    if (!mpy_uros_msg_copy(
         &(input->data[i]), &(output->data[i])))
     {
       return false;
