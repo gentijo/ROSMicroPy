@@ -8,7 +8,7 @@ docker run -it \
  --privileged  \
  -v `pwd`:/opt/rosmicropy  \
  -v /dev:/dev \
- rosmicropy.img bash 
+ rosmicropy50.img bash
 
- 
+
 

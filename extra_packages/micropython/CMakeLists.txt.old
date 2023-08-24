@@ -1,10 +1,63 @@
+message("Begining of MP CMake")
+
 # Set location of base MicroPython directory.
 if(NOT MICROPY_DIR)
-    get_filename_component(MICROPY_DIR ${PROJECT_DIR}/../.. ABSOLUTE)
+    get_filename_component(MICROPY_DIR ${PROJECT_DIR}/../../libs/micropython ABSOLUTE)
+endif()
+
+get_filename_component(MICROPY_PORT_DIR ${PROJECT_DIR}/../../extra_packages/micropython/ports/esp32 ABSOLUTE)
+
+get_filename_component(MICROPY_UROS_BASE_DIR ${PROJECT_DIR}/../../extra_packages/micropython ABSOLUTE)
+get_filename_component(MICROPY_UROS_MODULE_DIR ${MICROPY_UROS_BASE_DIR}/mp_uros_modules ABSOLUTE)
+get_filename_component(MICROPY_UROS_TYPE_SUPPORT_DIR ${MICROPY_UROS_BASE_DIR}/mp_uros_type_support ABSOLUTE)
+
+get_filename_component(MICROROS_INC_DIR ${PROJECT_DIR}/../../extra_packages/libmicroros/include ABSOLUTE)
+
+message ("\r\n Project Dir: ${PROJECT_DIR}")
+message ("\r\n CMake Source Dir: ${CMAKE_SOURCE_DIR}")
+message ("\r\n Micropython Dir: ${MICROPY_DIR}")
+message ("\r\n Micropython Port Dir: ${MICROPY_PORT_DIR}")
+message ("\r\n MicroROS INC Dir: ${MICROROS_INC_DIR}")
+message ("\r\n MICROPY_UROS_BASE_DIR : ${MICROPY_UROS_BASE_DIR}")
+message ("\r\n MICROPY_UROS_MODULE_DIR : ${MICROPY_UROS_MODULE_DIR}")
+message ("\r\n MICROPY_UROS_TYPE_SUPPORT_DIR : ${MICROPY_UROS_TYPE_SUPPORT_DIR}")
+
+# Set the board if it's not already set.
+if(NOT MICROPY_BOARD)
+    set(MICROPY_BOARD GENERIC)
+endif()
+
+# Set the board directory and check that it exists.
+if(NOT MICROPY_BOARD_DIR)
+    set(MICROPY_BOARD_DIR ${MICROPY_PORT_DIR}/boards/${MICROPY_BOARD})
+endif()
+
+message ("\r\n Micropython Board Dir: ${MICROPY_BOARD_DIR}")
+
+if(NOT EXISTS ${MICROPY_BOARD_DIR}/mpconfigboard.cmake)
+    message(FATAL_ERROR "Invalid MICROPY_BOARD specified: ${MICROPY_BOARD}")
+endif()
+
+# Save the manifest file set from the cmake command line.
+set(MICROPY_USER_FROZEN_MANIFEST ${MICROPY_FROZEN_MANIFEST})
+
+
+# Include board config; this is expected to set SDKCONFIG_DEFAULTS (among other options).
+include(${MICROPY_BOARD_DIR}/mpconfigboard.cmake)
+
+
+
+# Set the frozen manifest file. Note if MICROPY_FROZEN_MANIFEST is set from the cmake
+# command line, then it will override the default and any manifest set by the board.
+if (MICROPY_USER_FROZEN_MANIFEST)
+    set(MICROPY_FROZEN_MANIFEST ${MICROPY_USER_FROZEN_MANIFEST})
+elseif (NOT MICROPY_FROZEN_MANIFEST)
+    set(MICROPY_FROZEN_MANIFEST ${MICROPY_PORT_DIR}/boards/manifest.py)
 endif()
 
 # Include core source components.
 include(${MICROPY_DIR}/py/py.cmake)
+
 
 if(NOT CMAKE_BUILD_EARLY_EXPANSION)
     # Enable extmod components that will be configured by extmod.cmake.
@@ -16,7 +69,7 @@ if(NOT CMAKE_BUILD_EARLY_EXPANSION)
 endif()
 
 set(MICROPY_QSTRDEFS_PORT
-    ${PROJECT_DIR}/qstrdefsport.h
+    ${MICROPY_PORT_DIR}/qstrdefsport.h
 )
 
 set(MICROPY_SOURCE_SHARED
@@ -48,44 +101,69 @@ set(MICROPY_SOURCE_DRIVERS
 )
 
 set(MICROPY_SOURCE_PORT
-    ${PROJECT_DIR}/main.c
-    ${PROJECT_DIR}/uart.c
-    ${PROJECT_DIR}/usb.c
-    ${PROJECT_DIR}/usb_serial_jtag.c
-    ${PROJECT_DIR}/gccollect.c
-    ${PROJECT_DIR}/mphalport.c
-    ${PROJECT_DIR}/fatfs_port.c
-    ${PROJECT_DIR}/help.c
-    ${PROJECT_DIR}/modutime.c
-    ${PROJECT_DIR}/machine_bitstream.c
-    ${PROJECT_DIR}/machine_timer.c
-    ${PROJECT_DIR}/machine_pin.c
-    ${PROJECT_DIR}/machine_touchpad.c
-    ${PROJECT_DIR}/machine_adc.c
-    ${PROJECT_DIR}/machine_adcblock.c
-    ${PROJECT_DIR}/machine_dac.c
-    ${PROJECT_DIR}/machine_i2c.c
-    ${PROJECT_DIR}/machine_i2s.c
-    ${PROJECT_DIR}/machine_uart.c
-    ${PROJECT_DIR}/modmachine.c
-    ${PROJECT_DIR}/network_common.c
-    ${PROJECT_DIR}/network_lan.c
-    ${PROJECT_DIR}/network_ppp.c
-    ${PROJECT_DIR}/network_wlan.c
-    ${PROJECT_DIR}/mpnimbleport.c
-    ${PROJECT_DIR}/modsocket.c
-    ${PROJECT_DIR}/modesp.c
-    ${PROJECT_DIR}/esp32_nvs.c
-    ${PROJECT_DIR}/esp32_partition.c
-    ${PROJECT_DIR}/esp32_rmt.c
-    ${PROJECT_DIR}/esp32_ulp.c
-    ${PROJECT_DIR}/modesp32.c
-    ${PROJECT_DIR}/machine_hw_spi.c
-    ${PROJECT_DIR}/machine_wdt.c
-    ${PROJECT_DIR}/mpthreadport.c
-    ${PROJECT_DIR}/machine_rtc.c
-    ${PROJECT_DIR}/machine_sdcard.c
+    ${MICROPY_PORT_DIR}/main.c
+    ${MICROPY_PORT_DIR}/uart.c
+    ${MICROPY_PORT_DIR}/usb.c
+    ${MICROPY_PORT_DIR}/usb_serial_jtag.c
+    ${MICROPY_PORT_DIR}/gccollect.c
+    ${MICROPY_PORT_DIR}/mphalport.c
+    ${MICROPY_PORT_DIR}/fatfs_port.c
+    ${MICROPY_PORT_DIR}/help.c
+    ${MICROPY_PORT_DIR}/modutime.c
+    ${MICROPY_PORT_DIR}/machine_bitstream.c
+    ${MICROPY_PORT_DIR}/machine_timer.c
+    ${MICROPY_PORT_DIR}/machine_pin.c
+    ${MICROPY_PORT_DIR}/machine_touchpad.c
+    ${MICROPY_PORT_DIR}/machine_adc.c
+    ${MICROPY_PORT_DIR}/machine_adcblock.c
+    ${MICROPY_PORT_DIR}/machine_dac.c
+    ${MICROPY_PORT_DIR}/machine_i2c.c
+    ${MICROPY_PORT_DIR}/machine_i2s.c
+    ${MICROPY_PORT_DIR}/machine_uart.c
+    ${MICROPY_PORT_DIR}/modmachine.c
+    ${MICROPY_PORT_DIR}/network_common.c
+    ${MICROPY_PORT_DIR}/network_lan.c
+    ${MICROPY_PORT_DIR}/network_ppp.c
+    ${MICROPY_PORT_DIR}/network_wlan.c
+    ${MICROPY_PORT_DIR}/mpnimbleport.c
+    ${MICROPY_PORT_DIR}/modsocket.c
+    ${MICROPY_PORT_DIR}/modesp.c
+    ${MICROPY_PORT_DIR}/esp32_nvs.c
+    ${MICROPY_PORT_DIR}/esp32_partition.c
+    ${MICROPY_PORT_DIR}/esp32_rmt.c
+    ${MICROPY_PORT_DIR}/esp32_ulp.c
+    ${MICROPY_PORT_DIR}/modesp32.c
+    ${MICROPY_PORT_DIR}/machine_hw_spi.c
+    ${MICROPY_PORT_DIR}/machine_wdt.c
+    ${MICROPY_PORT_DIR}/mpthreadport.c
+    ${MICROPY_PORT_DIR}/machine_rtc.c
+    ${MICROPY_PORT_DIR}/machine_sdcard.c
+
 )
+
+set(MICROPY_UROS_MODULES
+    #
+    # Bind Python to ROS
+    ${MICROPY_UROS_MODULE_DIR}/mp_uros_module.c
+    ${MICROPY_UROS_MODULE_DIR}/mp_uros.cpp
+)
+
+set(MICROPY_UROS_TYPESUPPORT
+    #
+    # Bind Python to ROS
+    ${MICROPY_UROS_TYPE_SUPPORT_DIR}/mp_uros_type_support.c
+
+)
+
+message ("MICROPY_SOURCE_PY: ${MICROPY_SOURCE_PY}")
+message ("MICROPY_SOURCE_EXTMOD : ${MICROPY_SOURCE_EXTMOD}")
+message ("MICROPY_SOURCE_USERMOD : ${MICROPY_SOURCE_USERMOD}")
+message ("MICROPY_SOURCE_SHARED : ${MICROPY_SOURCE_SHARED}")
+
+message ("MICROPY_SOURCE_LIB : ${MICROPY_SOURCE_LIB}")
+message ("MICROPY_SOURCE_PORT : ${MICROPY_SOURCE_PORT}")
+message ("MICROPY_SOURCE_BOARD : ${MICROPY_SOURCE_BOARD}")
+message ("MICROPY_UROS_DIR : ${MICROPY_UROS_DIR}")
 
 set(MICROPY_SOURCE_QSTR
     ${MICROPY_SOURCE_PY}
@@ -95,14 +173,16 @@ set(MICROPY_SOURCE_QSTR
     ${MICROPY_SOURCE_LIB}
     ${MICROPY_SOURCE_PORT}
     ${MICROPY_SOURCE_BOARD}
+    ${MICROPY_UROS_MODULES}
+
 )
+
 
 set(IDF_COMPONENTS
     app_update
     bootloader_support
     bt
     driver
-    esp_adc_cal
     esp_common
     esp_eth
     esp_event
@@ -114,7 +194,6 @@ set(IDF_COMPONENTS
     log
     lwip
     mbedtls
-    mdns
     newlib
     nvs_flash
     sdmmc
@@ -164,14 +243,23 @@ idf_component_register(
         ${MICROPY_SOURCE_DRIVERS}
         ${MICROPY_SOURCE_PORT}
         ${MICROPY_SOURCE_BOARD}
+        ${MICROPY_UROS_MODULES}
+        ${MICROPY_UROS_TYPESUPPORT}
     INCLUDE_DIRS
         ${MICROPY_INC_CORE}
         ${MICROPY_INC_USERMOD}
         ${MICROPY_PORT_DIR}
         ${MICROPY_BOARD_DIR}
         ${CMAKE_BINARY_DIR}
+        ${MICROPY_PORT_DIR}
+        ${MICROPY_UROS_MODULE_DIR}
+        ${MICROPY_UROS_TYPE_SUPPORT_DIR}
+
+        ${MICROROS_INC_DIR}/rosidl_runtime_c
+
     REQUIRES
         ${IDF_COMPONENTS}
+        libmicroros
 )
 
 # Set the MicroPython target as the current (main) IDF component target.
