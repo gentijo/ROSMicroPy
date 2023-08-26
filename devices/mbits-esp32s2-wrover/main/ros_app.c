@@ -16,7 +16,7 @@
 #include <geometry_msgs/geometry_msgs/msg/twist.h>
 #include "rosidl_typesupport_microxrcedds_c/message_type_support.h"
 
-#include "py/runtime.h"
+// #include "py/runtime.h"
 
 extern rosidl_message_type_support_t mpy_uros_type_support;
 
@@ -97,31 +97,31 @@ void micro_ros_task(void * arg)
 	// 		&mpy_uros_type_support,
 
 	// create publisher
-	rclc_publisher_init_default(
-		&publisher,
-		&node,
-		&mpy_uros_type_support,
-		"rosbot_twist_publisher");
+	// rclc_publisher_init_default(
+	// 	&publisher,
+	// 	&node,
+	// 	&mpy_uros_type_support,
+	// 	"rosbot_twist_publisher");
 
 
 	int freeMem = esp_get_free_heap_size();
 	printf("\r\nFree memory %d\r\n", freeMem);
 	
-	mp_obj_dict_t *linear = mp_obj_new_dict(3);
+//	mp_obj_dict_t *linear = mp_obj_new_dict(3);
 
 	// create timer,
-	rcl_timer_t timer;
-	const unsigned int timer_timeout = 1000;
-	RCCHECK(rclc_timer_init_default(
-		&timer,
-		&support,
-		RCL_MS_TO_NS(timer_timeout),
-		timer_callback));
+	// rcl_timer_t timer;
+	// const unsigned int timer_timeout = 1000;
+	// RCCHECK(rclc_timer_init_default(
+	// 	&timer,
+	// 	&support,
+	// 	RCL_MS_TO_NS(timer_timeout),
+	// 	timer_callback));
 
 	// create executor
 	rclc_executor_t executor;
 	RCCHECK(rclc_executor_init(&executor, &support.context, 1, &allocator));
-	RCCHECK(rclc_executor_add_timer(&executor, &timer));
+	// RCCHECK(rclc_executor_add_timer(&executor, &timer));
 
 	while(1){
 		rclc_executor_spin_some(&executor, RCL_MS_TO_NS(100));
@@ -140,7 +140,7 @@ void app_main(void)
 #if defined(CONFIG_MICRO_ROS_ESP_NETIF_WLAN) || defined(CONFIG_MICRO_ROS_ESP_NETIF_ENET)
     ESP_ERROR_CHECK(uros_network_interface_initialize());
 #endif
-	mp_app_main();
+//	mp_app_main();
 
 	const TickType_t xDelay = 2000 / portTICK_PERIOD_MS;
 	vTaskDelay( xDelay );

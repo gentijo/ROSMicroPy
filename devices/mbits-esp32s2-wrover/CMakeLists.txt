@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.8)
 
 get_filename_component(PROJECT_DIR "./" ABSOLUTE)
 message("Project Dir is ${PROJECT_DIR}")  
@@ -14,7 +14,7 @@ include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 #include($ENV{IDF_PATH}/tools/cmake/targets.cmake)
 #include($ENV{IDF_PATH}/tools/cmake/utilities.cmake)
 
-include(ExternalProject )
+#include(ExternalProject )
 
 # Define the output sdkconfig so it goes in the build directory.
 #set(SDKCONFIG ${CMAKE_BINARY_DIR}/sdkconfig)

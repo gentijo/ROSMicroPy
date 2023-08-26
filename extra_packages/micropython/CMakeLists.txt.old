@@ -1,26 +1,3 @@
-message("Begining of MP CMake")
-
-# Set location of base MicroPython directory.
-if(NOT MICROPY_DIR)
-    get_filename_component(MICROPY_DIR ${PROJECT_DIR}/../../libs/micropython ABSOLUTE)
-endif()
-
-get_filename_component(MICROPY_PORT_DIR ${PROJECT_DIR}/../../extra_packages/micropython/ports/esp32 ABSOLUTE)
-
-get_filename_component(MICROPY_UROS_BASE_DIR ${PROJECT_DIR}/../../extra_packages/micropython ABSOLUTE)
-get_filename_component(MICROPY_UROS_MODULE_DIR ${MICROPY_UROS_BASE_DIR}/mp_uros_modules ABSOLUTE)
-get_filename_component(MICROPY_UROS_TYPE_SUPPORT_DIR ${MICROPY_UROS_BASE_DIR}/mp_uros_type_support ABSOLUTE)
-
-get_filename_component(MICROROS_INC_DIR ${PROJECT_DIR}/../../extra_packages/libmicroros/include ABSOLUTE)
-
-message ("\r\n Project Dir: ${PROJECT_DIR}")
-message ("\r\n CMake Source Dir: ${CMAKE_SOURCE_DIR}")
-message ("\r\n Micropython Dir: ${MICROPY_DIR}")
-message ("\r\n Micropython Port Dir: ${MICROPY_PORT_DIR}")
-message ("\r\n MicroROS INC Dir: ${MICROROS_INC_DIR}")
-message ("\r\n MICROPY_UROS_BASE_DIR : ${MICROPY_UROS_BASE_DIR}")
-message ("\r\n MICROPY_UROS_MODULE_DIR : ${MICROPY_UROS_MODULE_DIR}")
-message ("\r\n MICROPY_UROS_TYPE_SUPPORT_DIR : ${MICROPY_UROS_TYPE_SUPPORT_DIR}")
 
 # Set the board if it's not already set.
 if(NOT MICROPY_BOARD)

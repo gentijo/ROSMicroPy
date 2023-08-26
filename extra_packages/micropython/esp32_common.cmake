@@ -50,7 +50,6 @@ list(APPEND MICROPY_SOURCE_DRIVERS
 )
 
 list(APPEND MICROPY_SOURCE_PORT
-    main.c
     ppp_set_auth.c
     uart.c
     usb.c
@@ -137,6 +136,20 @@ list(APPEND IDF_COMPONENTS
     vfs
     xtensa
 )
+message ("MICROPY_SOURCE_PY ${MICROPY_SOURCE_PY}")
+message ("MICROPY_SOURCE_EXTMOD ${MICROPY_SOURCE_EXTMOD}")
+
+message ("MICROPY_SOURCE_SHARED ${MICROPY_SOURCE_SHARED}")
+message ("MICROPY_SOURCE_LIB ${MICROPY_SOURCE_LIB}")
+message ("MICROPY_SOURCE_DRIVERS ${MICROPY_SOURCE_DRIVERS}")
+message ("MICROPY_SOURCE_PORT ${MICROPY_SOURCE_PORT}")
+message ("MICROPY_SOURCE_BOARD ${MICROPY_SOURCE_BOARD}")
+
+message ("MICROPY_INC_CORE ${MICROPY_INC_CORE}")
+message ("MICROPY_INC_USERMOD ${MICROPY_INC_USERMOD}")
+message ("MICROPY_PORT_DIR ${MICROPY_PORT_DIR}")
+message ("MICROPY_BOARD_DIR ${MICROPY_BOARD_DIR}")
+message ("CMAKE_BINARY_DIR ${CMAKE_BINARY_DIR}")
 
 # Register the main IDF component.
 idf_component_register(
@@ -155,7 +168,7 @@ idf_component_register(
         ${MICROPY_BOARD_DIR}
         ${CMAKE_BINARY_DIR}
     REQUIRES
-        ${IDF_COMPONENTS}
+        ${IDF_COMPONENTS} libmicroros
 )
 
 # Set the MicroPython target as the current (main) IDF component target.

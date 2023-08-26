@@ -18,6 +18,6 @@ idf_component_register (
 
         
     REQUIRES 
- #       micropython 
+      libmicroros micropython 
 )
 

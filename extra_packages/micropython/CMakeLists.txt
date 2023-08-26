@@ -1,6 +1,8 @@
 # Top-level cmake file for building MicroPython on ESP32.
 
-cmake_minimum_required(VERSION 3.12)
+#cmake_minimum_required(VERSION 3.12)
+
+include(${PROJECT_DIR}/../../extra_packages/micropython/mpy_uros_build_env.cmake)
 
 # Set the board if it's not already set.
 if(NOT MICROPY_BOARD)
@@ -9,7 +11,7 @@ endif()
 
 # Set the board directory and check that it exists.
 if(NOT MICROPY_BOARD_DIR)
-    set(MICROPY_BOARD_DIR ${CMAKE_CURRENT_LIST_DIR}/boards/${MICROPY_BOARD})
+    set(MICROPY_BOARD_DIR ${MICROPY_PORT_DIR}/boards/${MICROPY_BOARD})
 endif()
 if(NOT EXISTS ${MICROPY_BOARD_DIR}/mpconfigboard.cmake)
     message(FATAL_ERROR "Invalid MICROPY_BOARD specified: ${MICROPY_BOARD}")
@@ -35,19 +37,20 @@ elseif (NOT MICROPY_FROZEN_MANIFEST)
 endif()
 
 # Concatenate all sdkconfig files into a combined one for the IDF to use.
-file(WRITE ${CMAKE_BINARY_DIR}/sdkconfig.combined.in "")
-foreach(SDKCONFIG_DEFAULT ${SDKCONFIG_DEFAULTS})
-    file(READ ${SDKCONFIG_DEFAULT} CONTENTS)
-    file(APPEND ${CMAKE_BINARY_DIR}/sdkconfig.combined.in "${CONTENTS}")
-endforeach()
-configure_file(${CMAKE_BINARY_DIR}/sdkconfig.combined.in ${CMAKE_BINARY_DIR}/sdkconfig.combined COPYONLY)
-set(SDKCONFIG_DEFAULTS ${CMAKE_BINARY_DIR}/sdkconfig.combined)
+#file(WRITE ${CMAKE_BINARY_DIR}/sdkconfig.combined.in "")
+#foreach(SDKCONFIG_DEFAULT ${SDKCONFIG_DEFAULTS})
+#    file(READ ${SDKCONFIG_DEFAULT} CONTENTS)
+#    file(APPEND ${CMAKE_BINARY_DIR}/sdkconfig.combined.in "${CONTENTS}")
+#endforeach()
+#configure_file(${CMAKE_BINARY_DIR}/sdkconfig.combined.in ${CMAKE_BINARY_DIR}/sdkconfig.combined COPYONLY)
+#set(SDKCONFIG_DEFAULTS ${CMAKE_BINARY_DIR}/sdkconfig.combined)
 
 # Include main IDF cmake file.
-include($ENV{IDF_PATH}/tools/cmake/project.cmake)
+#include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 
 # Set the location of the main component for the project (one per target).
 list(APPEND EXTRA_COMPONENT_DIRS main_${IDF_TARGET})
 
 # Define the project.
-project(micropython)
+#project(micropython)
+include(${PROJECT_DIR}/../../extra_packages/micropython/mpy_uros_build_env.cmake)
