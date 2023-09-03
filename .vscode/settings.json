@@ -75,7 +75,8 @@
         "twist.h": "c",
         "twist__struct.h": "c",
         "twist__functions.h": "c",
-        "identifier.h": "c"
+        "identifier.h": "c",
+        "mpthreadport.h": "c"
     },
     "cmake.configureOnOpen": false,
     "cmake.sourceDirectory": "/opt/rosmicropy/extra_packages/libmicroros/examples/handle_static_types/main"

@@ -256,9 +256,7 @@ idf_component_register(
         ${MICROPY_PORT_DIR}
         ${MICROPY_UROS_MODULE_DIR}
         ${MICROPY_UROS_TYPE_SUPPORT_DIR}
-
-        ${MICROROS_INC_DIR}/rosidl_runtime_c
-
+        ${MICROROS_INC_DIR}
     REQUIRES
         ${IDF_COMPONENTS}
         libmicroros

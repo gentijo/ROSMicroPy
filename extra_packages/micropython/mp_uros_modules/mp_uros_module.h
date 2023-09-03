@@ -1,5 +1,8 @@
-// Include MicroPython API.
+
+#ifndef __MP_UROS_MODULE_H__
+#define __MP_UROS_MODULE_H__
+
 #include "py/runtime.h"
+#include "py/mpconfig.h"
 
-
-extern mp_obj_t publishMsg(mp_obj_t a_obj, mp_obj_t b_obj);
+#endif
