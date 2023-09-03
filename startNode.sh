@@ -1,4 +1,4 @@
-export NODENAME=microrospy
+export NODENAME=rosmicropy
 
 docker rm $NODENAME
 

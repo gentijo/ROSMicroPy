@@ -5,9 +5,13 @@ FROM espressif/idf:release-v4.4
 
 ENV DEBIAN_FRONTEND=noninteractive 
 
-ENV LC_ALL en_US.UTF-8
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US.UTF-8
+#ENV LC_ALL en_US.UTF-8
+#ENV LANG en_US.UTF-8
+#ENV LANGUAGE en_US.UTF-8
+
+ARG TZ_ARG=UTC
+ENV TZ=$TZ_ARG
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN apt -yq update
 RUN apt -yq upgrade
@@ -25,14 +29,10 @@ RUN apt -y update && \
 	    locales lsb-release \
         sudo gosu
 
-#software-properties-common 
- 
-#        python3-colcon-common-extensions 
-
 RUN pip3 install adafruit-ampy rshell
 
-RUN locale-gen en_US en_US.UTF-8 
-RUN update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+#RUN locale-gen en_US en_US.UTF-8 
+#RUN update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 
 
 RUN apt -yq update

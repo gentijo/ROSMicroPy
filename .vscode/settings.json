@@ -71,8 +71,13 @@
         "moduplatform.h": "c",
         "mpconfig.h": "c",
         "mphal.h": "c",
-        "mphalport.h": "c"
+        "mphalport.h": "c",
+        "twist.h": "c",
+        "twist__struct.h": "c",
+        "twist__functions.h": "c",
+        "identifier.h": "c",
+        "mpthreadport.h": "c"
     },
     "cmake.configureOnOpen": false,
-    "cmake.sourceDirectory": "${workspaceFolder}/assemblies/esp32-joystick"
+    "cmake.sourceDirectory": "/opt/rosmicropy/extra_packages/libmicroros/examples/handle_static_types/main"
 }

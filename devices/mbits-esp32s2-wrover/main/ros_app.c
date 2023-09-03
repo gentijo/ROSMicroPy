@@ -1,38 +1,71 @@
-
+#include <string.h>
 #include <stdio.h>
 #include <unistd.h>
 
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+#include "freertos/queue.h"
+
 #include "esp_log.h"
 #include "esp_system.h"
 
-
-
+#include <uros_network_interfaces.h>
 #include <rcl/rcl.h>
+
 #include <rcl/error_handling.h>
+#include <std_msgs/msg/int32.h>
+
 #include <rclc/rclc.h>
 #include <rclc/executor.h>
 
-#include <uros_network_interfaces.h>
-#ifdef CONFIG_MICRO_ROS_ESP_XRCE_DDS_MIDDLEWARE
-#include <rmw_microros/rmw_microros.h>
-#endif
+#include <geometry_msgs/geometry_msgs/msg/twist.h>
+#include "rosidl_typesupport_microxrcedds_c/message_type_support.h"
 
-#define RCCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){printf("Failed status on line %d: %d. Aborting.\n",__LINE__,(int)temp_rc);}}
-#define RCSOFTCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){printf("Failed status on line %d: %d. Continuing.\n",__LINE__,(int)temp_rc);}}
+#include "py/runtime.h"
+#include "mp_uros.h"
 
-#define DOMAIN_ID 3
+extern rosidl_message_type_support_t mpy_uros_type_support;
 
 void mp_app_main(void);
 
 
+#ifdef CONFIG_MICRO_ROS_ESP_XRCE_DDS_MIDDLEWARE
+#include <rmw_microros/rmw_microros.h>
+#endif
+
+#define RCCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){printf("Failed status on line %d: %d. Aborting.\n",__LINE__,(int)temp_rc);vTaskDelete(NULL);}}
+#define RCSOFTCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){printf("Failed status on line %d: %d. Continuing.\n",__LINE__,(int)temp_rc);}}
+
+#define DOMAIN_ID 3
+
+rcl_publisher_t publisher;
+
+void on_ros_mp_event(void);
+extern QueueHandle_t 	mp_uros_queue;
+
+void timer_callback(rcl_timer_t * timer, int64_t last_call_time)
+{
+	RCLC_UNUSED(last_call_time);
+
+	printf("Timer Task \r\n");
+	unsigned long xMessage = 10;
+	if (timer != NULL) {
+		if (mp_uros_queue != NULL){
+			xQueueSend( 
+				mp_uros_queue,
+				( void * ) &xMessage,
+				( TickType_t ) 0 );
+			}
+	}
+}
+
 void micro_ros_task(void * arg)
 {
-    rcl_allocator_t allocator = rcl_get_default_allocator();
+	rcl_allocator_t allocator = rcl_get_default_allocator();
 	rclc_support_t support;
+	
+	printf("\r\nStarting ROS Task\r\n");
 
-	// Create init_options.
 	rcl_init_options_t init_options = rcl_get_zero_initialized_init_options();
 	RCCHECK(rcl_init_options_init(&init_options, allocator));
 	RCCHECK(rcl_init_options_set_domain_id(&init_options, DOMAIN_ID));
@@ -45,49 +78,75 @@ void micro_ros_task(void * arg)
 	//RCCHECK(rmw_uros_discover_agent(rmw_options));
 #endif
 
-	// Setup support structure.
+	// create init_options
 	RCCHECK(rclc_support_init_with_options(&support, 0, NULL, &init_options, &allocator));
 
-    // create node
-    rcl_node_t node;
-    RCCHECK(rclc_node_init_default(&node, "rosbot", "", &support));
+	// create node
+	rcl_node_t node;
+	RCCHECK(rclc_node_init_default(&node, "rosbot", "", &support));
 
-    // create service
-    //rcl_service_t service;
-    //RCCHECK(rclc_service_init_default(&service, &node, ROSIDL_GET_SRV_TYPE_SUPPORT(example_interfaces, srv, AddTwoInts), "/addtwoints"));
+	// create publisher
+	// RCCHECK(rclc_publisher_init_default(
+	// 	&publisher,
+	// 	&node,
+	// 	ROSIDL_GET_MSG_TYPE_SUPPORT(geometry_msgs, msg, Twist),
+	// 	"rosbot_twist_publisher"));
+	// 		&mpy_uros_type_support,
 
-    // create executor
-    rclc_executor_t executor;
-    RCCHECK(rclc_executor_init(&executor, &support.context, 1, &allocator));
+	// create publisher
+	rclc_publisher_init_default(
+		&publisher,
+		&node,
+		&mpy_uros_type_support,
+		"rosbot_twist_publisher");
 
 
-    // Spin forever
-	while(1) {
+	int freeMem = esp_get_free_heap_size();
+	printf("\r\nFree memory %d\r\n", freeMem);
+	
+	// create timer,
+	rcl_timer_t timer;
+	const unsigned int timer_timeout = 10000;
+	RCCHECK(rclc_timer_init_default(
+		&timer,
+		&support,
+		RCL_MS_TO_NS(timer_timeout),
+		timer_callback));
 
-		rclc_executor_spin(&executor);
+	// create executor
+	rclc_executor_t executor;
+	RCCHECK(rclc_executor_init(&executor, &support.context, 1, &allocator));
+	RCCHECK(rclc_executor_add_timer(&executor, &timer));
+
+	while(1){
+		rclc_executor_spin_some(&executor, RCL_MS_TO_NS(100));
+		const TickType_t xDelay = 200 / portTICK_PERIOD_MS;
+		vTaskDelay( xDelay );
 	}
 
-	// Free resources
-    //RCCHECK(rcl_service_fini(&service, &node));
-    RCCHECK(rcl_node_fini(&node));
+	// free resources
+	RCCHECK(rcl_publisher_fini(&publisher, &node));
+	RCCHECK(rcl_node_fini(&node));
+
+  	vTaskDelete(NULL);
 }
 
 void app_main(void)
 {
-#if defined(CONFIG_MICRO_ROS_ESP_NETIF_WLAN) || defined(CONFIG_MICRO_ROS_ESP_NETIF_ENET)
-    ESP_ERROR_CHECK(uros_network_interface_initialize());
-#endif
 
-//    mp_app_main();
-
-    //pin micro-ros task in APP_CPU to make PRO_CPU to deal with wifi:
-    xTaskCreate(micro_ros_task,
-            "rosbot",
-            CONFIG_MICRO_ROS_APP_STACK,
-            NULL,
-            CONFIG_MICRO_ROS_APP_TASK_PRIO,
-            NULL);
-
-
-
+	#if defined(CONFIG_MICRO_ROS_ESP_NETIF_WLAN) || defined(CONFIG_MICRO_ROS_ESP_NETIF_ENET)
+		ESP_ERROR_CHECK(uros_network_interface_initialize());
+	#endif
+	
+	printf("\r\nInitializing Micropython Stack\r\n");	
+	mp_app_main();
+	
+	printf("\r\nInitializing ROS Stack\r\n");
+	xTaskCreate(micro_ros_task,
+		"uros_task",
+		CONFIG_MICRO_ROS_APP_STACK,
+		NULL,
+		CONFIG_MICRO_ROS_APP_TASK_PRIO,
+		NULL);
 }
+
