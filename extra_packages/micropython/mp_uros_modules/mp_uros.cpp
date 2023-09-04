@@ -48,6 +48,33 @@ mp_obj_t readROSMsg() {
     return NULL;
 }
 
+
+mp_obj_t twist = NULL;
+
+mp_obj_t readObjFromThread() {
+
+    return twist;
+}
+
+mp_obj_t createObjFromThread() {
+
+    mp_obj_t linear = mp_obj_new_dict(3);	
+    linear = mp_obj_dict_store(linear, mp_obj_new_str("x",1), mp_obj_new_float(0x40));
+    linear = mp_obj_dict_store(linear, mp_obj_new_str("y",1), mp_obj_new_float(0x50));
+    linear = mp_obj_dict_store(linear, mp_obj_new_str("z",1), mp_obj_new_float(0x60));
+
+    mp_obj_t angular = mp_obj_new_dict(3);
+    angular = mp_obj_dict_store(angular, mp_obj_new_str("x",1), mp_obj_new_float(0x70));
+    angular = mp_obj_dict_store(angular, mp_obj_new_str("y",1), mp_obj_new_float(0x80));
+    angular = mp_obj_dict_store(angular, mp_obj_new_str("z",1), mp_obj_new_float(0x90));
+
+    twist = mp_obj_new_dict(2);
+    twist = mp_obj_dict_store(twist, mp_obj_new_str("linear",6), linear);
+    twist = mp_obj_dict_store(twist, mp_obj_new_str("angular",7), angular);
+
+    return (twist);
+}
+
 void* ros_mp_event_task(void *pvParameter) {
 
     volatile uint32_t sp = (uint32_t)get_sp();
@@ -155,19 +182,5 @@ mp_obj_t init_ros_mp_event_system(void) {
 }
 
 
-
-    // mp_obj_t linear = mp_obj_new_dict(3);	
-    // linear = mp_obj_dict_store(linear, mp_obj_new_str("x",1), mp_obj_new_float(0x40));
-    // linear = mp_obj_dict_store(linear, mp_obj_new_str("y",1), mp_obj_new_float(0x50));
-    // linear = mp_obj_dict_store(linear, mp_obj_new_str("z",1), mp_obj_new_float(0x60));
-
-    // mp_obj_t angular = mp_obj_new_dict(3);
-    // angular = mp_obj_dict_store(angular, mp_obj_new_str("x",1), mp_obj_new_float(0x70));
-    // angular = mp_obj_dict_store(angular, mp_obj_new_str("y",1), mp_obj_new_float(0x80));
-    // angular = mp_obj_dict_store(angular, mp_obj_new_str("z",1), mp_obj_new_float(0x90));
-
-    // mp_obj_t twist = mp_obj_new_dict(2);
-    // twist = mp_obj_dict_store(twist, mp_obj_new_str("linear",6), linear);
-    // twist = mp_obj_dict_store(twist, mp_obj_new_str("angular",7), angular);
 
 }

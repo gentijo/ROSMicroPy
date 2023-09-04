@@ -8,6 +8,8 @@ STATIC MP_DEFINE_CONST_FUN_OBJ_3(registerEventSubscription_obj, registerEventSub
 STATIC MP_DEFINE_CONST_FUN_OBJ_0(init_ros_mp_event_system_obj, init_ros_mp_event_system);
 STATIC MP_DEFINE_CONST_FUN_OBJ_0(readROSMsg_obj, readROSMsg);
 STATIC MP_DEFINE_CONST_FUN_OBJ_0(init_event_queue_obj, init_event_queue);
+STATIC MP_DEFINE_CONST_FUN_OBJ_0(readObjFromThread_obj, readObjFromThread);
+STATIC MP_DEFINE_CONST_FUN_OBJ_0(createObjFromThread_obj, createObjFromThread);
 
 
 
@@ -23,7 +25,9 @@ STATIC const mp_rom_map_elem_t mp_uros_module_globals_table[] = {
     { MP_ROM_QSTR(MP_QSTR_registerEventSubscription), MP_ROM_PTR(&registerEventSubscription_obj) },
     { MP_ROM_QSTR(MP_QSTR_init_ros_mp_event_system), MP_ROM_PTR(&init_ros_mp_event_system_obj) },
     { MP_ROM_QSTR(MP_QSTR_readROSMsg), MP_ROM_PTR(&readROSMsg_obj) },
-    { MP_ROM_QSTR(MP_QSTR_init_event_queue), MP_ROM_PTR(&init_event_queue_obj) }
+    { MP_ROM_QSTR(MP_QSTR_init_event_queue), MP_ROM_PTR(&init_event_queue_obj) },
+    { MP_ROM_QSTR(MP_QSTR_readObjFromThread), MP_ROM_PTR(&readObjFromThread_obj) },
+    { MP_ROM_QSTR(MP_QSTR_createObjFromThread), MP_ROM_PTR(&createObjFromThread_obj) }
 
 };
 

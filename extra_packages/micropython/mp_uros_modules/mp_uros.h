@@ -22,4 +22,8 @@ mp_obj_t registerEventSubscription(mp_obj_t eventName, mp_obj_t eventType, mp_ob
 mp_obj_t init_ros_mp_event_system(void);
 mp_obj_t readROSMsg();
 mp_obj_t init_event_queue(void);
+
+mp_obj_t readObjFromThread();
+mp_obj_t createObjFromThread();
+
 #endif
