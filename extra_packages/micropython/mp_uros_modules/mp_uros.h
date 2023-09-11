@@ -15,13 +15,12 @@
 
 #include "shared/runtime/pyexec.h"
 
-// extern QueueHandle_t 	mp_uros_queue;
+mp_obj_t    init_ROS_System();
+mp_obj_t    registerEventSubscription(mp_obj_t eventName, mp_obj_t eventType, mp_obj_t eventCallback);
+mp_obj_t    publishMsg(mp_obj_t publisher_ID, mp_obj_t dataType, mp_obj_t data);
 
-mp_obj_t publishMsg(mp_obj_t a_obj, mp_obj_t b_obj);
-mp_obj_t registerEventSubscription(mp_obj_t eventName, mp_obj_t eventType, mp_obj_t eventCallback);
-mp_obj_t init_ros_mp_event_system(void);
-mp_obj_t readROSMsg();
-mp_obj_t init_event_queue(void);
+void        dispatch_ROSMsg();
+
 
 mp_obj_t readObjFromThread();
 mp_obj_t createObjFromThread();

@@ -145,7 +145,8 @@ set(MICROPY_UROS_MODULES
     #
     # Bind Python to ROS
     ${MICROPY_UROS_MODULE_DIR}/mp_uros_module.c
-    ${MICROPY_UROS_MODULE_DIR}/mp_uros.cpp
+    ${MICROPY_UROS_MODULE_DIR}/mp_uros_thread.c
+    ${MICROPY_UROS_MODULE_DIR}/mp_uros.c
 )
 
 set(MICROPY_UROS_TYPESUPPORT

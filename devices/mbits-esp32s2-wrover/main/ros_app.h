@@ -2,10 +2,7 @@
 #define __ROS_APP_H__
 
 #include "sdkconfig.h"
-struct AMessage
-{
-    char ucMessageID;
-    char ucData[ 20 ];
-};
+
+void init_ROS_Main_Task();
 
 #endif
