@@ -153,7 +153,6 @@ set(MICROPY_UROS_TYPESUPPORT
     #
     # Bind Python to ROS
     ${MICROPY_UROS_TYPE_SUPPORT_DIR}/mp_uros_type_support.c
-
 )
 
 message ("MICROPY_SOURCE_PY: ${MICROPY_SOURCE_PY}")
@@ -177,6 +176,21 @@ set(MICROPY_SOURCE_QSTR
     ${MICROPY_UROS_MODULES}
 
 )
+
+
+list(APPEND MICROPY_CPP_INC_EXTRA  
+    ${MICROROS_INC_DIR}/rcl_action
+    ${MICROROS_INC_DIR}/action_msgs
+    ${MICROROS_INC_DIR}/unique_identifier_msgs
+    ${MICROROS_INC_DIR}/builtin_interfaces
+    ${MICROROS_INC_DIR}
+    ${MICROROS_INC_DIR}/rcl
+    ${MICROROS_INC_DIR}/rcutils
+    ${MICROROS_INC_DIR}/rmw
+    ${MICROROS_INC_DIR}/rosidl_runtime_c
+    ${MICROROS_INC_DIR}/rosidl_typesupport_interface
+)
+
 
 
 set(IDF_COMPONENTS
@@ -258,6 +272,7 @@ idf_component_register(
         ${MICROPY_UROS_MODULE_DIR}
         ${MICROPY_UROS_TYPE_SUPPORT_DIR}
         ${MICROROS_INC_DIR}
+        ${PROJECT_DIR}/main
     REQUIRES
         ${IDF_COMPONENTS}
         libmicroros

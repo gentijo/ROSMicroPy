@@ -1,0 +1,8 @@
+FROM ros:humble
+
+RUN apt -y update
+RUN apt -y upgrade
+RUN apt install -y ros-humble-turtlesim
+
+COPY ./run_teleop_key.sh /run_teleop_key.sh
+CMD sh /run_teleop_key.sh

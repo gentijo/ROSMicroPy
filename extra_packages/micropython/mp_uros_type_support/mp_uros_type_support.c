@@ -157,8 +157,8 @@ size_t mpy_uros_typesupport_get_max_serialized_size(bool * full_bounded, size_t 
 *
 */
 message_type_support_callbacks_t callbacks_mpy_uros_type_support = {
-  "micropython",
-  "object",
+  "geometry_msgs",
+  "msg/Twist",
   mpy_uros_typesupport_cdr_serialize,
   mpy_uros_typesupport_cdr_deserialize,
   mpy_uros_typesupport_get_initial_serialized_size,

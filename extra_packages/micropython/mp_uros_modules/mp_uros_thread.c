@@ -1,5 +1,6 @@
 
 #include "mp_uros_thread.h"
+#include "ros_app.h"
 
 void init_ROS_Main_Task();
 
@@ -39,14 +40,9 @@ STATIC void *ros_thread_entry(void *args_in)
 
     // TODO set more thread-specific state here:
     //  cur_exception (root pointer)
-
-    //DEBUG_printf("[thread] start ts=%p args=%p stack=%p\n", &ts, &args, MP_STATE_THREAD(stack_top));
     MP_THREAD_GIL_EXIT();
 
-    //args->fun_ptr();
-    //ROS_Main_Task_Loop();
-
-    init_ROS_Main_Task();
+    run_ROS_Stack();
 
     // signal that we are finished
     mp_thread_finish();
@@ -73,40 +69,3 @@ mp_obj_t start_new_ROS_thread(void (*entry_point_fun)())
 
     return mp_const_none;
 }
-
-mp_obj_t init_ROS_System() {
- 
-	printf("\r\nInitializing ROS Stack\r\n");
-	//init_ROS_Main_Task();
-    start_new_ROS_thread(ROS_Main_Task_Loop);  
-    return mp_const_none;
-  
-}
-
-
-//  MP_THREAD_GIL_ENTER();
-// nlr_buf_t nlr;
-// if (nlr_push(&nlr) == 0)
-// {
-//     mp_call_function_n_kw(args->fun, args->n_args, args->n_kw, args->args);
-//     nlr_pop();
-// }
-// else
-// {
-//     // uncaught exception
-//     // check for SystemExit
-//     mp_obj_base_t *exc = (mp_obj_base_t *)nlr.ret_val;
-//     if (mp_obj_is_subclass_fast(MP_OBJ_FROM_PTR(exc->type), MP_OBJ_FROM_PTR(&mp_type_SystemExit)))
-//     {
-//         // swallow exception silently
-//     }
-//     else
-//     {
-//         // print exception out
-//         mp_printf(MICROPY_ERROR_PRINTER, "Unhandled exception in thread started by ");
-//         mp_obj_print_helper(MICROPY_ERROR_PRINTER, args->fun, PRINT_REPR);
-//         mp_printf(MICROPY_ERROR_PRINTER, "\n");
-//         mp_obj_print_exception(MICROPY_ERROR_PRINTER, MP_OBJ_FROM_PTR(exc));
-//     }
-// }
-//  MP_THREAD_GIL_EXIT();
