@@ -11,22 +11,26 @@
 #include "esp_system.h"
 
 #include <uros_network_interfaces.h>
+
 #include <rcl/rcl.h>
+#include <rclc/executor.h>
 
 #include <rcl/error_handling.h>
 #include <std_msgs/msg/int32.h>
-
-#include <rclc/rclc.h>
-#include <rclc/executor.h>
-
-#include <geometry_msgs/geometry_msgs/msg/twist.h>
-#include "rosidl_typesupport_microxrcedds_c/message_type_support.h"
 
 #include "py/runtime.h"
 
 #include "ros_app.h"
 #include "mp_uros.h"
 #include "mp_uros_thread.h"
+#include "mp_uros_type_support.h"
+
+
+#include <rclc/rclc.h>
+#include <rclc/executor.h>
+
+#include <geometry_msgs/geometry_msgs/msg/twist.h>
+#include "rosidl_typesupport_microxrcedds_c/message_type_support.h"
 
 extern rosidl_message_type_support_t mpy_uros_type_support;
 
@@ -60,9 +64,6 @@ void mp_app_main(void);
 rclc_executor_t		executor;
 rcl_node_t 			node;
 
-
-rcl_publisher_t		publisher;
-rcl_subscription_t  subscription;
 rcl_timer_t			timer;
 
 rcl_allocator_t		allocator;
@@ -87,7 +88,6 @@ void timer_callback(rcl_timer_t *timer, int64_t last_call_time)
 	// }
 }
 
-geometry_msgs__msg__Twist   m_velocity_msg;
 void sub_velocity_callback(const void *msgin)
 {
 	printf("Vel Callback\r\n");
@@ -137,37 +137,6 @@ void init_ROS_Stack()
 		&support,
 		RCL_MS_TO_NS(timer_timeout),
 		timer_callback));
-
-	// char full_name[40];
-	// strcpy(full_name, "turtle1");
-	// strcat(full_name, "/cmd_vel");
-
-	// printf("Init command velocity subscription Name=%s\r\n", full_name);
-	// RCCHECK(rclc_subscription_init_default(
-	//  	&subscription,
-	// 	&node,
-	// 	ROSIDL_GET_MSG_TYPE_SUPPORT(geometry_msgs, msg, Twist),
-	// 	full_name)
-	// );
-
-
-	// printf("Add command velocity subscription\r\n");
-	// RCCHECK(rclc_executor_add_subscription(
-	// 	&executor, 
-	// 	&subscription, 
-	// 	&m_velocity_msg, 
-	// 	&sub_velocity_callback, ON_NEW_DATA));
-
-
-	RCCHECK(rclc_executor_add_timer(&executor, &timer));
-
-	//rclc_executor_spin(&executor);
-
-	// while(1) {
-	// 	rclc_executor_spin_some(&executor, RCL_MS_TO_NS(200));
-	// 	vTaskDelay( 100 );
-	// }
-
 }
 
 void run_ROS_Stack() {
@@ -192,19 +161,17 @@ void add_ROS_service_Listener(ros_subscription* sub) {
 	RCSOFTCHECK(rclc_subscription_init_default(
 	 	&sub->rcl_service_subscription,
 		&node,
-		// ROSIDL_GET_MSG_TYPE_SUPPORT(geometry_msgs, msg, Twist),
-		&mpy_uros_type_support,
+		ROSIDL_GET_MSG_TYPE_SUPPORT(geometry_msgs, msg, Twist),
+		//mpy_uros_type_support_slots[0],
 		full_name)
 	);
 	
-
 	printf("Add command velocity subscription\r\n");
-	RCSOFTCHECK(rclc_executor_add_subscription_with_context(
+	RCSOFTCHECK(rclc_executor_add_subscription(
 		&executor,
 		&sub->rcl_service_subscription,
 		sub->resp,
 		&service_callback, 
-		sub,
 		ON_NEW_DATA));
 
 }

@@ -1,7 +1,12 @@
+#include "ros_app.h"
+
 #include "mp_uros.h"
 #include "mp_uros_module.h"
 #include "mp_uros_thread.h"
-#include "ros_app.h"
+#include "mp_uros_type_support.h"
+
+//#include "common_internal.h"
+#include <ucdr/microcdr.h>
 
 // MicroPython runs as a task under FreeRTOS
 #define MP_TASK_PRIORITY (ESP_TASK_PRIO_MIN + 1)
@@ -55,17 +60,22 @@ mp_obj_t createObjFromThread()
  *
  *
  */
-void service_callback(const void *res, void *context)
+void service_callback(const void *response)
 {
     printf("in Service callback\r\n");
-    if (context == NULL)
-        return;
 
-    ros_subscription *ros_sub = (ros_subscription *)context;
-    MP_THREAD_GIL_ENTER();
-    mp_obj_t data = createObjFromThread();
-    mp_call_function_1(ros_sub->mpEventCallback, data);
-    MP_THREAD_GIL_EXIT();
+//    double *double_val = (double *)response;
+
+    ucdrBuffer temp_buffer;
+    ucdr_init_buffer(
+        &temp_buffer,
+        NULL,
+        0);
+    
+    // MP_THREAD_GIL_ENTER();
+    // mp_obj_t data = createObjFromThread();
+    // mp_call_function_1(ros_sub->mpEventCallback, data);
+    // MP_THREAD_GIL_EXIT();
 }
 
 /**
@@ -126,6 +136,7 @@ mp_obj_t mp_init_ROS_Stack()
 {
     printf("\r\nInitializing ROS Stack\r\n");
     init_event_subscription_callbacks();
+    init_mpy_uros_typesupport();
     init_ROS_Stack();
 
     return mp_const_none;
