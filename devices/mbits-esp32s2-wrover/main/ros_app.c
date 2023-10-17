@@ -192,8 +192,8 @@ void add_ROS_service_Listener(ros_subscription* sub) {
 	RCSOFTCHECK(rclc_subscription_init_default(
 	 	&sub->rcl_service_subscription,
 		&node,
-		// ROSIDL_GET_MSG_TYPE_SUPPORT(geometry_msgs, msg, Twist),
-		&mpy_uros_type_support,
+		ROSIDL_GET_MSG_TYPE_SUPPORT(geometry_msgs, msg, Twist),
+		//&mpy_uros_type_support,
 		full_name)
 	);
 	
