@@ -8,10 +8,10 @@
 #include "py/runtime.h"
 
 
-ROSIDL_TYPESUPPORT_MICROXRCEDDS_C_EXPORT_mpy_uros_msgs
+//ROSIDL_TYPESUPPORT_MICROXRCEDDS_C_EXPORT_mpy_uros_msgs
 size_t mpy_uros_typesupport_get_serialized_size(const void * mp_obj, size_t current_alignment);
 
-ROSIDL_TYPESUPPORT_MICROXRCEDDS_C_EXPORT_mpy_uros_msgs
+// ROSIDL_TYPESUPPORT_MICROXRCEDDS_C_EXPORT_mpy_uros_msgs
 static uint32_t mpy_uros_typesupport_get_initial_serialized_size(const void * mp_obj);
 static size_t mp_uros_typesupport_max_serialized_size();
 
@@ -44,11 +44,12 @@ void mpy_uros_msg_fini(mp_obj_t * msg)
   // geometry_msgs__msg__Vector3__fini(&msg->angular);
 }
 
-bool mpy_uros_msg_are_equal(const (mp_obj_t *lhs, const mp_obj_t *rhs)
+bool mpy_uros_msg_are_equal(const mp_obj_t *lhs, const mp_obj_t *rhs)
 {
   if (!lhs || !rhs) {
     return false;
   }
+
   // // linear
   // if (!geometry_msgs__msg__Vector3__are_equal(
   //     &(lhs->linear), &(rhs->linear)))
@@ -64,11 +65,13 @@ bool mpy_uros_msg_are_equal(const (mp_obj_t *lhs, const mp_obj_t *rhs)
   return true;
 }
 
-bool mpy_uros_msg_copy(const (mp_obj_t * input, mp_obj_t *output)
+bool mpy_uros_msg_copy(const mp_obj_t * input, mp_obj_t *output)
 {
   if (!input || !output) {
     return false;
   }
+
+
   // // linear
   // if (!geometry_msgs__msg__Vector3__copy(
   //     &(input->linear), &(output->linear)))
@@ -92,7 +95,7 @@ mp_obj_t *mpy_uros_msg_create()
     return NULL;
   }
 
-  memset(msg, 0, sizeof(geometry_msgs__msg__Twist));
+  //memset(msg, 0, sizeof(geometry_msgs__msg__Twist));
   bool success = mpy_uros_msg_init(msg);
   if (!success) {
     allocator.deallocate(msg, allocator.state);
@@ -119,7 +122,7 @@ bool mpy_uros_msg_Sequence__init(mp_obj_t * array, size_t size)
   }
   
   rcutils_allocator_t allocator = rcutils_get_default_allocator();
-  geometry_msgs__msg__Twist * data = NULL;
+  //geometry_msgs__msg__Twist * data = NULL;
 
   if (size) {
     data = (geometry_msgs__msg__Twist *)allocator.zero_allocate(size, sizeof(geometry_msgs__msg__Twist), allocator.state);
