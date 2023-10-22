@@ -7,6 +7,7 @@
 
 //#include "common_internal.h"
 #include <ucdr/microcdr.h>
+#include "py/runtime.h"
 
 // MicroPython runs as a task under FreeRTOS
 #define MP_TASK_PRIORITY (ESP_TASK_PRIO_MIN + 1)
@@ -60,22 +61,22 @@ mp_obj_t createObjFromThread()
  *
  *
  */
-void service_callback(const void *response)
+void service_callback(const void *response, const void *context)
 {
     printf("in Service callback\r\n");
 
-//    double *double_val = (double *)response;
-
-    ucdrBuffer temp_buffer;
-    ucdr_init_buffer(
-        &temp_buffer,
-        NULL,
-        0);
+    void **mp_data = response;
+    ros_subscription* ros_sub = (ros_subscription *)context;
+    // ucdrBuffer temp_buffer;
+    // ucdr_init_buffer(
+    //     &temp_buffer,
+    //     NULL,
+    //     0);
     
-    // MP_THREAD_GIL_ENTER();
+    MP_THREAD_GIL_ENTER();
     // mp_obj_t data = createObjFromThread();
-    // mp_call_function_1(ros_sub->mpEventCallback, data);
-    // MP_THREAD_GIL_EXIT();
+    mp_call_function_1(ros_sub->mpEventCallback, *mp_data);
+    MP_THREAD_GIL_EXIT();
 }
 
 /**
@@ -103,9 +104,6 @@ mp_obj_t registerEventSubscription(
     mp_obj_t eventType,
     mp_obj_t eventCallback)
 {
-
- //   const char *ename = mp_obj_str_get_str(eventName);
-
     int cnt = ros_subscription_slots;
     ros_subscription* rsubs = g_ros_subs;
 
@@ -146,4 +144,11 @@ mp_obj_t mp_run_ROS_Stack()
 {
     start_new_ROS_thread(run_ROS_Stack);
     return mp_const_none;
+}
+
+ros_subscription * get_ROS_Sub_from_slot(int slot)
+{
+    if (slot >= ros_subscription_slots) return NULL;
+    return &g_ros_subs[slot];
+
 }

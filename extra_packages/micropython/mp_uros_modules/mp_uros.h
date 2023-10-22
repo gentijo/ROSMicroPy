@@ -37,7 +37,8 @@ mp_obj_t publishMsg(mp_obj_t publisher_ID, mp_obj_t dataType, mp_obj_t data);
 mp_obj_t mp_init_ROS_Stack();
 mp_obj_t mp_run_ROS_Stack();
 
-void service_callback(const void *resp);
+void service_callback(const void *resp, const void *context);
+ros_subscription* get_ROS_Sub_from_slot(int slot);
 
 void dispatch_ROSMsg();
 

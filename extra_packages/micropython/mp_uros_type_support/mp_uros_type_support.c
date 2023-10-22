@@ -34,7 +34,14 @@ rosidl_message_type_support_t* mpy_uros_type_support_slots[25];
     return rv;
   }
 
-
+  ros_subscription* ros_sub_test(ros_subscription* sub )
+  {
+    sub->eventName = NULL;
+    return sub;
+  }
+  
+  ros_subscription* ros_sub;
+  mp_obj_t type;
   /**
    *
    *
@@ -50,42 +57,46 @@ rosidl_message_type_support_t* mpy_uros_type_support_slots[25];
       return false;
     }
 
+    void **ros_mesg = untyped_ros_message;
+
+    ros_sub = get_ROS_Sub_from_slot(slot);
+    type = ros_sub->eventType;
+    
+    
+    ros_sub_test(ros_sub);
+
     double double_val;
     
-    rv = ucdr_deserialize_double(cdr, &double_val);
-
-    rv = ucdr_deserialize_double(cdr, &double_val);
-    rv = ucdr_deserialize_double(cdr, &double_val);
-    rv = ucdr_deserialize_double(cdr, &double_val);
-
     mp_obj_t linear = mp_obj_new_dict(3);
 
     rv = ucdr_deserialize_double(cdr, &double_val);
+    printf("X: %lf", double_val);
     linear = mp_obj_dict_store(linear, mp_obj_new_str("x", 1), mp_obj_new_float(double_val));
     
     rv = ucdr_deserialize_double(cdr, &double_val);
+    printf("y: %lf", double_val);
     linear = mp_obj_dict_store(linear, mp_obj_new_str("y", 1), mp_obj_new_float(double_val));
 
     rv = ucdr_deserialize_double(cdr, &double_val);
+    printf("z: %lf", double_val);
     linear = mp_obj_dict_store(linear, mp_obj_new_str("z", 1), mp_obj_new_float(double_val));
 
     mp_obj_t angular = mp_obj_new_dict(3);
     rv = ucdr_deserialize_double(cdr, &double_val);
-    linear = mp_obj_dict_store(linear, mp_obj_new_str("x", 1), mp_obj_new_float(double_val));
+    angular = mp_obj_dict_store(angular, mp_obj_new_str("x", 1), mp_obj_new_float(double_val));
     
     rv = ucdr_deserialize_double(cdr, &double_val);
-    linear = mp_obj_dict_store(linear, mp_obj_new_str("y", 1), mp_obj_new_float(double_val));
+    angular = mp_obj_dict_store(angular, mp_obj_new_str("y", 1), mp_obj_new_float(double_val));
 
     rv = ucdr_deserialize_double(cdr, &double_val);
-    linear = mp_obj_dict_store(linear, mp_obj_new_str("z", 1), mp_obj_new_float(double_val));
+    angular = mp_obj_dict_store(angular, mp_obj_new_str("z", 1), mp_obj_new_float(double_val));
 
-    mp_obj_t twist = mp_obj_new_dict(2);
-    twist = mp_obj_dict_store(twist, mp_obj_new_str("linear", 6), linear);
-    twist = mp_obj_dict_store(twist, mp_obj_new_str("angular", 7), angular);
+    mp_obj_t message = mp_obj_new_dict(2);
+    message = mp_obj_dict_store(message, mp_obj_new_str("linear", 6), linear);
+    message = mp_obj_dict_store(message, mp_obj_new_str("angular", 7), angular);
+    *ros_mesg = message;
 
     //    mp_store_global(MP_QSTR_make_dict, MP_OBJ_FROM_PTR(&make_dict_obj));
-
-    untyped_ros_message=twist;
 
     return rv;
   }

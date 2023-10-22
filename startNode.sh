@@ -1,7 +1,6 @@
 export NODENAME=rosmicropy
 
-cd docker/
-docker build -t rosmicropy.img -f Dockerfile.rbpy .
+docker build -t rosmicropy.img -f Dockerfile.rbpy ./docker
 
 docker rm $NODENAME
 

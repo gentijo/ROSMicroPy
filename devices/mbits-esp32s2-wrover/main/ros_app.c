@@ -161,17 +161,18 @@ void add_ROS_service_Listener(ros_subscription* sub) {
 	RCSOFTCHECK(rclc_subscription_init_default(
 	 	&sub->rcl_service_subscription,
 		&node,
-		ROSIDL_GET_MSG_TYPE_SUPPORT(geometry_msgs, msg, Twist),
-		//mpy_uros_type_support_slots[0],
+		//ROSIDL_GET_MSG_TYPE_SUPPORT(geometry_msgs, msg, Twist),
+		mpy_uros_type_support_slots[0],
 		full_name)
 	);
 	
 	printf("Add command velocity subscription\r\n");
-	RCSOFTCHECK(rclc_executor_add_subscription(
+	RCSOFTCHECK(rclc_executor_add_subscription_with_context(
 		&executor,
 		&sub->rcl_service_subscription,
 		sub->resp,
 		&service_callback, 
+		sub,
 		ON_NEW_DATA));
 
 }
