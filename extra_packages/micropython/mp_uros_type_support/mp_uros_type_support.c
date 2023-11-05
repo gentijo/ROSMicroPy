@@ -42,6 +42,16 @@ rosidl_message_type_support_t* mpy_uros_type_support_slots[25];
   
   ros_subscription* ros_sub;
   mp_obj_t type;
+
+//   size_t mp_obj_namedtuple_find_field(const mp_obj_namedtuple_type_t *type, qstr name) {
+//     for (size_t i = 0; i < type->n_fields; i++) {
+//         if (type->fields[i] == name) {
+//             return i;
+//         }
+//     }
+//     return (size_t)-1;
+// }
+
   /**
    *
    *
@@ -60,10 +70,6 @@ rosidl_message_type_support_t* mpy_uros_type_support_slots[25];
     void **ros_mesg = untyped_ros_message;
 
     ros_sub = get_ROS_Sub_from_slot(slot);
-    type = ros_sub->eventType;
-    
-    
-    ros_sub_test(ros_sub);
 
     double double_val;
     
