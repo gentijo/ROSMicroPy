@@ -4,16 +4,15 @@
 
 mp_obj_t mpt_getNamedObjFrom(mp_obj_t obj_in, qstr attr)
 {
-
     mp_obj_t obj_out = mp_load_attr(obj_in, attr);
     size_t data_map_len;
     mp_obj_t *data_map_items;
     
-    type = mp_obj_get_type(data_map);
+    type = mp_obj_get_type(obj_in);
     type_str = qstr_str(type->name);
     printf ("Type: %s\r\n", type_str);
     
-    mp_obj_list_get(data_map, &data_map_len, &data_map_items);
+    mp_obj_list_get(obj_in, &data_map_len, &data_map_items);
     for (size_t i = 0; i < data_map_len; ++i) {
         mp_obj_t data_map_elem = data_map_items[i];
         type = mp_obj_get_type(data_map_elem);
@@ -24,7 +23,7 @@ mp_obj_t mpt_getNamedObjFrom(mp_obj_t obj_in, qstr attr)
 
 }
 
-mp_obj_t mpt_getIndexedObjFrom(mp_obj_t objin, size_t index)
+mp_obj_t mpt_getObjFromByIndex(mp_obj_t objin, size_t index)
 {
 
 }
