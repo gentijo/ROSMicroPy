@@ -152,7 +152,7 @@ mp_obj_t registerEventSubscription(
 
 
     mp_obj_t data_map = mp_load_attr(eventType, MP_QSTR_dataMap);
-    size_t data_map_len;
+    size_t   data_map_len;
     mp_obj_t *data_map_items;
     
     type = mp_obj_get_type(data_map);

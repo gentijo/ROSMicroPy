@@ -1,3 +1,6 @@
+**Learn How To - Developing for ROSMicroPy**
+**[here](docs/devenv.md)**
+
 When switching between branches, you may need to delete the extra_packages/microros directory
 then do a forced submodule recursive update.  Galactic has the code in the repo, Humble + will
 link directly to the libMicroROS project.

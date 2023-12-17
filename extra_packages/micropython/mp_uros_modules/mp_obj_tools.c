@@ -1,37 +1,41 @@
 
+
 #include "py/runtime.h"
 #include "py/obj.h"
 
 mp_obj_t mpt_getNamedObjFrom(mp_obj_t obj_in, qstr attr)
 {
-    mp_obj_t obj_out = mp_load_attr(obj_in, attr);
-    size_t data_map_len;
-    mp_obj_t *data_map_items;
+    // mp_obj_t obj_out = mp_load_attr(obj_in, attr);
+    // size_t data_map_len;
+    // mp_obj_t *data_map_items;
     
-    type = mp_obj_get_type(obj_in);
-    type_str = qstr_str(type->name);
-    printf ("Type: %s\r\n", type_str);
+    // type = mp_obj_get_type(obj_in);
+    // type_str = qstr_str(type->name);
+    // printf ("Type: %s\r\n", type_str);
     
-    mp_obj_list_get(obj_in, &data_map_len, &data_map_items);
-    for (size_t i = 0; i < data_map_len; ++i) {
-        mp_obj_t data_map_elem = data_map_items[i];
-        type = mp_obj_get_type(data_map_elem);
-        type_str = qstr_str(type->name);
+    // mp_obj_list_get(obj_in, &data_map_len, &data_map_items);
 
-        parseDataMapDict(data_map_elem);
-    }
+    // for (size_t i = 0; i < data_map_len; ++i) {
+    //     mp_obj_t data_map_elem = data_map_items[i];
+    //     type = mp_obj_get_type(data_map_elem);
+    //     type_str = qstr_str(type->name);
 
+    //     parseDataMapDict(data_map_elem);
+    // }
+
+    return NULL;
 }
 
 mp_obj_t mpt_getObjFromByIndex(mp_obj_t objin, size_t index)
 {
-
+    return NULL;
 }
 
 //#getNextObj
 
 char *mpt_obj_to_cstr(mp_obj_t objin)
 {
+    return NULL;
 
 }
 
@@ -84,6 +88,7 @@ mp_obj_t dict_map_elem;
 //    self->data = mp_obj_dict_get(uasyncio_context, MP_OBJ_NEW_QSTR(MP_QSTR_CancelledError));
 
 mp_obj_t parseDataMapDict(mp_obj_t dict) {
+
     mp_map_t *named_map = mp_obj_dict_get_map(dict);
     mp_map_elem_t *named_elem = mp_map_lookup(named_map, MP_OBJ_NEW_QSTR(MP_QSTR_name), MP_MAP_LOOKUP);
     if (named_elem != NULL && named_elem->value != NULL) {
