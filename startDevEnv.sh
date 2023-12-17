@@ -1,8 +1,15 @@
 export NODENAME=rosmicropy
 
-cd  docker
-docker build -t rosmicropy.img -f Dockerfile.rbpy .
-cd -
+
+
+IMAGE_NAME=Dockerfile.rbpy
+IMAGE_EXISTS=$(docker image list | grep $IMAGE_NAME )
+if [ -z "$IMAGE_EXISTS" ]; then
+   cd  docker
+   echo "Building " $IMAGE_NAME " image"
+   docker build -t ros_humble.img -f Dockerfile.humble .
+   cd -
+fi
 
 docker rm $NODENAME
 
