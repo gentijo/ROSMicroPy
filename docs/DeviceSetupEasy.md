@@ -1,5 +1,4 @@
-**Learn How To - Developing for ROSMicroPy**
-**[here](docs/devenv.md)**
+
 
 
 **Building the firmware to load and go**

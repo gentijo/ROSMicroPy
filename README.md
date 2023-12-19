@@ -1,6 +1,9 @@
 # ROSMicroPy
 
-ROSMicroPy is a tightly coupled intergration of MicroROS and Micropython.
+ROSMicroPy is a tightly coupled intergration of MicroROS and Micropython, multithreaded, async message, Python based ROS2 firmware for embedded microprocessor devices 
+
+
+
 ## Features Include
 
 ### [SDK to control the ROS Stack](./docs/ROS_SDK.md)
@@ -22,6 +25,7 @@ ROSMicroPy is a tightly coupled intergration of MicroROS and Micropython.
 ### How to get started 
 + **[Flash device and run on a device](./docs/DeviceSetupEasy.md)**
 + **[How to configure development environment](docs/DevEnviroment.md)**
+How to setup the Python / ROS Robot Coder Development Environment
 
 ### Thonny Support
     - Plugin to compile ROS Types and store to the device
@@ -30,7 +34,12 @@ ROSMicroPy is a tightly coupled intergration of MicroROS and Micropython.
 
 + **[Running the ROS Type Python generator ](./docs/typeSupport-Parser.md)**
 
+### Compiling ROSMicroPy
+ 
 ### Micropython ROS Intergration Details
 Build System
 Connecting the different Threading Models
 Type Support
+Callback functions on Message Receive events
+Publishing ROS messages
+ROS Server support
