@@ -5,7 +5,7 @@ echo this line may fail on non-linux hosts
 xhost +
 
 NET_NAME=rosnet
-IMAGE_NAME=ros_humble.img
+IMAGE_NAME=ROSConsole
 
 
 
@@ -15,7 +15,7 @@ if [ -z "$NET_EXISTS" ]; then
     docker network create $NET_NAME
 fi
 
-DOCKER_DEF=Dockerfile.humble
+DOCKER_DEF=Dockerfile.ROSConsole
 IMAGE_EXISTS=$(docker image list | grep $IMAGE_NAME )
 if [ -z "$IMAGE_EXISTS" ]; then
    cd docker

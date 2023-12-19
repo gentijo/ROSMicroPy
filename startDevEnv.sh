@@ -1,8 +1,6 @@
-export NODENAME=rosmicropy
+NODENAME=rosmicropy
 
-
-
-IMAGE_NAME=Dockerfile.rbpy
+IMAGE_NAME=Dockerfile.DevEnvironment
 IMAGE_EXISTS=$(docker image list | grep $IMAGE_NAME )
 if [ -z "$IMAGE_EXISTS" ]; then
    cd  docker

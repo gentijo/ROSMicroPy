@@ -10,7 +10,7 @@ if [ -z "$NET_EXISTS" ]; then
 fi 
 
 IMAGE_NAME=rosteleopkey.img 
-DOCKER_DEF=Dockerfile.humble
+DOCKER_DEF=Dockerfile.TeleopKey
 
 IMAGE_EXISTS=$(docker image list | grep $IMAGE_NAME )
 if [ -z "$IMAGE_EXISTS" ]; then
