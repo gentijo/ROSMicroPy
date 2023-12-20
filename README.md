@@ -8,7 +8,8 @@ ROSMicroPy is a tightly coupled intergration of MicroROS and Micropython, multit
 
 ### [SDK to control the ROS Stack](./docs/ROS_SDK.md)
 + Start / Stop ROS Stack
-+ Set the Set the Address of the ROS Agent
++ Set the Address of the ROS Agent
++ Set the Node name of the device
 + Publish messages
 + Subsubscribe to messages
 + Run a server process
