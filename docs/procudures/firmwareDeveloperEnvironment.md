@@ -1,9 +1,23 @@
-The development setup
+[**First Create the firmware Development Contaier**](../containerSupport/containerDevEnv.md)
 
 
-[ ![](../images/Development%20Environment.svg ) **Development Component Diagram**](../images/Development%20Environment.svg  )
+[ ![]( ../images/DevEnv_RemExp.png ) **Phyiscal Setup**]( ../images/DevEnv_RemExp.png  )
 
-[ ![]( ../images/PhyiscalDevSetup2.png ) **Phyiscal Setup**]( ../images/PhyiscalDevSetup2.png  )
+[ ![]( ../images/DevEnv_SubModule.png ) **Phyiscal Setup**]( ../images/DevEnv_SubModule.png  )
+
+[ ![]( ../images/DevEnv_UpdateUser.png ) **Phyiscal Setup**]( ../images/DevEnv_UpdateUser.png  )
+
+[ ![]( ../images/DevEnv_VS_Term.png ) **Phyiscal Setup**]( ../images/DevEnv_VS_Term.png  )
+
+[ ![]( ../images/DevEnv_VS_Term.png ) **Phyiscal Setup**]( ../images/DevEnv_VS_Term.png  )
+
+[ ![]( ../images/DevEnv_VSC_compile.png ) **Phyiscal Setup**]( ../images/DevEnv_VSC_compile.png )
+
+[ ![]( ../images/DevEnv_VSCode.png ) **Phyiscal Setup**]( ../images/DevEnv_VSCode.png )
+
+
+
+
 
 
 **sh startDevEnv.sh**  

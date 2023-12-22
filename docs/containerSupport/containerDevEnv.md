@@ -1,6 +1,17 @@
   ## Development environment supported by this project. 
-  
  
+## Running from host computer, run ./startDevEnv
+
+[ ![]( ../images/DevEnv_StartBuild.png ) **Development Environment**]( ../images/DevEnv_StartBuild.png )
+
+### xyz
+
+[ ![]( ../images/DevEnvBuild.png ) **Phyiscal Setup**]( ../images/DevEnvBuild.png )
+
+**From the cmdline, run ./startDevEnv**
+**This will build the container and start, upon success you should be inside the container at a shell prompt** 
+[ ![]( ../images/DevEnvStep1.png ) **Host Shell prompt**]( ../images/DevEnvStep1.png )
+
 
  
   ***ROSNode***, this is a container to launch a ROS envirnment with support for XWindows to allow execution of rqt and other ROS visualization tools
