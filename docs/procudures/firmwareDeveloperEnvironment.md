@@ -3,8 +3,8 @@ The development setup
 
 [ ![](../images/Development%20Environment.svg ) **Development Component Diagram**](../images/Development%20Environment.svg  )
 
+[ ![]( ../images/PhyiscalDevSetup2.png ) **Phyiscal Setup**]( ../images/PhyiscalDevSetup2.png  )
 
-![Phyiscal Setup](../images/PhyiscalDevSetup.png)
 
 **sh startDevEnv.sh**  
 

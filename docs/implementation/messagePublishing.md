@@ -1,1 +1,1 @@
-# soon to come
+# Describe the message publishing system
