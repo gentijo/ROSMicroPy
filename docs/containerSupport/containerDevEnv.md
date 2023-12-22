@@ -1,4 +1,19 @@
+  ## Development environment supported by this project. 
+  
+ 
 
+ 
+  ***ROSNode***, this is a container to launch a ROS envirnment with support for XWindows to allow execution of rqt and other ROS visualization tools
+
+  ***MicroROS agent***, this container runs the MicroROS agent exposing the udp port 8888 to allow the container to participate on the ROS network allowing the MicroROS agent to connect to MicroROS devices. 
+
+  ***MicroROS Teleop Agent***, this runs the ROS Telop Agent to send messages to ROSNodes.
+
+  ***ROS***
+### Required prerequsites
+Start the Dev Environment Container
+Start the ROS Agent
+Start 
 
 
 **Building the firmware to load and go**
@@ -80,3 +95,5 @@ In the terminal window where the Agent is running, you should see messages where
 
 Now in the TeleopKey window, type the arrow keys, you should see a new 
 message in the Log window where it says *ROS Did Something* and the data sent from the *cmd_vel* message and displaying the contents of the *Twist* messsage **Graph Explorer**, you will now see the assoiation from the Turtle1 agent to the ESP device.
+
+![Development Environment](./Development%20Environment.svg)

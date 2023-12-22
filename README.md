@@ -6,7 +6,7 @@ ROSMicroPy is a tightly coupled intergration of MicroROS and Micropython, multit
 
 ## Features Include
 
-### [SDK to control the ROS Stack](./docs/ROS_SDK.md)
+### [SDK to control the ROS Stack](./docs/implementation/ROS_SDK.md)
 + Start / Stop ROS Stack
 + Set the Address of the ROS Agent
 + Set the Node name of the device
@@ -18,29 +18,31 @@ ROSMicroPy is a tightly coupled intergration of MicroROS and Micropython, multit
 
 ### Full Container Support
  Container definitions are include for
- + **[Running the development environment](./docs/containerDevEnv.md)**
- + **[Running the ROS Agent](./docs/containerROSAgent.md)**
- + **[Running the Teleop Key ROS Program to send commands to your device](./docs/containerTeleopKey.md)**
- + **[Running a ROS System capiable running graphical ROS apps](./docs/containerROSConsole.md)**
+ + **[Running the development environment](./docs/containerSupport/containerDevEnv.md)**
+ + **[Running the ROS Agent](./docs/containerSupport/containerROSAgent.md)**
+ + **[Running the Teleop Key ROS Program to send commands to your device](./docs/containerSupport/containerTeleopKey.md)**
+ + **[Running a ROS System capiable running graphical ROS apps](./docs/containerSupport/containerROSConsole.md)**
 
 ### How to get started 
-+ **[Flash device and run on a device](./docs/DeviceSetupEasy.md)**
-+ **[How to configure development environment](docs/DevEnviroment.md)**
-How to setup the Python / ROS Robot Coder Development Environment
++ **[Flash device and run](./docs/procudures/flashDevice.md)**
++ **[How to setup the Python / ROS Robot Coder Development Environment](./docs/procudures/pythonDeveloperEnvironment.md)**
+
++ **[*Advanced:* How to setup the firmware development environment](docs/procudures/firmwareDeveloperEnvironment.md)**
 
 ### Thonny Support
-    - Plugin to compile ROS Types and store to the device
+    - **[Plugin to compile ROS Types and store to the device](/docs/thonny/thonnyROSTypeSupportPlugin.md)**
 
 ### ROSMicro Type Support
 
-+ **[Running the ROS Type Python generator ](./docs/typeSupport-Parser.md)**
++ **[Running the ROS Type Python generator ](./docs/procudures/typeSupport-Parser.md)**
 
 ### Compiling ROSMicroPy
  
 ### Micropython ROS Intergration Details
-Build System
-Connecting the different Threading Models
-Type Support
-Callback functions on Message Receive events
-Publishing ROS messages
-ROS Server support
++ [Build System](./docs/implementation/buildSystem.md)
++ [Connecting the different Threading Models](./docs/implementation/threadingModels.md)
++ [Type Support](./docs/implementation/typeSupport.md)
++ [Subscribing to an event](./docs/implementation/eventSubscription.md)
++ [Callback functions on Message Receive events](./docs/implementation/messageCallback.md)
++ [Publishing ROS messages](./docs/implementation/messagePublishing.md)
++ [ROS Server support](./docs/implementation/rosServer.md)

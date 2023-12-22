@@ -1,32 +1,10 @@
-  ## Development environment supported by this project. 
-  
-  Everything is based on containers and should work seemly on Linux / Mac hosts. On Windows it should also work seemlessly under WSL2 and with a couple of adjustments work on Windows directly.
-
-  Containers definitions supplied:
-
-  ***ROSNode***, this is a container to launch a ROS envirnment with support for XWindows to allow execution of rqt and other ROS visualization tools
-
-  ***MicroROS agent***, this container runs the MicroROS agent exposing the udp port 8888 to allow the container to participate on the ROS network allowing the MicroROS agent to connect to MicroROS devices. 
-
-  ***MicroROS Teleop Agent***, this runs the ROS Telop Agent to send messages to ROSNodes.
-
-  ***Dev Environment Container*** this container contains the build tools for the ESP platform. This container is used to build the source code and flash it to the device. There is a Host platform dependancy for this container that the /dev file system exists so the container can access the Host serial ports (USB or Phyiscal)
-
-### Required prerequsites
-Start the Dev Environment Container
-Start the ROS Agent
-Start 
+The development setup
 
 
-**Building the firmware to load and go**
+[ ![](../images/Development%20Environment.svg ) **Development Component Diagram**](../images/Development%20Environment.svg  )
 
-Start with Mac or Linux, if using Windows, WSL2 has to be installed
-Docker plus the legacy build package needs to be loaded on your host 
-computer along with Thonny or your favorite Python IDE that works with
-Micropython and a terminal program, I like Terminator because you can
-split the pane horizontally, this is very helpfull in the steps below
 
-In the project directory on the host computer, run 
+![Phyiscal Setup](../images/PhyiscalDevSetup.png)
 
 **sh startDevEnv.sh**  
 
@@ -35,11 +13,9 @@ This will build a docker container with the build environment configured.
 
 Run the following commands in the container
 **source /opt/esp/idf/export.sh**
-
-
 **cd devices/mbits-esp32s2-wrover**
-
 **sh compile**
+
 
 If you get an error, cd back to project directory then run
 **pip -r pip-requirments.txt**
@@ -50,13 +26,6 @@ if you get a successful compile, you will see the message
 *Project build complete. To flash, run this command:
 /opt/esp/python_env/idf4.4_py3.8_env/bin/python ../../../esp/idf/components/esptool_py/esptool/esptool.py -p (PORT) -b 460800 --before default_reset --after hard_reset --chip esp32  write_flash --flash_mode dio --flash_size detect --flash_freq 40m 0x1000 build/bootloader/bootloader.bin 0x8000 build/partition_table/partition-table.bin 0x10000 build/mbits-esp32s2-wrover.bin*
 
-Attach your ESP32 device to a serial port and run
-
-**sh flash**
-
-This should load code into your device. 
-
-On your host computer
 
 **Launch the Thonny IDE**
 Select **Run / Select Interperter**
@@ -98,4 +67,9 @@ In the terminal window where the Agent is running, you should see messages where
 Now in the TeleopKey window, type the arrow keys, you should see a new 
 message in the Log window where it says *ROS Did Something* and the data sent from the *cmd_vel* message and displaying the contents of the *Twist* messsage **Graph Explorer**, you will now see the assoiation from the Turtle1 agent to the ESP device.
 
-![Development Environment](./Development%20Environment.svg)
+
+![Screen shot before running](../images/startup.png)
+
+
+
+![Screen shot before running](../images/running.png)
