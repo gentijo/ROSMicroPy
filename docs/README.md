@@ -11,10 +11,10 @@ ROSMicroPy is a tightly coupled intergration of MicroROS and Micropython, multit
 + Set the Address of the ROS Agent
 + Set the Node name of the device
 + Publish messages
-+ Subsubscribe to messages
++ Subscribe to messages
 + Run a server process
 + Support for all standard ROS and Custom Types
-+ On device, dynanic on-the-fly, type creation
++ On device, dynamic on-the-fly, type creation
 
 ### Full Container Support
  Container definitions are include for
