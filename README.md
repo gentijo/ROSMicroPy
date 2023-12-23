@@ -2,7 +2,7 @@
 
 ROSMicroPy is a tightly coupled integration of MicroROS and Micropython, multithreaded, async message, Python based ROS2 firmware for embedded microprocessor devices 
 
-[ROSMicroPy Code Repository](https://github.com/gentijo/ROSMicroPy)
+## [Click here to view ROSMicroPy source code repository](https://github.com/gentijo/ROSMicroPy)
 
 ## Features Include
 
