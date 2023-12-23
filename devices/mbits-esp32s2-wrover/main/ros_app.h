@@ -2,7 +2,7 @@
 #define __ROS_APP_H__
 
 #include "sdkconfig.h"
-#include "mp_uros.h"
+#include "uros_sdk_api.h"
 
 
 void init_ROS_Stack();

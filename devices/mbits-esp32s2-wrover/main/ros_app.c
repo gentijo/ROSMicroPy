@@ -21,7 +21,8 @@
 #include "py/runtime.h"
 
 #include "ros_app.h"
-#include "mp_uros.h"
+#include "uros_sdk_api.h"
+
 #include "mp_uros_thread.h"
 #include "mp_uros_type_support.h"
 

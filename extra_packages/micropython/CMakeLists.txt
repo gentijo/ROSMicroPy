@@ -144,9 +144,9 @@ set(MICROPY_SOURCE_PORT
 set(MICROPY_UROS_MODULES
     #
     # Bind Python to ROS
-    ${MICROPY_UROS_MODULE_DIR}/mp_uros_module.c
+    ${MICROPY_UROS_MODULE_DIR}/uros_sdk_api.c
     ${MICROPY_UROS_MODULE_DIR}/mp_uros_thread.c
-    ${MICROPY_UROS_MODULE_DIR}/mp_uros.c
+    ${MICROPY_UROS_MODULE_DIR}/uros_sdk_impl.c
     ${MICROPY_UROS_MODULE_DIR}/mp_obj_tools.c
 
 )

@@ -1,7 +1,8 @@
 #include "ros_app.h"
 
-#include "mp_uros.h"
-#include "mp_uros_module.h"
+#include "uros_sdk_api.h"
+#include "uros_sdk_impl.h"
+
 #include "mp_uros_thread.h"
 #include "mp_uros_type_support.h"
 

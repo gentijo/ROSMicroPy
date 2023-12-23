@@ -1,7 +1,9 @@
-#include "mp_uros_module.h"
-#include "mp_uros_thread.h"
-#include "mp_uros.h"
 #include "ros_app.h"
+
+#include "uros_sdk_api.h"
+#include "uros_sdk_impl.h"
+
+#include "mp_uros_thread.h"
 
 mp_obj_t registerEventSubscription(
     mp_obj_t eventName, mp_obj_t eventType, mp_obj_t eventCallback);
