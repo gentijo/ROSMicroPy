@@ -1,12 +1,12 @@
 # The Python Development Environment
 
- A device loaded with ROSMicroPy can opeate as a stand alone device where it can read sensor values and perform operations like turning on a light or fan.  In this Mode, you are only taking advantage of the Micropython section of the project. 
+ A device loaded with ROSMicroPy can operate as a stand alone device where it can read sensor values and perform operations like turning on a light or fan.  In this Mode, you are only taking advantage of the Micropython section of the project. 
  
  When you start to couple that to the larger ROS system, magic starts to happen because it's both possible to run a simpler setup where a remote control can send messages to operate a remote device as well as participating in a larger installation utilizing more ROS services, or combine a RC remote that performs basic manuevers then in conjunction with a ROS Service
  
  This allows you to start using all the modules available to ROS2
  
- An example of this could beusing Machine Learning to recognize a situation and react as a copilot. ROSMicroPy allows you to grow from small setup targeted to children 10 years old and above and also allow a broad range of expansion to provide follow on growth opportunity for the Python developer interested in robotics.  
+ An example of this could be using Machine Learning to recognize a situation and react as a copilot. ROSMicroPy allows you to grow from small setup targeted to children 10 years old and above and also allow a broad range of expansion to provide follow on growth opportunity for the Python developer interested in robotics.  
 
  To participate in the ROS network, there are some prerequisites that need to be configured and running to support the whole system. This project has included container definitions that allow the end user to launch these service without needing to learn about the networking of ROS. 
 
