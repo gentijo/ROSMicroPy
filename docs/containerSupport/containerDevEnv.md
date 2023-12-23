@@ -24,7 +24,7 @@
 
 [ ![]( ../images/DevEnvBuild.png ) ]( ../images/DevEnvBuild.png )
 
-**The first time you are using your Dev Env container, you need to initialize and update all the submodules of the project by running 
+**The first time you are using your Dev Env container, you need to initialize and update all the submodules of the project by running** 
 
 `git submodule update --init --recursive` 
 
@@ -36,9 +36,7 @@
  + Dev Containers
 
 
-
 **Open VSCode and select Remote Explorer, you should see the rosmicropy container**
-
  
 [ ![]( ../images/DevEnv_RemExp.png ) ]( ../images/DevEnv_RemExp.png )
 
@@ -53,7 +51,7 @@
 ### How to compile the code
 
 + From your project directory, cd to the devices/mbits-esp32s2-wrover directory
-+ This device device should support all of the esp32s2 SoC chips
++ This device should support all of the esp32s2 SoC chips
 
 #### Run the compile process by running the ./compile shell script
 
