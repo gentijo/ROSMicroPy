@@ -1,110 +1,90 @@
-  ## Development environment supported by this project. 
+# Creating the Development Environment container
+
+## Overview
+ The Development Environment is a container that has pre-installed and configured all the development tools that are needed to Compile, Flash and Monitor a ROSMicroPy device.
+
+## Requirements
++ Computer with Docker installed
++ A terminal program to give you command line access. 
++ Its helpful if you have a terminal program that will multiple sessions in one window. This saves on space and allows you to collapse all of your container sessions as a single operation.
+
+## How to Build
+ + Change your working directory to be where you checked out the ROSMicroPy repository.
+ + Run the shell script, startDevEnv, this will build then run the container.
+ + You can either work from the command line once the container launches, or use Visual Studio code attach to the running container via Remote Explorer and have a full IDE that will give you command line access and be able to easily transfer files.
+ + The current working directory will automatically be mounted to the running container and will be present at **/opt/rosmicropy**
+
+ + **Here is an example of a terminal running on the host system would look like when you want to run the container.** 
+   + If you are using VS Code, you no longer need to run the startDevEnv script as VSCode will auto start and attach to the container. 
+
+[ ![]( ../images/DevEnv_StartBuild.png ) ]( ../images/DevEnv_StartBuild.png )
+
+
+**When the build is complete you will have a shell prompt in your container at the project directory inside the container**
+
+[ ![]( ../images/DevEnvBuild.png ) ]( ../images/DevEnvBuild.png )
+
+**The first time you are using your Dev Env container, you need to initialize and update all the submodules of the project by running 
+
+`git submodule update --init --recursive` 
+
+[ ![]( ../images/DevEnvStep1.png ) ]( ../images/DevEnvStep1.png )
+
+### To attach to VS Code, install VSCode along the following VS Code extensions
+ + Remote Explorer 
+ + Remote Development
+ + Dev Containers
+
+
+
+**Open VSCode and select Remote Explorer, you should see the rosmicropy container**
+
  
-## Running from host computer, run ./startDevEnv
+[ ![]( ../images/DevEnv_RemExp.png ) ]( ../images/DevEnv_RemExp.png )
 
-[ ![]( ../images/DevEnv_StartBuild.png ) **Development Environment**]( ../images/DevEnv_StartBuild.png )
+### Opening your workspace folder
 
-### xyz
-
-[ ![]( ../images/DevEnvBuild.png ) **Phyiscal Setup**]( ../images/DevEnvBuild.png )
-
-**From the cmdline, run ./startDevEnv**
-**This will build the container and start, upon success you should be inside the container at a shell prompt** 
-[ ![]( ../images/DevEnvStep1.png ) **Host Shell prompt**]( ../images/DevEnvStep1.png )
+ + Attach to the container then use the Open Folder command to open */opt/rosmicropy***
+ + Your Repo files should now be visible in the explorer
 
 
- 
-  ***ROSNode***, this is a container to launch a ROS envirnment with support for XWindows to allow execution of rqt and other ROS visualization tools
+[ ![]( ../images/DevEnv_VS_Term.png ) ]( ../images/DevEnv_VS_Term.png )
 
-  ***MicroROS agent***, this container runs the MicroROS agent exposing the udp port 8888 to allow the container to participate on the ROS network allowing the MicroROS agent to connect to MicroROS devices. 
+### How to compile the code
 
-  ***MicroROS Teleop Agent***, this runs the ROS Telop Agent to send messages to ROSNodes.
++ From your project directory, cd to the devices/mbits-esp32s2-wrover directory
++ This device device should support all of the esp32s2 SoC chips
 
-  ***ROS***
-### Required prerequsites
-Start the Dev Environment Container
-Start the ROS Agent
-Start 
+#### Run the compile process by running the ./compile shell script
 
+[ ![]( ../images/DevEnv_VSC_compile.png ) ]( ../images/DevEnv_VSC_compile.png )
 
-**Building the firmware to load and go**
-
-Start with Mac or Linux, if using Windows, WSL2 has to be installed
-Docker plus the legacy build package needs to be loaded on your host 
-computer along with Thonny or your favorite Python IDE that works with
-Micropython and a terminal program, I like Terminator because you can
-split the pane horizontally, this is very helpfull in the steps below
-
-In the project directory on the host computer, run 
-
-**sh startDevEnv.sh**  
-
-This will build a docker container with the build environment configured. 
+#### On a successful compile you should see the following message
 
 
-Run the following commands in the container
-**source /opt/esp/idf/export.sh**
+```
+Successfully created esp32 image.
+Generated /opt/rosmicropy/devices/mbits-esp32s2-wrover/build/mbits-esp32s2-wrover.bin
+[21/21] cd /opt/rosmicropy/devices/mbits-esp32s2-wrover/build/esp-idf/esptool_py && /opt/esp/python_env/idf4.4_py3.8_env/bin/python /opt/esp/idf/components/partition_table/check_sizes.p...0 partition --type app /opt/rosmicropy/devices/mbits-esp32s2-wrover/build/partition_table/partition-table.bin /opt/rosmicropy/devices/mbits-esp32s2-wrover/build/mbits-esp32s2-wrover.bin
+mbits-esp32s2-wrover.bin binary size 0x18e000 bytes. Smallest app partition is 0x1f0000 bytes. 0x62000 bytes (20%) free.
 
+Project build complete. To flash, run this command:
+/opt/esp/python_env/idf4.4_py3.8_env/bin/python ../../../esp/idf/components/esptool_py/esptool/esptool.py -p (PORT) -b 460800 --before default_reset --after hard_reset --chip esp32  write_flash --flash_mode dio --flash_size detect --flash_freq 40m 0x1000 build/bootloader/bootloader.bin 0x8000 build/partition_table/partition-table.bin 0x10000 build/mbits-esp32s2-wrover.bin
+or run 'idf.py -p (PORT) flash'
+```
 
-**cd devices/mbits-esp32s2-wrover**
-
-**sh compile**
-
-If you get an error, cd back to project directory then run
-**pip -r pip-requirments.txt**
-the cd back to devices/mbits-esp32s2-wrover
-
-if you get a successful compile, you will see the message
-
-*Project build complete. To flash, run this command:
-/opt/esp/python_env/idf4.4_py3.8_env/bin/python ../../../esp/idf/components/esptool_py/esptool/esptool.py -p (PORT) -b 460800 --before default_reset --after hard_reset --chip esp32  write_flash --flash_mode dio --flash_size detect --flash_freq 40m 0x1000 build/bootloader/bootloader.bin 0x8000 build/partition_table/partition-table.bin 0x10000 build/mbits-esp32s2-wrover.bin*
+### Flashing your device
 
 Attach your ESP32 device to a serial port and run
 
-**sh flash**
+`./flash`
 
 This should load code into your device. 
 
-On your host computer
+#### [Follow the instructions to set up your Python dev Env to start running code](../procudures/pythonDeveloperEnvironment.md)
 
-**Launch the Thonny IDE**
-Select **Run / Select Interperter**
-then select **Micropython (ESP32)**
-and either auto discover port or select specfic port
 
-In the Thonny IDE you should see the REPL prompt and at this point
-run any Python code that you want. 
 
-Load the example code to the device by changing directory of the "This Computer" to you project directory
-
-In the example directory, load all the code including folders to the device by dragging the files from the "This Computer" pane to the "Device" pane below it
-
-If your termonal program supports horiizontal splitting, then run the
-following commands in seperate panes, if not the you will need 2 command
-windows
-
-To set up the supporting ROS components, in a Terminal run the following from your project directory. the two commands should run 
-in seperate panes or windows.
-
-**sh startAgent.sh**
-
-**sh startTeleopKey.sh**
-
-If you are on a linux host, you can also run, in a seperate window/pane
-
-**sh startROSConsole.sh**
-
-This will allow you to run **rqt** in the container which will pop up in a XWindows window on the host computer, rqt is actually running in the container.
-
-Now in the Thonny, from the **Device** pane, double click the **rosEventThread.py** this should bring up the file in the editor.
-
-Click the **run current script** button in the menu bar, you should 
-see two different diag messages in the log window on the bottom, 
-*in main thread* and *spinning*, spinning is comming from the ROS Stack.
-
-In the terminal window where the Agent is running, you should see messages where the the ESP32 device has registered as a subscriber.
-
-Now in the TeleopKey window, type the arrow keys, you should see a new 
-message in the Log window where it says *ROS Did Something* and the data sent from the *cmd_vel* message and displaying the contents of the *Twist* messsage **Graph Explorer**, you will now see the assoiation from the Turtle1 agent to the ESP device.
-
-![Development Environment](./Development%20Environment.svg)
+### A note about different Operating Systems
+This should work out of the box for Mac or Linux and Windows with WSL2 installed
+Your milage may vary with non-WSL2 Windows and is out of scope for this project

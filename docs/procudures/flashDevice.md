@@ -1,5 +1,5 @@
 # Flash Device
-    Note: Only ESP32 S* devices are support and tested, YMMV with the ESP32C* devices, plans are in the works to support ESP32 and Unix
+    Note: Currently only ESP32S* devices are supported and tested, YMMV with the ESP32C* devices, plans are in the works to also support ESP32C*, STM32 and Unix
 
 ## ESP Devices
  The release directory will contain the latest binary build for that version.

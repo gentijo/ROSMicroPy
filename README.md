@@ -17,11 +17,11 @@ ROSMicroPy is a tightly coupled intergration of MicroROS and Micropython, multit
 + On device, dynamic on-the-fly, type creation
 
 ### Full Container Support
- Container definitions are include for
- + **[Running the development environment](./docs/containerSupport/containerDevEnv.md)**
- + **[Running the ROS Agent](./docs/containerSupport/containerROSAgent.md)**
- + **[Running the Teleop Key ROS Program to send commands to your device](./docs/containerSupport/containerTeleopKey.md)**
- + **[Running a ROS System capiable running graphical ROS apps](./docs/containerSupport/containerROSConsole.md)**
+ How to's on creating the supporting containers include:
+ + **[Creating a container for Firmware development](./docs/containerSupport/containerDevEnv.md)**
+ + **[Creating a container to run the ROS Agent](./docs/containerSupport/containerROSAgent.md)**
+ + **[Creating a container to run TeleopKey from Turtlesim](./docs/containerSupport/containerTeleopKey.md)**
+ + **[Creating a container to run graphical ROS apps](./docs/containerSupport/containerROSConsole.md)**
 
 ### How to get started 
 + **[Flash device and run](./docs/procudures/flashDevice.md)**

@@ -5,7 +5,7 @@ echo this line may fail on non-linux hosts
 xhost +
 
 NET_NAME=rosnet
-IMAGE_NAME=ROSConsole
+IMAGE_NAME=ros-console
 
 
 
