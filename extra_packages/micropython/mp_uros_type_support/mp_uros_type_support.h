@@ -9,8 +9,7 @@
 #include "rosidl_typesupport_microxrcedds_c/message_type_support.h"
 #include "mp_uros_type_support_visibility_control.h"
 
-#include "uros_sdk_api.h"
-#include "uros_sdk_impl.h"
+#include "uros_sdk.h"
 
 #include <ucdr/microcdr.h>
 #include "py/obj.h"

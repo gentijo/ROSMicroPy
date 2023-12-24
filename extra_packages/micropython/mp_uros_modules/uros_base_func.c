@@ -1,5 +1,6 @@
-#include "uros_support.h"
-
+#include "uros_base_func.h"
+#include "mp_obj_tools.h"
+#include "mp_uros_type_support.h"
 
 rclc_executor_t		executor;
 rcl_node_t 			node;
@@ -10,6 +11,10 @@ rcl_allocator_t		allocator;
 rclc_support_t		support;
 rcl_init_options_t init_options;
 rmw_init_options_t *rmw_options;
+
+size_t				domain_id = DOMAIN_ID;
+
+char				node_name[64];
 
 /**
  *
@@ -22,12 +27,11 @@ mp_obj_t init_ROS_Stack()
 	init_event_subscription_callbacks();
     init_mpy_uros_typesupport();
 	
-	
 	allocator = rcl_get_default_allocator();
 
 	init_options= rcl_get_zero_initialized_init_options();
 	RCCHECK(rcl_init_options_init(&init_options, allocator));
-	RCCHECK(rcl_init_options_set_domain_id(&init_options, DOMAIN_ID));
+	RCCHECK(rcl_init_options_set_domain_id(&init_options, domain_id));
 
 #ifdef CONFIG_MICRO_ROS_ESP_XRCE_DDS_MIDDLEWARE
 	rmw_options = rcl_init_options_get_rmw_init_options(&init_options);
@@ -51,6 +55,7 @@ mp_obj_t init_ROS_Stack()
 
 	return mp_const_none;
 }
+
 
 mp_obj_t run_ROS_Stack() {
 

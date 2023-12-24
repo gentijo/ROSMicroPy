@@ -1,19 +1,28 @@
+#include "py/runtime.h"
+#include "py/mpconfig.h"
 
-#include "uros_support.h"
-#include "uros_sdk_api.h"
-#include "uros_sdk_impl.h"
+#include "rcl/rcl.h"
+#include "rcl/error_handling.h"
+#include "rclc/rclc.h"
+#include "rclc/executor.h"
 
-#include "mp_uros_thread.h"
+#include "uros_sdk.h"
 
-mp_obj_t registerEventSubscription(
-    mp_obj_t eventName, mp_obj_t eventType, mp_obj_t eventCallback);
 
+/**
+ * Create MP objects that can be registered with Micropython from MicroROS
+ * This will represent the microros builtin class, with the functions that make up the MicroROS SDK
+ * 
+*/
 STATIC MP_DEFINE_CONST_FUN_OBJ_0(init_ROS_Stack_obj,init_ROS_Stack);
 STATIC MP_DEFINE_CONST_FUN_OBJ_0(run_ROS_Stack_obj, run_ROS_Stack);
 
 STATIC MP_DEFINE_CONST_FUN_OBJ_3(publishMsg_obj, publishMsg);
 STATIC MP_DEFINE_CONST_FUN_OBJ_3(registerEventSubscription_obj, registerEventSubscription);
 
+/**
+ * Register the microros class and map the functions from Micropython to MicroROS
+*/
 STATIC const mp_rom_map_elem_t mp_uros_module_globals_table[] = {
     {MP_ROM_QSTR(MP_QSTR___name__), MP_ROM_QSTR(MP_QSTR_microros)},
 

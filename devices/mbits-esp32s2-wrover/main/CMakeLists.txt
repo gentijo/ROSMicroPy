@@ -7,6 +7,10 @@ message ("\r\n Micropython Port Dir: ${MICROPY_PORT_DIR}")
 message ("\r\n Component Dir is ${COMPONENT_DIR}")  
 
 
+#
+# Need empty component so reconfigure / menuconfig picks up the project
+# specific Kconfig.
+#
 idf_component_register (
     SRCS 
 

@@ -144,11 +144,11 @@ set(MICROPY_SOURCE_PORT
 set(MICROPY_UROS_MODULES
     #
     # Bind Python to ROS
-    ${MICROPY_UROS_MODULE_DIR}/uros_sdk_api.c
-    ${MICROPY_UROS_MODULE_DIR}/uros_sdk_impl.c
+    ${MICROPY_UROS_MODULE_DIR}/uros_mesg_func.c
+    ${MICROPY_UROS_MODULE_DIR}/uros_base_func.c
+
     ${MICROPY_UROS_MODULE_DIR}/mp_uros_thread.c
     ${MICROPY_UROS_MODULE_DIR}/mp_obj_tools.c
-    ${MICROPY_UROS_MODULE_DIR}/uros_support.c
 
     ${MICROPY_UROS_TYPE_SUPPORT_DIR}/mp_uros_type_support.c
 )
