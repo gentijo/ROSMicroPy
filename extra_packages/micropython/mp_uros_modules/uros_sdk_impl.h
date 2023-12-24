@@ -19,11 +19,15 @@
 
 #include "shared/runtime/pyexec.h"
 
-
-
-void service_callback(const void *resp, const void *context);
 ros_subscription* get_ROS_Sub_from_slot(int slot);
-
 void dispatch_ROSMsg();
+
+void init_event_subscription_callbacks();
+mp_obj_t publishMsg(mp_obj_t publisher_ID, mp_obj_t dataType, mp_obj_t data);
+mp_obj_t registerEventSubscription(
+    mp_obj_t eventName,
+    mp_obj_t eventType,
+    mp_obj_t eventCallback);
+
 
 #endif

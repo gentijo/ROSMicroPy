@@ -23,8 +23,7 @@ typedef struct _ros_subscription
 
 } ros_subscription;
 
-mp_obj_t mp_init_ROS_Stack();
-mp_obj_t mp_run_ROS_Stack();
+
 
 mp_obj_t registerEventSubscription(mp_obj_t eventName, mp_obj_t eventType, mp_obj_t eventCallback);
 mp_obj_t publishMsg(mp_obj_t publisher_ID, mp_obj_t dataType, mp_obj_t data);

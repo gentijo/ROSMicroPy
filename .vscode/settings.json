@@ -81,7 +81,8 @@
         "message_type_support.h": "c",
         "vector3__functions.h": "c",
         "vector3__type_support.h": "c",
-        "twist__rosidl_typesupport_microxrcedds_c.h": "c"
+        "twist__rosidl_typesupport_microxrcedds_c.h": "c",
+        "sdkconfig.h": "c"
     },
     "cmake.configureOnOpen": false,
     "cmake.sourceDirectory": "/opt/rosmicropy/extra_packages/libmicroros/examples/handle_static_types/main"

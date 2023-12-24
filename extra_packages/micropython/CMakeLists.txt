@@ -5,7 +5,7 @@ if(NOT MICROPY_DIR)
     get_filename_component(MICROPY_DIR ${PROJECT_DIR}/../../libs/micropython ABSOLUTE)
 endif()
 
-get_filename_component(MICROPY_PORT_DIR ${PROJECT_DIR}/../../extra_packages/micropython/ports/esp32 ABSOLUTE)
+get_filename_component(MICROPY_PORT_DIR ${MICROPY_DIR}/ports/esp32 ABSOLUTE)
 
 get_filename_component(MICROPY_UROS_BASE_DIR ${PROJECT_DIR}/../../extra_packages/micropython ABSOLUTE)
 get_filename_component(MICROPY_UROS_MODULE_DIR ${MICROPY_UROS_BASE_DIR}/mp_uros_modules ABSOLUTE)
@@ -145,10 +145,12 @@ set(MICROPY_UROS_MODULES
     #
     # Bind Python to ROS
     ${MICROPY_UROS_MODULE_DIR}/uros_sdk_api.c
-    ${MICROPY_UROS_MODULE_DIR}/mp_uros_thread.c
     ${MICROPY_UROS_MODULE_DIR}/uros_sdk_impl.c
+    ${MICROPY_UROS_MODULE_DIR}/mp_uros_thread.c
     ${MICROPY_UROS_MODULE_DIR}/mp_obj_tools.c
+    ${MICROPY_UROS_MODULE_DIR}/uros_support.c
 
+    ${MICROPY_UROS_TYPE_SUPPORT_DIR}/mp_uros_type_support.c
 )
 
 set(MICROPY_UROS_TYPESUPPORT

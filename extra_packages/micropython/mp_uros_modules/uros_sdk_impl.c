@@ -1,4 +1,3 @@
-#include "ros_app.h"
 
 #include "uros_sdk_api.h"
 #include "uros_sdk_impl.h"
@@ -23,6 +22,9 @@
 
 int ros_subscription_slots = 10;
 ros_subscription* g_ros_subs;
+
+
+
 
 /***********************************************************************************************/
 /***********************************************************************************************/
@@ -57,30 +59,6 @@ mp_obj_t createObjFromThread()
 
     return (twist);
 }
-
-/**
- *
- *
- *
- */
-void service_callback(const void *response, const void *context)
-{
-    printf("in Service callback\r\n");
-
-    void **mp_data = response;
-    ros_subscription* ros_sub = (ros_subscription *)context;
-    // ucdrBuffer temp_buffer;
-    // ucdr_init_buffer(
-    //     &temp_buffer,
-    //     NULL,
-    //     0);
-    
-    MP_THREAD_GIL_ENTER();
-    // mp_obj_t data = createObjFromThread();
-    mp_call_function_1(ros_sub->mpEventCallback, *mp_data);
-    MP_THREAD_GIL_EXIT();
-}
-
 /**
  *
  *
@@ -138,6 +116,7 @@ mp_obj_t parseDataMapDict(mp_obj_t dict) {
     return NULL;
 }
 
+
 /**
  *
  *
@@ -187,25 +166,6 @@ mp_obj_t registerEventSubscription(
         rsubs++;
     }
 
-    return mp_const_none;
-}
-
-/**
- *
- */
-mp_obj_t mp_init_ROS_Stack()
-{
-    printf("\r\nInitializing ROS Stack\r\n");
-    init_event_subscription_callbacks();
-    init_mpy_uros_typesupport();
-    init_ROS_Stack();
-
-    return mp_const_none;
-}
-
-mp_obj_t mp_run_ROS_Stack()
-{
-    start_new_ROS_thread(run_ROS_Stack);
     return mp_const_none;
 }
 

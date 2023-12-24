@@ -1,5 +1,5 @@
-#include "ros_app.h"
 
+#include "uros_support.h"
 #include "uros_sdk_api.h"
 #include "uros_sdk_impl.h"
 
@@ -8,8 +8,8 @@
 mp_obj_t registerEventSubscription(
     mp_obj_t eventName, mp_obj_t eventType, mp_obj_t eventCallback);
 
-STATIC MP_DEFINE_CONST_FUN_OBJ_0(mp_init_ROS_Stack_obj, mp_init_ROS_Stack);
-STATIC MP_DEFINE_CONST_FUN_OBJ_0(mp_run_ROS_Stack_obj, mp_run_ROS_Stack);
+STATIC MP_DEFINE_CONST_FUN_OBJ_0(init_ROS_Stack_obj,init_ROS_Stack);
+STATIC MP_DEFINE_CONST_FUN_OBJ_0(run_ROS_Stack_obj, run_ROS_Stack);
 
 STATIC MP_DEFINE_CONST_FUN_OBJ_3(publishMsg_obj, publishMsg);
 STATIC MP_DEFINE_CONST_FUN_OBJ_3(registerEventSubscription_obj, registerEventSubscription);
@@ -17,10 +17,11 @@ STATIC MP_DEFINE_CONST_FUN_OBJ_3(registerEventSubscription_obj, registerEventSub
 STATIC const mp_rom_map_elem_t mp_uros_module_globals_table[] = {
     {MP_ROM_QSTR(MP_QSTR___name__), MP_ROM_QSTR(MP_QSTR_microros)},
 
+    {MP_ROM_QSTR(MP_QSTR_init_ROS_Stack), MP_ROM_PTR(&init_ROS_Stack_obj)},
+    {MP_ROM_QSTR(MP_QSTR_run_ROS_Stack), MP_ROM_PTR(&run_ROS_Stack_obj)},
+
     {MP_ROM_QSTR(MP_QSTR_publishMsg), MP_ROM_PTR(&publishMsg_obj)},
-    {MP_ROM_QSTR(MP_QSTR_registerEventSubscription), MP_ROM_PTR(&registerEventSubscription_obj)},
-    {MP_ROM_QSTR(MP_QSTR_mp_init_ROS_Stack), MP_ROM_PTR(&mp_init_ROS_Stack_obj)},
-    {MP_ROM_QSTR(MP_QSTR_mp_run_ROS_Stack), MP_ROM_PTR(&mp_run_ROS_Stack_obj)}
+    {MP_ROM_QSTR(MP_QSTR_registerEventSubscription), MP_ROM_PTR(&registerEventSubscription_obj)}
 
 };
 

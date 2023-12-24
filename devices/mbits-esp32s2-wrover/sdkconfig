@@ -133,10 +133,8 @@ CONFIG_PARTITION_TABLE_MD5=y
 # end of Partition Table
 
 #
-# Maqueen Bot
+# Mbits
 #
-CONFIG_MICRO_ROS_APP_STACK=16000
-CONFIG_MICRO_ROS_APP_TASK_PRIO=5
 
 #
 # I2C Host
@@ -146,7 +144,7 @@ CONFIG_I2C_HOST_SDA=18
 CONFIG_I2C_HOST_PORT_NUM=1
 CONFIG_I2C_HOST_FREQUENCY=100000
 # end of I2C Host
-# end of Maqueen Bot
+# end of Mbits
 
 #
 # micro-ROS Settings
@@ -168,6 +166,13 @@ CONFIG_ESP_MAXIMUM_RETRY=5
 CONFIG_MICRO_ROS_AGENT_IP="192.168.8.100"
 CONFIG_MICRO_ROS_AGENT_PORT="8888"
 # end of micro-ROS Settings
+
+#
+# ROSMicroPy
+#
+CONFIG_MICRO_ROS_APP_STACK=10000
+CONFIG_MICRO_ROS_APP_TASK_PRIO=5
+# end of ROSMicroPy
 
 #
 # Compiler options

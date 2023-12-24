@@ -1,8 +1,21 @@
 
 #include "mp_uros_thread.h"
-#include "ros_app.h"
 
-void init_ROS_Main_Task();
+#include "sdkconfig.h"
+
+#include <rcl/rcl.h>
+#include <rcl/error_handling.h>
+
+#include <rclc/rclc.h>
+#include <rclc/executor.h>
+
+#ifdef CONFIG_MICRO_ROS_ESP_XRCE_DDS_MIDDLEWARE
+#include <rmw_microros/rmw_microros.h>
+#endif
+
+#include "mp_uros_type_support__functions.h"
+#include "uros_support.h"
+
 
 STATIC void *ros_thread_entry(void *args_in)
 {
@@ -69,3 +82,6 @@ mp_obj_t start_new_ROS_thread(void (*entry_point_fun)())
 
     return mp_const_none;
 }
+
+
+
