@@ -1,11 +1,17 @@
+#include "sdkconfig.h"
+
+#include "uros_sdk.h"
 #include "uros_base_func.h"
+
 #include "mp_obj_tools.h"
 #include "mp_uros_type_support.h"
+#include "mp_uros_thread.h"
+
+//#include <network_interfaces/uros_network_interfaces.h>
+esp_err_t uros_network_interface_initialize(void);
 
 rclc_executor_t		executor;
 rcl_node_t 			node;
-
-rcl_timer_t			timer;
 
 rcl_allocator_t		allocator;
 rclc_support_t		support;
@@ -16,17 +22,45 @@ size_t				domain_id = DOMAIN_ID;
 
 char				node_name[64];
 
+
+
+/**
+ *
+ */
+mp_obj_t mp_init_ROS_Stack()
+{
+    printf("\r\nInitializing ROS Stack\r\n");
+    init_event_subscription_callbacks();
+    init_mpy_uros_typesupport();
+    init_ROS_Stack();
+
+    return mp_const_none;
+}
+
+/**
+ * 
+*/
+mp_obj_t mp_run_ROS_Stack()
+{
+    start_new_ROS_thread(run_ROS_Stack);
+    return mp_const_none;
+}
+
+
+
 /**
  *
  *
  */
 mp_obj_t init_ROS_Stack()
 {
-	printf("\r\nInitializing ROS Stack\r\n");
 
-	init_event_subscription_callbacks();
-    init_mpy_uros_typesupport();
-	
+	printf("IRS1\r\n");
+
+#if defined(CONFIG_MICRO_ROS_ESP_NETIF_WLAN) || defined(CONFIG_MICRO_ROS_ESP_NETIF_ENET)
+	ESP_ERROR_CHECK(uros_network_interface_initialize());
+#endif	
+
 	allocator = rcl_get_default_allocator();
 
 	init_options= rcl_get_zero_initialized_init_options();
@@ -41,14 +75,22 @@ mp_obj_t init_ROS_Stack()
 	// RCCHECK(rmw_uros_discover_agent(rmw_options));
 #endif
 
+	printf("IRS2\r\n");
+
 	// create init_options
 	RCCHECK(rclc_support_init_with_options(&support, 0, NULL, &init_options, &allocator));
+	
+	printf("IRS2.2\r\n");
 
 	// create node
 	RCCHECK(rclc_node_init_default(&node, "turtle2", "", &support));
+	
+	printf("IRS2.3\r\n");
 
 	// create executor
 	RCCHECK(rclc_executor_init(&executor, &support.context, 20, &allocator));
+
+	printf("IRS3\r\n");
 
 	int freeMem = esp_get_free_heap_size();
 	printf("\r\nFree memory %d\r\n", freeMem);

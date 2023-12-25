@@ -28,6 +28,11 @@
 #endif
 
 
+#ifdef CONFIG_MICRO_ROS_ESP_XRCE_DDS_MIDDLEWARE
+#include <rmw_microros/rmw_microros.h>
+#endif
+
+
 #define RCCHECK(fn)                                                                      \
 	{                                                                                    \
 		rcl_ret_t temp_rc = fn;                                                          \
@@ -62,9 +67,21 @@ typedef struct _ros_subscription
 
 ros_subscription* get_ROS_Sub_from_slot(int slot);
 
+#define DOMAIN_ID 0
+
+extern rclc_executor_t		executor;
+extern rcl_node_t 			node;
+extern rcl_timer_t			timer;
+extern rcl_allocator_t		allocator;
+extern rclc_support_t		support;
+extern rcl_init_options_t   init_options;
+extern rmw_init_options_t   *rmw_options;
+
+
 void dispatch_ROSMsg();
 
-void init_event_subscription_callbacks();
+
+
 
 mp_obj_t publishMsg(mp_obj_t publisher_ID, mp_obj_t dataType, mp_obj_t data);
 
@@ -73,5 +90,12 @@ mp_obj_t registerEventSubscription(
     mp_obj_t eventType,
     mp_obj_t eventCallback);
 
+
+
+mp_obj_t init_ROS_Stack();
+mp_obj_t run_ROS_Stack();
+
+void add_ROS_service_Listener(ros_subscription* sub);
+void service_callback(const void *response, void *context);
 
 #endif

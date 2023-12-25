@@ -7,15 +7,15 @@
 #include "rclc/executor.h"
 
 #include "uros_sdk.h"
-
+#include "uros_base_func.h"
 
 /**
  * Create MP objects that can be registered with Micropython from MicroROS
  * This will represent the microros builtin class, with the functions that make up the MicroROS SDK
  * 
 */
-STATIC MP_DEFINE_CONST_FUN_OBJ_0(init_ROS_Stack_obj,init_ROS_Stack);
-STATIC MP_DEFINE_CONST_FUN_OBJ_0(run_ROS_Stack_obj, run_ROS_Stack);
+STATIC MP_DEFINE_CONST_FUN_OBJ_0(init_ROS_Stack_obj, mp_init_ROS_Stack);
+STATIC MP_DEFINE_CONST_FUN_OBJ_0(run_ROS_Stack_obj,  mp_run_ROS_Stack);
 
 STATIC MP_DEFINE_CONST_FUN_OBJ_3(publishMsg_obj, publishMsg);
 STATIC MP_DEFINE_CONST_FUN_OBJ_3(registerEventSubscription_obj, registerEventSubscription);
