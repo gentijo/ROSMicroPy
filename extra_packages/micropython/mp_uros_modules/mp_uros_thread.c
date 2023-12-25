@@ -1,9 +1,63 @@
 
 #include "mp_uros_thread.h"
-#include "ros_app.h"
+#include "uros_base_func.h"
 
-void init_ROS_Main_Task();
+#include "sdkconfig.h"
 
+#include <rcl/rcl.h>
+#include <rcl/error_handling.h>
+
+#include <rclc/rclc.h>
+#include <rclc/executor.h>
+
+#ifdef CONFIG_MICRO_ROS_ESP_XRCE_DDS_MIDDLEWARE
+#include <rmw_microros/rmw_microros.h>
+#endif
+
+
+/**
+ * 
+ * Spawn a new thread that is compatible with both the ROS Threading 
+ * model as well as a Micropython Thread.
+ * 
+ * This function runs on the thread of the call which could be either
+ * MicroROS or Micropython thread
+ *  
+*/
+mp_obj_t start_new_ROS_thread(void (*entry_point_fun)())
+{   
+    ros_thread_entry_args_t *th_args = malloc(sizeof(ros_thread_entry_args_t));
+
+    // pass our locals and globals into the new thread
+    th_args->dict_locals = mp_locals_get();
+    th_args->dict_globals = mp_globals_get();
+
+    // set the stack size to use
+    th_args->stack_size = CONFIG_MICRO_ROS_APP_STACK;
+
+    // set the function for thread entry
+    th_args->fun_ptr = entry_point_fun;
+
+    // spawn the thread!
+    mp_thread_create(ros_thread_entry, th_args, &th_args->stack_size);
+
+    return mp_const_none;
+}
+
+/**
+ * 
+ * This is the thread main, when a new thread is created then this function is 
+ * called to finish up the MP Thread prep and calls the target function.
+ * 
+ * If the target function needs to call into the Micropython interpreter, the
+ * call needs to be wrapped in the GIL (Global Interpreter lock). 
+ * 
+ * i.e.
+ * MP_THREAD_GIL_ENTER();
+ *  MicropythonFunction()
+ * MP_THREAD_GIL_EXIT(); 
+ * 
+*/
 STATIC void *ros_thread_entry(void *args_in)
 {
     printf("\r\nStarting ROS Thread");
@@ -50,22 +104,4 @@ STATIC void *ros_thread_entry(void *args_in)
     return NULL;
 }
 
-mp_obj_t start_new_ROS_thread(void (*entry_point_fun)())
-{   
-    ros_thread_entry_args_t *th_args = malloc(sizeof(ros_thread_entry_args_t));
 
-    // pass our locals and globals into the new thread
-    th_args->dict_locals = mp_locals_get();
-    th_args->dict_globals = mp_globals_get();
-
-    // set the stack size to use
-    th_args->stack_size = CONFIG_MICRO_ROS_APP_STACK;
-
-    // set the function for thread entry
-    th_args->fun_ptr = entry_point_fun;
-
-    // spawn the thread!
-    mp_thread_create(ros_thread_entry, th_args, &th_args->stack_size);
-
-    return mp_const_none;
-}

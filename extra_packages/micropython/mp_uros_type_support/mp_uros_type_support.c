@@ -1,16 +1,5 @@
 #include "mp_uros_type_support.h"
 
-// #ifndef _WIN32
-// # pragma GCC diagnostic push
-// # pragma GCC diagnostic ignored "-Wunused-parameter"
-// # ifdef __clang__
-// #  pragma clang diagnostic ignored "-Wdeprecated-register"
-// #  pragma clang diagnostic ignored "-Wreturn-type-c-linkage"
-// # endif
-// #endif
-// #ifndef _WIN32
-// # pragma GCC diagnostic pop
-// #endif
 
 #define MICROXRCEDDS_PADDING sizeof(uint32_t)
 

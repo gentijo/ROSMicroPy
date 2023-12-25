@@ -1,7 +1,12 @@
-
-
 #include "py/runtime.h"
-#include "py/obj.h"
+
+#include "mp_obj_tools.h"
+
+/**
+ *  mp_obj_tools is a collection of functions that support interfacing MicroROS with the objects/variables in Micropython
+ * 
+*/
+
 
 mp_obj_t mpt_getNamedObjFrom(mp_obj_t obj_in, qstr attr)
 {
@@ -108,3 +113,24 @@ mp_obj_t parseDataMapDict(mp_obj_t dict) {
     }
     return NULL;
 }
+
+
+
+    // mp_obj_t data_map = mp_load_attr(eventType, MP_QSTR_dataMap);
+    // size_t   data_map_len;
+    // mp_obj_t *data_map_items;
+    
+    // type = mp_obj_get_type(data_map);
+    // type_str = qstr_str(type->name);
+    // printf ("Type: %s\r\n", type_str);
+    
+    // mp_obj_list_get(data_map, &data_map_len, &data_map_items);
+    // for (size_t i = 0; i < data_map_len; ++i) {
+    //     mp_obj_t data_map_elem = data_map_items[i];
+    //     type = mp_obj_get_type(data_map_elem);
+    //     type_str = qstr_str(type->name);
+
+    //     parseDataMapDict(data_map_elem);
+    // }
+
+

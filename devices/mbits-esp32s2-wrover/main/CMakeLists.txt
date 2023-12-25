@@ -6,17 +6,16 @@ message ("\r\n Micropython Dir: ${MICROPY_DIR}")
 message ("\r\n Micropython Port Dir: ${MICROPY_PORT_DIR}")
 message ("\r\n Component Dir is ${COMPONENT_DIR}")  
 
+
+#
+# Need empty component so reconfigure / menuconfig picks up the project
+# specific Kconfig.
+#
 idf_component_register (
     SRCS 
-        "ros_app.c" 
 
     INCLUDE_DIRS 
-        "./"
-        ${PROJECT_DIR}../../../libs/micropython/
         ${CMAKE_BINARY_DIR}
-
-        
     REQUIRES 
  #       micropython 
 )
-
