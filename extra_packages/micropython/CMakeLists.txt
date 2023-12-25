@@ -149,6 +149,7 @@ set(MICROPY_UROS_MODULES
 
     ${MICROPY_UROS_MODULE_DIR}/mp_uros_thread.c
     ${MICROPY_UROS_MODULE_DIR}/mp_obj_tools.c
+    ${MICROPY_UROS_MODULE_DIR}/uros_mp_reg.c
 
     ${MICROPY_UROS_TYPE_SUPPORT_DIR}/mp_uros_type_support.c
 )
