@@ -78,6 +78,7 @@ mp_obj_t registerEventSubscription(
     mp_obj_t eventCallback);
 
 
+mp_obj_t registerDataType(mp_obj_t name, mp_obj_t dataMap);
 
 mp_obj_t	mp_run_ROS_Stack();
 mp_obj_t	init_ROS_Stack();

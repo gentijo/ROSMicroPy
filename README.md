@@ -6,7 +6,7 @@
 
 ## Features Include
 
-### [SDK to control the ROS Stack](./docs/implementation/ROS_SDK.md)
+### [SDK to control the ROS Stack](./extra_packages/ROSMicroPy/README.md)
 + Start / Stop ROS Stack
 + Set the Address of the ROS Agent
 + Set the Node name of the device
