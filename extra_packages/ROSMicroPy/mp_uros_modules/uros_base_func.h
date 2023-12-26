@@ -12,7 +12,7 @@
 
 
 mp_obj_t init_ROS_Stack();
-mp_obj_t run_ROS_Stack();
+void     run_ROS_Stack();
 
 void init_event_subscription_callbacks();
 
