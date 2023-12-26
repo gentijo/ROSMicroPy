@@ -89,7 +89,8 @@
         "guard_condition.h": "c",
         "init.h": "c",
         "node_options.h": "c",
-        "macros.h": "c"
+        "macros.h": "c",
+        "runtime.h": "c"
     },
     "cmake.configureOnOpen": false,
     "cmake.sourceDirectory": "/opt/rosmicropy/extra_packages/libmicroros/examples/handle_static_types/main"

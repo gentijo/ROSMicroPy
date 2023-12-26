@@ -7,7 +7,7 @@ endif()
 
 get_filename_component(MICROPY_PORT_DIR ${MICROPY_DIR}/ports/esp32 ABSOLUTE)
 
-get_filename_component(MICROPY_UROS_BASE_DIR ${PROJECT_DIR}/../../extra_packages/micropython ABSOLUTE)
+get_filename_component(MICROPY_UROS_BASE_DIR ${PROJECT_DIR}/../../extra_packages/ROSMicroPy ABSOLUTE)
 get_filename_component(MICROPY_UROS_MODULE_DIR ${MICROPY_UROS_BASE_DIR}/mp_uros_modules ABSOLUTE)
 get_filename_component(MICROPY_UROS_TYPE_SUPPORT_DIR ${MICROPY_UROS_BASE_DIR}/mp_uros_type_support ABSOLUTE)
 
