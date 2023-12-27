@@ -77,6 +77,13 @@ mp_obj_t mp_run_ROS_Stack()
     return mp_const_none;
 }
 
+/**
+ * Register a data type which will build a data type instruction set
+ * used to marshal data between MicrpROS and Micropython
+*/
+mp_obj_t registerDataType(mp_obj_t name, mp_obj_t dataMap) {
+	return mp_const_none;
+}
 
 
 /**
