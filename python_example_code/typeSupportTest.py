@@ -2,7 +2,8 @@ from ROSMicroPy import registerDataType, dumpDataType, registerEventSubscription
 from rostype.Twist import Twist
 
 dataMap = {
-    "type": "Twist",
+    "message_name": "Twist",
+    "message_namespace": "geometry_msgs::msg",
     "components": [
         {
             "name": "linear",
