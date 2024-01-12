@@ -6,7 +6,8 @@
 #include "mp_obj_tools.h"
 #include "mp_uros_type_support.h"
 #include "mp_uros_thread.h"
-
+#include "mp_uros_dataTypeParser.h"
+#include "uros_mesg_func.h"
 
 esp_err_t uros_network_interface_initialize(void);
 
@@ -25,16 +26,24 @@ char				namespace[64] = "";
 char				ROS_AgentIP[64] = CONFIG_MICRO_ROS_AGENT_IP;
 char				ROS_AgentPort[64] = CONFIG_MICRO_ROS_AGENT_PORT;
 
-char  	ROS_WIFI_SSID[32] = CONFIG_ESP_WIFI_SSID;
-char	ROS_Wifi_Pass[32] =  CONFIG_ESP_WIFI_PASSWORD;
+char  				ROS_WIFI_SSID[64] = CONFIG_ESP_WIFI_SSID;
+char				ROS_WIFI_Pass[64] =  CONFIG_ESP_WIFI_PASSWORD;
 
 /**
  * 
  * 
 */
-mp_obj_t setDomainID(mp_obj_t id)
+mp_obj_t setDomainID(mp_obj_t obj_in)
 {
-    return mp_const_none;
+    if (&mp_type_int != mp_obj_get_type(obj_in)) {
+		mp_raise_TypeError(MP_ERROR_TEXT("Domain ID must be a number"));
+		return obj_in;
+    }
+
+    int  id = mp_obj_get_int(obj_in);
+	domain_id = id;
+
+    return obj_in;
 }
 
 
@@ -42,9 +51,21 @@ mp_obj_t setDomainID(mp_obj_t id)
  * 
  * 
 */
-mp_obj_t setNamespace(mp_obj_t namespace)
+mp_obj_t setNamespace(mp_obj_t obj_in)
 {
-    return mp_const_none;
+    if (&mp_type_str != mp_obj_get_type(obj_in)) {
+		mp_raise_TypeError(MP_ERROR_TEXT("Namespace must be a str"));
+		return obj_in;
+    }
+
+    const char* cstr = mp_obj_str_get_str(obj_in);
+    if ((cstr == NULL) || strlen(cstr)==0) {
+		mp_raise_ValueError(MP_ERROR_TEXT("Namespace name can not be an null / empty string"));
+		return obj_in;
+    }
+
+	strncpy(namespace, cstr, 64);
+	return obj_in;
 }
 
 
@@ -52,9 +73,22 @@ mp_obj_t setNamespace(mp_obj_t namespace)
  * 
  * 
 */
-mp_obj_t setNodeName(mp_obj_t name)
+mp_obj_t setNodeName(mp_obj_t obj_in)
 {
-    return mp_const_none;
+    if (&mp_type_str != mp_obj_get_type(obj_in)) {
+		mp_raise_TypeError(MP_ERROR_TEXT("Node name must be a str"));
+		return obj_in;
+    }
+
+    const char* cstr = mp_obj_str_get_str(obj_in);
+    if ((cstr == NULL) || strlen(cstr)==0) {
+		mp_raise_ValueError(MP_ERROR_TEXT("Node name can not be an null / empty string"));
+		return obj_in;
+    }
+
+	strncpy(node_name, cstr, 64);
+
+	return obj_in;
 }
 
 /**
@@ -63,26 +97,34 @@ mp_obj_t setNodeName(mp_obj_t name)
 */
 mp_obj_t setWifiConfig(mp_obj_t sta_id, mp_obj_t pass) {
 
-    return mp_const_none;
-}
+    if (&mp_type_str != mp_obj_get_type(sta_id)) {
+		mp_raise_TypeError(MP_ERROR_TEXT("SSID name must be a str"));
+		return sta_id;
+    }
 
-/**
- * This is a wrapper function that runs the ROS Stack in a separate MP thread
- * 
- */
-  
-mp_obj_t mp_run_ROS_Stack()
-{
-    start_new_ROS_thread(run_ROS_Stack);
-    return mp_const_none;
-}
+    const char* cstr = mp_obj_str_get_str(sta_id);
+    if ((cstr == NULL) || strlen(cstr)==0) {
+		mp_raise_ValueError(MP_ERROR_TEXT("SSID can not be an null / empty string"));
+		return sta_id;
+    }
 
-/**
- * Register a data type which will build a data type instruction set
- * used to marshal data between MicrpROS and Micropython
-*/
-mp_obj_t registerDataType(mp_obj_t name, mp_obj_t dataMap) {
-	return mp_const_none;
+	strncpy(ROS_WIFI_SSID, cstr, 64);
+
+
+    if (&mp_type_str != mp_obj_get_type(pass)) {
+		mp_raise_TypeError(MP_ERROR_TEXT("Password name must be a str"));
+		return pass;
+    }
+
+    cstr = mp_obj_str_get_str(pass);
+    if ((cstr == NULL) || strlen(cstr)==0) {
+		mp_raise_ValueError(MP_ERROR_TEXT("Password can not be an null / empty string"));
+		return pass;
+    }
+
+	strncpy(ROS_WIFI_Pass, cstr, 64);
+
+	return sta_id;
 }
 
 
@@ -94,9 +136,8 @@ mp_obj_t init_ROS_Stack()
 {
     printf("\r\nInitializing ROS Stack\r\n");
 
-    init_event_subscription_callbacks();
-    init_mpy_uros_typesupport();
-
+    init_ROS_Subscriptions();
+    init_mpy_ROS_TypeSupport();
 
 #if defined(CONFIG_MICRO_ROS_ESP_NETIF_WLAN) || defined(CONFIG_MICRO_ROS_ESP_NETIF_ENET)
 	ESP_ERROR_CHECK(uros_network_interface_initialize());
@@ -132,66 +173,61 @@ mp_obj_t init_ROS_Stack()
 }
 
 
+
+
+/**
+ * This is a wrapper function that runs the ROS Stack in a separate MP thread
+ * 
+ */
+  
+mp_obj_t mp_run_ROS_Stack()
+{
+    start_new_ROS_thread(run_ROS_Stack);
+    return mp_const_none;
+}
+
+
+
+/**
+ * 
+ * 
+ * 
+*/
 void run_ROS_Stack() {
 
 	printf("\r\nROS Task running task\r\n");
 	while(1) {
 		rclc_executor_spin_some(&executor, RCL_MS_TO_NS(200));
 		vTaskDelay( 100 );
-		printf("Spinning\r\n");
 	}
 }
 
 
 
-/***
- * 
- * 
- * 
-*/
-void add_ROS_service_Listener(ros_subscription* sub) {
-
-	char full_name[40] = "";
-	strcpy(full_name, "/turtle1");
-	strcat(full_name, "/cmd_vel");
-
-	printf("Init command velocity subscription Name=%s\r\n", full_name);
-	RCSOFTCHECK(rclc_subscription_init_default(
-	 	&sub->rcl_service_subscription,
-		&node,
-		//ROSIDL_GET_MSG_TYPE_SUPPORT(geometry_msgs, msg, Twist),
-		mpy_uros_type_support_slots[0],
-		full_name)
-	);
-	
-	printf("Add command velocity subscription\r\n");
-	RCSOFTCHECK(rclc_executor_add_subscription_with_context(
-		&executor,
-		&sub->rcl_service_subscription,
-		sub->resp,
-		&service_callback, 
-		sub,
-		ON_NEW_DATA));
-
-}
-
-
 
 /**
- *
- *
- *
- */
-void service_callback(const void *response, void *context)
-{
-    printf("in Service callback\r\n");
+ * Register a data type which will build a data type instruction set
+ * used to marshal data between MicrpROS and Micropython
+*/
+mp_obj_t registerDataType(mp_obj_t dataMap) {
 
-    void **mp_data = response;
-    ros_subscription* ros_sub = (ros_subscription *)context;
- 
-    MP_THREAD_GIL_ENTER();
-    // mp_obj_t data = createObjFromThread();
-    mp_call_function_1(ros_sub->mpEventCallback, *mp_data);
-    MP_THREAD_GIL_EXIT();
+	mp_obj_t typeName = parseDataTypeDefinition(dataMap, true);
+
+	if  (typeName == NULL) {
+		mp_raise_ValueError(MP_ERROR_TEXT("Error registering data type"));
+		return mp_const_none;
+	}
+
+	return typeName;
 }
 
+/**
+ * 
+ * Diagnostic: Output the instruction list for a registered data type
+ * 
+*/
+mp_obj_t mp_dumpDataType(mp_obj_t dataTypeName) {
+
+	dumpDataTypeMap(dataTypeName);
+	return mp_const_none;
+}

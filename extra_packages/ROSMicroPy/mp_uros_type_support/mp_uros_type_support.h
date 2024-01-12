@@ -11,13 +11,31 @@
 
 #include "uros_sdk.h"
 
+#include "mp_uros_dataTypeParser.h"
+
 #include <ucdr/microcdr.h>
 #include "py/obj.h"
 
 #define MICROXRCEDDS_PADDING sizeof(uint32_t)
 
-#define cnt_ros_type_support_slots 25
-extern rosidl_message_type_support_t* mpy_uros_type_support_slots[cnt_ros_type_support_slots];
-void init_mpy_uros_typesupport(void); 
+
+void init_mpy_ROS_TypeSupport(void); 
+dxc_cb_t* findAvailTypeSlot();
+dxc_cb_t* findTypeByName(const char *type);
+
+
+void serializeBool(int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack);
+void deserializeBool(int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack);
+void serializeInt(int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack);
+void deserializeInt(int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack);
+void serializeFloat(int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack);
+void deserializeFloat(int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack);
+
+void deserializeDouble(int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack);
+void serializeDouble(int slot, ucdrBuffer *cdr,   dxi_t* inst,  mp_obj_stk_t *obj_stack);
+
+void deserializeROSType(int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack);
+void serializeROSType(int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack);
+
 
 #endif

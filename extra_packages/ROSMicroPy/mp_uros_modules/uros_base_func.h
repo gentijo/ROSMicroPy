@@ -15,9 +15,7 @@ mp_obj_t init_ROS_Stack();
 void     run_ROS_Stack();
 
 void init_event_subscription_callbacks();
-
-void add_ROS_service_Listener(ros_subscription* sub);
-void service_callback(const void *response, void *context);
+mp_obj_t mp_dumpDataType(mp_obj_t dataTypeName);
 
 
 mp_obj_t mp_run_ROS_Stack();

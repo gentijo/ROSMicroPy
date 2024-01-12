@@ -3,8 +3,6 @@
 
 #include "py/runtime.h"
 
-
-
 mp_obj_t mpt_getNamedObjFrom(mp_obj_t obj_in, qstr attr);
 mp_obj_t mpt_getObjFromByIndex(mp_obj_t objin, size_t index);
 char *mpt_obj_to_cstr(mp_obj_t objin);
