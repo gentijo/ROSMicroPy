@@ -8,6 +8,8 @@
 
 #include "py/runtime.h"
 
+#include "mp_uros_dataTypeParser.h"
+
 #define DEBUG 0
 
 #if DEBUG
@@ -45,12 +47,13 @@
 typedef struct _ros_subscription
 {
     int index;
-    mp_obj_t eventName;
-    mp_obj_t eventType;
-    void *resp;
-    mp_obj_t mpEventCallback;
+    char*     eventName;
+	dxc_cb_t *dataTypeCtrlBlk;
 
+    void*     resp;
+    mp_obj_t  mpEventCallback;
     rcl_subscription_t rcl_service_subscription;
+	
 
 } ros_subscription;
 
@@ -78,7 +81,7 @@ mp_obj_t registerEventSubscription(
     mp_obj_t eventCallback);
 
 
-mp_obj_t registerDataType(mp_obj_t name, mp_obj_t dataMap);
+mp_obj_t registerDataType(mp_obj_t dataMap);
 
 mp_obj_t	mp_run_ROS_Stack();
 mp_obj_t	init_ROS_Stack();
