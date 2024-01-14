@@ -46,7 +46,7 @@
 
 typedef struct _ros_subscription
 {
-    int index;
+    bool	  inUse;
     char*     eventName;
 	dxc_cb_t *dataTypeCtrlBlk;
 
@@ -56,6 +56,18 @@ typedef struct _ros_subscription
 	
 
 } ros_subscription;
+
+typedef struct _ros_publisher
+{
+    bool	  		inUse;
+	const char*		topicName;
+	dxc_cb_t*		dataTypeCtrlBlk;
+    rcl_publisher_t pub;
+
+} ros_publisher_t;
+
+
+
 
 ros_subscription* get_ROS_Sub_from_slot(int slot);
 
@@ -73,7 +85,11 @@ extern rmw_init_options_t   *rmw_options;
 void dispatch_ROSMsg();
 void run_ROS_Stack();
 
-mp_obj_t publishMsg(mp_obj_t publisher_ID, mp_obj_t dataType, mp_obj_t data);
+mp_obj_t  registerROSPublisher(
+	mp_obj_t topicName,
+	mp_obj_t dataType);
+
+ mp_obj_t publishMsg(mp_obj_t topicName, mp_obj_t data);
 
 mp_obj_t registerEventSubscription(
     mp_obj_t eventName,
@@ -82,6 +98,7 @@ mp_obj_t registerEventSubscription(
 
 
 mp_obj_t registerDataType(mp_obj_t dataMap);
+mp_obj_t dumpDataType(mp_obj_t dataTypeName);
 
 mp_obj_t	mp_run_ROS_Stack();
 mp_obj_t	init_ROS_Stack();

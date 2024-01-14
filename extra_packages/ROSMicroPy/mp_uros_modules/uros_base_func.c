@@ -9,6 +9,11 @@
 #include "mp_uros_dataTypeParser.h"
 #include "uros_mesg_func.h"
 
+
+#include "esp_wifi.h"
+#include "esp_netif.h"
+
+
 esp_err_t uros_network_interface_initialize(void);
 
 
@@ -127,6 +132,31 @@ mp_obj_t setWifiConfig(mp_obj_t sta_id, mp_obj_t pass) {
 	return sta_id;
 }
 
+/**
+ * 
+ * 
+*/
+void configureWifi() {
+//
+// Something is wrong with this code, it won't compile.
+//
+// 	wifi_config_t  wifi_config;
+	
+// 	wifi_config.sta.ssid = (char *)&ROS_WIFI_SSID[0];
+//     wifi_config.sta.password = (char *)&ROS_WIFI_Pass[0];
+
+// #ifdef CONFIG_PM_ENABLE
+//     wifi_config.sta.listen_interval = 5;
+//         /* Listen interval for ESP32 station to receive beacon when WIFI_PS_MAX_MODEM is set.
+//          Units: AP beacon intervals. Defaults to 3 if set to 0. */
+// #endif //CONFIG_PM_ENABLE *
+
+// 	esp_wifi_disconnect();
+//     ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA) );
+//     ESP_ERROR_CHECK(esp_wifi_set_config(ESP_IF_WIFI_STA, &wifi_config) );
+//     ESP_ERROR_CHECK(esp_wifi_connect() );
+
+}
 
 /**
  * 
@@ -137,10 +167,12 @@ mp_obj_t init_ROS_Stack()
     printf("\r\nInitializing ROS Stack\r\n");
 
     init_ROS_Subscriptions();
+	init_ROS_Publishers();
     init_mpy_ROS_TypeSupport();
 
 #if defined(CONFIG_MICRO_ROS_ESP_NETIF_WLAN) || defined(CONFIG_MICRO_ROS_ESP_NETIF_ENET)
 	ESP_ERROR_CHECK(uros_network_interface_initialize());
+	configureWifi();
 #endif	
 
 	allocator = rcl_get_default_allocator();
@@ -187,7 +219,6 @@ mp_obj_t mp_run_ROS_Stack()
 }
 
 
-
 /**
  * 
  * 
@@ -196,13 +227,8 @@ mp_obj_t mp_run_ROS_Stack()
 void run_ROS_Stack() {
 
 	printf("\r\nROS Task running task\r\n");
-	while(1) {
-		rclc_executor_spin_some(&executor, RCL_MS_TO_NS(200));
-		vTaskDelay( 100 );
-	}
+	rclc_executor_spin(&executor);
 }
-
-
 
 
 /**
@@ -226,7 +252,7 @@ mp_obj_t registerDataType(mp_obj_t dataMap) {
  * Diagnostic: Output the instruction list for a registered data type
  * 
 */
-mp_obj_t mp_dumpDataType(mp_obj_t dataTypeName) {
+mp_obj_t dumpDataType(mp_obj_t dataTypeName) {
 
 	dumpDataTypeMap(dataTypeName);
 	return mp_const_none;
