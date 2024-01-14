@@ -173,15 +173,18 @@ bool mpy_uros_typesupport_cdr_deserialize(int slot, ucdrBuffer *cdr, void *untyp
 
   ros_subscription *rsub = get_ROS_Subscription(slot);
   dxil_t *dxil = rsub->dataTypeCtrlBlk->dxil;
-  mp_obj_t mp_obj = mp_obj_new_dict(dxil->instructionList[0].shallowComponentCount);
-  obj_stack.objects[0] = mp_obj;
+  mp_obj_t root_obj = mp_obj_new_dict(dxil->instructionList[0].shallowComponentCount);
+  obj_stack.objects[0] = root_obj;
   obj_stack.stkPtr=1;
-  for (int x=0;  x < dxil->component_len; x++)  {
+
+  // Index 0 is the root object, do not process
+  for (int x=1;  x < rsub->dataTypeCtrlBlk->componentCount+1; x++)  {
     dxil->instructionList[x].deserialize(slot, cdr, &dxil->instructionList[x], &obj_stack);
       if (dxil->instructionList[x].islastBlk) obj_stack.stkPtr--;
-      if (obj_stack.stkPtr < 0) obj_stack.stkPtr=0;
 
   }
+
+ *ros_mesg = root_obj;
 
   return rv;
 }
@@ -267,10 +270,9 @@ void serializeFloat(int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_
 
 void deserializeFloat(int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack)
 {
-  float floatVal;
-
-  bool rc = ucdr_deserialize_float(cdr, &floatVal);
-  mp_obj_dict_store(obj_stack->objects[obj_stack->stkPtr], mp_obj_new_str(inst->name, sizeof(inst->name)), mp_obj_new_float(floatVal));
+  double doubleVal;
+  ucdr_deserialize_double(cdr, &doubleVal);
+  mp_obj_dict_store(obj_stack->objects[obj_stack->stkPtr-1], mp_obj_new_str(inst->name, strlen(inst->name)), mp_obj_new_float(doubleVal));
 }
 
 void deserializeDouble(int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack)

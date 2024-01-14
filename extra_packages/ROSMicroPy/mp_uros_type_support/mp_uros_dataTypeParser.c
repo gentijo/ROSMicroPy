@@ -226,7 +226,7 @@ void dumpDataTypeMap(mp_obj_t type) {
         return;
     }
     
-    char *cstr_type = mp_obj_str_get_str(type);
+    const char *cstr_type = mp_obj_str_get_str(type);
     if (cstr_type == NULL || strlen(cstr_type) == 0) {
         mp_raise_ValueError(MP_ERROR_TEXT("data type name has zero length"));
         return;

@@ -21,15 +21,18 @@ STATIC MP_DEFINE_CONST_FUN_OBJ_0(init_ROS_Stack_obj, init_ROS_Stack);
 // A little indirection here to allow for thread creation
 STATIC MP_DEFINE_CONST_FUN_OBJ_0(run_ROS_Stack_obj,  mp_run_ROS_Stack);
 
-STATIC MP_DEFINE_CONST_FUN_OBJ_3(publishMsg_obj, publishMsg);
 STATIC MP_DEFINE_CONST_FUN_OBJ_3(registerEventSubscription_obj, registerEventSubscription);
+
+STATIC MP_DEFINE_CONST_FUN_OBJ_3(publishMsg_obj, publishMsg);
+STATIC MP_DEFINE_CONST_FUN_OBJ_2(registerROSPublisher_obj, registerROSPublisher);
+
 
 STATIC MP_DEFINE_CONST_FUN_OBJ_1(setDomainID_obj, setDomainID);
 STATIC MP_DEFINE_CONST_FUN_OBJ_1(setNamespace_obj, setNamespace);
 STATIC MP_DEFINE_CONST_FUN_OBJ_1(setNodeName_obj, setNodeName);
 STATIC MP_DEFINE_CONST_FUN_OBJ_2(setWifiConfig_obj, setWifiConfig);
 STATIC MP_DEFINE_CONST_FUN_OBJ_1(registerDataType_obj, registerDataType);
-STATIC MP_DEFINE_CONST_FUN_OBJ_1(dumpDataType_obj, mp_dumpDataType);
+STATIC MP_DEFINE_CONST_FUN_OBJ_1(dumpDataType_obj, dumpDataType);
 
 
 /**
@@ -51,9 +54,9 @@ STATIC const mp_rom_map_elem_t mp_uros_module_globals_table[] = {
 
 
     {MP_ROM_QSTR(MP_QSTR_publishMsg), MP_ROM_PTR(&publishMsg_obj)},
-    {MP_ROM_QSTR(MP_QSTR_registerEventSubscription), MP_ROM_PTR(&registerEventSubscription_obj)},
+    {MP_ROM_QSTR(MP_QSTR_registerROSPublisher), MP_ROM_PTR(&registerROSPublisher_obj)},
 
-
+    {MP_ROM_QSTR(MP_QSTR_registerEventSubscription), MP_ROM_PTR(&registerEventSubscription_obj)}
 
 };
 

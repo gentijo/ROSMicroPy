@@ -15,13 +15,10 @@ typeName = registerDataType(Twist.dataMap)
 dumpDataType(typeName)
 
 print("Registgering Event Subscription\r\n")
-registerEventSubscription("CmdVel", typeName, ros_event_callback)
+registerEventSubscription("/turtle1/cmd_vel", typeName, ros_event_callback)
 
 print("Run ROS Stack\r\n")
 run_ROS_Stack()  
-
-
-
 
 while True:
     print("In Main Thread")
