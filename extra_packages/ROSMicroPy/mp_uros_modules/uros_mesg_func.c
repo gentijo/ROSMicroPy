@@ -14,6 +14,11 @@
 #include "rclc/rclc.h"
 #include "rclc/executor.h"
 
+#include "rosidl_runtime_c/message_type_support_struct.h"
+#include "rosidl_typesupport_microxrcedds_c/identifier.h"
+#include "rosidl_typesupport_microxrcedds_c/message_type_support.h"
+#include "mp_uros_type_support_visibility_control.h"
+
 #include "esp_netif.h"
 #include "esp_wifi.h"
 //#include "uros_network_interfaces.h"
@@ -199,7 +204,7 @@ ros_publisher_t* getPublisherByTopic(const char *topic) {
     {
         if (g_ros_publishers[x].inUse == false) return NULL;
         
-        if (strcmp(g_ros_publishers[x].topicName, topic)) return &g_ros_publishers[x];
+        if (strcmp(g_ros_publishers[x].topicName, topic) == 0) return &g_ros_publishers[x];
     }
 
     return NULL;

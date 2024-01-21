@@ -23,7 +23,7 @@ STATIC MP_DEFINE_CONST_FUN_OBJ_0(run_ROS_Stack_obj,  mp_run_ROS_Stack);
 
 STATIC MP_DEFINE_CONST_FUN_OBJ_3(registerEventSubscription_obj, registerEventSubscription);
 
-STATIC MP_DEFINE_CONST_FUN_OBJ_3(publishMsg_obj, publishMsg);
+STATIC MP_DEFINE_CONST_FUN_OBJ_2(publishMsg_obj, publishMsg);
 STATIC MP_DEFINE_CONST_FUN_OBJ_2(registerROSPublisher_obj, registerROSPublisher);
 
 

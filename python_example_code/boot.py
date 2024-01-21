@@ -2,4 +2,5 @@
 #import esp
 #esp.osdebug(None)
 #import webrepl
+#import webrepl_setup
 #webrepl.start()

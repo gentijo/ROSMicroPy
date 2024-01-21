@@ -23,19 +23,25 @@ void init_mpy_ROS_TypeSupport(void);
 dxc_cb_t* findAvailTypeSlot();
 dxc_cb_t* findTypeByName(const char *type);
 
+void serializeBool(ucdrBuffer *cdr,  mp_obj_t value, dxi_t* inst);
+void deserializeBool(ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack);
+size_t serializedSizeBool(const void *mp_obj, size_t current_alignment);
 
-void serializeBool(int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack);
-void deserializeBool(int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack);
-void serializeInt(int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack);
-void deserializeInt(int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack);
-void serializeFloat(int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack);
-void deserializeFloat(int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack);
+void serializeInt(ucdrBuffer *cdr,  mp_obj_t value, dxi_t* inst);
+void deserializeInt(ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack);
+size_t serializedSizeInt(const void *mp_obj, size_t current_alignment);
 
-void deserializeDouble(int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack);
-void serializeDouble(int slot, ucdrBuffer *cdr,   dxi_t* inst,  mp_obj_stk_t *obj_stack);
+void serializeFloat(ucdrBuffer *cdr,  mp_obj_t value, dxi_t* inst);
+void deserializeFloat(ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack);
+size_t serializedSizeFloat(const void *mp_obj, size_t current_alignment);
 
-void deserializeROSType(int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack);
-void serializeROSType(int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack);
+void deserializeDouble(ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack);
+void serializeDouble(ucdrBuffer *cdr,  mp_obj_t value, dxi_t* inst);
+size_t serializedSizeDouble(const void *mp_obj, size_t current_alignment);
+
+void deserializeROSType(ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack);
+void serializeROSType(ucdrBuffer *cdr,  mp_obj_t value, dxi_t* inst);
+size_t serializedSizeROSType(const void *mp_obj, size_t current_alignment);
 
 
 #endif

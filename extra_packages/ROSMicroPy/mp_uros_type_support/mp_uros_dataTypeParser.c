@@ -272,6 +272,7 @@ void populateSerDeEntries(dxi_t *component, bool debug) {
     if (strcmp("bool", type) == 0) {
         component->serialize = serializeBool;
         component->deserialize = deserializeBool;
+        component->serializedSize = serializedSizeBool;
         return;
     }
 
@@ -279,89 +280,106 @@ void populateSerDeEntries(dxi_t *component, bool debug) {
     if (strcmp("byte", type) == 0)     {
         component->serialize = serializeInt;
         component->deserialize = deserializeInt;
+        component->serializedSize = serializedSizeInt;
         return;
     }
 
     if (strcmp("char", type) == 0)     {
         component->serialize = serializeInt;
         component->deserialize = deserializeInt;
+        component->serializedSize = serializedSizeInt;
         return;
     }
 
     if (strcmp("int8", type) == 0)     {
         component->serialize = serializeInt;
         component->deserialize = deserializeInt;
+        component->serializedSize = serializedSizeInt;
         return;
     } 
   
     if (strcmp("uint8", type) == 0)    {
         component->serialize = serializeInt;
         component->deserialize = deserializeInt;
+        component->serializedSize = serializedSizeInt;
         return;
     }
     
     if (strcmp("int16", type) == 0)    {
         component->serialize = serializeInt;
         component->deserialize = deserializeInt;
-         return;
+        component->serializedSize = serializedSizeInt;
+        return;
     }
     
     if (strcmp("uint16", type) == 0)   {
         component->serialize = serializeInt;
         component->deserialize = deserializeInt;
+        component->serializedSize = serializedSizeInt;
         return; 
     }
     
     if (strcmp("int32", type) == 0)    {
         component->serialize = serializeInt;
         component->deserialize = deserializeInt;
+        component->serializedSize = serializedSizeInt;
         return;
     }
     
     if (strcmp("uint32", type) == 0)   {
         component->serialize = serializeInt;
         component->deserialize = deserializeInt;
+        component->serializedSize = serializedSizeInt;
+    
         return; 
     }
     
     if (strcmp("int64", type) == 0)    {
         component->serialize = serializeInt;
         component->deserialize = deserializeInt;
+        component->serializedSize = serializedSizeInt;
         return;
     }
     
     if (strcmp("int64", type) == 0)    {
         component->serialize = serializeInt;
         component->deserialize = deserializeInt;
+        component->serializedSize = serializedSizeInt;
+
         return;            
     }
     
     if (strcmp("uint64", type) == 0)   {
         component->serialize = serializeInt;
         component->deserialize = deserializeInt;    
+        component->serializedSize = serializedSizeInt;
         return;
     }
     
     if (strcmp("float32", type) == 0)  {
         component->serialize = serializeFloat;
         component->deserialize = deserializeFloat;
+        component->serializedSize = serializedSizeInt;
         return;        
     }
     
     if (strcmp("float64", type) == 0)  {
         component->serialize = &serializeFloat;
         component->deserialize = &deserializeFloat;
+        component->serializedSize = serializedSizeFloat;
         return;
     }      
 
     if (strcmp("double", type) == 0)  {
         component->serialize = &serializeDouble;
         component->deserialize = &deserializeDouble;
+        component->serializedSize = serializedSizeDouble;
         return;
     }    
 
     component->serialize = &serializeROSType;
     component->deserialize = &deserializeROSType;
+    component->serializedSize = serializedSizeROSType;
     component->isROSType = true;
     return;
        

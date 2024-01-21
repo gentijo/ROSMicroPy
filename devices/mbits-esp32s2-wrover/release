@@ -1,0 +1,5 @@
+#!/bin/sh
+
+./clean
+cp build/mbits-esp32s2-wrover.* ../../release
+
