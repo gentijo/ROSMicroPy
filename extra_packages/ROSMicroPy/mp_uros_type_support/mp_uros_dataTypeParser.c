@@ -79,8 +79,6 @@ mp_obj_t parseDataTypeDefinition(mp_obj_t obj_in, bool debug) {
         processComponent(ctrlBlk, component, debug, true);
     }
 
-    printf("\r\nTotal Count: %d\r\n", ctrlBlk->componentCount);
-
     dxil_t *dxil = malloc(sizeof(dxil_t));
 
     //
