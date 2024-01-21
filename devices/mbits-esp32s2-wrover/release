@@ -2,4 +2,9 @@
 
 ./clean
 cp build/mbits-esp32s2-wrover.* ../../release
+cd ../..
+git add *
+git tag  "rel-"`date +%m%d%Y%H%M%S`
+git commit -m  "relese: "`date +%m%d%Y%H%M%S`
+git push --tags
 
