@@ -52,15 +52,12 @@ dxc_cb_t *g_typeSupportCtrlBlks[mpy_uros_type_support_slots];
   }                                                                                                                                    \
                                                                                                                                        \
   dxc_cb_t *typeSupportCtrlBlk_##n = malloc(sizeof(dxc_cb_t));                                                                         \
-  printf("ctrlblk %p\r\n", (void *)typeSupportCtrlBlk_##n);                                                                            \
                                                                                                                                        \
-  typeSupportCtrlBlk_##n->ros_mesg_type_support = malloc(sizeof(rosidl_message_type_support_t));                                       \
-  printf("type support %p\r\n", (void *)typeSupportCtrlBlk_##n->ros_mesg_type_support);                                                \
+  typeSupportCtrlBlk_##n->ros_mesg_type_support = malloc(sizeof(rosidl_message_type_support_t));                                       \   
                                                                                                                                        \
   /* The DXIL will be allocated when a type is registered */                                                                           \
                                                                                                                                        \
   message_type_support_callbacks_t *mpy_uros_ts##n##_cb = malloc(sizeof(message_type_support_callbacks_t));                            \
-  printf("type support cb %p\r\n", (void *)mpy_uros_ts##n##_cb);                                                                       \
                                                                                                                                        \
   mpy_uros_ts##n##_cb->cdr_serialize = mpy_uros_ts##n##_serialize;                                                                     \
   mpy_uros_ts##n##_cb->cdr_deserialize = mpy_uros_ts##n##_deserialize;                                                                 \
@@ -109,7 +106,6 @@ void init_mpy_ROS_TypeSupport(void)
     g_typeSupportCtrlBlks[x]->index = 0;
   }
 
-  printf("Type support init complete\r\n");
 }
 
 dxc_cb_t *findTypeByName(const char *type)
@@ -187,8 +183,6 @@ bool mpy_uros_typesupport_cdr_serialize(int slot, const void *untyped_ros_messag
     }
     else {
       const char *type = mp_obj_get_type_str(value);
-      printf("Serializing %s Object\r\n", type);
-
       instruction->serialize(cdr, value, instruction);
     }
 
@@ -196,7 +190,6 @@ bool mpy_uros_typesupport_cdr_serialize(int slot, const void *untyped_ros_messag
 
   }
 
- 
   return true;
 }
 
@@ -297,7 +290,7 @@ void deserializeROSType(ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack)
 
 size_t serializedSizeROSType(const void *mp_obj, size_t current_alignment)
 {
-  return current_alignment;
+  return 0;
 }
 
 void serializeROSType(ucdrBuffer *cdr,  mp_obj_t value, dxi_t* inst)
@@ -400,6 +393,7 @@ size_t serializedSizeFloat(const void *mp_obj, size_t current_alignment)
   const size_t initial_alignment = current_alignment;
   const size_t item_size = sizeof(doubleVal);
   current_alignment += ucdr_alignment(current_alignment, item_size) + item_size;
+
   return current_alignment - initial_alignment;
 }
 
