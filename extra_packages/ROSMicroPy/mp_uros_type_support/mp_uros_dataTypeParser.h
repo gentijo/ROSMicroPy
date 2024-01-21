@@ -16,9 +16,9 @@
  * object.  i.e. In a Geometry_Twist deserialization, we 
 */
 
-#define mp_obj_stack_size 20
+#define mp_obj_stack_size 5
 typedef struct mp_obj_stack {
-  mp_obj_t  objects[20];
+  mp_obj_t  objects[mp_obj_stack_size];
   size_t    stkPtr;
 } mp_obj_stk_t;
 
@@ -32,8 +32,10 @@ struct dataXferInst {
     bool isROSType;
     int  shallowComponentCount;
 
-    void (*deserialize) (int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack);
-    void (*serialize)   (int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack);
+    void (*deserialize) (ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack);
+    void (*serialize)   (ucdrBuffer *cdr,  mp_obj_t value, dxi_t* inst);
+    size_t (*serializedSize) (const void *mp_obj, size_t current_alignment);
+
 };
 
 

@@ -5,6 +5,13 @@
 #include "rosidl_runtime_c/message_type_support_struct.h"
 
 
+#include "std_msgs/std_msgs/msg/detail/byte__struct.h"
+#include "std_msgs/std_msgs/msg/detail/int16__struct.h"
+#include "std_msgs/std_msgs/msg/detail/int32__struct.h"
+#include "std_msgs/std_msgs/msg/detail/float32__struct.h"
+#include "std_msgs/std_msgs/msg/detail/float64__struct.h"
+
+
 
 bool mpy_uros_typesupport_cdr_serialize(int slot, const void *untyped_ros_message, ucdrBuffer *cdr);
 bool mpy_uros_typesupport_cdr_deserialize(int slot, ucdrBuffer *cdr, void *untyped_ros_message);
@@ -138,22 +145,59 @@ dxc_cb_t *findAvailTypeSlot()
 
   return NULL;
 }
+
+
+
 /**
  *
  *
  */
 bool mpy_uros_typesupport_cdr_serialize(int slot, const void *untyped_ros_message, ucdrBuffer *cdr)
 {
-  (void)untyped_ros_message;
   (void)cdr;
+  
+  if (!untyped_ros_message) {return false;}
 
-  bool rv = false;
+  dxc_cb_t *dataTypeCtrlBlk = g_typeSupportCtrlBlks[slot];
+  dxil_t *dxil = dataTypeCtrlBlk->dxil;
 
-  if (!untyped_ros_message)
-  {
-    return false;
+  mp_obj_t obj_in = (mp_obj_t) untyped_ros_message;
+  mp_map_t *root_obj = mp_obj_dict_get_map(obj_in);
+
+  
+  mp_obj_stk_t obj_stack;
+  obj_stack.objects[0] = root_obj;
+  obj_stack.stkPtr = 1;
+
+  // Index 0 is the root object, do not process
+  for (int x=1;  x < dataTypeCtrlBlk->componentCount+1; x++)  {
+
+
+    dxi_t*   instruction = &dxil->instructionList[x];
+    const char * cstr_Name = instruction->name;
+    mp_obj_t mpMap = obj_stack.objects[obj_stack.stkPtr-1];
+
+    mp_obj_t mpName = mp_obj_new_str(cstr_Name, strlen(cstr_Name));
+    mp_map_elem_t *element = mp_map_lookup(mpMap, mpName, MP_MAP_LOOKUP);
+    mp_obj_t value = element->value;
+
+    if (instruction->isROSType) {
+      mp_map_t *mobj = mp_obj_dict_get_map(value);
+      obj_stack.objects[obj_stack.stkPtr++] = mobj;
+    }
+    else {
+      const char *type = mp_obj_get_type_str(value);
+      printf("Serializing %s Object\r\n", type);
+
+      instruction->serialize(cdr, value, instruction);
+    }
+
+    if (dxil->instructionList[x].islastBlk) obj_stack.stkPtr--;
+
   }
-  return rv;
+
+ 
+  return true;
 }
 
 
@@ -164,7 +208,7 @@ bool mpy_uros_typesupport_cdr_serialize(int slot, const void *untyped_ros_messag
 bool mpy_uros_typesupport_cdr_deserialize(int slot, ucdrBuffer *cdr, void *untyped_ros_message)
 {
   (void)cdr;
-  bool rv = true;
+ 
   mp_obj_stk_t obj_stack;
 
   if (!untyped_ros_message) {return false;}
@@ -179,14 +223,14 @@ bool mpy_uros_typesupport_cdr_deserialize(int slot, ucdrBuffer *cdr, void *untyp
 
   // Index 0 is the root object, do not process
   for (int x=1;  x < rsub->dataTypeCtrlBlk->componentCount+1; x++)  {
-    dxil->instructionList[x].deserialize(slot, cdr, &dxil->instructionList[x], &obj_stack);
+    dxil->instructionList[x].deserialize(cdr, &dxil->instructionList[x], &obj_stack);
       if (dxil->instructionList[x].islastBlk) obj_stack.stkPtr--;
 
   }
 
- *ros_mesg = root_obj;
+  *ros_mesg = root_obj;
 
-  return rv;
+  return true;
 }
 
 /**
@@ -196,14 +240,17 @@ bool mpy_uros_typesupport_cdr_deserialize(int slot, ucdrBuffer *cdr, void *untyp
  */
 size_t mpy_uros_typesupport_get_serialized_size(int slot, const void *mp_obj, size_t current_alignment)
 {
-  bool rv = false;
-
-  if (!mp_obj)
-  {
-    return 0;
-  }
+  if (!mp_obj) return 0;
 
   const size_t initial_alignment = current_alignment;
+
+  dxc_cb_t *dataTypeCtrlBlk = g_typeSupportCtrlBlks[slot];
+  dxil_t *dxil = dataTypeCtrlBlk->dxil;
+
+  // Index 0 is the root object, do not process
+  for (int x=1;  x < dataTypeCtrlBlk->componentCount+1; x++)  {
+   current_alignment += dxil->instructionList[x].serializedSize( mp_obj, current_alignment);
+  }
 
   return current_alignment - initial_alignment;
 }
@@ -234,8 +281,12 @@ size_t mpy_uros_typesupport_get_max_serialized_size(int slot, bool *full_bounded
 }
 
 
-
-void deserializeROSType(int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack)
+/**
+ * 
+ * 
+ * 
+*/
+void deserializeROSType(ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack)
 {
   mp_obj_t dict = mp_obj_new_dict(inst->shallowComponentCount);
   mp_obj_t parent_obj = obj_stack->objects[obj_stack->stkPtr-1];
@@ -243,46 +294,170 @@ void deserializeROSType(int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *
   obj_stack->objects[obj_stack->stkPtr++]=dict;
 }
 
-void serializeROSType(int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack)
+
+size_t serializedSizeROSType(const void *mp_obj, size_t current_alignment)
 {
+  return current_alignment;
 }
 
-void serializeBool(int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack)
-{
-}
-
-void deserializeBool(int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack)
-{
-}
-
-void serializeInt(int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack)
-{
-}
-
-void deserializeInt(int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack)
-{
-}
-
-void serializeFloat(int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack)
+void serializeROSType(ucdrBuffer *cdr,  mp_obj_t value, dxi_t* inst)
 {
 }
 
 
-void deserializeFloat(int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack)
+/**
+ * 
+ * 
+ * 
+ * 
+*/
+void serializeBool(ucdrBuffer *cdr,  mp_obj_t value, dxi_t* inst)
+{
+    bool bVal = true;
+    if (value == mp_const_none) {	return;}
+    if (&mp_type_bool != mp_obj_get_type(value) ) { return; }
+    int iVal = mp_obj_get_int(value);
+    if (iVal == 0) bVal=false;
+    ucdr_serialize_bool(cdr, bVal);
+}
+
+size_t serializedSizeBool(const void *mp_obj, size_t current_alignment)
+{
+  bool val;
+  const size_t initial_alignment = current_alignment;
+  const size_t item_size = sizeof(val);
+  current_alignment += ucdr_alignment(current_alignment, item_size) + item_size;
+  return current_alignment - initial_alignment;
+}
+
+void deserializeBool(ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack)
+{
+}
+
+
+/**
+ * 
+ * 
+ * 
+*/
+void serializeInt(ucdrBuffer *cdr,  mp_obj_t value, dxi_t* inst)
+{  
+    int iVal;
+    if (value == mp_const_none) {	return;}
+    if (&mp_type_int != mp_obj_get_type(value) ) { return; }
+    iVal = mp_obj_get_int(value);
+    ucdr_serialize_int32_t(cdr, iVal);
+}
+
+size_t serializedSizeInt(const void *mp_obj, size_t current_alignment)
+{
+  int intVal;
+  const size_t initial_alignment = current_alignment;
+  const size_t item_size = sizeof(intVal);
+  current_alignment += ucdr_alignment(current_alignment, item_size) + item_size;
+  return current_alignment - initial_alignment;
+}
+
+void deserializeInt(ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack)
+{
+}
+
+/**
+ * 
+ * 
+ * 
+ * 
+*/
+void serializeFloat(ucdrBuffer *cdr,  mp_obj_t value, dxi_t* inst)
+{
+    if (value == mp_const_none) {	return;}
+
+    const mp_obj_type_t* mpType = mp_obj_get_type(value);
+
+    if (&mp_type_float ==  mpType) 
+    { 
+      double dVal = mp_obj_get_float_to_d(value);
+      ucdr_serialize_double(cdr, dVal);
+    } 
+    else if (&mp_type_int == mpType)  
+    {
+      int iVal = mp_obj_get_int(value);
+      double dVal = (double) iVal;
+      ucdr_serialize_double(cdr, dVal);
+    } 
+}
+
+void deserializeFloat(ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack)
 {
   double doubleVal;
   ucdr_deserialize_double(cdr, &doubleVal);
   mp_obj_dict_store(obj_stack->objects[obj_stack->stkPtr-1], mp_obj_new_str(inst->name, strlen(inst->name)), mp_obj_new_float(doubleVal));
 }
 
-void deserializeDouble(int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack)
+size_t serializedSizeFloat(const void *mp_obj, size_t current_alignment)
 {
+  double doubleVal;
+  const size_t initial_alignment = current_alignment;
+  const size_t item_size = sizeof(doubleVal);
+  current_alignment += ucdr_alignment(current_alignment, item_size) + item_size;
+  return current_alignment - initial_alignment;
 }
 
-void serializeDouble(int slot, ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack)
+
+/**
+ * 
+ * 
+ * 
+ * 
+*/
+void deserializeDouble(ucdrBuffer *cdr, dxi_t* inst, mp_obj_stk_t *obj_stack)
 {
+  double doubleVal;
+  ucdr_deserialize_double(cdr, &doubleVal);
+  mp_obj_dict_store(obj_stack->objects[obj_stack->stkPtr-1], mp_obj_new_str(inst->name, strlen(inst->name)), mp_obj_new_float(doubleVal));
 }
 
+void serializeDouble(ucdrBuffer *cdr,  mp_obj_t value, dxi_t* inst)
+{
+    double dVal;
+    if (value == mp_const_none) {	return;}
+    if (&mp_type_float != mp_obj_get_type(value) ) { NULL; }
+    dVal = mp_obj_get_float_to_d(value);
+    ucdr_serialize_double(cdr, dVal);
+}
+
+size_t serializedSizeDouble(const void *mp_obj, size_t current_alignment)
+{
+  double doubleVal;
+  const size_t initial_alignment = current_alignment;
+  const size_t item_size = sizeof(doubleVal);
+  current_alignment += ucdr_alignment(current_alignment, item_size) + item_size;
+  return current_alignment - initial_alignment;
+}
+
+
+
+
+// ROSIDL_TYPESUPPORT_MICROXRCEDDS_C_PUBLIC_example_interfaces
+// size_t get_serialized_size_example_interfaces__msg__String(
+//   const void * untyped_ros_message,
+//   size_t current_alignment)
+// {
+//   if (!untyped_ros_message) {
+//     return 0;
+//   }
+
+//   const _String__ros_msg_type * ros_message = (const _String__ros_msg_type *)(untyped_ros_message);
+//   (void)ros_message;
+
+//   const size_t initial_alignment = current_alignment;
+
+//   // Member: data
+//   current_alignment += ucdr_alignment(current_alignment, MICROXRCEDDS_PADDING) + MICROXRCEDDS_PADDING;
+//   current_alignment += ros_message->data.size + 1;
+
+//   return current_alignment - initial_alignment;
+// }
 
 // UCDR_BASIC_TYPE_DECLARATIONS(_char, char)
 // UCDR_BASIC_TYPE_DECLARATIONS(_bool, bool)
