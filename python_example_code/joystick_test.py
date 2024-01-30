@@ -1,6 +1,6 @@
 from mbits_JoystickBit import mbits_joystickbit
 
-def _onButtonChange(val:int) -> None:
+def _onButtonChange(val):
     print("On Button Change")
     
 def _onJoystickChange(val:int) -> None:

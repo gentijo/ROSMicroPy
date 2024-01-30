@@ -5,7 +5,6 @@ from time import sleep
 class mbits_joystickbit():
     
     def __init__(self) -> None:
-
         self.xaxis = ADC(Pin(32))
         self.xaxis.atten(ADC.ATTN_11DB)
 
@@ -31,10 +30,13 @@ class mbits_joystickbit():
         self.onY: callable[[int], None] = None
         self.onX: callable[[int], None] = None
 
-    def onButtonUp(self, func: callable[[int], None]):
+    def test2(self):
+        pass
+    
+    def setbuttonUp(self, func):
         self.onButtonUp = func
         
-    def onButtonDown(self, func: callable[[int], None]):
+    def set_onButtonDown(self, func: callable[[int], None]):
         self.onButtonDown = func
         
     def onButtonLeft(self, func: callable[[int], None]):
