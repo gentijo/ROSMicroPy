@@ -5,7 +5,7 @@ import utime
 #
 #
 #
-class mbits_maqueen_drive:
+class MaqueenDrive:
 
     Motor_Left:int = 0
     Motor_Right:int = 1
