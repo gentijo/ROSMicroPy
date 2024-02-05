@@ -11,8 +11,9 @@ class joystickbit():
         self.xaxis = ADC(Pin(32))
         self.xaxis.atten(ADC.ATTN_11DB)
 
-        self.yaxis = ADC(Pin(25))
+        self.yaxis = ADC(Pin(34))  #25 33
         self.yaxis.atten(ADC.ATTN_11DB)
+        self.yaxis.width(ADC.WIDTH_12BIT)
         
         self.bUp =    machine.Pin(18, machine.Pin.IN, machine.Pin.PULL_UP)
         self.bDown =  machine.Pin(19, machine.Pin.IN, machine.Pin.PULL_UP)
@@ -104,6 +105,7 @@ class joystickbit():
             with _self.lock:
                 ydiff:int = _self.yval - yval
                 trigger = abs(ydiff)
+#                print(f"Y self:{_self.yval} val:{yval} T:{trigger} diff:{ydiff}")
 
                 if (trigger > 10):
                     if(_self._onY):
