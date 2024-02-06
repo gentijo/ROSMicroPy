@@ -18,7 +18,7 @@ Sets the NodeName of the ROS Node.
 Configures the ROSNode to attach to a specific SSID (sta_id) with a password. 
  + Must be called prior to Init
 
-### ```registerDataType(name:str, mp_obj_t dataMap:rosTypeDataMap)```
+### ```registerDataType(mp_obj_t dataMap:rosTypeDataMap)```
 Using the dataMap defined by the ROS .msg compiler, create a virtual named type that will be used when receiving or publishing messages. 
  + Init must be called prior
 
