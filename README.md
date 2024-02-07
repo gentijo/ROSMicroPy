@@ -25,7 +25,7 @@
 
 ### How to get started 
 + **[Flash device and run](./docs/procudures/flashDevice.md)**
-+ **[Introduction do Python / ROS Robot Coder Development](./docs/python-dev/welcome.md)**
++ **[Introduction to Python / ROS Robot Coder Development](./docs/python-dev/welcome.md)**
 
 + **[*Advanced:* How to setup the firmware development environment](docs/procudures/firmwareDeveloperEnvironment.md)**
 

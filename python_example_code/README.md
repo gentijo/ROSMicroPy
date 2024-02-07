@@ -27,10 +27,18 @@ the [MBits ESP32](https://www.aliexpress.us/item/3256803353734572.html), a [Micr
 
 and the [Joystick Controller](https://www.amazon.com/Elecfreaks-microbit-Joystick-Wireless-Control/dp/B08HD557QJ)
 
+![JoystickBit](../docs/images/JoystickBit-V2.png)
 
-[MBits Wiki](https://www.elecrow.com/wiki/index.php?title=Mbits)
+***Note: on the Joystick controller, P0 needs to be jumped to P9. P0 is an ADC on ADC Block2 which is not usable when Wifi is enabled. P9 is on ADC1***
 
-[Code for the Turtle Bot](../python_example_code/RosBot_Maqueen.py)
+***This [Micro:bit extension board](https://www.aliexpress.us/item/3256805550646047.html)*** makes that easier
 
-[Code for the Joystick V2](https://www.amazon.com/Elecfreaks-microbit-Joystick-Wireless-Control/dp/B08HD557QJ)
+![MicroBit Extension Board](../docs/images/Microbit-ExtensionBoard.png)
+
+# Links
+### [MBits Wiki](https://www.elecrow.com/wiki/index.php?title=Mbits)
+
+### [Code for the Turtle Bot](../python_example_code/RosBot_Maqueen.py)
+
+### [Code for the Joystick V2](../python_example_code/RosBot_Teleop.py)
 
