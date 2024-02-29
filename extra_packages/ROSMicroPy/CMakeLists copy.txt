@@ -1,12 +1,10 @@
-message(DEBUG "Begining of ROSMicroPy CMake")
+message("Begining of ROSMicroPy CMake")
 
 get_filename_component(ROS_MICROPY_DIR      ${PROJECT_DIR}/../../extra_packages/ROSMicroPy ABSOLUTE)
 get_filename_component(MICROROS_INC_DIR     ${PROJECT_DIR}/../../extra_packages/libmicroros/include ABSOLUTE)
 get_filename_component(MICROPY_DIR          ${PROJECT_DIR}/../../libs/micropython ABSOLUTE)
 get_filename_component(MICROPY_ARCH_DIR     ${MICROPY_DIR}/ports/${IDF_TARGET} ABSOLUTE)
 
-get_filename_component(MICROPY_UROS_MODULE_DIR ${ROS_MICROPY_DIR}/mp_uros_modules ABSOLUTE)
-get_filename_component(MICROPY_UROS_TYPE_SUPPORT_DIR ${ROS_MICROPY_DIR}/mp_uros_type_support ABSOLUTE)
 
 #get_filename_component(MICROPY_BOARD_DIR $(MICROPY_DIR)/ports/esp32
 
@@ -57,13 +55,7 @@ list(APPEND MICROPY_INC_USERMOD
     ${MICROROS_INC_DIR}/rmw
     ${MICROROS_INC_DIR}/rosidl_runtime_c
     ${MICROROS_INC_DIR}/rosidl_typesupport_interface
-    ${ROS_MICROPY_DIR}/mp_uros_modules
-    ${ROS_MICROPY_DIR}/mp_uros_type_support
-
-
 )
-
-list(APPEND IDF_COMPONENTS libmicroros)
 
 
 
@@ -73,4 +65,3 @@ message ("Micropython Dir: ${MICROPY_DIR}")
 message ("ROS MicroPy Dir: ${ROS_MICROPY_DIR}")
 
 include( ${ROS_MICROPY_DIR}/micropython.cmake.txt )
-
