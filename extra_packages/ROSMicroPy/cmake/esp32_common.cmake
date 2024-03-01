@@ -98,6 +98,8 @@ list(APPEND MICROPY_SOURCE_QSTR
     ${MICROPY_SOURCE_LIB}
     ${MICROPY_SOURCE_PORT}
     ${MICROPY_SOURCE_BOARD}
+    ${ROS_MICROPY_MODULES}
+
 )
 
 list(APPEND IDF_COMPONENTS
@@ -135,7 +137,7 @@ list(APPEND IDF_COMPONENTS
     vfs
     mdns
 )
-
+message ("MICROPY_SOURCE_EXTMOD ${ROS_MICROPY_MODULES}")
 # Register the main IDF component.
 idf_component_register(
     SRCS
@@ -146,12 +148,15 @@ idf_component_register(
         ${MICROPY_SOURCE_DRIVERS}
         ${MICROPY_SOURCE_PORT}
         ${MICROPY_SOURCE_BOARD}
+        ${ROS_MICROPY_MODULES}
+
     INCLUDE_DIRS
         ${MICROPY_INC_CORE}
         ${MICROPY_INC_USERMOD}
         ${MICROPY_PORT_DIR}
         ${MICROPY_BOARD_DIR}
         ${CMAKE_BINARY_DIR}
+        ${ROS_MICROPY_INC_DIR}
     REQUIRES
         ${IDF_COMPONENTS}
 )

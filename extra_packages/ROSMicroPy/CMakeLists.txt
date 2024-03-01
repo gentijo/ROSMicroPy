@@ -1,12 +1,30 @@
 message(DEBUG "Begining of ROSMicroPy CMake")
 
+set(MICROPY_ARCH esp32)
+
 get_filename_component(ROS_MICROPY_DIR      ${PROJECT_DIR}/../../extra_packages/ROSMicroPy ABSOLUTE)
 get_filename_component(MICROROS_INC_DIR     ${PROJECT_DIR}/../../extra_packages/libmicroros/include ABSOLUTE)
-get_filename_component(MICROPY_DIR          ${PROJECT_DIR}/../../libs/micropython ABSOLUTE)
-get_filename_component(MICROPY_ARCH_DIR     ${MICROPY_DIR}/ports/${IDF_TARGET} ABSOLUTE)
+
 
 get_filename_component(MICROPY_UROS_MODULE_DIR ${ROS_MICROPY_DIR}/mp_uros_modules ABSOLUTE)
 get_filename_component(MICROPY_UROS_TYPE_SUPPORT_DIR ${ROS_MICROPY_DIR}/mp_uros_type_support ABSOLUTE)
+
+get_filename_component(MICROPY_DIR ${PROJECT_DIR}/../../libs/micropython ABSOLUTE)
+message("MicroPy Dir: ${MICROPY_DIR}")
+
+get_filename_component(MICROPY_ARCH_DIR ${MICROPY_DIR}/ports/${MICROPY_ARCH} ABSOLUTE)
+message("MicroPy Arch Dir: ${MICROPY_ARCH_DIR}")
+
+# Set the board if it's not already set.
+if(NOT MICROPY_BOARD)
+    set(MICROPY_BOARD ESP32_GENERIC)
+endif()
+
+# Set the board directory and check that it exists.
+if(NOT MICROPY_BOARD_DIR)
+    set(MICROPY_BOARD_DIR ${MICROPY_ARCH_DIR}/boards/${MICROPY_BOARD})
+endif()
+
 
 #get_filename_component(MICROPY_BOARD_DIR $(MICROPY_DIR)/ports/esp32
 
@@ -17,7 +35,7 @@ endif()
 
 # Set the board directory and check that it exists.
 if(NOT MICROPY_BOARD_DIR)
-    set(MICROPY_BOARD_DIR ${MICROPY_DIR}/ports/esp32/boards/${MICROPY_BOARD})
+    set(MICROPY_BOARD_DIR ${MICROPY_DIR}/ports/$IDF_TARGET/boards/${MICROPY_BOARD})
 endif()
 
 set(ROS_MICROPY_MODULES
@@ -46,7 +64,7 @@ list(APPEND MICROPY_SOURCE_EXTMOD
 
 
 
-list(APPEND MICROPY_INC_USERMOD
+list(APPEND ROS_MICROPY_INC_DIR
     ${MICROROS_INC_DIR}/rcl_action
     ${MICROROS_INC_DIR}/action_msgs
     ${MICROROS_INC_DIR}/unique_identifier_msgs
@@ -63,7 +81,7 @@ list(APPEND MICROPY_INC_USERMOD
 
 )
 
-list(APPEND IDF_COMPONENTS libmicroros)
+list(APPEND IDF_COMPONENTS libmicroros ROSMicroPy)
 
 
 
