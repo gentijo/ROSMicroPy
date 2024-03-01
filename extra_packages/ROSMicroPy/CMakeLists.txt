@@ -33,6 +33,7 @@ if(NOT MICROPY_BOARD)
     set(MICROPY_BOARD ESP32_GENERIC)
 endif()
 
+message("Board: ${MICROPY_DIR}/ports/$IDF_TARGET/boards/${MICROPY_BOARD} ")
 # Set the board directory and check that it exists.
 if(NOT MICROPY_BOARD_DIR)
     set(MICROPY_BOARD_DIR ${MICROPY_DIR}/ports/$IDF_TARGET/boards/${MICROPY_BOARD})
