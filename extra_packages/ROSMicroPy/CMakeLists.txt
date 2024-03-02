@@ -2,17 +2,24 @@ message(DEBUG "Begining of ROSMicroPy CMake")
 
 set(MICROPY_ARCH esp32)
 
-get_filename_component(ROS_MICROPY_DIR      ${PROJECT_DIR}/../../extra_packages/ROSMicroPy ABSOLUTE)
-get_filename_component(MICROROS_INC_DIR     ${PROJECT_DIR}/../../extra_packages/libmicroros/include ABSOLUTE)
+get_filename_component(_ROS_MICROPY_DIR      ${PROJECT_DIR}/../../extra_packages/ROSMicroPy ABSOLUTE)
+set (ROS_MICROPY_DIR ${_ROS_MICROPY_DIR})
 
+get_filename_component(_MICROROS_INC_DIR     ${PROJECT_DIR}/../../extra_packages/libmicroros/include ABSOLUTE)
+set (MICROROS_INC_DIR ${_MICROROS_INC_DIR} )
 
-get_filename_component(MICROPY_UROS_MODULE_DIR ${ROS_MICROPY_DIR}/mp_uros_modules ABSOLUTE)
-get_filename_component(MICROPY_UROS_TYPE_SUPPORT_DIR ${ROS_MICROPY_DIR}/mp_uros_type_support ABSOLUTE)
+get_filename_component(_MICROPY_UROS_MODULE_DIR ${ROS_MICROPY_DIR}/mp_uros_modules ABSOLUTE)
+set (MICROPY_UROS_MODULE_DIR ${_MICROPY_UROS_MODULE_DIR} )
 
-get_filename_component(MICROPY_DIR ${PROJECT_DIR}/../../libs/micropython ABSOLUTE)
+get_filename_component(_MICROPY_UROS_TYPE_SUPPORT_DIR ${ROS_MICROPY_DIR}/mp_uros_type_support ABSOLUTE)
+set (MICROPY_UROS_TYPE_SUPPORT_DIR ${_MICROPY_UROS_TYPE_SUPPORT_DIR} )
+
+get_filename_component(_MICROPY_DIR ${PROJECT_DIR}/../../libs/micropython ABSOLUTE)
+set (MICROPY_DIR ${_MICROPY_DIR} )
 message("MicroPy Dir: ${MICROPY_DIR}")
 
-get_filename_component(MICROPY_ARCH_DIR ${MICROPY_DIR}/ports/${MICROPY_ARCH} ABSOLUTE)
+get_filename_component(_MICROPY_ARCH_DIR ${MICROPY_DIR}/ports/${MICROPY_ARCH} ABSOLUTE)
+set (MICROPY_ARCH_DIR ${_MICROPY_ARCH_DIR} )
 message("MicroPy Arch Dir: ${MICROPY_ARCH_DIR}")
 
 # Set the board if it's not already set.
@@ -22,7 +29,7 @@ endif()
 
 # Set the board directory and check that it exists.
 if(NOT MICROPY_BOARD_DIR)
-    set(MICROPY_BOARD_DIR ${MICROPY_ARCH_DIR}/boards/${MICROPY_BOARD})
+    set(MICROPY_BOARD_DIR ${MICROPY_ARCH_DIR}/boards/${MICROPY_BOARD} )
 endif()
 
 
@@ -35,7 +42,7 @@ endif()
 
 # Set the board directory and check that it exists.
 if(NOT MICROPY_BOARD_DIR)
-    set(MICROPY_BOARD_DIR ${MICROPY_DIR}/ports/$IDF_TARGET/boards/${MICROPY_BOARD})
+    set(MICROPY_BOARD_DIR ${MICROPY_DIR}/ports/$IDF_TARGET/boards/${MICROPY_BOARD}  )
 endif()
 
 set(ROS_MICROPY_MODULES

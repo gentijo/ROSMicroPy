@@ -1,4 +1,10 @@
 message ("Micropython CMake")
+message ("Project Dir: ${PROJECT_DIR}")
+message ("CMake Source Dir: ${CMAKE_SOURCE_DIR}")
+message ("Micropython Dir: ${MICROPY_DIR}")
+message ("ROS MicroPy Dir: ${ROS_MICROPY_DIR}")
+message ("MicroPy Board Dir: ${MICROPY_BOARD_DIR}")
+
 
 # Set the board if it's not already set.
 if(NOT MICROPY_BOARD)
@@ -33,19 +39,19 @@ elseif (NOT MICROPY_FROZEN_MANIFEST)
 endif()
 
 # Concatenate all sdkconfig files into a combined one for the IDF to use.
-file(WRITE ${CMAKE_BINARY_DIR}/sdkconfig.combined.in "")
+#file(WRITE ${CMAKE_BINARY_DIR}/sdkconfig.combined.in "")
 
-message("\r\n\nSDK Defaults ${SDKCONFIG_DEFAULTS}")
-message("MICROPY Archdir: ${MICROPY_ARCH_DIR}")
+#message("\r\n\nSDK Defaults ${SDKCONFIG_DEFAULTS}")
+#message("MICROPY Archdir: ${MICROPY_ARCH_DIR}")
 
-foreach(SDKCONFIG_DEFAULT ${SDKCONFIG_DEFAULTS})
-    set(SDKCONFIG_DEFAULT_FULLPATH ${MICROPY_ARCH_DIR}/${SDKCONFIG_DEFAULT})
-    message("SDK DEFAULT: ${SDK_DEFAULT_FULLPATH}")
-    file(READ ${SDKCONFIG_DEFAULT_FULLPATH} CONTENTS)
-    file(APPEND ${CMAKE_BINARY_DIR}/sdkconfig.combined.in "${CONTENTS}")
-endforeach()
-configure_file(${CMAKE_BINARY_DIR}/sdkconfig.combined.in ${CMAKE_BINARY_DIR}/sdkconfig.combined.mp COPYONLY)
-set(SDKCONFIG_DEFAULTS ${CMAKE_BINARY_DIR}/sdkconfig.combined.mp)
+#foreach(SDKCONFIG_DEFAULT ${SDKCONFIG_DEFAULTS})
+#    set(SDKCONFIG_DEFAULT_FULLPATH ${MICROPY_ARCH_DIR}/${SDKCONFIG_DEFAULT})
+#    message("SDK DEFAULT: ${SDK_DEFAULT_FULLPATH}")
+#    file(READ ${SDKCONFIG_DEFAULT_FULLPATH} CONTENTS)
+#    file(APPEND ${CMAKE_BINARY_DIR}/sdkconfig.combined.in "${CONTENTS}")
+#endforeach()
+#configure_file(${CMAKE_BINARY_DIR}/sdkconfig.combined.in ${CMAKE_BINARY_DIR}/sdkconfig.combined.mp COPYONLY)
+#set(SDKCONFIG_DEFAULTS ${CMAKE_BINARY_DIR}/sdkconfig.combined.mp)
 
 # Include main IDF cmake file.
 #include($ENV{IDF_PATH}/tools/cmake/project.cmake)
@@ -55,7 +61,7 @@ set(SDKCONFIG_DEFAULTS ${CMAKE_BINARY_DIR}/sdkconfig.combined.mp)
 
 
 message("include(${ROS_MICROPY_DIR}/cmake/main_${IDF_TARGET}/CMakeLists.txt)")
-include(${ROS_MICROPY_DIR}/cmake/main_${IDF_TARGET}/CMakeLists.txt)
+include(${ROS_MICROPY_DIR}/main_${IDF_TARGET}/CMakeLists.txt)
 
 # Define the project.
 #project(micropython)

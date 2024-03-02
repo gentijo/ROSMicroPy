@@ -1,15 +1,21 @@
 dependencies:
+  ROSMicroPy:
+    component_hash: null
+    source:
+      path: /opt/ROSMicroPy2/extra_packages/ROSMicroPy/main_esp32
+      type: local
+    version: '*'
   espressif/mdns:
-    component_hash: d96d277207c4fec77ec290b7a8b0ca4043e10f407df0ff6aa52e54a94f0c54a5
+    component_hash: 46ee81d32fbf850462d8af1e83303389602f6a6a9eddd2a55104cb4c063858ed
     source:
       service_url: https://api.components.espressif.com/
       type: service
-    version: 1.2.4
+    version: 1.1.0
   idf:
     component_hash: null
     source:
       type: idf
     version: 5.1.2
-manifest_hash: f1a572a6b8b65aece61b0a0f76d62584e1a3d1245f1ab9b4ca2e98bd39ba616e
+manifest_hash: 558a96fca1192d48157ed4c7897bbfcc64ea98375cac537c78733f26db33edf9
 target: esp32
 version: 1.0.0
