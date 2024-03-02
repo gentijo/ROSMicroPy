@@ -1,11 +1,17 @@
-message(DEBUG "Begining of ROSMicroPy CMake")
-
+message("Begining of ROSMicroPy CMake")
+message ("CMake Source Dir: ${CMAKE_SOURCE_DIR}")
+message ("Micropython Dir: ${MICROPY_DIR}")
+message ("ROS MicroPy Dir: ${ROS_MICROPY_DIR}")
+message ("MicroPy Board Dir: ${MICROPY_BOARD_DIR}")
+message ("MicroPy Arch Dir: ${MICROPY_ARCH_DIR}")
 set(MICROPY_ARCH esp32)
+get_filename_component(MICROPY_DIR  ${PROJECT_DIR}/../../libs/micropython ABSOLUTE)
+get_filename_component(MICROPY_ARCH_DIR ${MICROPY_DIR}/ports/${MICROPY_ARCH} ABSOLUTE)
 
-get_filename_component(_ROS_MICROPY_DIR      ${PROJECT_DIR}/../../extra_packages/ROSMicroPy ABSOLUTE)
+get_filename_component(_ROS_MICROPY_DIR  ${PROJECT_DIR}/../../extra_packages/ROSMicroPy ABSOLUTE)
 set (ROS_MICROPY_DIR ${_ROS_MICROPY_DIR})
 
-get_filename_component(_MICROROS_INC_DIR     ${PROJECT_DIR}/../../extra_packages/libmicroros/include ABSOLUTE)
+get_filename_component(_MICROROS_INC_DIR ${PROJECT_DIR}/../../extra_packages/libmicroros/include ABSOLUTE)
 set (MICROROS_INC_DIR ${_MICROROS_INC_DIR} )
 
 get_filename_component(_MICROPY_UROS_MODULE_DIR ${ROS_MICROPY_DIR}/mp_uros_modules ABSOLUTE)
@@ -14,14 +20,6 @@ set (MICROPY_UROS_MODULE_DIR ${_MICROPY_UROS_MODULE_DIR} )
 get_filename_component(_MICROPY_UROS_TYPE_SUPPORT_DIR ${ROS_MICROPY_DIR}/mp_uros_type_support ABSOLUTE)
 set (MICROPY_UROS_TYPE_SUPPORT_DIR ${_MICROPY_UROS_TYPE_SUPPORT_DIR} )
 
-get_filename_component(_MICROPY_DIR ${PROJECT_DIR}/../../libs/micropython ABSOLUTE)
-set (MICROPY_DIR ${_MICROPY_DIR} )
-message("MicroPy Dir: ${MICROPY_DIR}")
-
-get_filename_component(_MICROPY_ARCH_DIR ${MICROPY_DIR}/ports/${MICROPY_ARCH} ABSOLUTE)
-set (MICROPY_ARCH_DIR ${_MICROPY_ARCH_DIR} )
-message("MicroPy Arch Dir: ${MICROPY_ARCH_DIR}")
-
 # Set the board if it's not already set.
 if(NOT MICROPY_BOARD)
     set(MICROPY_BOARD ESP32_GENERIC)
@@ -29,73 +27,43 @@ endif()
 
 # Set the board directory and check that it exists.
 if(NOT MICROPY_BOARD_DIR)
-    set(MICROPY_BOARD_DIR ${MICROPY_ARCH_DIR}/boards/${MICROPY_BOARD} )
+    set(MICROPY_BOARD_DIR ${MICROPY_ARCH_DIR}/boards/${MICROPY_BOARD})
 endif()
 
-
-#get_filename_component(MICROPY_BOARD_DIR $(MICROPY_DIR)/ports/esp32
-
-# Set the board if it's not already set.
-if(NOT MICROPY_BOARD)
-    set(MICROPY_BOARD ESP32_GENERIC)
-endif()
-
-# Set the board directory and check that it exists.
-if(NOT MICROPY_BOARD_DIR)
-    set(MICROPY_BOARD_DIR ${MICROPY_DIR}/ports/$IDF_TARGET/boards/${MICROPY_BOARD}  )
-endif()
-
-set(ROS_MICROPY_MODULES
-    #
-    # Bind Python to ROS
-    ${MICROPY_UROS_MODULE_DIR}/uros_mesg_func.c
-    ${MICROPY_UROS_MODULE_DIR}/uros_base_func.c
-
-    ${MICROPY_UROS_MODULE_DIR}/mp_uros_thread.c
-    ${MICROPY_UROS_MODULE_DIR}/uros_mp_reg.c
-
-    ${MICROPY_UROS_TYPE_SUPPORT_DIR}/mp_uros_type_support.c
-    ${MICROPY_UROS_TYPE_SUPPORT_DIR}/mp_uros_dataTypeParser.c
-    ${MICROPY_UROS_TYPE_SUPPORT_DIR}/mp_uros_type_support.c
-
-)
-
-list(APPEND MICROPY_SOURCE_QSTR
-    ${ROS_MICROPY_MODULES}
-
-)
-
-list(APPEND MICROPY_SOURCE_EXTMOD
-    ${MICROPY_UROS_MODULES}
-)
-
-
-
-list(APPEND ROS_MICROPY_INC_DIR
-    ${MICROROS_INC_DIR}/rcl_action
-    ${MICROROS_INC_DIR}/action_msgs
-    ${MICROROS_INC_DIR}/unique_identifier_msgs
-    ${MICROROS_INC_DIR}/builtin_interfaces
-    ${MICROROS_INC_DIR}
-    ${MICROROS_INC_DIR}/rcl
-    ${MICROROS_INC_DIR}/rcutils
-    ${MICROROS_INC_DIR}/rmw
-    ${MICROROS_INC_DIR}/rosidl_runtime_c
-    ${MICROROS_INC_DIR}/rosidl_typesupport_interface
-    ${ROS_MICROPY_DIR}/mp_uros_modules
-    ${ROS_MICROPY_DIR}/mp_uros_type_support
-
-
-)
-
-list(APPEND IDF_COMPONENTS libmicroros ROSMicroPy)
-
-
-
-message ("Project Dir: ${PROJECT_DIR}")
+message ("\r\nProject Dir: ${PROJECT_DIR}")
 message ("CMake Source Dir: ${CMAKE_SOURCE_DIR}")
 message ("Micropython Dir: ${MICROPY_DIR}")
 message ("ROS MicroPy Dir: ${ROS_MICROPY_DIR}")
+message ("MicroPy Board Dir: ${MICROPY_BOARD_DIR}")
+message ("MicroPy Arch Dir: ${MICROPY_ARCH_DIR}")
 
-include( ${ROS_MICROPY_DIR}/micropython.cmake.txt )
+
+if(NOT EXISTS ${MICROPY_BOARD_DIR}/mpconfigboard.cmake)
+    message(FATAL_ERROR "Invalid MICROPY_BOARD specified: ${MICROPY_BOARD}")
+endif()
+
+# Define the output sdkconfig so it goes in the build directory.
+#set(SDKCONFIG ${CMAKE_BINARY_DIR}/sdkconfig)
+
+# Save the manifest file set from the cmake command line.
+set(MICROPY_USER_FROZEN_MANIFEST ${MICROPY_FROZEN_MANIFEST})
+
+# Include board config; this is expected to set (among other options):
+# - SDKCONFIG_DEFAULTS
+# - IDF_TARGET
+include(${MICROPY_BOARD_DIR}/mpconfigboard.cmake)
+
+# Set the frozen manifest file. Note if MICROPY_FROZEN_MANIFEST is set from the cmake
+# command line, then it will override the default and any manifest set by the board.
+if (MICROPY_USER_FROZEN_MANIFEST)
+    set(MICROPY_FROZEN_MANIFEST ${MICROPY_USER_FROZEN_MANIFEST})
+elseif (NOT MICROPY_FROZEN_MANIFEST)
+    set(MICROPY_FROZEN_MANIFEST ${MICROPY_ARCH_DIR}/boards/manifest.py)
+endif()
+
+include(${ROS_MICROPY_DIR}/main_${IDF_TARGET}/CMakeLists.txt)
+include(${ROS_MICROPY_DIR}/esp32_common.cmake)
+
+# Define the project.
+#project(micropython)
 

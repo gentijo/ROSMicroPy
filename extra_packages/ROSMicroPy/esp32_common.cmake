@@ -1,4 +1,11 @@
 # Set location of base MicroPython directory.
+message ("Micropython Common CMake")
+message ("Project Dir: ${PROJECT_DIR}")
+message ("CMake Source Dir: ${CMAKE_SOURCE_DIR}")
+message ("Micropython Dir: ${MICROPY_DIR}")
+message ("ROS MicroPy Dir: ${ROS_MICROPY_DIR}")
+message ("MicroPy Board Dir: ${MICROPY_BOARD_DIR}")
+
 if(NOT MICROPY_DIR)
     get_filename_component(_MICROPY_DIR ${CMAKE_CURRENT_LIST_DIR}/../.. ABSOLUTE)
     set (MICROPY_DIR ${_MICROPY_DIR} PARENT_SCOPE)
@@ -8,6 +15,43 @@ endif()
 if(NOT MICROPY_PORT_DIR)
     get_filename_component(MICROPY_PORT_DIR ${MICROPY_DIR}/ports/esp32 ABSOLUTE)
 endif()
+
+
+set(ROS_MICROPY_MODULES
+    #
+    # Bind Python to ROS
+    ${MICROPY_UROS_MODULE_DIR}/uros_mesg_func.c
+    ${MICROPY_UROS_MODULE_DIR}/uros_base_func.c
+
+    ${MICROPY_UROS_MODULE_DIR}/mp_uros_thread.c
+    ${MICROPY_UROS_MODULE_DIR}/uros_mp_reg.c
+
+    ${MICROPY_UROS_TYPE_SUPPORT_DIR}/mp_uros_type_support.c
+    ${MICROPY_UROS_TYPE_SUPPORT_DIR}/mp_uros_dataTypeParser.c
+    ${MICROPY_UROS_TYPE_SUPPORT_DIR}/mp_uros_type_support.c
+
+)
+
+
+set(ROS_MICROPY_INC_DIR
+    ${MICROROS_INC_DIR}/rcl_action
+    ${MICROROS_INC_DIR}/action_msgs
+    ${MICROROS_INC_DIR}/unique_identifier_msgs
+    ${MICROROS_INC_DIR}/builtin_interfaces
+    ${MICROROS_INC_DIR}
+    ${MICROROS_INC_DIR}/rcl
+    ${MICROROS_INC_DIR}/rcutils
+    ${MICROROS_INC_DIR}/rmw
+    ${MICROROS_INC_DIR}/rosidl_runtime_c
+    ${MICROROS_INC_DIR}/rosidl_typesupport_interface
+    ${ROS_MICROPY_DIR}/mp_uros_modules
+    ${ROS_MICROPY_DIR}/mp_uros_type_support
+)
+
+message("\r\nROS_MICROPY_INC_DIR: [${ROS_MICROPY_INC_DIR}]")
+message("\r\nROS_MICROPY_MODULES: [${ROS_MICROPY_MODULES}]")
+
+list(APPEND IDF_COMPONENTS )
 
 # Include core source components.
 include(${MICROPY_DIR}/py/py.cmake)
@@ -136,9 +180,12 @@ list(APPEND IDF_COMPONENTS
     spi_flash
     ulp
     vfs
+    libmicroros
     mdns
 )
-message ("MICROPY_SOURCE_EXTMOD ${ROS_MICROPY_MODULES}")
+message ("\r\nROS_MICROPY_MODULES ${ROS_MICROPY_MODULES}")
+message ("\r\nROS_MICROPY_INC_DIR ${ROS_MICROPY_INC_DIR}")
+
 # Register the main IDF component.
 idf_component_register(
     SRCS

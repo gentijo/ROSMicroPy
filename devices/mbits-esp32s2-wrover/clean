@@ -3,6 +3,7 @@ clear
 idf.py clean
 idf.py fullclean
 rm -rf ./build
-idf.py build
+idf.py  reconfigure
+
 
 
