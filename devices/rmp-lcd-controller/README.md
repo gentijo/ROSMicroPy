@@ -4,7 +4,7 @@
 
 ## Problem Statement
 Using the ROSMicroPy firmware on an MBits ESP32 controller, for both the JoystickBit and the Maqueen Turtlebot work well to produce a cost effective ROS based robotic learning system. Although the JoystickBit has sufficient but limited functionality for expansion. 
-<table>
+<table style="width:100%" >
  <tr>
   <td style="width:50%">
    <img src="../../docs/images/ROB0148-EN.png" width="200" height="200" />
