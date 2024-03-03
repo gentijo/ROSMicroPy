@@ -5,9 +5,26 @@ get_filename_component(PROJECT_DIR "./" ABSOLUTE)
 message("Project Dir is ${PROJECT_DIR}")  
 
 get_filename_component(COMPONENT_DIR ${PROJECT_DIR}/../../extra_packages ABSOLUTE)
-message("Component Dir is ${COMPONENT_DIR}")  
+message("Component Dir is ${COMPONENT_DIR}") 
 
-set(EXTRA_COMPONENT_DIRS 
+get_filename_component(MICROPY_DIR ${PROJECT_DIR}/../../libs/micropython ABSOLUTE)
+message("MicroPy Dir: ${MICROPY_DIR}")
+
+set(MICROPY_ARCH esp32)
+get_filename_component(MICROPY_ARCH_DIR ${MICROPY_DIR}/ports/${MICROPY_ARCH} ABSOLUTE)
+message("MicroPy Arch Dir: ${MICROPY_ARCH_DIR}")
+
+# Set the board if it's not already set.
+if(NOT MICROPY_BOARD)
+    set(MICROPY_BOARD ESP32_GENERIC)
+endif()
+
+# Set the board directory and check that it exists.
+if(NOT MICROPY_BOARD_DIR)
+    set(MICROPY_BOARD_DIR ${MICROPY_ARCH_DIR}/boards/${MICROPY_BOARD})
+endif()
+
+list(APPEND EXTRA_COMPONENT_DIRS 
     ${COMPONENT_DIR}/libmicroros
     ${COMPONENT_DIR}/ROSMicroPy
 )
