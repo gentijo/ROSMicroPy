@@ -2,7 +2,7 @@ dependencies:
   ROSMicroPy:
     component_hash: null
     source:
-      path: /opt/ROSMicroPy2/extra_packages/ROSMicroPy/main_esp32
+      path: /opt/rosmicropy/extra_packages/ROSMicroPy/main_esp32s3
       type: local
     version: '*'
   espressif/esp_lcd_touch:
@@ -17,23 +17,35 @@ dependencies:
       service_url: https://api.components.espressif.com/
       type: service
     version: 1.1.0
+  espressif/esp_tinyusb:
+    component_hash: 5e37c53a10518f40b288a48afec4ab549784be9e6eb74add699a30395543418a
+    source:
+      service_url: https://api.components.espressif.com/
+      type: service
+    version: 1.0.3
   espressif/mdns:
     component_hash: 46ee81d32fbf850462d8af1e83303389602f6a6a9eddd2a55104cb4c063858ed
     source:
       service_url: https://api.components.espressif.com/
       type: service
     version: 1.1.0
+  espressif/tinyusb:
+    component_hash: a01cfb210e3bca8f046ca55b3aeb6b4329c22345ca2479e29d1ce7dc267abe65
+    source:
+      service_url: https://api.components.espressif.com/
+      type: service
+    version: 0.15.0~5
   idf:
     component_hash: null
     source:
       type: idf
-    version: 5.1.2
+    version: 5.1.3
   lvgl/lvgl:
     component_hash: 948bff879a345149b83065535bbc4a026ce9f47498a22881e432a264b9098015
     source:
       service_url: https://api.components.espressif.com/
       type: service
     version: 8.3.11
-manifest_hash: 1a46211f067b06d8c1ab9369f3931151e123731836f425fb8e4dcd9cf2489b78
-target: esp32
+manifest_hash: a17c31391016793740e576ab115c8d7336e41b5e846a6e27bbb34d869b2c1c54
+target: esp32s3
 version: 1.0.0

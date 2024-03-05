@@ -1,9 +1,9 @@
 clear
 
-NODENAME=rosmicropy.devenv.idf5.1.3
+NODENAME=rosmicropy.devenv
 
-DOCKER_DEF=Dockerfile-IDF51.DevEnvironment
-IMAGE_NAME=rosmicropy.devenv-idf5.1.3.img
+DOCKER_DEF=Dockerfile.DevEnvironment
+IMAGE_NAME=rosmicropy.devenv.img
 
 echo $1
 if [ "$1" == "clean" ]; then

@@ -17,7 +17,7 @@
 extern "C"
 {
 
-  void lcd_main(void)
+  void app_main(void)
   {
 
     lv_disp_t *disp = initDisplay();

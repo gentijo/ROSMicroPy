@@ -2,7 +2,7 @@ dependencies:
   ROSMicroPy:
     component_hash: null
     source:
-      path: /opt/ROSMicroPy2/extra_packages/ROSMicroPy/main_esp32
+      path: /opt/rosmicropy/extra_packages/ROSMicroPy/main_esp32
       type: local
     version: '*'
   espressif/mdns:
@@ -15,7 +15,7 @@ dependencies:
     component_hash: null
     source:
       type: idf
-    version: 5.1.2
-manifest_hash: 558a96fca1192d48157ed4c7897bbfcc64ea98375cac537c78733f26db33edf9
+    version: 5.1.3
+manifest_hash: 05172dac7e7c17ef4f869ca444c8d81e91435c460889f1960a676ed43dda1ef9
 target: esp32
 version: 1.0.0

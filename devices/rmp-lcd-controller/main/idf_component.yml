@@ -4,7 +4,7 @@ dependencies:
   lvgl/lvgl: "^8.3.8"
 
   ROSMicroPy:
-    path: '../../../extra_packages/ROSMicroPy/main_esp32'  
+    path: '../../../extra_packages/ROSMicroPy/main_esp32s3'  
   ## Required IDF version
   idf:
     version: ">=4.1.0"

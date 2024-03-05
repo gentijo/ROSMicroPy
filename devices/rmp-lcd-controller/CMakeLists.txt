@@ -10,13 +10,13 @@ message("Component Dir is ${COMPONENT_DIR}")
 get_filename_component(MICROPY_DIR ${PROJECT_DIR}/../../libs/micropython ABSOLUTE)
 message("MicroPy Dir: ${MICROPY_DIR}")
 
-set(MICROPY_ARCH esp32)
+set(MICROPY_ARCH esp32S3)
 get_filename_component(MICROPY_ARCH_DIR ${MICROPY_DIR}/ports/${MICROPY_ARCH} ABSOLUTE)
 message("MicroPy Arch Dir: ${MICROPY_ARCH_DIR}")
 
 # Set the board if it's not already set.
 if(NOT MICROPY_BOARD)
-    set(MICROPY_BOARD ESP32_GENERIC)
+    set(MICROPY_BOARD ESP32_GENERIC_S3)
 endif()
 
 # Set the board directory and check that it exists.
@@ -29,13 +29,14 @@ list(APPEND EXTRA_COMPONENT_DIRS
     ${COMPONENT_DIR}/ROSMicroPy
 )
 
-set(IDF_TARGET esp32)
+set(IDF_TARGET esp32S3)
+set(IDF_ARCH esp32)
 # Set the board if it's not already set.
 if(NOT MICROPY_BOARD)
-    set(MICROPY_BOARD ESP32_GENERIC)
+    set(MICROPY_BOARD ESP32_GENERIC_S3)
 endif()
 get_filename_component(MICROPY_DIR  ${PROJECT_DIR}/../../libs/micropython ABSOLUTE)
-set (MICROPY_ARCH_DIR ${MICROPY_DIR}/ports/${IDF_TARGET} )
+set (MICROPY_ARCH_DIR ${MICROPY_DIR}/ports/${IDF_ARCH} )
 set (MICROPY_BOARD_DIR ${MICROPY_ARCH_DIR}/boards/${MICROPY_BOARD})
 
 
@@ -91,7 +92,7 @@ set(SDKCONFIG_DEFAULTS ${SDK_CONFIG_FILE_BUILD})
 message("\r\nWrite Config File Complete")
 
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
-project(mbits-esp32s2-wrover)
+project(rmp-lcd-controller)
 
 
 
