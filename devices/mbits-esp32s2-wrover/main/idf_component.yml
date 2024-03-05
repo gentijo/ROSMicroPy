@@ -1,7 +1,9 @@
 ## IDF Component Manager Manifest File
 dependencies:
-  espressif/mdns: "*"
+  #espressif/mdns: "*"
   ## Required IDF version
+  ROSMicroPy:
+    path: '../../../extra_packages/ROSMicroPy/main_esp32'
   idf:
     version: ">=4.1.0"
   # # Put list of dependencies here

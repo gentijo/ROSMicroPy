@@ -1,0 +1,61 @@
+menu "LCD Configuration"
+    config EXAMPLE_DOUBLE_FB
+        bool "Use double Frame Buffer"
+        default "n"
+        help
+            Enable this option, driver will allocate two frame buffers.
+
+    config EXAMPLE_USE_BOUNCE_BUFFER
+        depends on !EXAMPLE_DOUBLE_FB
+        bool "Use bounce buffer"
+        help
+            Enable bounce buffer mode can achieve higher PCLK frequency at the cost of higher CPU consumption.
+
+    config EXAMPLE_AVOID_TEAR_EFFECT_WITH_SEM
+        depends on !EXAMPLE_DOUBLE_FB
+        bool "Avoid tearing effect"
+        default "y"
+        help
+            Enable this option, the example will use a pair of semaphores to avoid the tearing effect.
+            Note, if the Double Frame Buffer is used, then we can also avoid the tearing effect without the lock.
+
+    config EXAMPLE_LCD_TOUCH_ENABLED
+        bool "Use touchscreen"
+        default "y"
+        help
+            Enable this option, the example will use touchscreen with GT911 driver.
+endmenu
+
+
+menu "Mbits"
+
+    menu "I2C Host"
+        config I2C_HOST_SCL
+            int "SCL GPIO Num"
+            default 6 if IDF_TARGET_ESP32C3
+            default 19 if IDF_TARGET_ESP32 || IDF_TARGET_ESP32S2 || IDF_TARGET_ESP32S3
+            help
+                GPIO number for I2C Master clock line.
+
+        config I2C_HOST_SDA
+            int "SDA GPIO Num"
+            default 5 if IDF_TARGET_ESP32C3
+            default 18 if IDF_TARGET_ESP32 || IDF_TARGET_ESP32S2 || IDF_TARGET_ESP32S3
+            help
+                GPIO number for I2C Master data line.
+
+        config I2C_HOST_PORT_NUM
+            int "Port Number"
+            default 1 if IDF_TARGET_ESP32 || IDF_TARGET_ESP32S2 || IDF_TARGET_ESP32S3
+            default 0 if IDF_TARGET_ESP32C3
+            help
+                Port number for I2C Master device.
+
+        config I2C_HOST_FREQUENCY
+            int "Host Frequency"
+            default 100000
+            help
+                I2C Speed of Host device.
+    endmenu
+endmenu
+
