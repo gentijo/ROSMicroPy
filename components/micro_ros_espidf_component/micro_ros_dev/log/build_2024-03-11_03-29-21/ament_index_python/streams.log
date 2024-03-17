@@ -1,0 +1,65 @@
+[2.741s] Invoking command in '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/src/ament_index/ament_index_python': AMENT_PREFIX_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_copyright:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pep257:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_copyright/bin:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pep257/bin:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/bin:${PATH} PYTHONPATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_index_python/prefix_override:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_index_python/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_copyright/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pep257/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint/lib/python3.8/site-packages X_CFLAGS=-mlongcalls X_CXXFLAGS=-mlongcalls /opt/esp/python_env/idf5.1_py3.8_env/bin/python setup.py egg_info --egg-base ../../../build/ament_index_python build --build-base /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_index_python/build install --record /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_index_python/install.log --single-version-externally-managed
+[3.267s] running egg_info
+[3.268s] creating ../../../build/ament_index_python/ament_index_python.egg-info
+[3.268s] writing ../../../build/ament_index_python/ament_index_python.egg-info/PKG-INFO
+[3.268s] writing dependency_links to ../../../build/ament_index_python/ament_index_python.egg-info/dependency_links.txt
+[3.269s] writing entry points to ../../../build/ament_index_python/ament_index_python.egg-info/entry_points.txt
+[3.269s] writing requirements to ../../../build/ament_index_python/ament_index_python.egg-info/requires.txt
+[3.269s] writing top-level names to ../../../build/ament_index_python/ament_index_python.egg-info/top_level.txt
+[3.269s] writing manifest file '../../../build/ament_index_python/ament_index_python.egg-info/SOURCES.txt'
+[3.270s] reading manifest file '../../../build/ament_index_python/ament_index_python.egg-info/SOURCES.txt'
+[3.270s] writing manifest file '../../../build/ament_index_python/ament_index_python.egg-info/SOURCES.txt'
+[3.270s] running build
+[3.271s] running build_py
+[3.271s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_index_python/build
+[3.271s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_index_python/build/lib
+[3.271s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_index_python/build/lib/ament_index_python
+[3.272s] copying ament_index_python/search_paths.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_index_python/build/lib/ament_index_python
+[3.272s] copying ament_index_python/resources.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_index_python/build/lib/ament_index_python
+[3.272s] copying ament_index_python/__init__.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_index_python/build/lib/ament_index_python
+[3.272s] copying ament_index_python/packages.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_index_python/build/lib/ament_index_python
+[3.272s] copying ament_index_python/cli.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_index_python/build/lib/ament_index_python
+[3.272s] copying ament_index_python/constants.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_index_python/build/lib/ament_index_python
+[3.273s] running install
+[3.273s] running install_lib
+[3.273s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_index_python/lib/python3.8/site-packages/ament_index_python
+[3.273s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_index_python/build/lib/ament_index_python/search_paths.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_index_python/lib/python3.8/site-packages/ament_index_python
+[3.273s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_index_python/build/lib/ament_index_python/resources.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_index_python/lib/python3.8/site-packages/ament_index_python
+[3.273s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_index_python/build/lib/ament_index_python/__init__.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_index_python/lib/python3.8/site-packages/ament_index_python
+[3.274s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_index_python/build/lib/ament_index_python/packages.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_index_python/lib/python3.8/site-packages/ament_index_python
+[3.274s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_index_python/build/lib/ament_index_python/cli.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_index_python/lib/python3.8/site-packages/ament_index_python
+[3.274s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_index_python/build/lib/ament_index_python/constants.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_index_python/lib/python3.8/site-packages/ament_index_python
+[3.275s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_index_python/lib/python3.8/site-packages/ament_index_python/search_paths.py to search_paths.cpython-38.pyc
+[3.275s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_index_python/lib/python3.8/site-packages/ament_index_python/resources.py to resources.cpython-38.pyc
+[3.275s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_index_python/lib/python3.8/site-packages/ament_index_python/__init__.py to __init__.cpython-38.pyc
+[3.276s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_index_python/lib/python3.8/site-packages/ament_index_python/packages.py to packages.cpython-38.pyc
+[3.276s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_index_python/lib/python3.8/site-packages/ament_index_python/cli.py to cli.cpython-38.pyc
+[3.276s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_index_python/lib/python3.8/site-packages/ament_index_python/constants.py to constants.cpython-38.pyc
+[3.276s] running install_data
+[3.276s] copying package.xml -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_index_python/share/ament_index_python
+[3.276s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_index_python/share/ament_index_python/environment
+[3.276s] copying completion/ament_index-argcomplete.bash -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_index_python/share/ament_index_python/environment
+[3.276s] copying completion/ament_index-argcomplete.zsh -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_index_python/share/ament_index_python/environment
+[3.276s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_index_python/share/ament_index
+[3.276s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_index_python/share/ament_index/resource_index
+[3.276s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_index_python/share/ament_index/resource_index/packages
+[3.276s] copying resource/ament_index_python -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_index_python/share/ament_index/resource_index/packages
+[3.276s] running install_egg_info
+[3.276s] Copying ../../../build/ament_index_python/ament_index_python.egg-info to /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_index_python/lib/python3.8/site-packages/ament_index_python-1.4.0-py3.8.egg-info
+[3.276s] running install_scripts
+[3.276s] Installing ament_index script to /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_index_python/bin
+[3.276s] writing list of installed files to '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_index_python/install.log'
+[3.278s] /opt/esp/python_env/idf5.1_py3.8_env/lib/python3.8/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+[3.278s] !!
+[3.278s] 
+[3.278s]         ********************************************************************************
+[3.278s]         Please avoid running ``setup.py`` directly.
+[3.278s]         Instead, use pypa/build, pypa/installer or other
+[3.278s]         standards-based tools.
+[3.278s] 
+[3.278s]         See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+[3.278s]         ********************************************************************************
+[3.279s] 
+[3.279s] !!
+[3.279s]   self.initialize_options()
+[3.794s] Invoked command in '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/src/ament_index/ament_index_python' returned '0': AMENT_PREFIX_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_copyright:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pep257:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_copyright/bin:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pep257/bin:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/bin:${PATH} PYTHONPATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_index_python/prefix_override:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_index_python/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_copyright/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pep257/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint/lib/python3.8/site-packages X_CFLAGS=-mlongcalls X_CXXFLAGS=-mlongcalls /opt/esp/python_env/idf5.1_py3.8_env/bin/python setup.py egg_info --egg-base ../../../build/ament_index_python build --build-base /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_index_python/build install --record /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_index_python/install.log --single-version-externally-managed

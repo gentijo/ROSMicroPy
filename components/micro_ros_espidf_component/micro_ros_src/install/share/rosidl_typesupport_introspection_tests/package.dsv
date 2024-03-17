@@ -1,0 +1,17 @@
+source;share/rosidl_typesupport_introspection_tests/hook/cmake_prefix_path.ps1
+source;share/rosidl_typesupport_introspection_tests/hook/cmake_prefix_path.dsv
+source;share/rosidl_typesupport_introspection_tests/hook/cmake_prefix_path.sh
+source;share/rosidl_typesupport_introspection_tests/hook/path.ps1
+source;share/rosidl_typesupport_introspection_tests/hook/path.dsv
+source;share/rosidl_typesupport_introspection_tests/hook/path.sh
+source;share/rosidl_typesupport_introspection_tests/hook/pythonpath.ps1
+source;share/rosidl_typesupport_introspection_tests/hook/pythonpath.dsv
+source;share/rosidl_typesupport_introspection_tests/hook/pythonpath.sh
+source;share/rosidl_typesupport_introspection_tests/hook/pythonscriptspath.ps1
+source;share/rosidl_typesupport_introspection_tests/hook/pythonscriptspath.dsv
+source;share/rosidl_typesupport_introspection_tests/hook/pythonscriptspath.sh
+source;share/rosidl_typesupport_introspection_tests/local_setup.bash
+source;share/rosidl_typesupport_introspection_tests/local_setup.dsv
+source;share/rosidl_typesupport_introspection_tests/local_setup.ps1
+source;share/rosidl_typesupport_introspection_tests/local_setup.sh
+source;share/rosidl_typesupport_introspection_tests/local_setup.zsh

@@ -1,0 +1,9 @@
+source;share/gtest_vendor/hook/cmake_prefix_path.ps1
+source;share/gtest_vendor/hook/cmake_prefix_path.dsv
+source;share/gtest_vendor/hook/cmake_prefix_path.sh
+source;share/gtest_vendor/hook/pkg_config_path.ps1
+source;share/gtest_vendor/hook/pkg_config_path.dsv
+source;share/gtest_vendor/hook/pkg_config_path.sh
+source;share/gtest_vendor/hook/pkg_config_path_multiarch.ps1
+source;share/gtest_vendor/hook/pkg_config_path_multiarch.dsv
+source;share/gtest_vendor/hook/pkg_config_path_multiarch.sh

@@ -1,0 +1,17 @@
+source;share/test_rmw_implementation/hook/cmake_prefix_path.ps1
+source;share/test_rmw_implementation/hook/cmake_prefix_path.dsv
+source;share/test_rmw_implementation/hook/cmake_prefix_path.sh
+source;share/test_rmw_implementation/hook/path.ps1
+source;share/test_rmw_implementation/hook/path.dsv
+source;share/test_rmw_implementation/hook/path.sh
+source;share/test_rmw_implementation/hook/pythonpath.ps1
+source;share/test_rmw_implementation/hook/pythonpath.dsv
+source;share/test_rmw_implementation/hook/pythonpath.sh
+source;share/test_rmw_implementation/hook/pythonscriptspath.ps1
+source;share/test_rmw_implementation/hook/pythonscriptspath.dsv
+source;share/test_rmw_implementation/hook/pythonscriptspath.sh
+source;share/test_rmw_implementation/local_setup.bash
+source;share/test_rmw_implementation/local_setup.dsv
+source;share/test_rmw_implementation/local_setup.ps1
+source;share/test_rmw_implementation/local_setup.sh
+source;share/test_rmw_implementation/local_setup.zsh

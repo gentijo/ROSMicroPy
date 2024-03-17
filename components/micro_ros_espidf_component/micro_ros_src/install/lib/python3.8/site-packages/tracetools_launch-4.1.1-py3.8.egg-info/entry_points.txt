@@ -1,0 +1,2 @@
+[launch.frontend.launch_extension]
+tracetools_launch = tracetools_launch

@@ -1,0 +1,24 @@
+CMake Warning at /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rcutils/cmake/ament_cmake_export_libraries-extras.cmake:116 (message):
+  Package 'rcutils' exports library 'dl' which couldn't be found
+Call Stack (most recent call first):
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rcutils/cmake/rcutilsConfig.cmake:41 (include)
+  CMakeLists.txt:27 (find_package)
+
+
+In file included from /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rmw_microxrcedds/rmw_microxrcedds_c/src/rmw_init.c:15:
+/opt/esp/idf/components/newlib/platform_include/time.h:11:2: warning: #include_next is a GCC extension
+   11 | #include_next <time.h>
+      |  ^~~~~~~~~~~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rmw_microxrcedds/rmw_microxrcedds_c/src/rmw_microros/init_options.c: In function 'rmw_uros_options_set_udp_address':
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rmw_microxrcedds/rmw_microxrcedds_c/src/rmw_microros/init_options.c:94:80: warning: 'snprintf' output may be truncated before the last format character [-Wformat-truncation=]
+   94 |     snprintf(rmw_options->impl->transport_params.agent_address, MAX_IP_LEN, "%s", ip);
+      |                                                                                ^
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rmw_microxrcedds/rmw_microxrcedds_c/src/rmw_microros/init_options.c:94:5: note: 'snprintf' output between 1 and 17 bytes into a destination of size 16
+   94 |     snprintf(rmw_options->impl->transport_params.agent_address, MAX_IP_LEN, "%s", ip);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rmw_microxrcedds/rmw_microxrcedds_c/src/rmw_microros/init_options.c:101:79: warning: 'snprintf' output may be truncated before the last format character [-Wformat-truncation=]
+  101 |     snprintf(rmw_options->impl->transport_params.agent_port, MAX_PORT_LEN, "%s", port);
+      |                                                                               ^
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rmw_microxrcedds/rmw_microxrcedds_c/src/rmw_microros/init_options.c:101:5: note: 'snprintf' output between 1 and 6 bytes into a destination of size 5
+  101 |     snprintf(rmw_options->impl->transport_params.agent_port, MAX_PORT_LEN, "%s", port);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,0 +1,121 @@
+Not searching for unused variables given on the command line.
+-- The C compiler identification is GNU 12.2.0
+-- The CXX compiler identification is GNU 12.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /opt/esp/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/xtensa-esp32s3-elf-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /opt/esp/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/xtensa-esp32s3-elf-g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake_ros: 0.10.0 (/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_cmake_ros/share/ament_cmake_ros/cmake)
+-- Found Python3: /opt/esp/python_env/idf5.1_py3.8_env/bin/python3 (found version "3.8.10") found components: Interpreter 
+-- Found rcutils: 5.1.5 (/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rcutils/cmake)
+CMake Warning at /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rcutils/cmake/ament_cmake_export_libraries-extras.cmake:116 (message):
+  Package 'rcutils' exports library 'dl' which couldn't be found
+Call Stack (most recent call first):
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rcutils/cmake/rcutilsConfig.cmake:41 (include)
+  CMakeLists.txt:33 (find_package)
+
+
+-- Found rosidl_runtime_c: 3.1.5 (/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_runtime_c/cmake)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_typesupport_c
+make[1]: Entering directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_typesupport_c'
+make[2]: Entering directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_typesupport_c'
+make[3]: Entering directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_typesupport_c'
+make[3]: Entering directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_typesupport_c'
+make[3]: Entering directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_typesupport_c'
+make[3]: Leaving directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_typesupport_c'
+make[3]: Entering directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_typesupport_c'
+make[3]: Leaving directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_typesupport_c'
+make[3]: Leaving directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_typesupport_c'
+make[3]: Leaving directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_typesupport_c'
+make[3]: Entering directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_typesupport_c'
+make[3]: Entering directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_typesupport_c'
+[  0%] Built target ament_cmake_python_copy_rosidl_typesupport_c_setup
+[ 25%] Building C object CMakeFiles/rosidl_typesupport_c.dir/src/identifier.c.obj
+make[3]: Leaving directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_typesupport_c'
+[ 50%] Building CXX object CMakeFiles/rosidl_typesupport_c.dir/src/message_type_support_dispatch.cpp.obj
+[ 75%] Building CXX object CMakeFiles/rosidl_typesupport_c.dir/src/service_type_support_dispatch.cpp.obj
+[ 75%] Built target ament_cmake_python_copy_rosidl_typesupport_c
+make[3]: Entering directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_typesupport_c'
+make[3]: Leaving directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_typesupport_c'
+make[3]: Entering directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_typesupport_c'
+[100%] Linking CXX static library librosidl_typesupport_c.a
+make[3]: Leaving directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_typesupport_c'
+[100%] Built target rosidl_typesupport_c
+running egg_info
+creating rosidl_typesupport_c.egg-info
+writing rosidl_typesupport_c.egg-info/PKG-INFO
+writing dependency_links to rosidl_typesupport_c.egg-info/dependency_links.txt
+writing entry points to rosidl_typesupport_c.egg-info/entry_points.txt
+writing top-level names to rosidl_typesupport_c.egg-info/top_level.txt
+writing manifest file 'rosidl_typesupport_c.egg-info/SOURCES.txt'
+reading manifest file 'rosidl_typesupport_c.egg-info/SOURCES.txt'
+writing manifest file 'rosidl_typesupport_c.egg-info/SOURCES.txt'
+make[3]: Leaving directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_typesupport_c'
+[100%] Built target ament_cmake_python_build_rosidl_typesupport_c_egg
+make[2]: Leaving directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_typesupport_c'
+make[1]: Leaving directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_typesupport_c'
+-- Install configuration: "Release"
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_c/environment/pythonpath.sh
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_c/environment/pythonpath.dsv
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_typesupport_c-2.0.1-py3.8.egg-info
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_typesupport_c-2.0.1-py3.8.egg-info/top_level.txt
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_typesupport_c-2.0.1-py3.8.egg-info/dependency_links.txt
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_typesupport_c-2.0.1-py3.8.egg-info/SOURCES.txt
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_typesupport_c-2.0.1-py3.8.egg-info/entry_points.txt
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_typesupport_c-2.0.1-py3.8.egg-info/PKG-INFO
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_typesupport_c
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_typesupport_c/__init__.py
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_typesupport_c/cli.py
+Listing '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_typesupport_c'...
+Compiling '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_typesupport_c/__init__.py'...
+Compiling '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_typesupport_c/cli.py'...
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_c/environment/library_path.sh
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_c/environment/library_path.dsv
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/ament_index/resource_index/rosidl_runtime_packages/rosidl_typesupport_c
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/ament_index/resource_index/package_run_dependencies/rosidl_typesupport_c
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/ament_index/resource_index/parent_prefix_path/rosidl_typesupport_c
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_c/environment/ament_prefix_path.sh
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_c/environment/ament_prefix_path.dsv
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_c/environment/path.sh
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_c/environment/path.dsv
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_c/local_setup.bash
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_c/local_setup.sh
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_c/local_setup.zsh
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_c/local_setup.dsv
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_c/package.dsv
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/ament_index/resource_index/packages/rosidl_typesupport_c
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_c/cmake/rosidl_typesupport_cExport.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_c/cmake/rosidl_typesupport_cExport-release.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_c/cmake/rosidl_typesupport_c-extras.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_c/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_c/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_c/cmake/ament_cmake_export_libraries-extras.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_c/cmake/ament_cmake_export_targets-extras.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_c/cmake/rosidl_typesupport_cConfig.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_c/cmake/rosidl_typesupport_cConfig-version.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_c/package.xml
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/rosidl_typesupport_c/rosidl_typesupport_c
+-- Up-to-date: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_c/cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_c/cmake/get_used_typesupports.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_c/cmake/rosidl_typesupport_c_generate_interfaces.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_c/resource
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_c/resource/action__type_support.c.em
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_c/resource/srv__type_support.cpp.em
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_c/resource/idl__type_support.cpp.em
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_c/resource/msg__type_support.cpp.em
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rosidl_typesupport_c
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rosidl_typesupport_c/rosidl_typesupport_c
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rosidl_typesupport_c/rosidl_typesupport_c/message_type_support_dispatch.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rosidl_typesupport_c/rosidl_typesupport_c/service_type_support_dispatch.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rosidl_typesupport_c/rosidl_typesupport_c/identifier.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rosidl_typesupport_c/rosidl_typesupport_c/type_support_map.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rosidl_typesupport_c/rosidl_typesupport_c/visibility_control.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/librosidl_typesupport_c.a

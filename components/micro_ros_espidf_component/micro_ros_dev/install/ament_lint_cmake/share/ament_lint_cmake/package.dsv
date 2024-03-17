@@ -1,0 +1,12 @@
+source;share/ament_lint_cmake/hook/path.ps1
+source;share/ament_lint_cmake/hook/path.dsv
+source;share/ament_lint_cmake/hook/path.sh
+source;share/ament_lint_cmake/hook/pythonpath.ps1
+source;share/ament_lint_cmake/hook/pythonpath.dsv
+source;share/ament_lint_cmake/hook/pythonpath.sh
+source;share/ament_lint_cmake/hook/pythonscriptspath.ps1
+source;share/ament_lint_cmake/hook/pythonscriptspath.dsv
+source;share/ament_lint_cmake/hook/pythonscriptspath.sh
+source;share/ament_lint_cmake/hook/ament_prefix_path.ps1
+source;share/ament_lint_cmake/hook/ament_prefix_path.dsv
+source;share/ament_lint_cmake/hook/ament_prefix_path.sh

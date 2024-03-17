@@ -1,0 +1,2 @@
+[console_scripts]
+ament_uncrustify = ament_uncrustify.main:main

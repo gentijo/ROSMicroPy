@@ -1,0 +1,57 @@
+[0.099s] Invoking command in '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/gmock_vendor': CMAKE_PREFIX_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor PKG_CONFIG_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/lib/x86_64-linux-gnu/pkgconfig:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/lib/pkgconfig X_CFLAGS=-mlongcalls X_CXXFLAGS=-mlongcalls /opt/esp/tools/cmake/3.24.0/bin/cmake /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/src/googletest/googlemock -DBUILD_TESTING=OFF -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=gcc -DCMAKE_INSTALL_PREFIX=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor
+[0.110s] -- Configuring done
+[0.111s] -- Generating done
+[0.111s] CMake Warning:
+[0.111s]   Manually-specified variables were not used by the project:
+[0.111s] 
+[0.111s]     BUILD_TESTING
+[0.111s]     CMAKE_CXX_COMPILER
+[0.111s]     CMAKE_C_COMPILER
+[0.112s] 
+[0.112s] 
+[0.113s] -- Build files have been written to: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/gmock_vendor
+[0.114s] Invoked command in '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/gmock_vendor' returned '0': CMAKE_PREFIX_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor PKG_CONFIG_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/lib/x86_64-linux-gnu/pkgconfig:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/lib/pkgconfig X_CFLAGS=-mlongcalls X_CXXFLAGS=-mlongcalls /opt/esp/tools/cmake/3.24.0/bin/cmake /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/src/googletest/googlemock -DBUILD_TESTING=OFF -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=gcc -DCMAKE_INSTALL_PREFIX=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor
+[0.118s] Invoking command in '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/gmock_vendor': CMAKE_PREFIX_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor PKG_CONFIG_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/lib/x86_64-linux-gnu/pkgconfig:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/lib/pkgconfig X_CFLAGS=-mlongcalls X_CXXFLAGS=-mlongcalls /opt/esp/tools/cmake/3.24.0/bin/cmake --build /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/gmock_vendor
+[0.126s] make[1]: Entering directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/gmock_vendor'
+[0.128s] make[1]: Leaving directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/gmock_vendor'
+[0.129s] Invoked command in '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/gmock_vendor' returned '0': CMAKE_PREFIX_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor PKG_CONFIG_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/lib/x86_64-linux-gnu/pkgconfig:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/lib/pkgconfig X_CFLAGS=-mlongcalls X_CXXFLAGS=-mlongcalls /opt/esp/tools/cmake/3.24.0/bin/cmake --build /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/gmock_vendor
+[0.143s] Invoking command in '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/gmock_vendor': CMAKE_PREFIX_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor PKG_CONFIG_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/lib/x86_64-linux-gnu/pkgconfig:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/lib/pkgconfig X_CFLAGS=-mlongcalls X_CXXFLAGS=-mlongcalls /opt/esp/tools/cmake/3.24.0/bin/cmake --install /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/gmock_vendor
+[0.145s] -- Install configuration: ""
+[0.145s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/share/gmock_vendor/cmake/gmock_vendorConfig.cmake
+[0.145s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/share/gmock_vendor/package.xml
+[0.146s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/CMakeLists.txt
+[0.146s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/include/gmock
+[0.146s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/include/gmock/gmock-generated-matchers.h.pump
+[0.146s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/include/gmock/gmock-actions.h
+[0.146s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/include/gmock/gmock-generated-matchers.h
+[0.146s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/include/gmock/gmock-more-matchers.h
+[0.146s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/include/gmock/gmock-generated-actions.h
+[0.147s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/include/gmock/gmock.h
+[0.147s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/include/gmock/gmock-function-mocker.h
+[0.147s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/include/gmock/gmock-generated-function-mockers.h.pump
+[0.147s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/include/gmock/gmock-cardinalities.h
+[0.147s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/include/gmock/gmock-spec-builders.h
+[0.147s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/include/gmock/gmock-matchers.h
+[0.148s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/include/gmock/gmock-generated-actions.h.pump
+[0.148s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/include/gmock/gmock-more-actions.h
+[0.148s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/include/gmock/gmock-nice-strict.h
+[0.148s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/include/gmock/internal
+[0.148s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/include/gmock/internal/gmock-port.h
+[0.148s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/include/gmock/internal/gmock-pp.h
+[0.149s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/include/gmock/internal/custom
+[0.149s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/include/gmock/internal/custom/gmock-port.h
+[0.149s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/include/gmock/internal/custom/gmock-generated-actions.h
+[0.149s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/include/gmock/internal/custom/gmock-matchers.h
+[0.149s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/include/gmock/internal/custom/gmock-generated-actions.h.pump
+[0.149s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/include/gmock/internal/custom/README.md
+[0.149s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/include/gmock/internal/gmock-internal-utils.h
+[0.149s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/include/gmock/gmock-generated-function-mockers.h
+[0.150s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/src
+[0.150s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/src/gmock-spec-builders.cc
+[0.150s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/src/gmock-all.cc
+[0.150s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/src/gmock-cardinalities.cc
+[0.150s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/src/gmock.cc
+[0.150s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/src/gmock_main.cc
+[0.150s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/src/gmock-internal-utils.cc
+[0.150s] -- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gmock_vendor/src/gmock_vendor/src/gmock-matchers.cc
+[0.151s] Invoked command in '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/gmock_vendor' returned '0': CMAKE_PREFIX_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor PKG_CONFIG_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/lib/x86_64-linux-gnu/pkgconfig:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/lib/pkgconfig X_CFLAGS=-mlongcalls X_CXXFLAGS=-mlongcalls /opt/esp/tools/cmake/3.24.0/bin/cmake --install /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/gmock_vendor

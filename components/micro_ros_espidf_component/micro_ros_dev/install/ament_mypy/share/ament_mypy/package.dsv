@@ -1,0 +1,12 @@
+source;share/ament_mypy/hook/path.ps1
+source;share/ament_mypy/hook/path.dsv
+source;share/ament_mypy/hook/path.sh
+source;share/ament_mypy/hook/pythonpath.ps1
+source;share/ament_mypy/hook/pythonpath.dsv
+source;share/ament_mypy/hook/pythonpath.sh
+source;share/ament_mypy/hook/pythonscriptspath.ps1
+source;share/ament_mypy/hook/pythonscriptspath.dsv
+source;share/ament_mypy/hook/pythonscriptspath.sh
+source;share/ament_mypy/hook/ament_prefix_path.ps1
+source;share/ament_mypy/hook/ament_prefix_path.dsv
+source;share/ament_mypy/hook/ament_prefix_path.sh

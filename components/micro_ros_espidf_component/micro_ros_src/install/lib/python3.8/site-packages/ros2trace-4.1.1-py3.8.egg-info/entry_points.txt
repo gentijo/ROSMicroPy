@@ -1,0 +1,2 @@
+[ros2cli.command]
+trace = ros2trace.command.trace:TraceCommand

@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: test_tracetools_launch
+Version: 4.1.1
+Summary: Tests for the tracetools_launch package.
+Home-page: https://gitlab.com/ros-tracing/ros2_tracing
+Author: Christophe Bedard
+Author-email: fixed-term.christophe.bourquebedard@de.bosch.com
+Maintainer: Christophe Bedard, Ingo Luetkebohle
+Maintainer-email: bedard.christophe@gmail.com, ingo.luetkebohle@de.bosch.com
+License: Apache 2.0
+Requires-Dist: setuptools

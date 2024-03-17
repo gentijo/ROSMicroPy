@@ -1,0 +1,23 @@
+CMake Warning at /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rcutils/cmake/ament_cmake_export_libraries-extras.cmake:116 (message):
+  Package 'rcutils' exports library 'dl' which couldn't be found
+Call Stack (most recent call first):
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rcutils/cmake/rcutilsConfig.cmake:41 (include)
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_runtime_c/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_runtime_c/cmake/rosidl_runtime_cConfig.cmake:41 (include)
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/builtin_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/builtin_interfaces/cmake/builtin_interfacesConfig.cmake:41 (include)
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rcl_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rcl_interfaces/cmake/rcl_interfacesConfig.cmake:41 (include)
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rcl/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rcl/cmake/rclConfig.cmake:41 (include)
+  CMakeLists.txt:31 (find_package)
+
+
+In file included from /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rclc/rclc/src/rclc/action_client.c:16:
+/opt/esp/idf/components/newlib/platform_include/time.h:11:2: warning: #include_next is a GCC extension
+   11 | #include_next <time.h>
+      |  ^~~~~~~~~~~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rclc/rclc/src/rclc/executor_handle.c: In function 'rclc_executor_handle_print':
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rclc/rclc/src/rclc/executor_handle.c:84:10: warning: variable 'typeName' set but not used [-Wunused-but-set-variable]
+   84 |   char * typeName;
+      |          ^~~~~~~~

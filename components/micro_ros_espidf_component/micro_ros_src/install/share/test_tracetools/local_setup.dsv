@@ -1,0 +1,2 @@
+source;share/test_tracetools/environment/ament_prefix_path.sh
+source;share/test_tracetools/environment/path.sh

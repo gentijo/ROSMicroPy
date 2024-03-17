@@ -1,0 +1,6 @@
+setup.py
+rosidl_cmake/__init__.py
+rosidl_cmake.egg-info/PKG-INFO
+rosidl_cmake.egg-info/SOURCES.txt
+rosidl_cmake.egg-info/dependency_links.txt
+rosidl_cmake.egg-info/top_level.txt

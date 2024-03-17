@@ -1,0 +1,134 @@
+Not searching for unused variables given on the command line.
+-- The C compiler identification is GNU 12.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /opt/esp/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/xtensa-esp32s3-elf-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Found ament_cmake_ros: 0.10.0 (/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_cmake_ros/share/ament_cmake_ros/cmake)
+-- Found Python3: /opt/esp/python_env/idf5.1_py3.8_env/bin/python3 (found version "3.8.10") found components: Interpreter 
+-- Found rcutils: 5.1.5 (/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rcutils/cmake)
+CMake Warning at /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rcutils/cmake/ament_cmake_export_libraries-extras.cmake:116 (message):
+  Package 'rcutils' exports library 'dl' which couldn't be found
+Call Stack (most recent call first):
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rcutils/cmake/rcutilsConfig.cmake:41 (include)
+  CMakeLists.txt:27 (find_package)
+
+
+-- Found rosidl_runtime_c: 3.1.5 (/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_runtime_c/cmake)
+-- Found rmw: 6.1.1 (/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw/cmake)
+-- Found rosidl_typesupport_microxrcedds_c: 3.0.1 (/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_microxrcedds_c/cmake)
+-- Found rosidl_adapter: 3.1.5 (/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_adapter/cmake)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rmw_microxrcedds
+make[1]: Entering directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rmw_microxrcedds'
+make[2]: Entering directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rmw_microxrcedds'
+make[3]: Entering directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rmw_microxrcedds'
+make[3]: Leaving directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rmw_microxrcedds'
+make[3]: Entering directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rmw_microxrcedds'
+[  2%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/memory.c.obj
+[  4%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/identifiers.c.obj
+[  6%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_client.c.obj
+[  8%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_compare_gids_equal.c.obj
+[ 13%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_event.c.obj
+[ 13%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_features.c.obj
+[ 15%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_count.c.obj
+[ 17%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_get_gid_for_publisher.c.obj
+[ 19%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_get_implementation_identifier.c.obj
+[ 21%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_get_serialization_format.c.obj
+[ 23%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_get_topic_endpoint_info.c.obj
+[ 26%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_get_endpoint_network_flow.c.obj
+[ 28%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_qos_profile_check_compatible.c.obj
+[ 30%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_guard_condition.c.obj
+[ 32%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_init.c.obj
+[ 34%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_logging.c.obj
+[ 36%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_microxrcedds_topic.c.obj
+In file included from /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rmw_microxrcedds/rmw_microxrcedds_c/src/rmw_init.c:15:
+/opt/esp/idf/components/newlib/platform_include/time.h:11:2: warning: #include_next is a GCC extension
+   11 | #include_next <time.h>
+      |  ^~~~~~~~~~~~
+[ 39%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_node.c.obj
+[ 41%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_node_info_and_types.c.obj
+[ 43%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_node_names.c.obj
+[ 45%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_publish.c.obj
+[ 47%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_request.c.obj
+[ 50%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_publisher.c.obj
+[ 52%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_response.c.obj
+[ 54%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_serialize.c.obj
+[ 56%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_service.c.obj
+[ 58%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_service_names_and_types.c.obj
+[ 60%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_service_server_is_available.c.obj
+[ 63%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_subscription.c.obj
+[ 65%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_take.c.obj
+[ 67%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_topic_names_and_types.c.obj
+[ 69%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_trigger_guard_condition.c.obj
+[ 71%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_wait.c.obj
+[ 76%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_wait_set.c.obj
+[ 73%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/types.c.obj
+[ 78%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/utils.c.obj
+[ 80%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/callbacks.c.obj
+[ 82%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_event_callbacks.c.obj
+[ 84%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_uxrce_transports.c.obj
+[ 86%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_microros/continous_serialization.c.obj
+[ 89%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_microros/time_sync.c.obj
+[ 91%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_microros/init_options.c.obj
+[ 93%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_microros/ping.c.obj
+[ 95%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_microros/timing.c.obj
+[ 97%] Building C object CMakeFiles/rmw_microxrcedds.dir/src/rmw_microros/discovery.c.obj
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rmw_microxrcedds/rmw_microxrcedds_c/src/rmw_microros/init_options.c: In function 'rmw_uros_options_set_udp_address':
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rmw_microxrcedds/rmw_microxrcedds_c/src/rmw_microros/init_options.c:94:80: warning: 'snprintf' output may be truncated before the last format character [-Wformat-truncation=]
+   94 |     snprintf(rmw_options->impl->transport_params.agent_address, MAX_IP_LEN, "%s", ip);
+      |                                                                                ^
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rmw_microxrcedds/rmw_microxrcedds_c/src/rmw_microros/init_options.c:94:5: note: 'snprintf' output between 1 and 17 bytes into a destination of size 16
+   94 |     snprintf(rmw_options->impl->transport_params.agent_address, MAX_IP_LEN, "%s", ip);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rmw_microxrcedds/rmw_microxrcedds_c/src/rmw_microros/init_options.c:101:79: warning: 'snprintf' output may be truncated before the last format character [-Wformat-truncation=]
+  101 |     snprintf(rmw_options->impl->transport_params.agent_port, MAX_PORT_LEN, "%s", port);
+      |                                                                               ^
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rmw_microxrcedds/rmw_microxrcedds_c/src/rmw_microros/init_options.c:101:5: note: 'snprintf' output between 1 and 6 bytes into a destination of size 5
+  101 |     snprintf(rmw_options->impl->transport_params.agent_port, MAX_PORT_LEN, "%s", port);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[100%] Linking C static library librmw_microxrcedds.a
+make[3]: Leaving directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rmw_microxrcedds'
+[100%] Built target rmw_microxrcedds
+make[2]: Leaving directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rmw_microxrcedds'
+make[1]: Leaving directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rmw_microxrcedds'
+-- Install configuration: "Release"
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw_microxrcedds/environment/library_path.sh
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw_microxrcedds/environment/library_path.dsv
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/ament_index/resource_index/rmw_typesupport_c/rmw_microxrcedds
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/ament_index/resource_index/rmw_typesupport/rmw_microxrcedds
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/ament_index/resource_index/package_run_dependencies/rmw_microxrcedds
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/ament_index/resource_index/parent_prefix_path/rmw_microxrcedds
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw_microxrcedds/environment/ament_prefix_path.sh
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw_microxrcedds/environment/ament_prefix_path.dsv
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw_microxrcedds/environment/path.sh
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw_microxrcedds/environment/path.dsv
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw_microxrcedds/local_setup.bash
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw_microxrcedds/local_setup.sh
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw_microxrcedds/local_setup.zsh
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw_microxrcedds/local_setup.dsv
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw_microxrcedds/package.dsv
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/ament_index/resource_index/packages/rmw_microxrcedds
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw_microxrcedds/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw_microxrcedds/cmake/ament_cmake_export_libraries-extras.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw_microxrcedds/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw_microxrcedds/cmake/rmw_microxrceddsConfig.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw_microxrcedds/cmake/rmw_microxrceddsConfig-version.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw_microxrcedds/package.xml
+-- Up-to-date: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw_microros
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw_microros/discovery.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw_microros/init_options.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw_microros/rmw_microros.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw_microros/timing.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw_microros/ping.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw_microros/continous_serialization.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw_microros/time_sync.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw_microros/custom_transport.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw_microros/error_handling.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw_microxrcedds_c
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw_microxrcedds_c/rmw_c_macros.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw_microxrcedds_c/config.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/librmw_microxrcedds.a

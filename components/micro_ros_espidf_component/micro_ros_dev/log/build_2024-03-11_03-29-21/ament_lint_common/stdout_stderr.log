@@ -1,0 +1,32 @@
+-- Found ament_cmake_core: 1.3.8 (/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_cmake_core/share/ament_cmake_core/cmake)
+-- Found Python3: /opt/esp/python_env/idf5.1_py3.8_env/bin/python3 (found version "3.8.10") found components: Interpreter 
+-- Found ament_cmake_export_dependencies: 1.3.8 (/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_cmake_export_dependencies/share/ament_cmake_export_dependencies/cmake)
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_CXX_COMPILER
+    CMAKE_C_COMPILER
+
+
+-- Build files have been written to: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_lint_common
+make[1]: Entering directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_lint_common'
+make[1]: Leaving directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_lint_common'
+-- Install configuration: ""
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint_common/share/ament_index/resource_index/package_run_dependencies/ament_lint_common
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint_common/share/ament_index/resource_index/parent_prefix_path/ament_lint_common
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint_common/share/ament_lint_common/environment/ament_prefix_path.sh
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint_common/share/ament_lint_common/environment/ament_prefix_path.dsv
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint_common/share/ament_lint_common/environment/path.sh
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint_common/share/ament_lint_common/environment/path.dsv
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint_common/share/ament_lint_common/local_setup.bash
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint_common/share/ament_lint_common/local_setup.sh
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint_common/share/ament_lint_common/local_setup.zsh
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint_common/share/ament_lint_common/local_setup.dsv
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint_common/share/ament_lint_common/package.dsv
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint_common/share/ament_index/resource_index/packages/ament_lint_common
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint_common/share/ament_lint_common/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint_common/share/ament_lint_common/cmake/ament_lint_commonConfig.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint_common/share/ament_lint_common/cmake/ament_lint_commonConfig-version.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint_common/share/ament_lint_common/package.xml

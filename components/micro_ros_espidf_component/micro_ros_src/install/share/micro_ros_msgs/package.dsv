@@ -1,0 +1,17 @@
+source;share/micro_ros_msgs/hook/cmake_prefix_path.ps1
+source;share/micro_ros_msgs/hook/cmake_prefix_path.dsv
+source;share/micro_ros_msgs/hook/cmake_prefix_path.sh
+source;share/micro_ros_msgs/hook/path.ps1
+source;share/micro_ros_msgs/hook/path.dsv
+source;share/micro_ros_msgs/hook/path.sh
+source;share/micro_ros_msgs/hook/pythonpath.ps1
+source;share/micro_ros_msgs/hook/pythonpath.dsv
+source;share/micro_ros_msgs/hook/pythonpath.sh
+source;share/micro_ros_msgs/hook/pythonscriptspath.ps1
+source;share/micro_ros_msgs/hook/pythonscriptspath.dsv
+source;share/micro_ros_msgs/hook/pythonscriptspath.sh
+source;share/micro_ros_msgs/local_setup.bash
+source;share/micro_ros_msgs/local_setup.dsv
+source;share/micro_ros_msgs/local_setup.ps1
+source;share/micro_ros_msgs/local_setup.sh
+source;share/micro_ros_msgs/local_setup.zsh

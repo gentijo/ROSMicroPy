@@ -1,0 +1,138 @@
+Not searching for unused variables given on the command line.
+-- The C compiler identification is GNU 12.2.0
+-- The CXX compiler identification is GNU 12.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /opt/esp/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/xtensa-esp32s3-elf-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /opt/esp/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/xtensa-esp32s3-elf-g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake_ros: 0.10.0 (/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_cmake_ros/share/ament_cmake_ros/cmake)
+-- Found Python3: /opt/esp/python_env/idf5.1_py3.8_env/bin/python3 (found version "3.8.10") found components: Interpreter 
+-- Found rcutils: 5.1.5 (/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rcutils/cmake)
+-- Found rosidl_runtime_c: 3.1.5 (/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_runtime_c/cmake)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rmw
+make[1]: Entering directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rmw'
+make[2]: Entering directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rmw'
+make[3]: Entering directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rmw'
+make[3]: Leaving directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rmw'
+make[3]: Entering directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rmw'
+[  8%] Building C object CMakeFiles/rmw.dir/src/convert_rcutils_ret_to_rmw_ret.c.obj
+[ 13%] Building C object CMakeFiles/rmw.dir/src/event.c.obj
+[ 13%] Building C object CMakeFiles/rmw.dir/src/allocators.c.obj
+[ 17%] Building C object CMakeFiles/rmw.dir/src/init_options.c.obj
+[ 21%] Building C object CMakeFiles/rmw.dir/src/init.c.obj
+[ 26%] Building C object CMakeFiles/rmw.dir/src/names_and_types.c.obj
+[ 30%] Building C object CMakeFiles/rmw.dir/src/network_flow_endpoint.c.obj
+[ 39%] Building C object CMakeFiles/rmw.dir/src/qos_string_conversions.c.obj
+[ 39%] Building C object CMakeFiles/rmw.dir/src/network_flow_endpoint_array.c.obj
+[ 43%] Building C object CMakeFiles/rmw.dir/src/message_sequence.c.obj
+[ 47%] Building C object CMakeFiles/rmw.dir/src/publisher_options.c.obj
+[ 52%] Building C object CMakeFiles/rmw.dir/src/sanity_checks.c.obj
+[ 56%] Building C object CMakeFiles/rmw.dir/src/security_options.c.obj
+[ 60%] Building C object CMakeFiles/rmw.dir/src/subscription_content_filter_options.c.obj
+[ 65%] Building C object CMakeFiles/rmw.dir/src/subscription_options.c.obj
+[ 69%] Building C object CMakeFiles/rmw.dir/src/time.c.obj
+[ 73%] Building C object CMakeFiles/rmw.dir/src/topic_endpoint_info_array.c.obj
+[ 78%] Building C object CMakeFiles/rmw.dir/src/topic_endpoint_info.c.obj
+[ 86%] Building C object CMakeFiles/rmw.dir/src/types.c.obj
+[ 86%] Building C object CMakeFiles/rmw.dir/src/validate_full_topic_name.c.obj
+[ 91%] Building C object CMakeFiles/rmw.dir/src/validate_namespace.c.obj
+[ 95%] Building C object CMakeFiles/rmw.dir/src/validate_node_name.c.obj
+[100%] Linking C static library librmw.a
+make[3]: Leaving directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rmw'
+[100%] Built target rmw
+make[2]: Leaving directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rmw'
+make[1]: Leaving directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rmw'
+-- Install configuration: "Release"
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw/environment/library_path.sh
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw/environment/library_path.dsv
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/ament_index/resource_index/package_run_dependencies/rmw
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/ament_index/resource_index/parent_prefix_path/rmw
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw/environment/ament_prefix_path.sh
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw/environment/ament_prefix_path.dsv
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw/environment/path.sh
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw/environment/path.dsv
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw/local_setup.bash
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw/local_setup.sh
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw/local_setup.zsh
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw/local_setup.dsv
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw/package.dsv
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/ament_index/resource_index/packages/rmw
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw/cmake/rmwExport.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw/cmake/rmwExport-release.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw/cmake/rmw-extras.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw/cmake/ament_cmake_export_libraries-extras.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw/cmake/ament_cmake_export_targets-extras.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw/cmake/rmwConfig.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw/cmake/rmwConfig-version.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw/package.xml
+-- Up-to-date: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw/cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw/cmake/get_rmw_typesupport.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw/cmake/register_rmw_implementation.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw/cmake/configure_rmw_library.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/get_service_names_and_types.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/ret_types.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/get_network_flow_endpoints.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/convert_rcutils_ret_to_rmw_ret.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/types.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/network_flow_endpoint_array.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/validate_namespace.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/validate_full_topic_name.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/get_topic_names_and_types.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/event.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/incompatible_qos_events_statuses.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/localhost.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/names_and_types.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/get_topic_endpoint_info.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/features.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/security_options.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/init_options.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/macros.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/publisher_options.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/qos_string_conversions.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/get_node_info_and_types.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/domain_id.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/message_sequence.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/sanity_checks.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/qos_profiles.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/topic_endpoint_info.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/subscription_options.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/rmw.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/init.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/network_flow_endpoint.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/event_callback_type.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/visibility_control.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/subscription_content_filter_options.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/qos_policy_kind.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/impl
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/impl/config.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/impl/cpp
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/impl/cpp/macros.hpp
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/impl/cpp/key_value.hpp
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/impl/cpp/demangle.hpp
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/error_handling.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/validate_node_name.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/allocators.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/events_statuses
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/events_statuses/liveliness_changed.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/events_statuses/offered_deadline_missed.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/events_statuses/liveliness_lost.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/events_statuses/events_statuses.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/events_statuses/message_lost.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/events_statuses/incompatible_qos.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/events_statuses/requested_deadline_missed.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/time.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/serialized_message.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/rmw/rmw/topic_endpoint_info_array.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/librmw.a

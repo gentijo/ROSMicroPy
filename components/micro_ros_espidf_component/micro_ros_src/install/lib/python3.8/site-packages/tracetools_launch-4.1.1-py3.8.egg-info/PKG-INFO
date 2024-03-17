@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: tracetools_launch
+Version: 4.1.1
+Summary: Launch integration for tracing.
+Home-page: https://gitlab.com/ros-tracing/ros2_tracing
+Author: Christophe Bedard
+Author-email: fixed-term.christophe.bourquebedard@de.bosch.com
+Maintainer: Christophe Bedard, Ingo Luetkebohle
+Maintainer-email: bedard.christophe@gmail.com, ingo.luetkebohle@de.bosch.com
+License: Apache 2.0
+Requires-Dist: setuptools
+
+This package provides a trace action to launch tracing through a launch file.

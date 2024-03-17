@@ -1,0 +1,14 @@
+source;share/ament_index_python/hook/path.ps1
+source;share/ament_index_python/hook/path.dsv
+source;share/ament_index_python/hook/path.sh
+source;share/ament_index_python/hook/pythonpath.ps1
+source;share/ament_index_python/hook/pythonpath.dsv
+source;share/ament_index_python/hook/pythonpath.sh
+source;share/ament_index_python/hook/pythonscriptspath.ps1
+source;share/ament_index_python/hook/pythonscriptspath.dsv
+source;share/ament_index_python/hook/pythonscriptspath.sh
+source;share/ament_index_python/hook/ament_prefix_path.ps1
+source;share/ament_index_python/hook/ament_prefix_path.dsv
+source;share/ament_index_python/hook/ament_prefix_path.sh
+source;share/ament_index_python/environment/ament_index-argcomplete.bash
+source;share/ament_index_python/environment/ament_index-argcomplete.zsh

@@ -1,0 +1,12 @@
+source;share/microcdr/hook/cmake_prefix_path.ps1
+source;share/microcdr/hook/cmake_prefix_path.dsv
+source;share/microcdr/hook/cmake_prefix_path.sh
+source;share/microcdr/hook/path.ps1
+source;share/microcdr/hook/path.dsv
+source;share/microcdr/hook/path.sh
+source;share/microcdr/hook/pythonpath.ps1
+source;share/microcdr/hook/pythonpath.dsv
+source;share/microcdr/hook/pythonpath.sh
+source;share/microcdr/hook/pythonscriptspath.ps1
+source;share/microcdr/hook/pythonscriptspath.dsv
+source;share/microcdr/hook/pythonscriptspath.sh

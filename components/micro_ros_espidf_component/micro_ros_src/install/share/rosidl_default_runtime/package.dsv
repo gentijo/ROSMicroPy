@@ -1,0 +1,17 @@
+source;share/rosidl_default_runtime/hook/cmake_prefix_path.ps1
+source;share/rosidl_default_runtime/hook/cmake_prefix_path.dsv
+source;share/rosidl_default_runtime/hook/cmake_prefix_path.sh
+source;share/rosidl_default_runtime/hook/path.ps1
+source;share/rosidl_default_runtime/hook/path.dsv
+source;share/rosidl_default_runtime/hook/path.sh
+source;share/rosidl_default_runtime/hook/pythonpath.ps1
+source;share/rosidl_default_runtime/hook/pythonpath.dsv
+source;share/rosidl_default_runtime/hook/pythonpath.sh
+source;share/rosidl_default_runtime/hook/pythonscriptspath.ps1
+source;share/rosidl_default_runtime/hook/pythonscriptspath.dsv
+source;share/rosidl_default_runtime/hook/pythonscriptspath.sh
+source;share/rosidl_default_runtime/local_setup.bash
+source;share/rosidl_default_runtime/local_setup.dsv
+source;share/rosidl_default_runtime/local_setup.ps1
+source;share/rosidl_default_runtime/local_setup.sh
+source;share/rosidl_default_runtime/local_setup.zsh

@@ -1,0 +1,92 @@
+CMake Warning at /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rcutils/cmake/ament_cmake_export_libraries-extras.cmake:116 (message):
+  Package 'rcutils' exports library 'dl' which couldn't be found
+Call Stack (most recent call first):
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rcutils/cmake/rcutilsConfig.cmake:41 (include)
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_runtime_c/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_runtime_c/cmake/rosidl_runtime_cConfig.cmake:41 (include)
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/builtin_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/builtin_interfaces/cmake/builtin_interfacesConfig.cmake:41 (include)
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rcl_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rcl_interfaces/cmake/rcl_interfacesConfig.cmake:41 (include)
+  CMakeLists.txt:10 (find_package)
+
+
+In file included from /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/domain_id.c:17:
+/opt/esp/idf/components/newlib/platform_include/errno.h:10:2: warning: #include_next is a GCC extension
+   10 | #include_next "errno.h"
+      |  ^~~~~~~~~~~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/graph.c: In function '__validate_node_name_and_namespace':
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/graph.c:56:18: warning: unused variable 'msg' [-Wunused-variable]
+   56 |     const char * msg = rmw_namespace_validation_result_string(validation_result);
+      |                  ^~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/graph.c:68:18: warning: unused variable 'msg' [-Wunused-variable]
+   68 |     const char * msg = rmw_node_name_validation_result_string(validation_result);
+      |                  ^~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/graph.c: In function '_rcl_wait_for_entities':
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/graph.c:524:28: warning: unused variable 'error' [-Wunused-variable]
+  524 |     rcutils_error_string_t error = rcutils_get_error_string();
+      |                            ^~~~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/graph.c:558:32: warning: unused variable 'error' [-Wunused-variable]
+  558 |         rcutils_error_string_t error = rcutils_get_error_string();
+      |                                ^~~~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/graph.c: In function '__rcl_get_info_by_topic':
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/graph.c:657:22: warning: variable 'error_string' set but not used [-Wunused-but-set-variable]
+  657 |   rmw_error_string_t error_string;
+      |                      ^~~~~~~~~~~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/node.c: In function 'rcl_node_init':
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/node.c:166:18: warning: unused variable 'msg' [-Wunused-variable]
+  166 |     const char * msg = rmw_node_name_validation_result_string(validation_result);
+      |                  ^~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/node.c:198:18: warning: unused variable 'msg' [-Wunused-variable]
+  198 |     const char * msg = rmw_namespace_validation_result_string(validation_result);
+      |                  ^~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/init_options.c: In function 'rcl_init_options_copy':
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/init_options.c:108:24: warning: unused variable 'error_string' [-Wunused-variable]
+  108 |     rmw_error_string_t error_string = rmw_get_error_string();
+      |                        ^~~~~~~~~~~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/network_flow_endpoints.c: In function '__validate_network_flow_endpoint_array':
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/network_flow_endpoints.c:43:22: warning: variable 'error_string' set but not used [-Wunused-but-set-variable]
+   43 |   rmw_error_string_t error_string;
+      |                      ^~~~~~~~~~~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/network_flow_endpoints.c: In function 'rcl_publisher_get_network_flow_endpoints':
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/network_flow_endpoints.c:75:22: warning: variable 'error_string' set but not used [-Wunused-but-set-variable]
+   75 |   rmw_error_string_t error_string;
+      |                      ^~~~~~~~~~~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/network_flow_endpoints.c: In function 'rcl_subscription_get_network_flow_endpoints':
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/network_flow_endpoints.c:106:22: warning: variable 'error_string' set but not used [-Wunused-but-set-variable]
+  106 |   rmw_error_string_t error_string;
+      |                      ^~~~~~~~~~~~
+In file included from /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/validate_topic_name.c:22:
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/validate_topic_name.c: In function 'rcl_validate_topic_name_with_size':
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/validate_topic_name.c:58:25: warning: array subscript has type 'char' [-Wchar-subscripts]
+   58 |   if (isdigit(topic_name[0]) != 0) {
+      |               ~~~~~~~~~~^~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/validate_topic_name.c:84:27: warning: array subscript has type 'char' [-Wchar-subscripts]
+   84 |         isdigit(topic_name[i]) != 0 &&
+      |                 ~~~~~~~~~~^~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/validate_topic_name.c:179:29: warning: array subscript has type 'char' [-Wchar-subscripts]
+  179 |       if (isdigit(topic_name[i + 1]) != 0) {
+      |                   ~~~~~~~~~~^~~~~~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/node_resolve_name.c: In function 'rcl_resolve_name':
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/node_resolve_name.c:49:28: warning: unused variable 'error' [-Wunused-variable]
+   49 |     rcutils_error_string_t error = rcutils_get_error_string();
+      |                            ^~~~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/node_resolve_name.c:97:18: warning: unused variable 'error' [-Wunused-variable]
+   97 |     const char * error = rmw_get_error_string().str;
+      |                  ^~~~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/node_resolve_name.c:114:28: warning: unused variable 'error' [-Wunused-variable]
+  114 |     rcutils_error_string_t error = rcutils_get_error_string();
+      |                            ^~~~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/node_resolve_name.c:33:27: warning: unused parameter 'local_args' [-Wunused-parameter]
+   33 |   const rcl_arguments_t * local_args,
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/node_resolve_name.c:34:27: warning: unused parameter 'global_args' [-Wunused-parameter]
+   34 |   const rcl_arguments_t * global_args,
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/node_resolve_name.c:40:8: warning: unused parameter 'only_expand' [-Wunused-parameter]
+   40 |   bool only_expand,
+      |        ^
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/rmw_implementation_identifier_check.c: In function 'rcl_rmw_implementation_identifier_check':
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl/src/rcl/rmw_implementation_identifier_check.c:136:34: warning: unused variable 'rmw_error_msg' [-Wunused-variable]
+  136 |     const rcutils_error_string_t rmw_error_msg = rcl_get_error_string();
+      |                                  ^~~~~~~~~~~~~

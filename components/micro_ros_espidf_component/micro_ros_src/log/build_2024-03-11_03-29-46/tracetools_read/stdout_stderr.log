@@ -1,0 +1,43 @@
+running egg_info
+creating ../../../build/tracetools_read/tracetools_read.egg-info
+writing ../../../build/tracetools_read/tracetools_read.egg-info/PKG-INFO
+writing dependency_links to ../../../build/tracetools_read/tracetools_read.egg-info/dependency_links.txt
+writing requirements to ../../../build/tracetools_read/tracetools_read.egg-info/requires.txt
+writing top-level names to ../../../build/tracetools_read/tracetools_read.egg-info/top_level.txt
+writing manifest file '../../../build/tracetools_read/tracetools_read.egg-info/SOURCES.txt'
+reading manifest file '../../../build/tracetools_read/tracetools_read.egg-info/SOURCES.txt'
+writing manifest file '../../../build/tracetools_read/tracetools_read.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/tracetools_read/build
+creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/tracetools_read/build/lib
+creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/tracetools_read/build/lib/tracetools_read
+copying tracetools_read/__init__.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/tracetools_read/build/lib/tracetools_read
+copying tracetools_read/trace.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/tracetools_read/build/lib/tracetools_read
+running install
+running install_lib
+creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/tracetools_read
+copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/tracetools_read/build/lib/tracetools_read/__init__.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/tracetools_read
+copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/tracetools_read/build/lib/tracetools_read/trace.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/tracetools_read
+byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/tracetools_read/__init__.py to __init__.cpython-38.pyc
+byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/tracetools_read/trace.py to trace.cpython-38.pyc
+running install_data
+copying package.xml -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/tracetools_read
+copying resource/tracetools_read -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/ament_index/resource_index/packages
+running install_egg_info
+Copying ../../../build/tracetools_read/tracetools_read.egg-info to /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/tracetools_read-4.1.1-py3.8.egg-info
+running install_scripts
+writing list of installed files to '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/tracetools_read/install.log'
+/opt/esp/python_env/idf5.1_py3.8_env/lib/python3.8/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+!!
+
+        ********************************************************************************
+        Please avoid running ``setup.py`` directly.
+        Instead, use pypa/build, pypa/installer or other
+        standards-based tools.
+
+        See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+        ********************************************************************************
+
+!!
+  self.initialize_options()

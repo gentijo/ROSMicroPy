@@ -1,0 +1,16 @@
+package.xml
+setup.py
+../../../build/ament_clang_format/ament_clang_format.egg-info/PKG-INFO
+../../../build/ament_clang_format/ament_clang_format.egg-info/SOURCES.txt
+../../../build/ament_clang_format/ament_clang_format.egg-info/dependency_links.txt
+../../../build/ament_clang_format/ament_clang_format.egg-info/entry_points.txt
+../../../build/ament_clang_format/ament_clang_format.egg-info/not-zip-safe
+../../../build/ament_clang_format/ament_clang_format.egg-info/requires.txt
+../../../build/ament_clang_format/ament_clang_format.egg-info/top_level.txt
+ament_clang_format/__init__.py
+ament_clang_format/main.py
+ament_clang_format/configuration/.clang-format
+resource/ament_clang_format
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py

@@ -1,0 +1,12 @@
+source;share/ament_copyright/hook/path.ps1
+source;share/ament_copyright/hook/path.dsv
+source;share/ament_copyright/hook/path.sh
+source;share/ament_copyright/hook/pythonpath.ps1
+source;share/ament_copyright/hook/pythonpath.dsv
+source;share/ament_copyright/hook/pythonpath.sh
+source;share/ament_copyright/hook/pythonscriptspath.ps1
+source;share/ament_copyright/hook/pythonscriptspath.dsv
+source;share/ament_copyright/hook/pythonscriptspath.sh
+source;share/ament_copyright/hook/ament_prefix_path.ps1
+source;share/ament_copyright/hook/ament_prefix_path.dsv
+source;share/ament_copyright/hook/ament_prefix_path.sh

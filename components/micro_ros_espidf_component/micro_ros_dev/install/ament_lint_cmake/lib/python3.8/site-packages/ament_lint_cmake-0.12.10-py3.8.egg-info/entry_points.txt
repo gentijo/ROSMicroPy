@@ -1,0 +1,2 @@
+[console_scripts]
+ament_lint_cmake = ament_lint_cmake.main:main

@@ -1,0 +1,12 @@
+source;share/microxrcedds_client/hook/cmake_prefix_path.ps1
+source;share/microxrcedds_client/hook/cmake_prefix_path.dsv
+source;share/microxrcedds_client/hook/cmake_prefix_path.sh
+source;share/microxrcedds_client/hook/path.ps1
+source;share/microxrcedds_client/hook/path.dsv
+source;share/microxrcedds_client/hook/path.sh
+source;share/microxrcedds_client/hook/pythonpath.ps1
+source;share/microxrcedds_client/hook/pythonpath.dsv
+source;share/microxrcedds_client/hook/pythonpath.sh
+source;share/microxrcedds_client/hook/pythonscriptspath.ps1
+source;share/microxrcedds_client/hook/pythonscriptspath.dsv
+source;share/microxrcedds_client/hook/pythonscriptspath.sh

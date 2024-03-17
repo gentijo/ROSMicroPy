@@ -1,0 +1,48 @@
+[1.632s] Invoking command in '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/ros2_tracing/tracetools_test': AMENT_PREFIX_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install:${CMAKE_PREFIX_PATH} PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/bin:${PATH} PYTHONPATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/tracetools_test/prefix_override:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages:${PYTHONPATH} X_CFLAGS=-mlongcalls X_CXXFLAGS=-mlongcalls /opt/esp/python_env/idf5.1_py3.8_env/bin/python setup.py egg_info --egg-base ../../../build/tracetools_test build --build-base /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/tracetools_test/build install --record /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/tracetools_test/install.log --single-version-externally-managed
+[2.047s] running egg_info
+[2.047s] creating ../../../build/tracetools_test/tracetools_test.egg-info
+[2.047s] writing ../../../build/tracetools_test/tracetools_test.egg-info/PKG-INFO
+[2.048s] writing dependency_links to ../../../build/tracetools_test/tracetools_test.egg-info/dependency_links.txt
+[2.048s] writing requirements to ../../../build/tracetools_test/tracetools_test.egg-info/requires.txt
+[2.048s] writing top-level names to ../../../build/tracetools_test/tracetools_test.egg-info/top_level.txt
+[2.048s] writing manifest file '../../../build/tracetools_test/tracetools_test.egg-info/SOURCES.txt'
+[2.049s] reading manifest file '../../../build/tracetools_test/tracetools_test.egg-info/SOURCES.txt'
+[2.049s] writing manifest file '../../../build/tracetools_test/tracetools_test.egg-info/SOURCES.txt'
+[2.049s] running build
+[2.049s] running build_py
+[2.049s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/tracetools_test/build
+[2.049s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/tracetools_test/build/lib
+[2.049s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/tracetools_test/build/lib/tracetools_test
+[2.049s] copying tracetools_test/case.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/tracetools_test/build/lib/tracetools_test
+[2.049s] copying tracetools_test/__init__.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/tracetools_test/build/lib/tracetools_test
+[2.049s] copying tracetools_test/utils.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/tracetools_test/build/lib/tracetools_test
+[2.049s] running install
+[2.049s] running install_lib
+[2.049s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/tracetools_test
+[2.049s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/tracetools_test/build/lib/tracetools_test/case.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/tracetools_test
+[2.049s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/tracetools_test/build/lib/tracetools_test/__init__.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/tracetools_test
+[2.049s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/tracetools_test/build/lib/tracetools_test/utils.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/tracetools_test
+[2.049s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/tracetools_test/case.py to case.cpython-38.pyc
+[2.049s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/tracetools_test/__init__.py to __init__.cpython-38.pyc
+[2.050s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/tracetools_test/utils.py to utils.cpython-38.pyc
+[2.050s] running install_data
+[2.050s] copying package.xml -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/tracetools_test
+[2.050s] copying resource/tracetools_test -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/ament_index/resource_index/packages
+[2.050s] running install_egg_info
+[2.050s] Copying ../../../build/tracetools_test/tracetools_test.egg-info to /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/tracetools_test-4.1.1-py3.8.egg-info
+[2.050s] running install_scripts
+[2.050s] writing list of installed files to '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/tracetools_test/install.log'
+[2.050s] /opt/esp/python_env/idf5.1_py3.8_env/lib/python3.8/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+[2.050s] !!
+[2.050s] 
+[2.050s]         ********************************************************************************
+[2.050s]         Please avoid running ``setup.py`` directly.
+[2.050s]         Instead, use pypa/build, pypa/installer or other
+[2.050s]         standards-based tools.
+[2.050s] 
+[2.050s]         See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+[2.050s]         ********************************************************************************
+[2.050s] 
+[2.050s] !!
+[2.051s]   self.initialize_options()
+[2.332s] Invoked command in '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/ros2_tracing/tracetools_test' returned '0': AMENT_PREFIX_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install:${CMAKE_PREFIX_PATH} PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/bin:${PATH} PYTHONPATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/tracetools_test/prefix_override:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages:${PYTHONPATH} X_CFLAGS=-mlongcalls X_CXXFLAGS=-mlongcalls /opt/esp/python_env/idf5.1_py3.8_env/bin/python setup.py egg_info --egg-base ../../../build/tracetools_test build --build-base /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/tracetools_test/build install --record /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/tracetools_test/install.log --single-version-externally-managed

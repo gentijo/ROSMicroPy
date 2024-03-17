@@ -1,0 +1,19 @@
+[ament_copyright.copyright_name]
+osrf = ament_copyright.copyright_names:osrf
+
+[ament_copyright.license]
+apache2 = ament_copyright.licenses:apache2
+boost1 = ament_copyright.licenses:boost1
+bsd2 = ament_copyright.licenses:bsd2
+bsd_2clause = ament_copyright.licenses:bsd_2clause
+bsd_3clause = ament_copyright.licenses:bsd_3clause
+gplv3 = ament_copyright.licenses:gplv3
+lgplv3 = ament_copyright.licenses:lgplv3
+mit = ament_copyright.licenses:mit
+mit0 = ament_copyright.licenses:mit0
+
+[console_scripts]
+ament_copyright = ament_copyright.main:main
+
+[pytest11]
+ament_copyright = ament_copyright.pytest_marker

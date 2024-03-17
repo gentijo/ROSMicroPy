@@ -1,0 +1,1 @@
+lifecycle_msgs;rclcpp;rclcpp_lifecycle;std_msgs;std_srvs;ament_cmake_gtest;ament_cmake_mypy;ament_cmake_pytest;ament_lint_auto;ament_lint_common;python3-pytest;python3-pytest-cov;tracetools;tracetools_test

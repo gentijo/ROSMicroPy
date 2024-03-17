@@ -1,0 +1,4 @@
+[rosidl_cli.command.translate.extensions]
+action2idl = rosidl_adapter.cli:TranslateActionToIDL
+msg2idl = rosidl_adapter.cli:TranslateMsgToIDL
+srv2idl = rosidl_adapter.cli:TranslateSrvToIDL

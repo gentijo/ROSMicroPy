@@ -1,0 +1,9 @@
+setup.cfg
+setup.py
+rosidl_generator_c/__init__.py
+rosidl_generator_c/cli.py
+rosidl_generator_c.egg-info/PKG-INFO
+rosidl_generator_c.egg-info/SOURCES.txt
+rosidl_generator_c.egg-info/dependency_links.txt
+rosidl_generator_c.egg-info/entry_points.txt
+rosidl_generator_c.egg-info/top_level.txt

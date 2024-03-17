@@ -1,0 +1,50 @@
+[0.635s] Invoking command in '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/src/ament_lint/ament_pyflakes': AMENT_PREFIX_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pycodestyle PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pycodestyle/bin:${PATH} PYTHONPATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_pyflakes/prefix_override:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pyflakes/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pycodestyle/lib/python3.8/site-packages X_CFLAGS=-mlongcalls X_CXXFLAGS=-mlongcalls /opt/esp/python_env/idf5.1_py3.8_env/bin/python setup.py egg_info --egg-base ../../../build/ament_pyflakes build --build-base /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_pyflakes/build install --record /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_pyflakes/install.log --single-version-externally-managed
+[1.221s] running egg_info
+[1.221s] creating ../../../build/ament_pyflakes/ament_pyflakes.egg-info
+[1.221s] writing ../../../build/ament_pyflakes/ament_pyflakes.egg-info/PKG-INFO
+[1.221s] writing dependency_links to ../../../build/ament_pyflakes/ament_pyflakes.egg-info/dependency_links.txt
+[1.221s] writing entry points to ../../../build/ament_pyflakes/ament_pyflakes.egg-info/entry_points.txt
+[1.221s] writing requirements to ../../../build/ament_pyflakes/ament_pyflakes.egg-info/requires.txt
+[1.221s] writing top-level names to ../../../build/ament_pyflakes/ament_pyflakes.egg-info/top_level.txt
+[1.222s] writing manifest file '../../../build/ament_pyflakes/ament_pyflakes.egg-info/SOURCES.txt'
+[1.222s] reading manifest file '../../../build/ament_pyflakes/ament_pyflakes.egg-info/SOURCES.txt'
+[1.222s] writing manifest file '../../../build/ament_pyflakes/ament_pyflakes.egg-info/SOURCES.txt'
+[1.222s] running build
+[1.222s] running build_py
+[1.222s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_pyflakes/build
+[1.222s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_pyflakes/build/lib
+[1.222s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_pyflakes/build/lib/ament_pyflakes
+[1.222s] copying ament_pyflakes/__init__.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_pyflakes/build/lib/ament_pyflakes
+[1.222s] copying ament_pyflakes/main.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_pyflakes/build/lib/ament_pyflakes
+[1.222s] running install
+[1.222s] running install_lib
+[1.222s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pyflakes/lib/python3.8/site-packages/ament_pyflakes
+[1.222s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_pyflakes/build/lib/ament_pyflakes/__init__.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pyflakes/lib/python3.8/site-packages/ament_pyflakes
+[1.222s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_pyflakes/build/lib/ament_pyflakes/main.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pyflakes/lib/python3.8/site-packages/ament_pyflakes
+[1.222s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pyflakes/lib/python3.8/site-packages/ament_pyflakes/__init__.py to __init__.cpython-38.pyc
+[1.222s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pyflakes/lib/python3.8/site-packages/ament_pyflakes/main.py to main.cpython-38.pyc
+[1.222s] running install_data
+[1.222s] copying package.xml -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pyflakes/share/ament_pyflakes
+[1.222s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pyflakes/share/ament_index
+[1.222s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pyflakes/share/ament_index/resource_index
+[1.222s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pyflakes/share/ament_index/resource_index/packages
+[1.222s] copying resource/ament_pyflakes -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pyflakes/share/ament_index/resource_index/packages
+[1.222s] running install_egg_info
+[1.222s] Copying ../../../build/ament_pyflakes/ament_pyflakes.egg-info to /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pyflakes/lib/python3.8/site-packages/ament_pyflakes-0.12.10-py3.8.egg-info
+[1.222s] running install_scripts
+[1.223s] Installing ament_pyflakes script to /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pyflakes/bin
+[1.223s] writing list of installed files to '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_pyflakes/install.log'
+[1.223s] /opt/esp/python_env/idf5.1_py3.8_env/lib/python3.8/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+[1.223s] !!
+[1.223s] 
+[1.223s]         ********************************************************************************
+[1.223s]         Please avoid running ``setup.py`` directly.
+[1.223s]         Instead, use pypa/build, pypa/installer or other
+[1.223s]         standards-based tools.
+[1.223s] 
+[1.223s]         See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+[1.224s]         ********************************************************************************
+[1.224s] 
+[1.224s] !!
+[1.224s]   self.initialize_options()
+[1.435s] Invoked command in '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/src/ament_lint/ament_pyflakes' returned '0': AMENT_PREFIX_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pycodestyle PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pycodestyle/bin:${PATH} PYTHONPATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_pyflakes/prefix_override:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pyflakes/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pycodestyle/lib/python3.8/site-packages X_CFLAGS=-mlongcalls X_CXXFLAGS=-mlongcalls /opt/esp/python_env/idf5.1_py3.8_env/bin/python setup.py egg_info --egg-base ../../../build/ament_pyflakes build --build-base /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_pyflakes/build install --record /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_pyflakes/install.log --single-version-externally-managed

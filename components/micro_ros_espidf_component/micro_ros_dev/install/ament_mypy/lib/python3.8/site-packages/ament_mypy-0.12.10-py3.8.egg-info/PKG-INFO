@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: ament_mypy
+Version: 0.12.10
+Summary: Check Python static typing using mypy.
+Home-page: https://github.com/ament/ament_lint
+Download-URL: https://github.com/ament/ament_lint/releases
+Author: Ted Kern
+Author-email: ted.kern@canonical.com
+Maintainer: Michael Jeronimo, Michel Hidalgo
+Maintainer-email: michael.jeronimo@openrobotics.org, michel@ekumenlabs.com
+License: Apache License, Version 2.0
+Keywords: ROS
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development
+Requires-Dist: setuptools
+
+The ability to check code for user specified static typing with mypy.

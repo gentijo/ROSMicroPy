@@ -1,0 +1,12 @@
+source;share/ament_xmllint/hook/path.ps1
+source;share/ament_xmllint/hook/path.dsv
+source;share/ament_xmllint/hook/path.sh
+source;share/ament_xmllint/hook/pythonpath.ps1
+source;share/ament_xmllint/hook/pythonpath.dsv
+source;share/ament_xmllint/hook/pythonpath.sh
+source;share/ament_xmllint/hook/pythonscriptspath.ps1
+source;share/ament_xmllint/hook/pythonscriptspath.dsv
+source;share/ament_xmllint/hook/pythonscriptspath.sh
+source;share/ament_xmllint/hook/ament_prefix_path.ps1
+source;share/ament_xmllint/hook/ament_prefix_path.dsv
+source;share/ament_xmllint/hook/ament_prefix_path.sh

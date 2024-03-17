@@ -1,0 +1,33 @@
+[2.305s] Invoking command in '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/ros2_tracing/test_tracetools_launch': AMENT_PREFIX_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib:${LD_LIBRARY_PATH} PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/bin:${PATH} PYTHONPATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/test_tracetools_launch/prefix_override:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages:${PYTHONPATH} X_CFLAGS=-mlongcalls X_CXXFLAGS=-mlongcalls /opt/esp/python_env/idf5.1_py3.8_env/bin/python setup.py egg_info --egg-base ../../../build/test_tracetools_launch build --build-base /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/test_tracetools_launch/build install --record /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/test_tracetools_launch/install.log --single-version-externally-managed
+[2.704s] running egg_info
+[2.706s] creating ../../../build/test_tracetools_launch/test_tracetools_launch.egg-info
+[2.720s] writing ../../../build/test_tracetools_launch/test_tracetools_launch.egg-info/PKG-INFO
+[2.721s] writing dependency_links to ../../../build/test_tracetools_launch/test_tracetools_launch.egg-info/dependency_links.txt
+[2.722s] writing requirements to ../../../build/test_tracetools_launch/test_tracetools_launch.egg-info/requires.txt
+[2.722s] writing top-level names to ../../../build/test_tracetools_launch/test_tracetools_launch.egg-info/top_level.txt
+[2.723s] writing manifest file '../../../build/test_tracetools_launch/test_tracetools_launch.egg-info/SOURCES.txt'
+[2.739s] reading manifest file '../../../build/test_tracetools_launch/test_tracetools_launch.egg-info/SOURCES.txt'
+[2.740s] writing manifest file '../../../build/test_tracetools_launch/test_tracetools_launch.egg-info/SOURCES.txt'
+[2.741s] running build
+[2.741s] running install
+[2.753s] running install_data
+[2.770s] copying package.xml -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/test_tracetools_launch
+[2.770s] copying resource/test_tracetools_launch -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/ament_index/resource_index/packages
+[2.771s] running install_egg_info
+[2.806s] Copying ../../../build/test_tracetools_launch/test_tracetools_launch.egg-info to /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/test_tracetools_launch-4.1.1-py3.8.egg-info
+[2.808s] running install_scripts
+[2.968s] writing list of installed files to '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/test_tracetools_launch/install.log'
+[2.970s] /opt/esp/python_env/idf5.1_py3.8_env/lib/python3.8/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+[2.970s] !!
+[2.971s] 
+[2.971s]         ********************************************************************************
+[2.971s]         Please avoid running ``setup.py`` directly.
+[2.971s]         Instead, use pypa/build, pypa/installer or other
+[2.971s]         standards-based tools.
+[2.971s] 
+[2.971s]         See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+[2.971s]         ********************************************************************************
+[2.972s] 
+[2.972s] !!
+[2.972s]   self.initialize_options()
+[3.057s] Invoked command in '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/ros2_tracing/test_tracetools_launch' returned '0': AMENT_PREFIX_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib:${LD_LIBRARY_PATH} PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/bin:${PATH} PYTHONPATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/test_tracetools_launch/prefix_override:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages:${PYTHONPATH} X_CFLAGS=-mlongcalls X_CXXFLAGS=-mlongcalls /opt/esp/python_env/idf5.1_py3.8_env/bin/python setup.py egg_info --egg-base ../../../build/test_tracetools_launch build --build-base /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/test_tracetools_launch/build install --record /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/test_tracetools_launch/install.log --single-version-externally-managed

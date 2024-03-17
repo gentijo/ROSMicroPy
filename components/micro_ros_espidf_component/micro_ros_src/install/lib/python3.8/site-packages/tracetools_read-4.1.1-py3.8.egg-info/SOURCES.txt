@@ -1,0 +1,16 @@
+package.xml
+setup.cfg
+setup.py
+../../../build/tracetools_read/tracetools_read.egg-info/PKG-INFO
+../../../build/tracetools_read/tracetools_read.egg-info/SOURCES.txt
+../../../build/tracetools_read/tracetools_read.egg-info/dependency_links.txt
+../../../build/tracetools_read/tracetools_read.egg-info/requires.txt
+../../../build/tracetools_read/tracetools_read.egg-info/top_level.txt
+resource/tracetools_read
+test/test_copyright.py
+test/test_flake8.py
+test/test_mypy.py
+test/test_pep257.py
+test/test_xmllint.py
+tracetools_read/__init__.py
+tracetools_read/trace.py

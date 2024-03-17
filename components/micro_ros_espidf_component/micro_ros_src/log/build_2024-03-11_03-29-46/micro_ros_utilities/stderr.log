@@ -1,0 +1,23 @@
+CMake Warning at /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rcutils/cmake/ament_cmake_export_libraries-extras.cmake:116 (message):
+  Package 'rcutils' exports library 'dl' which couldn't be found
+Call Stack (most recent call first):
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rcutils/cmake/rcutilsConfig.cmake:41 (include)
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_runtime_c/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_runtime_c/cmake/rosidl_runtime_cConfig.cmake:41 (include)
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_introspection_c/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_typesupport_introspection_c/cmake/rosidl_typesupport_introspection_cConfig.cmake:41 (include)
+  CMakeLists.txt:18 (find_package)
+
+
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/micro_ros_utilities/src/type_utilities.c: In function 'print_type_info':
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/micro_ros_utilities/src/type_utilities.c:96:61: warning: format '%u' expects argument of type 'unsigned int', but argument 7 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+   96 |       buffer, sizeof(buffer), "%sIntrospection for %s/%s - %u members, %zu B\n",
+      |                                                            ~^
+      |                                                             |
+      |                                                             unsigned int
+      |                                                            %lu
+......
+  100 |       members->member_count_,
+      |       ~~~~~~~~~~~~~~~~~~~~~~                                 
+      |              |
+      |              uint32_t {aka long unsigned int}

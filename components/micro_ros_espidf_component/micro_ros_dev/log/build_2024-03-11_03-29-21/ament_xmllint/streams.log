@@ -1,0 +1,53 @@
+[2.963s] Invoking command in '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/src/ament_lint/ament_xmllint': AMENT_PREFIX_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_copyright:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pep257:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_copyright/bin:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pep257/bin:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/bin:${PATH} PYTHONPATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_xmllint/prefix_override:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_xmllint/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_copyright/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pep257/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint/lib/python3.8/site-packages X_CFLAGS=-mlongcalls X_CXXFLAGS=-mlongcalls /opt/esp/python_env/idf5.1_py3.8_env/bin/python setup.py egg_info --egg-base ../../../build/ament_xmllint build --build-base /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_xmllint/build install --record /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_xmllint/install.log --single-version-externally-managed
+[3.305s] running egg_info
+[3.305s] creating ../../../build/ament_xmllint/ament_xmllint.egg-info
+[3.311s] writing ../../../build/ament_xmllint/ament_xmllint.egg-info/PKG-INFO
+[3.312s] writing dependency_links to ../../../build/ament_xmllint/ament_xmllint.egg-info/dependency_links.txt
+[3.313s] writing entry points to ../../../build/ament_xmllint/ament_xmllint.egg-info/entry_points.txt
+[3.313s] writing requirements to ../../../build/ament_xmllint/ament_xmllint.egg-info/requires.txt
+[3.314s] writing top-level names to ../../../build/ament_xmllint/ament_xmllint.egg-info/top_level.txt
+[3.314s] writing manifest file '../../../build/ament_xmllint/ament_xmllint.egg-info/SOURCES.txt'
+[3.339s] reading manifest file '../../../build/ament_xmllint/ament_xmllint.egg-info/SOURCES.txt'
+[3.340s] writing manifest file '../../../build/ament_xmllint/ament_xmllint.egg-info/SOURCES.txt'
+[3.341s] running build
+[3.341s] running build_py
+[3.342s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_xmllint/build
+[3.342s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_xmllint/build/lib
+[3.342s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_xmllint/build/lib/ament_xmllint
+[3.342s] copying ament_xmllint/__init__.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_xmllint/build/lib/ament_xmllint
+[3.343s] copying ament_xmllint/main.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_xmllint/build/lib/ament_xmllint
+[3.343s] copying ament_xmllint/pytest_marker.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_xmllint/build/lib/ament_xmllint
+[3.344s] running install
+[3.377s] running install_lib
+[3.397s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_xmllint/lib/python3.8/site-packages/ament_xmllint
+[3.397s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_xmllint/build/lib/ament_xmllint/__init__.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_xmllint/lib/python3.8/site-packages/ament_xmllint
+[3.397s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_xmllint/build/lib/ament_xmllint/main.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_xmllint/lib/python3.8/site-packages/ament_xmllint
+[3.398s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_xmllint/build/lib/ament_xmllint/pytest_marker.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_xmllint/lib/python3.8/site-packages/ament_xmllint
+[3.398s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_xmllint/lib/python3.8/site-packages/ament_xmllint/__init__.py to __init__.cpython-38.pyc
+[3.398s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_xmllint/lib/python3.8/site-packages/ament_xmllint/main.py to main.cpython-38.pyc
+[3.398s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_xmllint/lib/python3.8/site-packages/ament_xmllint/pytest_marker.py to pytest_marker.cpython-38.pyc
+[3.398s] running install_data
+[3.402s] copying package.xml -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_xmllint/share/ament_xmllint
+[3.406s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_xmllint/share/ament_index
+[3.407s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_xmllint/share/ament_index/resource_index
+[3.407s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_xmllint/share/ament_index/resource_index/packages
+[3.407s] copying resource/ament_xmllint -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_xmllint/share/ament_index/resource_index/packages
+[3.407s] running install_egg_info
+[3.631s] Copying ../../../build/ament_xmllint/ament_xmllint.egg-info to /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_xmllint/lib/python3.8/site-packages/ament_xmllint-0.12.10-py3.8.egg-info
+[3.631s] running install_scripts
+[3.632s] Installing ament_xmllint script to /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_xmllint/bin
+[3.632s] writing list of installed files to '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_xmllint/install.log'
+[3.644s] /opt/esp/python_env/idf5.1_py3.8_env/lib/python3.8/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+[3.644s] !!
+[3.644s] 
+[3.644s]         ********************************************************************************
+[3.644s]         Please avoid running ``setup.py`` directly.
+[3.644s]         Instead, use pypa/build, pypa/installer or other
+[3.644s]         standards-based tools.
+[3.644s] 
+[3.644s]         See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+[3.644s]         ********************************************************************************
+[3.644s] 
+[3.644s] !!
+[3.644s]   self.initialize_options()
+[4.499s] Invoked command in '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/src/ament_lint/ament_xmllint' returned '0': AMENT_PREFIX_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_copyright:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pep257:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_copyright/bin:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pep257/bin:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/bin:${PATH} PYTHONPATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_xmllint/prefix_override:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_xmllint/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_copyright/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pep257/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint/lib/python3.8/site-packages X_CFLAGS=-mlongcalls X_CXXFLAGS=-mlongcalls /opt/esp/python_env/idf5.1_py3.8_env/bin/python setup.py egg_info --egg-base ../../../build/ament_xmllint build --build-base /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_xmllint/build install --record /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_xmllint/install.log --single-version-externally-managed

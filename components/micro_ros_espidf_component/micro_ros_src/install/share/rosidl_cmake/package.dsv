@@ -1,0 +1,17 @@
+source;share/rosidl_cmake/hook/cmake_prefix_path.ps1
+source;share/rosidl_cmake/hook/cmake_prefix_path.dsv
+source;share/rosidl_cmake/hook/cmake_prefix_path.sh
+source;share/rosidl_cmake/hook/path.ps1
+source;share/rosidl_cmake/hook/path.dsv
+source;share/rosidl_cmake/hook/path.sh
+source;share/rosidl_cmake/hook/pythonpath.ps1
+source;share/rosidl_cmake/hook/pythonpath.dsv
+source;share/rosidl_cmake/hook/pythonpath.sh
+source;share/rosidl_cmake/hook/pythonscriptspath.ps1
+source;share/rosidl_cmake/hook/pythonscriptspath.dsv
+source;share/rosidl_cmake/hook/pythonscriptspath.sh
+source;share/rosidl_cmake/local_setup.bash
+source;share/rosidl_cmake/local_setup.dsv
+source;share/rosidl_cmake/local_setup.ps1
+source;share/rosidl_cmake/local_setup.sh
+source;share/rosidl_cmake/local_setup.zsh

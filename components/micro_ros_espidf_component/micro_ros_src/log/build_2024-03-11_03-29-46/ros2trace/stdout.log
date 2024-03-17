@@ -1,0 +1,41 @@
+running egg_info
+creating ../../../build/ros2trace/ros2trace.egg-info
+writing ../../../build/ros2trace/ros2trace.egg-info/PKG-INFO
+writing dependency_links to ../../../build/ros2trace/ros2trace.egg-info/dependency_links.txt
+writing entry points to ../../../build/ros2trace/ros2trace.egg-info/entry_points.txt
+writing requirements to ../../../build/ros2trace/ros2trace.egg-info/requires.txt
+writing top-level names to ../../../build/ros2trace/ros2trace.egg-info/top_level.txt
+writing manifest file '../../../build/ros2trace/ros2trace.egg-info/SOURCES.txt'
+reading manifest file '../../../build/ros2trace/ros2trace.egg-info/SOURCES.txt'
+writing manifest file '../../../build/ros2trace/ros2trace.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/ros2trace/build
+creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/ros2trace/build/lib
+creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/ros2trace/build/lib/ros2trace
+copying ros2trace/__init__.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/ros2trace/build/lib/ros2trace
+creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/ros2trace/build/lib/ros2trace/api
+copying ros2trace/api/__init__.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/ros2trace/build/lib/ros2trace/api
+creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/ros2trace/build/lib/ros2trace/command
+copying ros2trace/command/__init__.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/ros2trace/build/lib/ros2trace/command
+copying ros2trace/command/trace.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/ros2trace/build/lib/ros2trace/command
+running install
+running install_lib
+creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/ros2trace
+copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/ros2trace/build/lib/ros2trace/__init__.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/ros2trace
+creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/ros2trace/api
+copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/ros2trace/build/lib/ros2trace/api/__init__.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/ros2trace/api
+creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/ros2trace/command
+copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/ros2trace/build/lib/ros2trace/command/__init__.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/ros2trace/command
+copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/ros2trace/build/lib/ros2trace/command/trace.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/ros2trace/command
+byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/ros2trace/__init__.py to __init__.cpython-38.pyc
+byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/ros2trace/api/__init__.py to __init__.cpython-38.pyc
+byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/ros2trace/command/__init__.py to __init__.cpython-38.pyc
+byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/ros2trace/command/trace.py to trace.cpython-38.pyc
+running install_data
+copying package.xml -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/ros2trace
+copying resource/ros2trace -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/ament_index/resource_index/packages
+running install_egg_info
+Copying ../../../build/ros2trace/ros2trace.egg-info to /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/ros2trace-4.1.1-py3.8.egg-info
+running install_scripts
+writing list of installed files to '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/ros2trace/install.log'

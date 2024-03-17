@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: ament_package
+Version: 0.14.0
+Summary: Ament is a build system for federated packages.
+Home-page: https://github.com/ament/ament_package/wiki
+Download-URL: https://github.com/ament/ament_package/releases
+Author: Dirk Thomas
+Author-email: dthomas@osrfoundation.org
+Maintainer: Audrow Nash
+Maintainer-email: audrow@openrobotics.org
+License: Apache License, Version 2.0
+Keywords: ROS
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development
+License-File: LICENSE
+
+Ament defines metainformation for packages, their dependencies,
+and provides tooling to build these federated packages together.

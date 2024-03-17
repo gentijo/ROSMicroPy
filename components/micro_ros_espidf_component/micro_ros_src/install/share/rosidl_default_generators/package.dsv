@@ -1,0 +1,17 @@
+source;share/rosidl_default_generators/hook/cmake_prefix_path.ps1
+source;share/rosidl_default_generators/hook/cmake_prefix_path.dsv
+source;share/rosidl_default_generators/hook/cmake_prefix_path.sh
+source;share/rosidl_default_generators/hook/path.ps1
+source;share/rosidl_default_generators/hook/path.dsv
+source;share/rosidl_default_generators/hook/path.sh
+source;share/rosidl_default_generators/hook/pythonpath.ps1
+source;share/rosidl_default_generators/hook/pythonpath.dsv
+source;share/rosidl_default_generators/hook/pythonpath.sh
+source;share/rosidl_default_generators/hook/pythonscriptspath.ps1
+source;share/rosidl_default_generators/hook/pythonscriptspath.dsv
+source;share/rosidl_default_generators/hook/pythonscriptspath.sh
+source;share/rosidl_default_generators/local_setup.bash
+source;share/rosidl_default_generators/local_setup.dsv
+source;share/rosidl_default_generators/local_setup.ps1
+source;share/rosidl_default_generators/local_setup.sh
+source;share/rosidl_default_generators/local_setup.zsh

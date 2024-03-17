@@ -1,0 +1,217 @@
+Not searching for unused variables given on the command line.
+-- The C compiler identification is GNU 12.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /opt/esp/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin/xtensa-esp32s3-elf-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/microxrcedds_client
+make[1]: Entering directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/microxrcedds_client'
+make[2]: Entering directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/microxrcedds_client'
+make[3]: Entering directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/microxrcedds_client'
+make[3]: Leaving directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/microxrcedds_client'
+make[3]: Entering directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/microxrcedds_client'
+[  3%] Building C object CMakeFiles/microxrcedds_client.dir/src/c/core/session/stream/input_best_effort_stream.c.obj
+[  6%] Building C object CMakeFiles/microxrcedds_client.dir/src/c/core/session/stream/input_reliable_stream.c.obj
+[ 10%] Building C object CMakeFiles/microxrcedds_client.dir/src/c/core/session/stream/output_best_effort_stream.c.obj
+[ 13%] Building C object CMakeFiles/microxrcedds_client.dir/src/c/core/session/stream/output_reliable_stream.c.obj
+[ 16%] Building C object CMakeFiles/microxrcedds_client.dir/src/c/core/session/stream/stream_storage.c.obj
+[ 20%] Building C object CMakeFiles/microxrcedds_client.dir/src/c/core/session/stream/seq_num.c.obj
+[ 23%] Building C object CMakeFiles/microxrcedds_client.dir/src/c/core/session/stream/stream_id.c.obj
+[ 26%] Building C object CMakeFiles/microxrcedds_client.dir/src/c/core/session/session.c.obj
+[ 33%] Building C object CMakeFiles/microxrcedds_client.dir/src/c/core/session/submessage.c.obj
+[ 33%] Building C object CMakeFiles/microxrcedds_client.dir/src/c/core/session/session_info.c.obj
+[ 36%] Building C object CMakeFiles/microxrcedds_client.dir/src/c/core/session/object_id.c.obj
+[ 40%] Building C object CMakeFiles/microxrcedds_client.dir/src/c/core/serialization/xrce_types.c.obj
+[ 43%] Building C object CMakeFiles/microxrcedds_client.dir/src/c/core/serialization/xrce_header.c.obj
+[ 46%] Building C object CMakeFiles/microxrcedds_client.dir/src/c/util/ping.c.obj
+[ 50%] Building C object CMakeFiles/microxrcedds_client.dir/src/c/core/serialization/xrce_subheader.c.obj
+[ 53%] Building C object CMakeFiles/microxrcedds_client.dir/src/c/util/time.c.obj
+[ 56%] Building C object CMakeFiles/microxrcedds_client.dir/src/c/core/session/create_entities_ref.c.obj
+[ 60%] Building C object CMakeFiles/microxrcedds_client.dir/src/c/core/session/create_entities_xml.c.obj
+[ 63%] Building C object CMakeFiles/microxrcedds_client.dir/src/c/core/session/common_create_entities.c.obj
+[ 66%] Building C object CMakeFiles/microxrcedds_client.dir/src/c/core/session/create_entities_bin.c.obj
+In file included from /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/Micro-XRCE-DDS-Client/src/c/util/time.c:3:
+/opt/esp/idf/components/newlib/platform_include/time.h:11:2: warning: #include_next is a GCC extension
+   11 | #include_next <time.h>
+      |  ^~~~~~~~~~~~
+[ 70%] Building C object CMakeFiles/microxrcedds_client.dir/src/c/core/session/read_access.c.obj
+[ 73%] Building C object CMakeFiles/microxrcedds_client.dir/src/c/profile/transport/stream_framing/stream_framing_protocol.c.obj
+[ 76%] Building C object CMakeFiles/microxrcedds_client.dir/src/c/core/session/write_access.c.obj
+[ 80%] Building C object CMakeFiles/microxrcedds_client.dir/src/c/profile/transport/ip/udp/udp_transport.c.obj
+[ 83%] Building C object CMakeFiles/microxrcedds_client.dir/src/c/profile/transport/ip/udp/udp_transport_posix_nopoll.c.obj
+[ 86%] Building C object CMakeFiles/microxrcedds_client.dir/src/c/profile/transport/ip/ip_posix.c.obj
+[ 90%] Building C object CMakeFiles/microxrcedds_client.dir/src/c/profile/discovery/transport/udp_transport_datagram_posix_nopoll.c.obj
+[ 93%] Building C object CMakeFiles/microxrcedds_client.dir/src/c/profile/discovery/discovery.c.obj
+[ 96%] Building C object CMakeFiles/microxrcedds_client.dir/src/c/profile/transport/custom/custom_transport.c.obj
+In file included from /opt/esp/idf/components/lwip/port/esp32xx/include/sys/socket.h:15,
+                 from /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/Micro-XRCE-DDS-Client/src/c/profile/transport/ip/udp/udp_transport_posix_nopoll.c:5:
+/opt/esp/idf/components/lwip/include/lwip/sockets.h:8:2: warning: #include_next is a GCC extension
+    8 | #include_next "lwip/sockets.h"
+      |  ^~~~~~~~~~~~
+In file included from /opt/esp/idf/components/lwip/port/esp32xx/include/sys/socket.h:15,
+                 from /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/Micro-XRCE-DDS-Client/src/c/profile/discovery/transport/udp_transport_datagram_posix_nopoll.c:4:
+/opt/esp/idf/components/lwip/include/lwip/sockets.h:8:2: warning: #include_next is a GCC extension
+    8 | #include_next "lwip/sockets.h"
+      |  ^~~~~~~~~~~~
+In file included from /opt/esp/idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:74,
+                 from /opt/esp/idf/components/freertos/FreeRTOS-Kernel/include/freertos/portable.h:59,
+                 from /opt/esp/idf/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h:71,
+                 from /opt/esp/idf/components/esp_system/include/esp_task.h:24,
+                 from /opt/esp/idf/components/lwip/port/include/lwipopts.h:20,
+                 from /opt/esp/idf/components/lwip/lwip/src/include/lwip/opt.h:51,
+                 from /opt/esp/idf/components/lwip/lwip/src/include/lwip/inet.h:43,
+                 from /opt/esp/idf/components/lwip/port/include/arpa/inet.h:10,
+                 from /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/Micro-XRCE-DDS-Client/src/c/profile/transport/ip/ip_posix.c:18:
+/opt/esp/idf/components/esp_hw_support/include/spinlock.h: In function 'spinlock_acquire':
+/opt/esp/idf/components/esp_hw_support/include/spinlock.h:117:94: warning: comparison of integer expressions of different signedness: 'esp_cpu_cycle_count_t' {aka 'long unsigned int'} and 'int32_t' {aka 'long int'} [-Wsign-compare]
+  117 |     } while ((timeout == SPINLOCK_WAIT_FOREVER) || (esp_cpu_get_cycle_count() - start_count) <= timeout);
+      |                                                                                              ^~
+In file included from /opt/esp/idf/components/lwip/port/esp32xx/include/arch/cc.h:12,
+                 from /opt/esp/idf/components/lwip/lwip/src/include/lwip/arch.h:48,
+                 from /opt/esp/idf/components/lwip/lwip/src/include/lwip/debug.h:40,
+                 from /opt/esp/idf/components/lwip/lwip/src/include/lwip/opt.h:52:
+/opt/esp/idf/components/newlib/platform_include/errno.h: At top level:
+/opt/esp/idf/components/newlib/platform_include/errno.h:10:2: warning: #include_next is a GCC extension
+   10 | #include_next "errno.h"
+      |  ^~~~~~~~~~~~
+In file included from /opt/esp/idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:74,
+                 from /opt/esp/idf/components/freertos/FreeRTOS-Kernel/include/freertos/portable.h:59,
+                 from /opt/esp/idf/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h:71,
+                 from /opt/esp/idf/components/esp_system/include/esp_task.h:24,
+                 from /opt/esp/idf/components/lwip/port/include/lwipopts.h:20,
+                 from /opt/esp/idf/components/lwip/lwip/src/include/lwip/opt.h:51,
+                 from /opt/esp/idf/components/lwip/lwip/src/include/lwip/sockets.h:42,
+                 from /opt/esp/idf/components/lwip/include/lwip/sockets.h:8:
+/opt/esp/idf/components/esp_hw_support/include/spinlock.h: In function 'spinlock_acquire':
+/opt/esp/idf/components/esp_hw_support/include/spinlock.h:117:94: warning: comparison of integer expressions of different signedness: 'esp_cpu_cycle_count_t' {aka 'long unsigned int'} and 'int32_t' {aka 'long int'} [-Wsign-compare]
+  117 |     } while ((timeout == SPINLOCK_WAIT_FOREVER) || (esp_cpu_get_cycle_count() - start_count) <= timeout);
+      |                                                                                              ^~
+In file included from /opt/esp/idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:74,
+                 from /opt/esp/idf/components/freertos/FreeRTOS-Kernel/include/freertos/portable.h:59,
+                 from /opt/esp/idf/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h:71,
+                 from /opt/esp/idf/components/esp_system/include/esp_task.h:24,
+                 from /opt/esp/idf/components/lwip/port/include/lwipopts.h:20,
+                 from /opt/esp/idf/components/lwip/lwip/src/include/lwip/opt.h:51,
+                 from /opt/esp/idf/components/lwip/lwip/src/include/lwip/sockets.h:42,
+                 from /opt/esp/idf/components/lwip/include/lwip/sockets.h:8:
+/opt/esp/idf/components/esp_hw_support/include/spinlock.h: In function 'spinlock_acquire':
+/opt/esp/idf/components/esp_hw_support/include/spinlock.h:117:94: warning: comparison of integer expressions of different signedness: 'esp_cpu_cycle_count_t' {aka 'long unsigned int'} and 'int32_t' {aka 'long int'} [-Wsign-compare]
+  117 |     } while ((timeout == SPINLOCK_WAIT_FOREVER) || (esp_cpu_get_cycle_count() - start_count) <= timeout);
+      |                                                                                              ^~
+In file included from /opt/esp/idf/components/lwip/port/esp32xx/include/sys/socket.h:15,
+                 from /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/Micro-XRCE-DDS-Client/src/c/profile/transport/ip/ip_posix.c:20:
+/opt/esp/idf/components/lwip/include/lwip/sockets.h:8:2: warning: #include_next is a GCC extension
+    8 | #include_next "lwip/sockets.h"
+      |  ^~~~~~~~~~~~
+In file included from /opt/esp/idf/components/lwip/port/esp32xx/include/arch/cc.h:12,
+                 from /opt/esp/idf/components/lwip/lwip/src/include/lwip/arch.h:48,
+                 from /opt/esp/idf/components/lwip/lwip/src/include/lwip/debug.h:40,
+                 from /opt/esp/idf/components/lwip/lwip/src/include/lwip/opt.h:52:
+/opt/esp/idf/components/newlib/platform_include/errno.h: At top level:
+/opt/esp/idf/components/newlib/platform_include/errno.h:10:2: warning: #include_next is a GCC extension
+   10 | #include_next "errno.h"
+      |  ^~~~~~~~~~~~
+In file included from /opt/esp/idf/components/lwip/port/esp32xx/include/arch/cc.h:12,
+                 from /opt/esp/idf/components/lwip/lwip/src/include/lwip/arch.h:48,
+                 from /opt/esp/idf/components/lwip/lwip/src/include/lwip/debug.h:40,
+                 from /opt/esp/idf/components/lwip/lwip/src/include/lwip/opt.h:52:
+/opt/esp/idf/components/newlib/platform_include/errno.h: At top level:
+/opt/esp/idf/components/newlib/platform_include/errno.h:10:2: warning: #include_next is a GCC extension
+   10 | #include_next "errno.h"
+      |  ^~~~~~~~~~~~
+In file included from /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/Micro-XRCE-DDS-Client/src/c/profile/transport/ip/udp/udp_transport_posix_nopoll.c:6:
+/opt/esp/idf/components/newlib/platform_include/sys/time.h:21:2: warning: #include_next is a GCC extension
+   21 | #include_next <sys/time.h>
+      |  ^~~~~~~~~~~~
+In file included from /opt/esp/idf/components/lwip/port/include/netdb.h:14,
+                 from /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/Micro-XRCE-DDS-Client/src/c/profile/transport/ip/udp/udp_transport_posix_nopoll.c:7:
+/opt/esp/idf/components/lwip/include/lwip/netdb.h:9:2: warning: #include_next is a GCC extension
+    9 | #include_next "lwip/netdb.h"
+      |  ^~~~~~~~~~~~
+In file included from /opt/esp/idf/components/lwip/port/include/netdb.h:14,
+                 from /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/Micro-XRCE-DDS-Client/src/c/profile/discovery/transport/udp_transport_datagram_posix_nopoll.c:5:
+/opt/esp/idf/components/lwip/include/lwip/netdb.h:9:2: warning: #include_next is a GCC extension
+    9 | #include_next "lwip/netdb.h"
+      |  ^~~~~~~~~~~~
+[100%] Linking C static library libmicroxrcedds_client.a
+make[3]: Leaving directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/microxrcedds_client'
+[100%] Built target microxrcedds_client
+make[2]: Leaving directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/microxrcedds_client'
+make[1]: Leaving directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/microxrcedds_client'
+-- Install configuration: "Release"
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/libmicroxrcedds_client.a
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/visibility.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/discovery
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/discovery/discovery.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/transport
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/transport/stream_framing
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/transport/stream_framing/stream_framing_protocol.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/transport/serial
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/transport/serial/serial_transport.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/transport/serial/serial_transport_posix.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/transport/serial/serial_transport_rtems_bsd_net.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/transport/serial/serial_transport_platform.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/transport/can
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/transport/can/can_transport.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/transport/can/can_transport_posix.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/transport/custom
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/transport/custom/custom_transport.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/transport/ip
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/transport/ip/udp
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/transport/ip/udp/udp_transport_posix_nopoll.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/transport/ip/udp/udp_transport_posix.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/transport/ip/udp/udp_transport_freertos_plus_tcp.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/transport/ip/udp/udp_transport_rtems_bsd_net.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/transport/ip/udp/udp_transport_windows.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/transport/ip/udp/udp_transport.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/transport/ip/ip.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/transport/ip/tcp
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/transport/ip/tcp/tcp_transport.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/transport/ip/tcp/tcp_transport_rtems_bsd_net.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/transport/ip/tcp/tcp_transport_windows.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/transport/ip/tcp/tcp_transport_posix_nopoll.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/transport/ip/tcp/tcp_transport_freertos_plus_tcp.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/transport/ip/tcp/tcp_transport_posix.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/multithread
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/profile/multithread/multithread.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/defines.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/util
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/util/ping.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/util/time.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/client.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/core
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/core/session
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/core/session/session.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/core/session/object_id.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/core/session/create_entities_bin.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/core/session/create_entities_ref.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/core/session/common_create_entities.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/core/session/session_info.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/core/session/read_access.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/core/session/create_entities_xml.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/core/session/stream
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/core/session/stream/output_best_effort_stream.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/core/session/stream/input_reliable_stream.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/core/session/stream/stream_id.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/core/session/stream/reliable_stream.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/core/session/stream/output_reliable_stream.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/core/session/stream/input_best_effort_stream.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/core/session/stream/stream_storage.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/core/session/stream/seq_num.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/core/session/time_sync.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/core/session/write_access.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/core/communication
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/core/communication/communication.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/core/type
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/core/type/xrce_types.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/transport.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/include/uxr/client/config.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/microxrcedds_client/cmake/microxrcedds_clientTargets.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/microxrcedds_client/cmake/microxrcedds_clientTargets-release.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/microxrcedds_client/cmake/microxrcedds_clientConfig.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/microxrcedds_client/cmake/microxrcedds_clientConfigVersion.cmake

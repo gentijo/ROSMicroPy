@@ -1,0 +1,15 @@
+source;share/sensor_msgs_py/hook/cmake_prefix_path.ps1
+source;share/sensor_msgs_py/hook/cmake_prefix_path.dsv
+source;share/sensor_msgs_py/hook/cmake_prefix_path.sh
+source;share/sensor_msgs_py/hook/path.ps1
+source;share/sensor_msgs_py/hook/path.dsv
+source;share/sensor_msgs_py/hook/path.sh
+source;share/sensor_msgs_py/hook/pythonpath.ps1
+source;share/sensor_msgs_py/hook/pythonpath.dsv
+source;share/sensor_msgs_py/hook/pythonpath.sh
+source;share/sensor_msgs_py/hook/pythonscriptspath.ps1
+source;share/sensor_msgs_py/hook/pythonscriptspath.dsv
+source;share/sensor_msgs_py/hook/pythonscriptspath.sh
+source;share/sensor_msgs_py/hook/ament_prefix_path.ps1
+source;share/sensor_msgs_py/hook/ament_prefix_path.dsv
+source;share/sensor_msgs_py/hook/ament_prefix_path.sh

@@ -1,0 +1,17 @@
+source;share/rosidl_parser/hook/cmake_prefix_path.ps1
+source;share/rosidl_parser/hook/cmake_prefix_path.dsv
+source;share/rosidl_parser/hook/cmake_prefix_path.sh
+source;share/rosidl_parser/hook/path.ps1
+source;share/rosidl_parser/hook/path.dsv
+source;share/rosidl_parser/hook/path.sh
+source;share/rosidl_parser/hook/pythonpath.ps1
+source;share/rosidl_parser/hook/pythonpath.dsv
+source;share/rosidl_parser/hook/pythonpath.sh
+source;share/rosidl_parser/hook/pythonscriptspath.ps1
+source;share/rosidl_parser/hook/pythonscriptspath.dsv
+source;share/rosidl_parser/hook/pythonscriptspath.sh
+source;share/rosidl_parser/local_setup.bash
+source;share/rosidl_parser/local_setup.dsv
+source;share/rosidl_parser/local_setup.ps1
+source;share/rosidl_parser/local_setup.sh
+source;share/rosidl_parser/local_setup.zsh

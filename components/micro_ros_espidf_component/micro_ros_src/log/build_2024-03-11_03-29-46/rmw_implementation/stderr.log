@@ -1,0 +1,10 @@
+CMake Warning at /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rcutils/cmake/ament_cmake_export_libraries-extras.cmake:116 (message):
+  Package 'rcutils' exports library 'dl' which couldn't be found
+Call Stack (most recent call first):
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rcutils/cmake/rcutilsConfig.cmake:41 (include)
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw_microxrcedds/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw_microxrcedds/cmake/rmw_microxrceddsConfig.cmake:41 (include)
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rmw_implementation_cmake/cmake/get_default_rmw_implementation.cmake:64 (find_package)
+  CMakeLists.txt:22 (get_default_rmw_implementation)
+
+

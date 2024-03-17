@@ -1,0 +1,2 @@
+[console_scripts]
+trace = tracetools_trace.trace:main

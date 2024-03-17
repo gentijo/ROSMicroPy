@@ -1,0 +1,17 @@
+CMake Warning at /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rcutils/cmake/ament_cmake_export_libraries-extras.cmake:116 (message):
+  Package 'rcutils' exports library 'dl' which couldn't be found
+Call Stack (most recent call first):
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rcutils/cmake/rcutilsConfig.cmake:41 (include)
+  CMakeLists.txt:21 (find_package)
+
+
+In file included from /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rmw/rmw/src/validate_full_topic_name.c:17:
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rmw/rmw/src/validate_full_topic_name.c: In function 'rmw_validate_full_topic_name_with_size':
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rmw/rmw/src/validate_full_topic_name.c:106:29: warning: array subscript has type 'char' [-Wchar-subscripts]
+  106 |       if (isdigit(topic_name[i + 1]) != 0) {
+      |                   ~~~~~~~~~~^~~~~~~
+In file included from /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rmw/rmw/src/validate_node_name.c:17:
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rmw/rmw/src/validate_node_name.c: In function 'rmw_validate_node_name_with_size':
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rmw/rmw/src/validate_node_name.c:72:24: warning: array subscript has type 'char' [-Wchar-subscripts]
+   72 |   if (isdigit(node_name[0]) != 0) {
+      |               ~~~~~~~~~^~~

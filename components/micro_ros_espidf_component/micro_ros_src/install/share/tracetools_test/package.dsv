@@ -1,0 +1,15 @@
+source;share/tracetools_test/hook/cmake_prefix_path.ps1
+source;share/tracetools_test/hook/cmake_prefix_path.dsv
+source;share/tracetools_test/hook/cmake_prefix_path.sh
+source;share/tracetools_test/hook/path.ps1
+source;share/tracetools_test/hook/path.dsv
+source;share/tracetools_test/hook/path.sh
+source;share/tracetools_test/hook/pythonpath.ps1
+source;share/tracetools_test/hook/pythonpath.dsv
+source;share/tracetools_test/hook/pythonpath.sh
+source;share/tracetools_test/hook/pythonscriptspath.ps1
+source;share/tracetools_test/hook/pythonscriptspath.dsv
+source;share/tracetools_test/hook/pythonscriptspath.sh
+source;share/tracetools_test/hook/ament_prefix_path.ps1
+source;share/tracetools_test/hook/ament_prefix_path.dsv
+source;share/tracetools_test/hook/ament_prefix_path.sh

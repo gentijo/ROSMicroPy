@@ -1,0 +1,57 @@
+[0.930s] Invoking command in '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/src/ament_lint/ament_flake8': AMENT_PREFIX_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint PYTHONPATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_flake8/prefix_override:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint/lib/python3.8/site-packages X_CFLAGS=-mlongcalls X_CXXFLAGS=-mlongcalls /opt/esp/python_env/idf5.1_py3.8_env/bin/python setup.py egg_info --egg-base ../../../build/ament_flake8 build --build-base /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_flake8/build install --record /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_flake8/install.log --single-version-externally-managed
+[1.122s] running egg_info
+[1.124s] creating ../../../build/ament_flake8/ament_flake8.egg-info
+[1.223s] writing ../../../build/ament_flake8/ament_flake8.egg-info/PKG-INFO
+[1.223s] writing dependency_links to ../../../build/ament_flake8/ament_flake8.egg-info/dependency_links.txt
+[1.223s] writing entry points to ../../../build/ament_flake8/ament_flake8.egg-info/entry_points.txt
+[1.223s] writing requirements to ../../../build/ament_flake8/ament_flake8.egg-info/requires.txt
+[1.225s] writing top-level names to ../../../build/ament_flake8/ament_flake8.egg-info/top_level.txt
+[1.225s] writing manifest file '../../../build/ament_flake8/ament_flake8.egg-info/SOURCES.txt'
+[1.225s] reading manifest file '../../../build/ament_flake8/ament_flake8.egg-info/SOURCES.txt'
+[1.225s] writing manifest file '../../../build/ament_flake8/ament_flake8.egg-info/SOURCES.txt'
+[1.226s] running build
+[1.226s] running build_py
+[1.226s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_flake8/build
+[1.227s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_flake8/build/lib
+[1.227s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_flake8/build/lib/ament_flake8
+[1.227s] copying ament_flake8/__init__.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_flake8/build/lib/ament_flake8
+[1.227s] copying ament_flake8/main.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_flake8/build/lib/ament_flake8
+[1.227s] copying ament_flake8/pytest_marker.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_flake8/build/lib/ament_flake8
+[1.227s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_flake8/build/lib/ament_flake8/configuration
+[1.227s] copying ament_flake8/configuration/ament_flake8.ini -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_flake8/build/lib/ament_flake8/configuration
+[1.227s] running install
+[1.227s] running install_lib
+[1.227s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/lib/python3.8/site-packages/ament_flake8
+[1.228s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/lib/python3.8/site-packages/ament_flake8/configuration
+[1.228s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_flake8/build/lib/ament_flake8/configuration/ament_flake8.ini -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/lib/python3.8/site-packages/ament_flake8/configuration
+[1.228s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_flake8/build/lib/ament_flake8/__init__.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/lib/python3.8/site-packages/ament_flake8
+[1.228s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_flake8/build/lib/ament_flake8/main.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/lib/python3.8/site-packages/ament_flake8
+[1.228s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_flake8/build/lib/ament_flake8/pytest_marker.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/lib/python3.8/site-packages/ament_flake8
+[1.228s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/lib/python3.8/site-packages/ament_flake8/__init__.py to __init__.cpython-38.pyc
+[1.228s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/lib/python3.8/site-packages/ament_flake8/main.py to main.cpython-38.pyc
+[1.228s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/lib/python3.8/site-packages/ament_flake8/pytest_marker.py to pytest_marker.cpython-38.pyc
+[1.229s] running install_data
+[1.229s] copying package.xml -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/share/ament_flake8
+[1.229s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/share/ament_index
+[1.229s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/share/ament_index/resource_index
+[1.229s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/share/ament_index/resource_index/packages
+[1.229s] copying resource/ament_flake8 -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/share/ament_index/resource_index/packages
+[1.229s] running install_egg_info
+[1.229s] Copying ../../../build/ament_flake8/ament_flake8.egg-info to /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/lib/python3.8/site-packages/ament_flake8-0.12.10-py3.8.egg-info
+[1.229s] running install_scripts
+[1.815s] Installing ament_flake8 script to /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/bin
+[1.816s] writing list of installed files to '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_flake8/install.log'
+[1.816s] /opt/esp/python_env/idf5.1_py3.8_env/lib/python3.8/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+[1.816s] !!
+[1.816s] 
+[1.816s]         ********************************************************************************
+[1.816s]         Please avoid running ``setup.py`` directly.
+[1.816s]         Instead, use pypa/build, pypa/installer or other
+[1.816s]         standards-based tools.
+[1.816s] 
+[1.816s]         See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+[1.817s]         ********************************************************************************
+[1.817s] 
+[1.817s] !!
+[1.817s]   self.initialize_options()
+[1.819s] Invoked command in '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/src/ament_lint/ament_flake8' returned '0': AMENT_PREFIX_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint PYTHONPATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_flake8/prefix_override:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint/lib/python3.8/site-packages X_CFLAGS=-mlongcalls X_CXXFLAGS=-mlongcalls /opt/esp/python_env/idf5.1_py3.8_env/bin/python setup.py egg_info --egg-base ../../../build/ament_flake8 build --build-base /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_flake8/build install --record /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_flake8/install.log --single-version-externally-managed

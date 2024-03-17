@@ -1,0 +1,36 @@
+-- Found ament_cmake_core: 1.3.8 (/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_cmake_core/share/ament_cmake_core/cmake)
+-- Found Python3: /opt/esp/python_env/idf5.1_py3.8_env/bin/python3 (found version "3.8.10") found components: Interpreter 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_cmake_gtest
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_CXX_COMPILER
+    CMAKE_C_COMPILER
+
+
+make[1]: Entering directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_cmake_gtest'
+make[1]: Leaving directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_cmake_gtest'
+-- Install configuration: ""
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_cmake_gtest/share/ament_index/resource_index/package_run_dependencies/ament_cmake_gtest
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_cmake_gtest/share/ament_index/resource_index/parent_prefix_path/ament_cmake_gtest
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_cmake_gtest/share/ament_cmake_gtest/environment/ament_prefix_path.sh
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_cmake_gtest/share/ament_cmake_gtest/environment/ament_prefix_path.dsv
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_cmake_gtest/share/ament_cmake_gtest/environment/path.sh
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_cmake_gtest/share/ament_cmake_gtest/environment/path.dsv
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_cmake_gtest/share/ament_cmake_gtest/local_setup.bash
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_cmake_gtest/share/ament_cmake_gtest/local_setup.sh
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_cmake_gtest/share/ament_cmake_gtest/local_setup.zsh
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_cmake_gtest/share/ament_cmake_gtest/local_setup.dsv
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_cmake_gtest/share/ament_cmake_gtest/package.dsv
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_cmake_gtest/share/ament_index/resource_index/packages/ament_cmake_gtest
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_cmake_gtest/share/ament_cmake_gtest/cmake/ament_cmake_gtest-extras.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_cmake_gtest/share/ament_cmake_gtest/cmake/ament_cmake_gtestConfig.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_cmake_gtest/share/ament_cmake_gtest/cmake/ament_cmake_gtestConfig-version.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_cmake_gtest/share/ament_cmake_gtest/package.xml
+-- Up-to-date: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_cmake_gtest/share/ament_cmake_gtest/cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_cmake_gtest/share/ament_cmake_gtest/cmake/ament_add_gtest_executable.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_cmake_gtest/share/ament_cmake_gtest/cmake/ament_find_gtest.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_cmake_gtest/share/ament_cmake_gtest/cmake/ament_add_gtest.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_cmake_gtest/share/ament_cmake_gtest/cmake/ament_add_gtest_test.cmake

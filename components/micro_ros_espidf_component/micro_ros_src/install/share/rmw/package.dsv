@@ -1,0 +1,17 @@
+source;share/rmw/hook/cmake_prefix_path.ps1
+source;share/rmw/hook/cmake_prefix_path.dsv
+source;share/rmw/hook/cmake_prefix_path.sh
+source;share/rmw/hook/path.ps1
+source;share/rmw/hook/path.dsv
+source;share/rmw/hook/path.sh
+source;share/rmw/hook/pythonpath.ps1
+source;share/rmw/hook/pythonpath.dsv
+source;share/rmw/hook/pythonpath.sh
+source;share/rmw/hook/pythonscriptspath.ps1
+source;share/rmw/hook/pythonscriptspath.dsv
+source;share/rmw/hook/pythonscriptspath.sh
+source;share/rmw/local_setup.bash
+source;share/rmw/local_setup.dsv
+source;share/rmw/local_setup.ps1
+source;share/rmw/local_setup.sh
+source;share/rmw/local_setup.zsh

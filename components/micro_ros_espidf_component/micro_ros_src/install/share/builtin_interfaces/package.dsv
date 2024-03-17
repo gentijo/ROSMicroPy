@@ -1,0 +1,17 @@
+source;share/builtin_interfaces/hook/cmake_prefix_path.ps1
+source;share/builtin_interfaces/hook/cmake_prefix_path.dsv
+source;share/builtin_interfaces/hook/cmake_prefix_path.sh
+source;share/builtin_interfaces/hook/path.ps1
+source;share/builtin_interfaces/hook/path.dsv
+source;share/builtin_interfaces/hook/path.sh
+source;share/builtin_interfaces/hook/pythonpath.ps1
+source;share/builtin_interfaces/hook/pythonpath.dsv
+source;share/builtin_interfaces/hook/pythonpath.sh
+source;share/builtin_interfaces/hook/pythonscriptspath.ps1
+source;share/builtin_interfaces/hook/pythonscriptspath.dsv
+source;share/builtin_interfaces/hook/pythonscriptspath.sh
+source;share/builtin_interfaces/local_setup.bash
+source;share/builtin_interfaces/local_setup.dsv
+source;share/builtin_interfaces/local_setup.ps1
+source;share/builtin_interfaces/local_setup.sh
+source;share/builtin_interfaces/local_setup.zsh

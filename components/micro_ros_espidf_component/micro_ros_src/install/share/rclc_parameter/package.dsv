@@ -1,0 +1,17 @@
+source;share/rclc_parameter/hook/cmake_prefix_path.ps1
+source;share/rclc_parameter/hook/cmake_prefix_path.dsv
+source;share/rclc_parameter/hook/cmake_prefix_path.sh
+source;share/rclc_parameter/hook/path.ps1
+source;share/rclc_parameter/hook/path.dsv
+source;share/rclc_parameter/hook/path.sh
+source;share/rclc_parameter/hook/pythonpath.ps1
+source;share/rclc_parameter/hook/pythonpath.dsv
+source;share/rclc_parameter/hook/pythonpath.sh
+source;share/rclc_parameter/hook/pythonscriptspath.ps1
+source;share/rclc_parameter/hook/pythonscriptspath.dsv
+source;share/rclc_parameter/hook/pythonscriptspath.sh
+source;share/rclc_parameter/local_setup.bash
+source;share/rclc_parameter/local_setup.dsv
+source;share/rclc_parameter/local_setup.ps1
+source;share/rclc_parameter/local_setup.sh
+source;share/rclc_parameter/local_setup.zsh

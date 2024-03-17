@@ -1,0 +1,2 @@
+[rosidl_cli.command.generate.type_extensions]
+c = rosidl_generator_c.cli:GenerateC

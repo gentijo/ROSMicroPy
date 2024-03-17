@@ -1,0 +1,12 @@
+source;share/ament_clang_tidy/hook/path.ps1
+source;share/ament_clang_tidy/hook/path.dsv
+source;share/ament_clang_tidy/hook/path.sh
+source;share/ament_clang_tidy/hook/pythonpath.ps1
+source;share/ament_clang_tidy/hook/pythonpath.dsv
+source;share/ament_clang_tidy/hook/pythonpath.sh
+source;share/ament_clang_tidy/hook/pythonscriptspath.ps1
+source;share/ament_clang_tidy/hook/pythonscriptspath.dsv
+source;share/ament_clang_tidy/hook/pythonscriptspath.sh
+source;share/ament_clang_tidy/hook/ament_prefix_path.ps1
+source;share/ament_clang_tidy/hook/ament_prefix_path.dsv
+source;share/ament_clang_tidy/hook/ament_prefix_path.sh

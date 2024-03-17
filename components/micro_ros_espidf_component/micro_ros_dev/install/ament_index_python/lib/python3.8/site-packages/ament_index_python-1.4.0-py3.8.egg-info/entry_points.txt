@@ -1,0 +1,2 @@
+[console_scripts]
+ament_index = ament_index_python.cli:main

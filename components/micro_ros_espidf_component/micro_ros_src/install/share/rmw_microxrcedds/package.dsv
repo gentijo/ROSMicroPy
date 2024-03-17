@@ -1,0 +1,17 @@
+source;share/rmw_microxrcedds/hook/cmake_prefix_path.ps1
+source;share/rmw_microxrcedds/hook/cmake_prefix_path.dsv
+source;share/rmw_microxrcedds/hook/cmake_prefix_path.sh
+source;share/rmw_microxrcedds/hook/path.ps1
+source;share/rmw_microxrcedds/hook/path.dsv
+source;share/rmw_microxrcedds/hook/path.sh
+source;share/rmw_microxrcedds/hook/pythonpath.ps1
+source;share/rmw_microxrcedds/hook/pythonpath.dsv
+source;share/rmw_microxrcedds/hook/pythonpath.sh
+source;share/rmw_microxrcedds/hook/pythonscriptspath.ps1
+source;share/rmw_microxrcedds/hook/pythonscriptspath.dsv
+source;share/rmw_microxrcedds/hook/pythonscriptspath.sh
+source;share/rmw_microxrcedds/local_setup.bash
+source;share/rmw_microxrcedds/local_setup.dsv
+source;share/rmw_microxrcedds/local_setup.ps1
+source;share/rmw_microxrcedds/local_setup.sh
+source;share/rmw_microxrcedds/local_setup.zsh

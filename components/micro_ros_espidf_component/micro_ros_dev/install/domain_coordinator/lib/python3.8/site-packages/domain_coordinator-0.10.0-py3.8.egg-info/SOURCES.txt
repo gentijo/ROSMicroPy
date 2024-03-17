@@ -1,0 +1,15 @@
+package.xml
+setup.py
+../../../build/domain_coordinator/domain_coordinator.egg-info/PKG-INFO
+../../../build/domain_coordinator/domain_coordinator.egg-info/SOURCES.txt
+../../../build/domain_coordinator/domain_coordinator.egg-info/dependency_links.txt
+../../../build/domain_coordinator/domain_coordinator.egg-info/requires.txt
+../../../build/domain_coordinator/domain_coordinator.egg-info/top_level.txt
+../../../build/domain_coordinator/domain_coordinator.egg-info/zip-safe
+domain_coordinator/__init__.py
+domain_coordinator/impl.py
+resource/domain_coordinator
+test/test_copyright.py
+test/test_domain_coordinator.py
+test/test_flake8.py
+test/test_pep257.py

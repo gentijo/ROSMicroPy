@@ -1,0 +1,17 @@
+source;share/rcl_logging_interface/hook/cmake_prefix_path.ps1
+source;share/rcl_logging_interface/hook/cmake_prefix_path.dsv
+source;share/rcl_logging_interface/hook/cmake_prefix_path.sh
+source;share/rcl_logging_interface/hook/path.ps1
+source;share/rcl_logging_interface/hook/path.dsv
+source;share/rcl_logging_interface/hook/path.sh
+source;share/rcl_logging_interface/hook/pythonpath.ps1
+source;share/rcl_logging_interface/hook/pythonpath.dsv
+source;share/rcl_logging_interface/hook/pythonpath.sh
+source;share/rcl_logging_interface/hook/pythonscriptspath.ps1
+source;share/rcl_logging_interface/hook/pythonscriptspath.dsv
+source;share/rcl_logging_interface/hook/pythonscriptspath.sh
+source;share/rcl_logging_interface/local_setup.bash
+source;share/rcl_logging_interface/local_setup.dsv
+source;share/rcl_logging_interface/local_setup.ps1
+source;share/rcl_logging_interface/local_setup.sh
+source;share/rcl_logging_interface/local_setup.zsh

@@ -1,0 +1,96 @@
+In file included from /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/src/env.c:20:
+/opt/esp/idf/components/newlib/platform_include/errno.h:10:2: warning: #include_next is a GCC extension
+   10 | #include_next "errno.h"
+      |  ^~~~~~~~~~~~
+In file included from /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/include/rcutils/error_handling.h:28,
+                 from /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/src/char_array.c:16:
+/opt/esp/idf/components/newlib/platform_include/assert.h:16:2: warning: #include_next is a GCC extension
+   16 | #include_next <assert.h>
+      |  ^~~~~~~~~~~~
+In file included from /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/src/filesystem.c:21:
+/opt/esp/idf/components/newlib/platform_include/errno.h:10:2: warning: #include_next is a GCC extension
+   10 | #include_next "errno.h"
+      |  ^~~~~~~~~~~~
+In file included from /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/include/rcutils/error_handling.h:28,
+                 from /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/src/error_handling.c:22:
+/opt/esp/idf/components/newlib/platform_include/assert.h:16:2: warning: #include_next is a GCC extension
+   16 | #include_next <assert.h>
+      |  ^~~~~~~~~~~~
+In file included from /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/src/logging.c:21:
+/opt/esp/idf/components/newlib/platform_include/errno.h:10:2: warning: #include_next is a GCC extension
+   10 | #include_next "errno.h"
+      |  ^~~~~~~~~~~~
+In file included from /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/src/process.c:20:
+/opt/esp/idf/components/newlib/platform_include/errno.h:10:2: warning: #include_next is a GCC extension
+   10 | #include_next "errno.h"
+      |  ^~~~~~~~~~~~
+In file included from /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/src/error_handling.c:35:
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/src/./error_handling_helpers.h: In function '__rcutils_convert_uint64_t_into_c_str':
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/src/./error_handling_helpers.h:109:48: warning: unused parameter 'number' [-Wunused-parameter]
+  109 | __rcutils_convert_uint64_t_into_c_str(uint64_t number, char * buffer, size_t buffer_size)
+      |                                       ~~~~~~~~~^~~~~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/src/./error_handling_helpers.h:109:63: warning: unused parameter 'buffer' [-Wunused-parameter]
+  109 | __rcutils_convert_uint64_t_into_c_str(uint64_t number, char * buffer, size_t buffer_size)
+      |                                                        ~~~~~~~^~~~~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/src/./error_handling_helpers.h:109:78: warning: unused parameter 'buffer_size' [-Wunused-parameter]
+  109 | __rcutils_convert_uint64_t_into_c_str(uint64_t number, char * buffer, size_t buffer_size)
+      |                                                                       ~~~~~~~^~~~~~~~~~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/src/./error_handling_helpers.h: In function '__rcutils_format_error_string':
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/src/./error_handling_helpers.h:142:28: warning: unused parameter 'error_string' [-Wunused-parameter]
+  142 |   rcutils_error_string_t * error_string,
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/src/./error_handling_helpers.h:143:33: warning: unused parameter 'error_state' [-Wunused-parameter]
+  143 |   const rcutils_error_state_t * error_state)
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/src/error_handling.c: In function 'rcutils_get_error_string':
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/src/error_handling.c:240:38: warning: initializer-string for array of 'char' is too long
+  240 |     return (rcutils_error_string_t) {"error not set"};  // NOLINT(readability/braces)
+      |                                      ^~~~~~~~~~~~~~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/src/error_handling.c:240:38: note: (near initialization for '(anonymous).str')
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/src/./error_handling_helpers.h: At top level:
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/src/./error_handling_helpers.h:109:1: warning: '__rcutils_convert_uint64_t_into_c_str' defined but not used [-Wunused-function]
+  109 | __rcutils_convert_uint64_t_into_c_str(uint64_t number, char * buffer, size_t buffer_size)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/src/./error_handling_helpers.h:91:1: warning: '__rcutils_reverse_str' defined but not used [-Wunused-function]
+   91 | __rcutils_reverse_str(char * string_in, size_t string_len)
+      | ^~~~~~~~~~~~~~~~~~~~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/src/logging.c: In function 'rcutils_get_env_var_zero_or_one':
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/src/logging.c:130:35: warning: unused parameter 'zero_semantic' [-Wunused-parameter]
+  130 |   const char * name, const char * zero_semantic,
+      |                      ~~~~~~~~~~~~~^~~~~~~~~~~~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/src/logging.c:131:16: warning: unused parameter 'one_semantic' [-Wunused-parameter]
+  131 |   const char * one_semantic)
+      |   ~~~~~~~~~~~~~^~~~~~~~~~~~
+In file included from /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/src/snprintf.c:22:
+/opt/esp/idf/components/newlib/platform_include/errno.h:10:2: warning: #include_next is a GCC extension
+   10 | #include_next "errno.h"
+      |  ^~~~~~~~~~~~
+In file included from /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/src/strcasecmp.c:20:
+/opt/esp/idf/components/newlib/platform_include/errno.h:10:2: warning: #include_next is a GCC extension
+   10 | #include_next "errno.h"
+      |  ^~~~~~~~~~~~
+In file included from /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/src/strerror.c:20:
+/opt/esp/idf/components/newlib/platform_include/errno.h:10:2: warning: #include_next is a GCC extension
+   10 | #include_next "errno.h"
+      |  ^~~~~~~~~~~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/src/atomic_64bits.c:53:10: warning: conflicting types for built-in function '__atomic_load_8'; expected 'long long unsigned int(const volatile void *, int)' [-Wbuiltin-declaration-mismatch]
+   53 | uint64_t __atomic_load_8(uint64_t *mem, int model) {
+      |          ^~~~~~~~~~~~~~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/src/atomic_64bits.c:62:6: warning: conflicting types for built-in function '__atomic_store_8'; expected 'void(volatile void *, long long unsigned int,  int)' [-Wbuiltin-declaration-mismatch]
+   62 | void __atomic_store_8(uint64_t *mem, uint64_t val, int model) {
+      |      ^~~~~~~~~~~~~~~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/src/atomic_64bits.c:70:10: warning: conflicting types for built-in function '__atomic_exchange_8'; expected 'long long unsigned int(volatile void *, long long unsigned int,  int)' [-Wbuiltin-declaration-mismatch]
+   70 | uint64_t __atomic_exchange_8(uint64_t *mem, uint64_t val, int model) {
+      |          ^~~~~~~~~~~~~~~~~~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/src/atomic_64bits.c:80:10: warning: conflicting types for built-in function '__atomic_fetch_add_8'; expected 'long long unsigned int(volatile void *, long long unsigned int,  int)' [-Wbuiltin-declaration-mismatch]
+   80 | uint64_t __atomic_fetch_add_8(uint64_t *mem, uint64_t val, int model) {
+      |          ^~~~~~~~~~~~~~~~~~~~
+In file included from /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/include/rcutils/error_handling.h:28,
+                 from /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/src/uint8_array.c:15:
+/opt/esp/idf/components/newlib/platform_include/assert.h:16:2: warning: #include_next is a GCC extension
+   16 | #include_next <assert.h>
+      |  ^~~~~~~~~~~~
+In file included from /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcutils/src/time_unix.c:40:
+/opt/esp/idf/components/newlib/platform_include/time.h:11:2: warning: #include_next is a GCC extension
+   11 | #include_next <time.h>
+      |  ^~~~~~~~~~~~

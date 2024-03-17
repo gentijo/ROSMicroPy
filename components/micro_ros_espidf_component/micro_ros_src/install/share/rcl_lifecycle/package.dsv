@@ -1,0 +1,17 @@
+source;share/rcl_lifecycle/hook/cmake_prefix_path.ps1
+source;share/rcl_lifecycle/hook/cmake_prefix_path.dsv
+source;share/rcl_lifecycle/hook/cmake_prefix_path.sh
+source;share/rcl_lifecycle/hook/path.ps1
+source;share/rcl_lifecycle/hook/path.dsv
+source;share/rcl_lifecycle/hook/path.sh
+source;share/rcl_lifecycle/hook/pythonpath.ps1
+source;share/rcl_lifecycle/hook/pythonpath.dsv
+source;share/rcl_lifecycle/hook/pythonpath.sh
+source;share/rcl_lifecycle/hook/pythonscriptspath.ps1
+source;share/rcl_lifecycle/hook/pythonscriptspath.dsv
+source;share/rcl_lifecycle/hook/pythonscriptspath.sh
+source;share/rcl_lifecycle/local_setup.bash
+source;share/rcl_lifecycle/local_setup.dsv
+source;share/rcl_lifecycle/local_setup.ps1
+source;share/rcl_lifecycle/local_setup.sh
+source;share/rcl_lifecycle/local_setup.zsh

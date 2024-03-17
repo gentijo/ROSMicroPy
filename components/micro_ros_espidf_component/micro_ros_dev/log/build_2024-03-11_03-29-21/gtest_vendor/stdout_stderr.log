@@ -1,0 +1,56 @@
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    BUILD_TESTING
+    CMAKE_CXX_COMPILER
+    CMAKE_C_COMPILER
+
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/gtest_vendor
+make[1]: Entering directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/gtest_vendor'
+make[1]: Leaving directory '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/gtest_vendor'
+-- Install configuration: ""
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/share/gtest_vendor/cmake/gtest_vendorConfig.cmake
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/share/gtest_vendor/package.xml
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/CMakeLists.txt
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/include/gtest
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/include/gtest/gtest-param-test.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/include/gtest/gtest-matchers.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/include/gtest/gtest_pred_impl.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/include/gtest/gtest-message.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/include/gtest/gtest-spi.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/include/gtest/gtest-test-part.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/include/gtest/gtest-printers.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/include/gtest/gtest-death-test.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/include/gtest/gtest-typed-test.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/include/gtest/gtest.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/include/gtest/gtest_prod.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/include/gtest/internal
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/include/gtest/internal/gtest-type-util.h.pump
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/include/gtest/internal/gtest-type-util.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/include/gtest/internal/gtest-string.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/include/gtest/internal/gtest-internal.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/include/gtest/internal/gtest-port.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/include/gtest/internal/custom
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/include/gtest/internal/custom/gtest-port.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/include/gtest/internal/custom/gtest-printers.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/include/gtest/internal/custom/gtest.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/include/gtest/internal/custom/README.md
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/include/gtest/internal/gtest-filepath.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/include/gtest/internal/gtest-port-arch.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/include/gtest/internal/gtest-death-test-internal.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/include/gtest/internal/gtest-param-util.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/src
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/src/gtest-test-part.cc
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/src/gtest-internal-inl.h
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/src/gtest_main.cc
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/src/gtest-death-test.cc
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/src/gtest-filepath.cc
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/src/gtest-matchers.cc
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/src/gtest-printers.cc
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/src/gtest-port.cc
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/src/gtest-typed-test.cc
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/src/gtest.cc
+-- Installing: /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/gtest_vendor/src/gtest_vendor/src/gtest-all.cc

@@ -1,0 +1,53 @@
+[3.063s] Invoking command in '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/src/ament_lint/ament_lint_cmake': AMENT_PREFIX_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_copyright:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pep257:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_copyright/bin:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pep257/bin:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/bin:${PATH} PYTHONPATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_lint_cmake/prefix_override:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint_cmake/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_copyright/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pep257/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint/lib/python3.8/site-packages X_CFLAGS=-mlongcalls X_CXXFLAGS=-mlongcalls /opt/esp/python_env/idf5.1_py3.8_env/bin/python setup.py egg_info --egg-base ../../../build/ament_lint_cmake build --build-base /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_lint_cmake/build install --record /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_lint_cmake/install.log --single-version-externally-managed
+[3.353s] running egg_info
+[3.354s] creating ../../../build/ament_lint_cmake/ament_lint_cmake.egg-info
+[3.365s] writing ../../../build/ament_lint_cmake/ament_lint_cmake.egg-info/PKG-INFO
+[3.368s] writing dependency_links to ../../../build/ament_lint_cmake/ament_lint_cmake.egg-info/dependency_links.txt
+[3.369s] writing entry points to ../../../build/ament_lint_cmake/ament_lint_cmake.egg-info/entry_points.txt
+[3.370s] writing requirements to ../../../build/ament_lint_cmake/ament_lint_cmake.egg-info/requires.txt
+[3.370s] writing top-level names to ../../../build/ament_lint_cmake/ament_lint_cmake.egg-info/top_level.txt
+[3.371s] writing manifest file '../../../build/ament_lint_cmake/ament_lint_cmake.egg-info/SOURCES.txt'
+[3.395s] reading manifest file '../../../build/ament_lint_cmake/ament_lint_cmake.egg-info/SOURCES.txt'
+[3.398s] writing manifest file '../../../build/ament_lint_cmake/ament_lint_cmake.egg-info/SOURCES.txt'
+[3.398s] running build
+[3.398s] running build_py
+[3.399s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_lint_cmake/build
+[3.399s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_lint_cmake/build/lib
+[3.399s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_lint_cmake/build/lib/ament_lint_cmake
+[3.399s] copying ament_lint_cmake/cmakelint.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_lint_cmake/build/lib/ament_lint_cmake
+[3.399s] copying ament_lint_cmake/__init__.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_lint_cmake/build/lib/ament_lint_cmake
+[3.400s] copying ament_lint_cmake/main.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_lint_cmake/build/lib/ament_lint_cmake
+[3.402s] running install
+[3.410s] running install_lib
+[3.421s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint_cmake/lib/python3.8/site-packages/ament_lint_cmake
+[3.421s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_lint_cmake/build/lib/ament_lint_cmake/cmakelint.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint_cmake/lib/python3.8/site-packages/ament_lint_cmake
+[3.421s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_lint_cmake/build/lib/ament_lint_cmake/__init__.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint_cmake/lib/python3.8/site-packages/ament_lint_cmake
+[3.421s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_lint_cmake/build/lib/ament_lint_cmake/main.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint_cmake/lib/python3.8/site-packages/ament_lint_cmake
+[3.422s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint_cmake/lib/python3.8/site-packages/ament_lint_cmake/cmakelint.py to cmakelint.cpython-38.pyc
+[3.429s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint_cmake/lib/python3.8/site-packages/ament_lint_cmake/__init__.py to __init__.cpython-38.pyc
+[3.429s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint_cmake/lib/python3.8/site-packages/ament_lint_cmake/main.py to main.cpython-38.pyc
+[3.431s] running install_data
+[3.442s] copying package.xml -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint_cmake/share/ament_lint_cmake
+[3.443s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint_cmake/share/ament_index
+[3.443s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint_cmake/share/ament_index/resource_index
+[3.443s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint_cmake/share/ament_index/resource_index/packages
+[3.443s] copying resource/ament_lint_cmake -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint_cmake/share/ament_index/resource_index/packages
+[3.443s] running install_egg_info
+[3.455s] Copying ../../../build/ament_lint_cmake/ament_lint_cmake.egg-info to /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint_cmake/lib/python3.8/site-packages/ament_lint_cmake-0.12.10-py3.8.egg-info
+[3.457s] running install_scripts
+[3.826s] Installing ament_lint_cmake script to /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint_cmake/bin
+[3.826s] writing list of installed files to '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_lint_cmake/install.log'
+[3.826s] /opt/esp/python_env/idf5.1_py3.8_env/lib/python3.8/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+[3.827s] !!
+[3.827s] 
+[3.827s]         ********************************************************************************
+[3.827s]         Please avoid running ``setup.py`` directly.
+[3.827s]         Instead, use pypa/build, pypa/installer or other
+[3.828s]         standards-based tools.
+[3.828s] 
+[3.828s]         See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+[3.828s]         ********************************************************************************
+[3.828s] 
+[3.828s] !!
+[3.829s]   self.initialize_options()
+[4.059s] Invoked command in '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/src/ament_lint/ament_lint_cmake' returned '0': AMENT_PREFIX_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_copyright:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pep257:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_copyright/bin:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pep257/bin:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/bin:${PATH} PYTHONPATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_lint_cmake/prefix_override:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint_cmake/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_copyright/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pep257/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint/lib/python3.8/site-packages X_CFLAGS=-mlongcalls X_CXXFLAGS=-mlongcalls /opt/esp/python_env/idf5.1_py3.8_env/bin/python setup.py egg_info --egg-base ../../../build/ament_lint_cmake build --build-base /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_lint_cmake/build install --record /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_lint_cmake/install.log --single-version-externally-managed

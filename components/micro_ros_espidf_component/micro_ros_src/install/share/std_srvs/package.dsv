@@ -1,0 +1,17 @@
+source;share/std_srvs/hook/cmake_prefix_path.ps1
+source;share/std_srvs/hook/cmake_prefix_path.dsv
+source;share/std_srvs/hook/cmake_prefix_path.sh
+source;share/std_srvs/hook/path.ps1
+source;share/std_srvs/hook/path.dsv
+source;share/std_srvs/hook/path.sh
+source;share/std_srvs/hook/pythonpath.ps1
+source;share/std_srvs/hook/pythonpath.dsv
+source;share/std_srvs/hook/pythonpath.sh
+source;share/std_srvs/hook/pythonscriptspath.ps1
+source;share/std_srvs/hook/pythonscriptspath.dsv
+source;share/std_srvs/hook/pythonscriptspath.sh
+source;share/std_srvs/local_setup.bash
+source;share/std_srvs/local_setup.dsv
+source;share/std_srvs/local_setup.ps1
+source;share/std_srvs/local_setup.sh
+source;share/std_srvs/local_setup.zsh

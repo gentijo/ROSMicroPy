@@ -1,0 +1,22 @@
+CMake Warning at /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rcutils/cmake/ament_cmake_export_libraries-extras.cmake:116 (message):
+  Package 'rcutils' exports library 'dl' which couldn't be found
+Call Stack (most recent call first):
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rcutils/cmake/rcutilsConfig.cmake:41 (include)
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_runtime_c/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_runtime_c/cmake/rosidl_runtime_cConfig.cmake:41 (include)
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/lifecycle_msgs/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)
+  /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/lifecycle_msgs/cmake/lifecycle_msgsConfig.cmake:41 (include)
+  CMakeLists.txt:7 (find_package)
+
+
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl_lifecycle/src/rcl_lifecycle.c: In function 'rcl_lifecycle_state_machine_fini':
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl_lifecycle/src/rcl_lifecycle.c:265:24: warning: unused variable 'error_string' [-Wunused-variable]
+  265 |     rcl_error_string_t error_string = rcl_get_error_string();
+      |                        ^~~~~~~~~~~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl_lifecycle/src/rcl_lifecycle.c:275:24: warning: unused variable 'error_string' [-Wunused-variable]
+  275 |     rcl_error_string_t error_string = rcl_get_error_string();
+      |                        ^~~~~~~~~~~~
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl_lifecycle/src/rcl_lifecycle.c: In function '_trigger_transition':
+/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rcl/rcl_lifecycle/src/rcl_lifecycle.c:366:26: warning: unused variable 'error_string' [-Wunused-variable]
+  366 |       rcl_error_string_t error_string = rcl_get_error_string();
+      |                          ^~~~~~~~~~~~

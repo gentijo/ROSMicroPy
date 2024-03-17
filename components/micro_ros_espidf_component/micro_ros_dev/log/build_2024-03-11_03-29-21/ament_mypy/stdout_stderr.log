@@ -1,0 +1,55 @@
+/opt/esp/python_env/idf5.1_py3.8_env/lib/python3.8/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+!!
+
+        ********************************************************************************
+        Please avoid running ``setup.py`` directly.
+        Instead, use pypa/build, pypa/installer or other
+        standards-based tools.
+
+        See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+        ********************************************************************************
+
+!!
+  self.initialize_options()
+running egg_info
+creating ../../../build/ament_mypy/ament_mypy.egg-info
+writing ../../../build/ament_mypy/ament_mypy.egg-info/PKG-INFO
+writing dependency_links to ../../../build/ament_mypy/ament_mypy.egg-info/dependency_links.txt
+writing entry points to ../../../build/ament_mypy/ament_mypy.egg-info/entry_points.txt
+writing requirements to ../../../build/ament_mypy/ament_mypy.egg-info/requires.txt
+writing top-level names to ../../../build/ament_mypy/ament_mypy.egg-info/top_level.txt
+writing manifest file '../../../build/ament_mypy/ament_mypy.egg-info/SOURCES.txt'
+reading manifest file '../../../build/ament_mypy/ament_mypy.egg-info/SOURCES.txt'
+writing manifest file '../../../build/ament_mypy/ament_mypy.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_mypy/build
+creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_mypy/build/lib
+creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_mypy/build/lib/ament_mypy
+copying ament_mypy/__init__.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_mypy/build/lib/ament_mypy
+copying ament_mypy/main.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_mypy/build/lib/ament_mypy
+copying ament_mypy/pytest_marker.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_mypy/build/lib/ament_mypy
+creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_mypy/build/lib/ament_mypy/configuration
+copying ament_mypy/configuration/ament_mypy.ini -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_mypy/build/lib/ament_mypy/configuration
+running install
+running install_lib
+creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_mypy/lib/python3.8/site-packages/ament_mypy
+creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_mypy/lib/python3.8/site-packages/ament_mypy/configuration
+copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_mypy/build/lib/ament_mypy/configuration/ament_mypy.ini -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_mypy/lib/python3.8/site-packages/ament_mypy/configuration
+copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_mypy/build/lib/ament_mypy/__init__.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_mypy/lib/python3.8/site-packages/ament_mypy
+copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_mypy/build/lib/ament_mypy/main.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_mypy/lib/python3.8/site-packages/ament_mypy
+copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_mypy/build/lib/ament_mypy/pytest_marker.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_mypy/lib/python3.8/site-packages/ament_mypy
+byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_mypy/lib/python3.8/site-packages/ament_mypy/__init__.py to __init__.cpython-38.pyc
+byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_mypy/lib/python3.8/site-packages/ament_mypy/main.py to main.cpython-38.pyc
+byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_mypy/lib/python3.8/site-packages/ament_mypy/pytest_marker.py to pytest_marker.cpython-38.pyc
+running install_data
+copying package.xml -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_mypy/share/ament_mypy
+creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_mypy/share/ament_index
+creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_mypy/share/ament_index/resource_index
+creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_mypy/share/ament_index/resource_index/packages
+copying resource/ament_mypy -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_mypy/share/ament_index/resource_index/packages
+running install_egg_info
+Copying ../../../build/ament_mypy/ament_mypy.egg-info to /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_mypy/lib/python3.8/site-packages/ament_mypy-0.12.10-py3.8.egg-info
+running install_scripts
+Installing ament_mypy script to /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_mypy/bin
+writing list of installed files to '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_mypy/install.log'

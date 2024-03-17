@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: domain_coordinator
+Version: 0.10.0
+Summary: A tool to coordinate unique ROS_DOMAIN_IDs across multiple processes
+Home-page: https://github.com/ros2/ament_cmake_ros
+Download-URL: https://github.com/ros2/ament_cmake_ros/releases
+Author: Pete Baughman
+Author-email: pete.baughman@apex.ai
+Maintainer: Michel Hidalgo
+Maintainer-email: michel@ekumenlabs.com
+License: Apache License, Version 2.0
+Keywords: ROS
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development
+Requires-Dist: setuptools
+
+This package provides the functionality used by ament_cmake_pytest_isolated, ament_cmake_gtest_isolated, and launch_testing to select unique ROS_DOMAIN_IDs that allow tests to run in parallel without interfering with each other.

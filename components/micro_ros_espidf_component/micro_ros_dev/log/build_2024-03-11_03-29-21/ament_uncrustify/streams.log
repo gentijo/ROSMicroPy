@@ -1,0 +1,54 @@
+[3.015s] Invoking command in '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/src/ament_lint/ament_uncrustify': AMENT_PREFIX_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_copyright:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pep257:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pycodestyle:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_copyright/bin:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pep257/bin:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/bin:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pycodestyle/bin:${PATH} PYTHONPATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_uncrustify/prefix_override:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_uncrustify/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_copyright/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pep257/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pycodestyle/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint/lib/python3.8/site-packages X_CFLAGS=-mlongcalls X_CXXFLAGS=-mlongcalls /opt/esp/python_env/idf5.1_py3.8_env/bin/python setup.py egg_info --egg-base ../../../build/ament_uncrustify build --build-base /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_uncrustify/build install --record /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_uncrustify/install.log --single-version-externally-managed
+[3.273s] running egg_info
+[3.274s] creating ../../../build/ament_uncrustify/ament_uncrustify.egg-info
+[3.293s] writing ../../../build/ament_uncrustify/ament_uncrustify.egg-info/PKG-INFO
+[3.296s] writing dependency_links to ../../../build/ament_uncrustify/ament_uncrustify.egg-info/dependency_links.txt
+[3.298s] writing entry points to ../../../build/ament_uncrustify/ament_uncrustify.egg-info/entry_points.txt
+[3.299s] writing requirements to ../../../build/ament_uncrustify/ament_uncrustify.egg-info/requires.txt
+[3.300s] writing top-level names to ../../../build/ament_uncrustify/ament_uncrustify.egg-info/top_level.txt
+[3.301s] writing manifest file '../../../build/ament_uncrustify/ament_uncrustify.egg-info/SOURCES.txt'
+[3.330s] reading manifest file '../../../build/ament_uncrustify/ament_uncrustify.egg-info/SOURCES.txt'
+[3.332s] writing manifest file '../../../build/ament_uncrustify/ament_uncrustify.egg-info/SOURCES.txt'
+[3.333s] running build
+[3.333s] running build_py
+[3.333s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_uncrustify/build
+[3.334s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_uncrustify/build/lib
+[3.334s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_uncrustify/build/lib/ament_uncrustify
+[3.335s] copying ament_uncrustify/__init__.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_uncrustify/build/lib/ament_uncrustify
+[3.335s] copying ament_uncrustify/main.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_uncrustify/build/lib/ament_uncrustify
+[3.335s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_uncrustify/build/lib/ament_uncrustify/configuration
+[3.335s] copying ament_uncrustify/configuration/ament_code_style.cfg -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_uncrustify/build/lib/ament_uncrustify/configuration
+[3.336s] running install
+[3.381s] running install_lib
+[3.381s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_uncrustify/lib/python3.8/site-packages/ament_uncrustify
+[3.381s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_uncrustify/lib/python3.8/site-packages/ament_uncrustify/configuration
+[3.381s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_uncrustify/build/lib/ament_uncrustify/configuration/ament_code_style.cfg -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_uncrustify/lib/python3.8/site-packages/ament_uncrustify/configuration
+[3.381s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_uncrustify/build/lib/ament_uncrustify/__init__.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_uncrustify/lib/python3.8/site-packages/ament_uncrustify
+[3.381s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_uncrustify/build/lib/ament_uncrustify/main.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_uncrustify/lib/python3.8/site-packages/ament_uncrustify
+[3.381s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_uncrustify/lib/python3.8/site-packages/ament_uncrustify/__init__.py to __init__.cpython-38.pyc
+[3.381s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_uncrustify/lib/python3.8/site-packages/ament_uncrustify/main.py to main.cpython-38.pyc
+[3.381s] running install_data
+[3.381s] copying package.xml -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_uncrustify/share/ament_uncrustify
+[3.381s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_uncrustify/share/ament_index
+[3.382s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_uncrustify/share/ament_index/resource_index
+[3.382s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_uncrustify/share/ament_index/resource_index/packages
+[3.382s] copying resource/ament_uncrustify -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_uncrustify/share/ament_index/resource_index/packages
+[3.382s] running install_egg_info
+[3.391s] Copying ../../../build/ament_uncrustify/ament_uncrustify.egg-info to /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_uncrustify/lib/python3.8/site-packages/ament_uncrustify-0.12.10-py3.8.egg-info
+[3.393s] running install_scripts
+[3.705s] Installing ament_uncrustify script to /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_uncrustify/bin
+[3.705s] writing list of installed files to '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_uncrustify/install.log'
+[3.706s] /opt/esp/python_env/idf5.1_py3.8_env/lib/python3.8/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+[3.706s] !!
+[3.706s] 
+[3.707s]         ********************************************************************************
+[3.707s]         Please avoid running ``setup.py`` directly.
+[3.707s]         Instead, use pypa/build, pypa/installer or other
+[3.707s]         standards-based tools.
+[3.707s] 
+[3.707s]         See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+[3.708s]         ********************************************************************************
+[3.709s] 
+[3.709s] !!
+[3.709s]   self.initialize_options()
+[4.017s] Invoked command in '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/src/ament_lint/ament_uncrustify' returned '0': AMENT_PREFIX_PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_copyright:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pep257:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pycodestyle:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint PATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_copyright/bin:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pep257/bin:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/bin:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pycodestyle/bin:${PATH} PYTHONPATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_uncrustify/prefix_override:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_uncrustify/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_copyright/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pep257/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_flake8/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_pycodestyle/lib/python3.8/site-packages:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/install/ament_lint/lib/python3.8/site-packages X_CFLAGS=-mlongcalls X_CXXFLAGS=-mlongcalls /opt/esp/python_env/idf5.1_py3.8_env/bin/python setup.py egg_info --egg-base ../../../build/ament_uncrustify build --build-base /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_uncrustify/build install --record /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_dev/build/ament_uncrustify/install.log --single-version-externally-managed

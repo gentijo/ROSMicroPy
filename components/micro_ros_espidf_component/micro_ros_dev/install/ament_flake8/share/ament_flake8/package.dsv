@@ -1,0 +1,12 @@
+source;share/ament_flake8/hook/path.ps1
+source;share/ament_flake8/hook/path.dsv
+source;share/ament_flake8/hook/path.sh
+source;share/ament_flake8/hook/pythonpath.ps1
+source;share/ament_flake8/hook/pythonpath.dsv
+source;share/ament_flake8/hook/pythonpath.sh
+source;share/ament_flake8/hook/pythonscriptspath.ps1
+source;share/ament_flake8/hook/pythonscriptspath.dsv
+source;share/ament_flake8/hook/pythonscriptspath.sh
+source;share/ament_flake8/hook/ament_prefix_path.ps1
+source;share/ament_flake8/hook/ament_prefix_path.dsv
+source;share/ament_flake8/hook/ament_prefix_path.sh

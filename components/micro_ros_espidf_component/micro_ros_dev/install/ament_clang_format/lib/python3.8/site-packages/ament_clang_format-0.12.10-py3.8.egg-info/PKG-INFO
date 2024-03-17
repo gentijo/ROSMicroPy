@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: ament_clang_format
+Version: 0.12.10
+Summary: Check C++ code style using clang-format.
+Home-page: https://github.com/ament/ament_lint
+Download-URL: https://github.com/ament/ament_lint/releases
+Author: Dirk Thomas
+Author-email: dthomas@osrfoundation.org
+Maintainer: Michael Jeronimo, Michel Hidalgo
+Maintainer-email: michael.jeronimo@openrobotics.org, michel@ekumenlabs.com
+License: Apache License, Version 2.0, BSD
+Keywords: ROS
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development
+Requires-Dist: setuptools
+Requires-Dist: pyyaml
+
+The ability to check code against style conventions using clang-format
+and generate xUnit test result files.

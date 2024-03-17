@@ -1,0 +1,90 @@
+[2.969s] Invoking command in '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rosidl/rosidl_cli': PYTHONPATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/prefix_override:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages:${PYTHONPATH} X_CFLAGS=-mlongcalls X_CXXFLAGS=-mlongcalls /opt/esp/python_env/idf5.1_py3.8_env/bin/python setup.py egg_info --egg-base ../../../build/rosidl_cli build --build-base /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build install --record /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/install.log --single-version-externally-managed
+[3.247s] running egg_info
+[3.247s] creating ../../../build/rosidl_cli/rosidl_cli.egg-info
+[3.248s] writing ../../../build/rosidl_cli/rosidl_cli.egg-info/PKG-INFO
+[3.251s] writing dependency_links to ../../../build/rosidl_cli/rosidl_cli.egg-info/dependency_links.txt
+[3.252s] writing entry points to ../../../build/rosidl_cli/rosidl_cli.egg-info/entry_points.txt
+[3.252s] writing requirements to ../../../build/rosidl_cli/rosidl_cli.egg-info/requires.txt
+[3.253s] writing top-level names to ../../../build/rosidl_cli/rosidl_cli.egg-info/top_level.txt
+[3.253s] writing manifest file '../../../build/rosidl_cli/rosidl_cli.egg-info/SOURCES.txt'
+[3.254s] reading manifest file '../../../build/rosidl_cli/rosidl_cli.egg-info/SOURCES.txt'
+[3.254s] writing manifest file '../../../build/rosidl_cli/rosidl_cli.egg-info/SOURCES.txt'
+[3.258s] running build
+[3.259s] running build_py
+[3.260s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build
+[3.260s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build/lib
+[3.260s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build/lib/rosidl_cli
+[3.260s] copying rosidl_cli/entry_points.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build/lib/rosidl_cli
+[3.261s] copying rosidl_cli/__init__.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build/lib/rosidl_cli
+[3.262s] copying rosidl_cli/cli.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build/lib/rosidl_cli
+[3.263s] copying rosidl_cli/extensions.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build/lib/rosidl_cli
+[3.264s] copying rosidl_cli/common.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build/lib/rosidl_cli
+[3.264s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build/lib/rosidl_cli/command
+[3.264s] copying rosidl_cli/command/__init__.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build/lib/rosidl_cli/command
+[3.265s] copying rosidl_cli/command/helpers.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build/lib/rosidl_cli/command
+[3.265s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build/lib/rosidl_cli/command/translate
+[3.265s] copying rosidl_cli/command/translate/api.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build/lib/rosidl_cli/command/translate
+[3.265s] copying rosidl_cli/command/translate/__init__.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build/lib/rosidl_cli/command/translate
+[3.266s] copying rosidl_cli/command/translate/extensions.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build/lib/rosidl_cli/command/translate
+[3.266s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build/lib/rosidl_cli/command/generate
+[3.266s] copying rosidl_cli/command/generate/api.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build/lib/rosidl_cli/command/generate
+[3.266s] copying rosidl_cli/command/generate/__init__.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build/lib/rosidl_cli/command/generate
+[3.267s] copying rosidl_cli/command/generate/extensions.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build/lib/rosidl_cli/command/generate
+[3.267s] running install
+[3.268s] running install_lib
+[3.268s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_cli
+[3.268s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build/lib/rosidl_cli/entry_points.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_cli
+[3.268s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build/lib/rosidl_cli/__init__.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_cli
+[3.269s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build/lib/rosidl_cli/cli.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_cli
+[3.269s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_cli/command
+[3.269s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build/lib/rosidl_cli/command/__init__.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_cli/command
+[3.269s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_cli/command/translate
+[3.269s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build/lib/rosidl_cli/command/translate/api.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_cli/command/translate
+[3.270s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build/lib/rosidl_cli/command/translate/__init__.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_cli/command/translate
+[3.270s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build/lib/rosidl_cli/command/translate/extensions.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_cli/command/translate
+[3.270s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_cli/command/generate
+[3.270s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build/lib/rosidl_cli/command/generate/api.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_cli/command/generate
+[3.271s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build/lib/rosidl_cli/command/generate/__init__.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_cli/command/generate
+[3.271s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build/lib/rosidl_cli/command/generate/extensions.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_cli/command/generate
+[3.271s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build/lib/rosidl_cli/command/helpers.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_cli/command
+[3.271s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build/lib/rosidl_cli/extensions.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_cli
+[3.271s] copying /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build/lib/rosidl_cli/common.py -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_cli
+[3.271s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_cli/entry_points.py to entry_points.cpython-38.pyc
+[3.271s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_cli/__init__.py to __init__.cpython-38.pyc
+[3.271s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_cli/cli.py to cli.cpython-38.pyc
+[3.271s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_cli/command/__init__.py to __init__.cpython-38.pyc
+[3.272s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_cli/command/translate/api.py to api.cpython-38.pyc
+[3.272s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_cli/command/translate/__init__.py to __init__.cpython-38.pyc
+[3.272s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_cli/command/translate/extensions.py to extensions.cpython-38.pyc
+[3.272s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_cli/command/generate/api.py to api.cpython-38.pyc
+[3.272s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_cli/command/generate/__init__.py to __init__.cpython-38.pyc
+[3.272s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_cli/command/generate/extensions.py to extensions.cpython-38.pyc
+[3.272s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_cli/command/helpers.py to helpers.cpython-38.pyc
+[3.272s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_cli/extensions.py to extensions.cpython-38.pyc
+[3.272s] byte-compiling /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_cli/common.py to common.cpython-38.pyc
+[3.272s] running install_data
+[3.272s] copying resource/rosidl_cli -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/ament_index/resource_index/packages
+[3.272s] copying package.xml -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_cli
+[3.272s] copying resource/package.dsv -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_cli
+[3.272s] creating /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_cli/environment
+[3.272s] copying completion/rosidl-argcomplete.bash -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_cli/environment
+[3.272s] copying completion/rosidl-argcomplete.zsh -> /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/share/rosidl_cli/environment
+[3.273s] running install_egg_info
+[3.273s] Copying ../../../build/rosidl_cli/rosidl_cli.egg-info to /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages/rosidl_cli-3.1.5-py3.8.egg-info
+[3.273s] running install_scripts
+[3.273s] Installing rosidl script to /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/bin
+[3.273s] writing list of installed files to '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/install.log'
+[3.275s] /opt/esp/python_env/idf5.1_py3.8_env/lib/python3.8/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+[3.275s] !!
+[3.276s] 
+[3.276s]         ********************************************************************************
+[3.276s]         Please avoid running ``setup.py`` directly.
+[3.277s]         Instead, use pypa/build, pypa/installer or other
+[3.277s]         standards-based tools.
+[3.277s] 
+[3.278s]         See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+[3.278s]         ********************************************************************************
+[3.278s] 
+[3.279s] !!
+[3.279s]   self.initialize_options()
+[3.779s] Invoked command in '/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/src/rosidl/rosidl_cli' returned '0': PYTHONPATH=/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/prefix_override:/opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/install/lib/python3.8/site-packages:${PYTHONPATH} X_CFLAGS=-mlongcalls X_CXXFLAGS=-mlongcalls /opt/esp/python_env/idf5.1_py3.8_env/bin/python setup.py egg_info --egg-base ../../../build/rosidl_cli build --build-base /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/build install --record /opt/rosmicropy/components/micro_ros_espidf_component/micro_ros_src/build/rosidl_cli/install.log --single-version-externally-managed
