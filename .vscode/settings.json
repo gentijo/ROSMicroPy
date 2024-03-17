@@ -2,7 +2,9 @@
     "files.associations": {
         "*.yaml": "home-assistant",
         "mp_uros_type_support.h": "c",
-        "float.h": "c"
+        "float.h": "c",
+        "mphal.h": "c",
+        "machine_i2c.h": "c"
     },
     "cmake.configureOnOpen": false,
     "cmake.sourceDirectory": "/opt/rosmicropy/extra_packages/libmicroros/examples/handle_static_types/main"
