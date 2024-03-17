@@ -1,5 +1,0 @@
-[console_scripts]
-ament_xmllint = ament_xmllint.main:main
-
-[pytest11]
-ament_xmllint = ament_xmllint.pytest_marker

@@ -1,2 +1,0 @@
-[pytest11]
-ament_lint = ament_lint.pytest_marker

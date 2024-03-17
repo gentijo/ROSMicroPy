@@ -1,2 +1,0 @@
-[console_scripts]
-ament_clang_tidy = ament_clang_tidy.main:main

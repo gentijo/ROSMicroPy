@@ -1,1 +1,0 @@
-rosidl_typesupport_microxrcedds_c

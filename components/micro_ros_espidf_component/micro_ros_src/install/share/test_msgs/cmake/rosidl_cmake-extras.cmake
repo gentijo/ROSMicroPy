@@ -1,4 +1,0 @@
-# generated from rosidl_cmake/cmake/rosidl_cmake-extras.cmake.in
-
-set(test_msgs_IDL_FILES "msg/Arrays.idl;msg/BasicTypes.idl;msg/BoundedPlainSequences.idl;msg/BoundedSequences.idl;msg/Constants.idl;msg/Defaults.idl;msg/Empty.idl;msg/MultiNested.idl;msg/Nested.idl;msg/Strings.idl;msg/UnboundedSequences.idl;msg/WStrings.idl;srv/Arrays.idl;srv/BasicTypes.idl;srv/Empty.idl;action/Fibonacci.idl;msg/Builtins.idl;action/NestedMessage.idl")
-set(test_msgs_INTERFACE_FILES "msg/Arrays.msg;msg/BasicTypes.msg;msg/BoundedPlainSequences.msg;msg/BoundedSequences.msg;msg/Constants.msg;msg/Defaults.msg;msg/Empty.msg;msg/MultiNested.msg;msg/Nested.msg;msg/Strings.msg;msg/UnboundedSequences.msg;msg/WStrings.msg;srv/Arrays.srv;srv/Arrays_Request.msg;srv/Arrays_Response.msg;srv/BasicTypes.srv;srv/BasicTypes_Request.msg;srv/BasicTypes_Response.msg;srv/Empty.srv;srv/Empty_Request.msg;srv/Empty_Response.msg;action/Fibonacci.action;msg/Builtins.msg;action/NestedMessage.action")

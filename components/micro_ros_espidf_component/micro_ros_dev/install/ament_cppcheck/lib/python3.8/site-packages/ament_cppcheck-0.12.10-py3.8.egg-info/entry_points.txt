@@ -1,2 +1,0 @@
-[console_scripts]
-ament_cppcheck = ament_cppcheck.main:main
