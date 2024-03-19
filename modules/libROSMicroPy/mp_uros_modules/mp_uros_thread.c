@@ -58,7 +58,7 @@ mp_obj_t start_new_ROS_thread(void (*entry_point_fun)())
  * MP_THREAD_GIL_EXIT(); 
  * 
 */
-STATIC void *ros_thread_entry(void *args_in)
+void *ros_thread_entry(void *args_in)
 {
     printf("\r\nStarting ROS Thread");
 

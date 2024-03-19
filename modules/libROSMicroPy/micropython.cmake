@@ -1,5 +1,6 @@
 # Create an INTERFACE library for our C module.
 add_library(libROSMicroPy INTERFACE)
+add_dependencies(libROSMicroPy  micro_ros_espidf_component)
 
 get_filename_component(MICROROS_INC_DIR ../../../../components/micro_ros_espidf_component/include ABSOLUTE)
 message("MicroRos ${MICROROS_INC_DIR}")
@@ -24,16 +25,19 @@ set(ROS_MICROPY_MODULES
 )
 
 set(ROS_MICROPY_INC_DIRS
+    ${MICROROS_INC_DIR}
     ${MICROROS_INC_DIR}/rcl_action
     ${MICROROS_INC_DIR}/action_msgs
     ${MICROROS_INC_DIR}/unique_identifier_msgs
     ${MICROROS_INC_DIR}/builtin_interfaces
-    ${MICROROS_INC_DIR}
     ${MICROROS_INC_DIR}/rcl
     ${MICROROS_INC_DIR}/rcutils
     ${MICROROS_INC_DIR}/rmw
     ${MICROROS_INC_DIR}/rosidl_runtime_c
     ${MICROROS_INC_DIR}/rosidl_typesupport_interface
+    ${MICROROS_INC_DIR}/type_description_interfaces
+    ${MICROROS_INC_DIR}/service_msgs
+    ${MICROROS_INC_DIR}/rosidl_dynamic_typesupport
     ${ROS_MICROPY_DIR}/mp_uros_modules
     ${ROS_MICROPY_DIR}/mp_uros_type_support
 )
@@ -50,3 +54,4 @@ target_include_directories(libROSMicroPy INTERFACE
 
 # Link our INTERFACE library to the usermod target.
 target_link_libraries(usermod INTERFACE libROSMicroPy)
+

@@ -32,7 +32,7 @@ typedef struct _ros_thread_entry_args_t
 
 
 mp_obj_t start_new_ROS_thread(void (*entry_point_fun)());
-STATIC void *ros_thread_entry(void *args_in);
+void *ros_thread_entry(void *args_in);
 
 
 #endif
