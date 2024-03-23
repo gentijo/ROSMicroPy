@@ -1,7 +1,7 @@
 #ifndef __uros_mesg_func_h__
 #define __uros_mesg_func_h__
 
-#include "uros_sdk.h"
+#include "mp_uros_sdk.h"
 
 void init_ROS_Subscriptions();;
 

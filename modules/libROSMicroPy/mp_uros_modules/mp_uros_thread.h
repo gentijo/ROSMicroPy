@@ -15,7 +15,7 @@
 
 #include "sdkconfig.h"
 
-#include "uros_sdk.h"
+#include "mp_uros_sdk.h"
 
 
 typedef struct _ros_thread_entry_args_t

@@ -14,9 +14,6 @@ Sets the Namespace of the ROS Node.
 Sets the NodeName of the ROS Node.
  + Must be called prior to Init
 
-### ```setWifiConfig(sta_id:str, pass:str)```
-Configures the ROSNode to attach to a specific SSID (sta_id) with a password. 
- + Must be called prior to Init
 
 ### ```registerDataType(mp_obj_t dataMap:rosTypeDataMap)```
 Using the dataMap defined by the ROS .msg compiler, create a virtual named type that will be used when receiving or publishing messages. 

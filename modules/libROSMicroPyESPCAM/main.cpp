@@ -3,12 +3,17 @@
 #include <rcl/rcl.h>
 #include <rclc/rclc.h>
 #include <rclc/executor.h>
-#include <std_msgs/msg/int32.h>
+
 #include <micro_ros_utilities/string_utilities.h>
 #include <micro_ros_utilities/type_utilities.h>
+
 #include <rosidl_typesupport_introspection_c/message_introspection.h>
 
+#include <std_msgs/msg/int32.h>
 #include <sensor_msgs/msg/compressed_image.h>
+
+#include <mp_uros_sdk.h>
+
 
 #define RCCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){printf("Failed status on line %d: %d. Aborting.\n",__LINE__,(int)temp_rc); return;}}
 #define RCSOFTCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){printf("Failed status on line %d: %d. Continuing.\n",__LINE__,(int)temp_rc);}}
@@ -20,12 +25,8 @@
 #include "camera_pins.h"
 #define ledPin      4
 
-extern rclc_executor_t executor;
-extern rcl_allocator_t allocator;
-extern rclc_support_t support;
-extern rcl_node_t node;
 
-rcl_timer_t timer;
+rcl_timer_t     timer;
 rcl_publisher_t img_publisher;
 sensor_msgs__msg__CompressedImage img_msg;
 
@@ -75,11 +76,7 @@ void timer_callback(rcl_timer_t * timer, int64_t last_call_time) {
   }
 }
 
-void setup() {
-  // WRITE_PERI_REG(RTC_CNTL_BROWN_OUT_REG, 0); //disable brownout detector
-  // Serial.begin(115200);
-  // Serial.setDebugOutput(true);
-  // Serial.println();
+mp_obj_t rmp_cam_setup() {
 
   camera_config_t config;
   config.ledc_channel = LEDC_CHANNEL_0;
@@ -149,12 +146,6 @@ void setup() {
     s->set_framesize(s, FRAMESIZE_QVGA);
   }
 
-  //allocator = rcl_get_default_allocator();
-
-  // Init node
-  // RCCHECK(rclc_support_init(&support, 0, NULL, &allocator));
-  // RCCHECK(rclc_node_init_default(&node, "esp32cam", "", &support));
-
   // create publisher and subscriber
   RCCHECK(rclc_publisher_init_default(&img_publisher, &node, type_support, "esp32_img/compressed"));
 
@@ -162,9 +153,7 @@ void setup() {
   const unsigned int timer_timeout = 10;
   RCCHECK(rclc_timer_init_default(&timer, &support, RCL_MS_TO_NS(timer_timeout), timer_callback));
 
-  // create executor, one for publisher and one for subscriber.
-  // RCCHECK(rclc_executor_init(&executor, &support.context, num_handles, &allocator));
-  // RCCHECK(rclc_executor_add_timer(&executor, &timer));
+
 
   static micro_ros_utilities_memory_conf_t conf = {};
 
@@ -194,4 +183,33 @@ void setup() {
   // Blink LED once the server is up
   blink_esp32_led();
 }
+
+/**
+ * Create MP objects that can be registered with Micropython from MicroROS
+ * This will represent the microros builtin class, with the functions that make up the MicroROS SDK
+ * 
+*/
+MP_DEFINE_CONST_FUN_OBJ_0(init_gui_obj, init_gui);
+
+
+/**
+ * Register the microros class and map the functions from Micropython to MicroROS
+*/
+const mp_rom_map_elem_t mp_uros_gui_module_globals_table[] = {
+    {MP_ROM_QSTR(MP_QSTR___name__), MP_ROM_QSTR(MP_QSTR_ROSMicroPyGUI)},
+
+    {MP_ROM_QSTR(MP_QSTR_init_gui), MP_ROM_PTR(&init_gui_obj)}
+};
+
+MP_DEFINE_CONST_DICT(mp_uros_gui_module_globals, mp_uros_gui_module_globals_table);
+
+// Define module object.
+const mp_obj_module_t mp_uros_gui_user_cmodule = {
+    .base = {&mp_type_module},
+    .globals = (mp_obj_dict_t *)&mp_uros_gui_module_globals,
+};
+
+// Register the module to make it available in Python.
+MP_REGISTER_MODULE(MP_QSTR_ROSMicroPyGUI, mp_uros_gui_user_cmodule);
+
 
