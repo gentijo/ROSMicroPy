@@ -28,8 +28,8 @@ size_t				domain_id = DOMAIN_ID;
 char				node_name[64] = "turtle2";
 char				namespace[64] = "";
 
-char				ROS_AgentIP[64] = CONFIG_MICRO_ROS_AGENT_IP;
-char				ROS_AgentPort[64] = CONFIG_MICRO_ROS_AGENT_PORT;
+char				ROS_AgentIP[64] = "192.168.4.100"; //CONFIG_MICRO_ROS_AGENT_IP;
+char				ROS_AgentPort[64] = "8888"; //CONFIG_MICRO_ROS_AGENT_PORT;
 
 /**
  * 
