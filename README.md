@@ -4,8 +4,13 @@
 At its core, is an intergration of Micropython and MicroROS 
 providing full access to ROS environment along native Micropython tyoe support.
 
-### [Click here to learn more about the core SDK](docs/rosmicropy-sdk/README.md)
-### [Learn more about MicroROS Typesupport](docs/rosmicropy-sdk/docs/mp_uros_dataTypeParser.md)
+ROSMicroPy has two goals.
+Create a platform that allows developers to be introduced to ROS robotics with a low overhead in the learning curve
+
+#### [Get Started](docs/LearnMore.md)
+#### [Learn more about the core SDK](docs/rosmicropy-sdk/README.md)
+#### [Learn more about MicroROS Typesupport](docs/rosmicropy-sdk/docs/mp_uros_dataTypeParser.md)
+#### [Python Example Code](./python_example_code/README.md)
 
 ![](docs/images/RMP_CoreStack.svg)
 
@@ -23,3 +28,4 @@ The **LCD Controller** introduces to new modules;
 
 ***ROSMicroPy-CAM*** module allows an ESP32 Cam to publish a video stream in ROS format that can be received by another ROSMMicroPy or other ROS enabled device. As images are pulled from the Camera, they are passed to the Python layer to be sent out as a ROS message or allow it to be analyzed by an image processing library such as [YOLO](https://www.kdnuggets.com/2018/09/object-detection-image-classification-yolo.html)
 
+[Learn More](docs/LearnMore.md)
