@@ -1,11 +1,12 @@
 ![](docs/images/ROSMicroPyHeader.svg)
 
-## ROSMicroPy, 
-At its core, is an intergration of Micropython and MicroROS 
+## ROSMicroPy
+Is an intergration of Micropython and MicroROS 
 providing full access to ROS environment along native Micropython tyoe support.
 
 ROSMicroPy has two goals.
-Create a platform that allows developers to be introduced to ROS robotics with a low overhead in the learning curve
+Provide a modular platform based on the ROS robotics platform with an easier learning curve to get started but also allows for future expansion into real world industrial robotics. 
+
 
 #### [Get Started](docs/LearnMore.md)
 #### [Learn more about the core SDK](docs/rosmicropy-sdk/README.md)
