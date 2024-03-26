@@ -1,48 +1,34 @@
-# ROSMicroPy
+![](docs/images/ROSMicroPyHeader.svg)
 
-## [Click here to view ROSMicroPy source code repository](https://github.com/gentijo/ROSMicroPy)
+## ROSMicroPy
+ROSMicroPy is an integration of Micropython and MicroROS providing full access to ROS environment along with native Micropython type support for ROS.
 
-**ROSMicroPy is a tightly coupled integration of MicroROS and Micropython, multithreaded, async message, Python based ROS2 firmware for embedded microprocessor devices** 
+ROSMicroPy has two goals.
+* Provide a modular platform based on the ROS robotics with an easier learning curve to get started but also allows for future expansion into real world industrial robotics.
 
-## Features Include
+* Expand on the idea of modular robotics where a robot can consist of many distributed compute modules that are organized into a single heterogenous interface using the "RollCall" protocol. The goal here is to allow robots to be assembled from many nodes, giving it more of a lego assembly feel, and having a Controller / IDE seeing all those nodes as a single robot control / programming interface.
 
-### [SDK to control the ROS Stack](./extra_packages/ROSMicroPy/README.md)
-+ Start / Stop ROS Stack
-+ Set the Address of the ROS Agent
-+ Set the Node name of the device
-+ Publish messages
-+ Subscribe to messages
-+ Run a server process
-+ Support for all standard ROS and Custom Types
-+ On device, dynamic on-the-fly, type creation
+* #### [Get Started](docs/LearnMore.md)
+* #### [Learn more about the core SDK](docs/rosmicropy-sdk/README.md)
+* #### [Learn more about MicroROS Type support](docs/rosmicropy-sdk/docs/mp_uros_dataTypeParser.md)
+* #### [Python Example Code](./python_example_code/README.md)
 
-### Full Container Support
- How to's on creating the supporting containers include:
- + **[Creating a container for Firmware development](./docs/containerSupport/containerDevEnv.md)**
- + **[Creating a container to run the ROS Agent](./docs/containerSupport/containerROSAgent.md)**
- + **[Creating a container to run TeleopKey from Turtlesim](./docs/containerSupport/containerTeleopKey.md)**
- + **[Creating a container to run graphical ROS apps](./docs/containerSupport/containerROSConsole.md)**
+### Current Build Profiles supported by ROSMicroPy
 
-### How to get started 
-+ **[Flash device and run](./docs/procudures/flashDevice.md)**
-+ **[Introduction to Python / ROS Robot Coder Development](./docs/python-dev/welcome.md)**
+The core stack provides the basic functionality of a ROS enabled Micropython node  
 
-+ **[*Advanced:* How to setup the firmware development environment](docs/procudures/firmwareDeveloperEnvironment.md)**
+![](docs/images/RMP_CoreStack.svg)
 
-### Thonny Support
-    - **[Plugin to compile ROS Types and store to the device](/docs/thonny/thonnyROSTypeSupportPlugin.md)**
+From it's core configuration, there are other ROSMicroPy modules that can be configured to provide additional functionality. 
 
-### ROSMicro Type Support
+![](docs/images/RMP_LCD_Stack.svg)
 
-+ **[Running the ROS Type Python generator ](./docs/procudures/typeSupport-Parser.md)**
+The **LCD Controller** introduces to new modules;
 
-### Compiling ROSMicroPy
- 
-### Micropython ROS Intergration Details
-+ [Build System](./docs/implementation/buildSystem.md)
-+ [Connecting the different Threading Models](./docs/implementation/threadingModels.md)
-+ [Type Support](./docs/implementation/typeSupport.md)
-+ [Subscribing to an event](./docs/implementation/eventSubscription.md)
-+ [Callback functions on Message Receive events](./docs/implementation/messageCallback.md)
-+ [Publishing ROS messages](./docs/implementation/messagePublishing.md)
-+ [ROS Server support](./docs/implementation/rosServer.md)
+***ROSMicroPy-GUI***, is a [JSON Forms](https://jsonforms.io/) renderer for LVGL that allows for a Web based GUI layout designer to produce a JSON description of a screen layout that can be saved on a ROSMicroPy device.
+
+***ROSMiicroPy-JoyCom***, is a Bluetooth HID Central Server, that makes the inputs of a JoyCon device available for the ROSMicroPy environment. 
+
+![](docs/images/RMP_Cam_Stack.svg)
+
+***ROSMicroPy-CAM*** module allows an ESP32 Cam to publish a video stream in ROS format that can be received by another ROSMicroPy or other ROS enabled device. As images are pulled from the Camera, they are passed to the Python layer to be sent out as a ROS message or allow it to be analyzed by an image processing library such as [YOLO](https://www.kdnuggets.com/2018/09/object-detection-image-classification-yolo.html)

@@ -1,8 +1,0 @@
-#!/bin/bash
-clear
-idf.py clean
-idf.py fullclean
-rm -rf ./build
-idf.py build
-
-
