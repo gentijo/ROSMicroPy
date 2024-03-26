@@ -1,3 +1,0 @@
-#!/bin/bash
-idf.py flash && idf.py monitor
-
