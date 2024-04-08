@@ -1,5 +1,6 @@
 
 #include "mp_uros_sdk.h"
+#include "mp_uros_sdk.h"
 #include "uros_base_func.h"
 #include "uros_mesg_func.h"
 #include "mp_uros_type_support.h"
