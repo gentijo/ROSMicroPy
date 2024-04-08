@@ -73,12 +73,16 @@ ros_subscription* get_ROS_Sub_from_slot(int slot);
 
 #define DOMAIN_ID 0
 
-extern rclc_executor_t		ros_rclc_executor;
-extern rcl_node_t 			ros_rcl_node;
-extern rcl_allocator_t		ros_rcl_allocator;
+extern rclc_executor_t		rmp_rclc_executor;
+extern rcl_node_t 			rmp_rcl_node;
+extern rcl_allocator_t		rmp_rcl_allocator;
+extern rclc_support_t		rmp_rclc_support;
+extern rclc_support_t		rmp_rclc_support;
 
+extern size_t				rmp_domain_id;
+extern char					rmp_node_name[64];
+extern char					rmp_namespace[64];
 
-extern rclc_support_t		support;
 extern rcl_init_options_t   init_options;
 extern rmw_init_options_t   *rmw_options;
 

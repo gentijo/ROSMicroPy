@@ -1,4 +1,4 @@
-// I2C definitions for ESP32_8048S050C
+// I2C definitions for ESP32_8048S043C
 #pragma once
 #ifdef __cplusplus
 extern "C" {

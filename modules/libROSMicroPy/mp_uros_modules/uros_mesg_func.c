@@ -149,13 +149,13 @@ void add_ROS_Service_Listener(ros_subscription* sub) {
 	printf("Init Subscription Name=%s\r\n", sub->eventName);
 	RCSOFTCHECK(rclc_subscription_init_default(
 	 	&sub->rcl_service_subscription,
-		&ros_rcl_node,
+		&rmp_rcl_node,
 		sub->dataTypeCtrlBlk->ros_mesg_type_support,
 		sub->eventName);
 	);
 	
 	RCSOFTCHECK(rclc_executor_add_subscription_with_context(
-		&ros_rclc_executor,
+		&rmp_rclc_executor,
 		&sub->rcl_service_subscription,
 		sub->resp,
 		&service_callback, 
@@ -269,7 +269,7 @@ mp_obj_t  registerROSPublisher(
             // create publisher
 	        RCCHECK(rclc_publisher_init_default(
 		        &g_ros_publishers[x].pub,
-		        &ros_rcl_node,
+		        &rmp_rcl_node,
                 g_ros_publishers[x].dataTypeCtrlBlk->ros_mesg_type_support,
 		        (const char *)cstr_topicName));
 

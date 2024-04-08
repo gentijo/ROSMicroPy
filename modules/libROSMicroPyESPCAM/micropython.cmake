@@ -6,7 +6,7 @@ get_filename_component(MICROROS_INC_DIR ../../../../components/micro_ros_espidf_
 message("MicroRos ${MICROROS_INC_DIR}")
 
 set (ROS_MICROPY_ESPCAM_SRC
-    ${MOD_ROS_MICROPY_ESPCAM_DIR}/main.cpp
+    ${MOD_ROS_MICROPY_ESPCAM_DIR}/main.c
 
 )
 

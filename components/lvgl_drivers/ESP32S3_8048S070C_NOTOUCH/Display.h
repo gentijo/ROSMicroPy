@@ -19,7 +19,7 @@
 #include <stdio.h>
 
 
-lv_disp_t *initDisplay();
+lv_disp_t *init_lcd_display();
 
 
 // Proper settings for the Sunton devboard LCD

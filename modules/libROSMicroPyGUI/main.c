@@ -5,57 +5,73 @@
 #include "esp_lcd_panel_rgb.h"
 #include "esp_log.h"
 #include "esp_timer.h"
+#include "esp_task.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/semphr.h"
 #include "freertos/task.h"
 #include "lvgl.h"
 #include "sdkconfig.h"
 #include <stdio.h>
-#include "lcd-display-drivers/ESP32S3_8048S070C/Display.h"
 
 #include "ui/ui.h"
 #include "py/runtime.h"
 #include "py/mpconfig.h"
+#include "mpconfigport.h"
 
+lv_disp_t *init_lcd_display();
 
-  mp_obj_t init_gui()
+#define MP_TASK_PRIORITY        (ESP_TASK_PRIO_MIN + 1)
+TaskHandle_t mp_lcd_display_task_handle;
+
+void  run_lcd_display_loop()
+{
+  mp_thread_init(pxTaskGetStackStart(NULL), MICROPY_TASK_STACK_SIZE / sizeof(uintptr_t));
+
+  lv_disp_t *disp = init_lcd_display();
+  ui_init(disp);
+
+  while (1)
   {
+    int timerTaskDelay = 0;
+    // raise the task priority of LVGL and/or reduce the handler period can
+    // improve the performance
+    vTaskDelay(pdMS_TO_TICKS(10));
+  
+    // The task running lv_timer_handler should have lower priority than that
+    // running `lv_tick_inc`
+    lv_tick_inc(10);
+    //lv_task_handler();
 
-    lv_disp_t *disp = initDisplay();
-    ui_init(disp);
-
-    printf("Enter LCD While\r\n");
-    while (1)
+    if ((timerTaskDelay++ % 3) == 0)
     {
-      // raise the task priority of LVGL and/or reduce the handler period can
-      // improve the performance
-      vTaskDelay(pdMS_TO_TICKS(10));
-      // The task running lv_timer_handler should have lower priority than that
-      // running `lv_tick_inc`
       lv_timer_handler();
     }
-    printf("Exit LCD While\r\n");
-
-    return mp_const_none;
   }
+}
 
+mp_obj_t mp_init_lcd_display()
+{
+  xTaskCreate(run_lcd_display_loop, "rmp_lcd_task", 
+    MICROPY_TASK_STACK_SIZE / sizeof(StackType_t), NULL, MP_TASK_PRIORITY, 
+    &mp_lcd_display_task_handle);
+
+  return mp_const_none;
+}
 
 /**
  * Create MP objects that can be registered with Micropython from MicroROS
  * This will represent the microros builtin class, with the functions that make up the MicroROS SDK
- * 
-*/
-MP_DEFINE_CONST_FUN_OBJ_0(init_gui_obj, init_gui);
-
+ *
+ */
+MP_DEFINE_CONST_FUN_OBJ_0(init_lcd_display_obj, mp_init_lcd_display);
 
 /**
  * Register the microros class and map the functions from Micropython to MicroROS
-*/
+ */
 const mp_rom_map_elem_t mp_uros_gui_module_globals_table[] = {
     {MP_ROM_QSTR(MP_QSTR___name__), MP_ROM_QSTR(MP_QSTR_ROSMicroPyGUI)},
 
-    {MP_ROM_QSTR(MP_QSTR_init_gui), MP_ROM_PTR(&init_gui_obj)}
-};
+    {MP_ROM_QSTR(MP_QSTR_rmp_init_lcd_display), MP_ROM_PTR(&init_lcd_display_obj)}};
 
 MP_DEFINE_CONST_DICT(mp_uros_gui_module_globals, mp_uros_gui_module_globals_table);
 
@@ -67,5 +83,3 @@ const mp_obj_module_t mp_uros_gui_user_cmodule = {
 
 // Register the module to make it available in Python.
 MP_REGISTER_MODULE(MP_QSTR_ROSMicroPyGUI, mp_uros_gui_user_cmodule);
-
-

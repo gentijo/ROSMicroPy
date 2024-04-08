@@ -3,12 +3,21 @@ add_library(libROSMicroPyGUI INTERFACE)
 
 
 get_filename_component(ROS_MICROPY_GUI_DIR ../../../../modules/libROSMicroPyGUI ABSOLUTE)
+
+#set (ROS_MICROPY_LCD_PANEL ESP32S3_8048S070C)
+#set (ROS_MICROPY_LCD_PANEL ESP32S3_8048S050C)
+set (ROS_MICROPY_LCD_PANEL 8048SC050C2)
+
+set (ROS_MICROPY_LCD_DRIVER_DIR ${ROS_MICROPY_GUI_DIR}/lcd-display-drivers/${ROS_MICROPY_LCD_PANEL})
+
 set (ROS_MICROPY_GUI_SRC
     ${ROS_MICROPY_GUI_DIR}/main.c
     ${ROS_MICROPY_GUI_DIR}/ui/ui.c 
     ${ROS_MICROPY_GUI_DIR}/ui/ui_helpers.c 
     ${ROS_MICROPY_GUI_DIR}/ui/screens/ui_Screen1.c
-    ${ROS_MICROPY_GUI_DIR}/lcd-display-drivers/ESP32S3_8048S070C/Display.c
+   # ${ROS_MICROPY_LCD_DRIVER_DIR}/bsp.c
+   # ${ROS_MICROPY_LCD_DRIVER_DIR}/disp_backlight.c
+
 #    ${ROS_MICROPY_GUI_DIR}/mp/lv_mp.c
 #    ${ROS_MICROPY_GUI_DIR}/mp/lv_espidf.c
 

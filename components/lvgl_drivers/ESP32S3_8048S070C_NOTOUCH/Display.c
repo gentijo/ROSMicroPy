@@ -227,7 +227,7 @@
      *
      *
      */
-    lv_disp_t *initDisplay()
+    lv_disp_t *init_lcd_display()
     {
         lv_disp_t *disp = NULL;
 
@@ -265,19 +265,19 @@
         gpio_set_level(PIN_NUM_BK_LIGHT, LCD_BK_LIGHT_ON_LEVEL);
 #endif
 
-        ESP_ERROR_CHECK(i2c_param_config(I2C_NUM_0, &conf));
-        ESP_ERROR_CHECK(i2c_driver_install(I2C_NUM_0, I2C_MODE_MASTER, 0, 0, 0));
+        // ESP_ERROR_CHECK(i2c_param_config(I2C_NUM_0, &conf));
+        // ESP_ERROR_CHECK(i2c_driver_install(I2C_NUM_0, I2C_MODE_MASTER, 0, 0, 0));
 
-        esp_lcd_panel_io_handle_t tp_io_handle = NULL;
-        esp_lcd_panel_io_i2c_config_t tp_io_config =
-            ESP_LCD_TOUCH_IO_I2C_GT911_CONFIG();
+        // esp_lcd_panel_io_handle_t tp_io_handle = NULL;
+        // esp_lcd_panel_io_i2c_config_t tp_io_config =
+        //     ESP_LCD_TOUCH_IO_I2C_GT911_CONFIG();
 
-        // Attach the TOUCH to the I2C bus
-        ESP_ERROR_CHECK(esp_lcd_new_panel_io_i2c((esp_lcd_i2c_bus_handle_t)I2C_NUM_0,
-                                                 &tp_io_config, &tp_io_handle));
+        // // Attach the TOUCH to the I2C bus
+        // ESP_ERROR_CHECK(esp_lcd_new_panel_io_i2c((esp_lcd_i2c_bus_handle_t)I2C_NUM_0,
+        //                                          &tp_io_config, &tp_io_handle));
 
-        ESP_LOGI(TAG, "Initialize touch controller GT911");
-        ESP_ERROR_CHECK(esp_lcd_touch_new_i2c_gt911(tp_io_handle, &tp_cfg, &tp));
+        // ESP_LOGI(TAG, "Initialize touch controller GT911");
+        // ESP_ERROR_CHECK(esp_lcd_touch_new_i2c_gt911(tp_io_handle, &tp_cfg, &tp));
 
         ESP_LOGI(TAG, "Initialize LVGL library");
         lv_init();
@@ -329,14 +329,14 @@
             esp_timer_start_periodic(lvgl_tick_timer, LVGL_TICK_PERIOD_MS * 1000));
 
 #if CONFIG_EXAMPLE_LCD_TOUCH_ENABLED
-        static lv_indev_drv_t indev_drv; // Input device driver (Touch)
-        lv_indev_drv_init(&indev_drv);
-        indev_drv.type = LV_INDEV_TYPE_POINTER;
-        indev_drv.disp = disp;
-        indev_drv.read_cb = lvgl_touch_cb;
-        indev_drv.user_data = tp;
+        // static lv_indev_drv_t indev_drv; // Input device driver (Touch)
+        // lv_indev_drv_init(&indev_drv);
+        // indev_drv.type = LV_INDEV_TYPE_POINTER;
+        // indev_drv.disp = disp;
+        // indev_drv.read_cb = lvgl_touch_cb;
+        // indev_drv.user_data = tp;
 
-        lv_indev_drv_register(&indev_drv);
+        // lv_indev_drv_register(&indev_drv);
 #endif
 
         ESP_LOGI(TAG, "Display simple buttons example");
