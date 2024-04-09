@@ -111,6 +111,8 @@ mp_obj_t	init_ROS_Stack();
 mp_obj_t setDomainID(mp_obj_t id);
 mp_obj_t setNamespace(mp_obj_t namespace);
 mp_obj_t setNodeName(mp_obj_t name);
-mp_obj_t setWifiConfig(mp_obj_t sta_id, mp_obj_t pass);
+mp_obj_t setAgentPort(mp_obj_t obj_in);
+mp_obj_t setAgentIP(mp_obj_t obj_in);
+
 
 #endif

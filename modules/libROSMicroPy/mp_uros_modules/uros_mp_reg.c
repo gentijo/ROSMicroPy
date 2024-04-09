@@ -30,6 +30,11 @@ MP_DEFINE_CONST_FUN_OBJ_2(registerROSPublisher_obj, registerROSPublisher);
 MP_DEFINE_CONST_FUN_OBJ_1(setDomainID_obj, setDomainID);
 MP_DEFINE_CONST_FUN_OBJ_1(setNamespace_obj, setNamespace);
 MP_DEFINE_CONST_FUN_OBJ_1(setNodeName_obj, setNodeName);
+
+MP_DEFINE_CONST_FUN_OBJ_1(setAgentPort_obj, setAgentPort);
+MP_DEFINE_CONST_FUN_OBJ_1(setAgentIP_obj, setAgentIP);
+
+
 MP_DEFINE_CONST_FUN_OBJ_1(registerDataType_obj, registerDataType);
 MP_DEFINE_CONST_FUN_OBJ_1(dumpDataType_obj, dumpDataType);
 
@@ -46,6 +51,8 @@ const mp_rom_map_elem_t mp_uros_module_globals_table[] = {
     {MP_ROM_QSTR(MP_QSTR_setDomainID), MP_ROM_PTR(&setDomainID_obj)},
     {MP_ROM_QSTR(MP_QSTR_setNamespace), MP_ROM_PTR(&setNamespace_obj)},
     {MP_ROM_QSTR(MP_QSTR_setNodeName), MP_ROM_PTR(&setNodeName_obj)},
+    {MP_ROM_QSTR(MP_QSTR_setAgentPort), MP_ROM_PTR(&setAgentPort_obj)},
+    {MP_ROM_QSTR(MP_QSTR_setAgentIP), MP_ROM_PTR(&setAgentIP_obj)},
 
     {MP_ROM_QSTR(MP_QSTR_registerDataType), MP_ROM_PTR(&registerDataType_obj)},
     {MP_ROM_QSTR(MP_QSTR_dumpDataType), MP_ROM_PTR(&dumpDataType_obj)},

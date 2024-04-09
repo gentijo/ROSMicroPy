@@ -97,6 +97,7 @@
         //   img_msg.data.data = *ptr;
         // }
         // img_msg.data.data = (uint8_t *) img->buf;
+        printf("Publish Image\r\n");
         RCSOFTCHECK(rcl_publish(&img_publisher, &img_msg, NULL));
         esp_camera_fb_return(img);
         free(_jpg_buf);
@@ -160,6 +161,7 @@
     }
 
     // camera init
+    printf("ESP Cam init\r\n");
     esp_err_t err = esp_camera_init(&config);
     if (err != ESP_OK)
     {
@@ -167,6 +169,7 @@
       return mp_const_none;
     }
 
+    printf("ESP Sensor get\r\n");
     sensor_t *s = esp_camera_sensor_get();
     // initial sensors are flipped vertically and colors are a bit saturated
     if (s->id.PID == OV3660_PID)
@@ -182,10 +185,12 @@
     }
 
     // create publisher and subscriber
+    printf("Pub Init\r\n");
     rclc_publisher_init_default(&img_publisher, &rmp_rcl_node, 
     ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, CompressedImage), "esp32_img/compressed");
 
     // create timer,
+    printf("Timer Init\r\n");
     const unsigned int timer_timeout = 10;
     rclc_timer_init_default(&timer, &rmp_rclc_support, RCL_MS_TO_NS(timer_timeout), timer_callback);
 
@@ -207,6 +212,7 @@
     conf.rules = rules;
     conf.n_rules = sizeof(rules) / sizeof(rules[0]);
 
+    printf("Create Message Memory\r\n");
     micro_ros_utilities_create_message_memory(
         ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, CompressedImage),
         &img_msg,
@@ -242,4 +248,4 @@
   };
 
   // Register the module to make it available in Python.
-  MP_REGISTER_MODULE(MP_QSTR_ROSMicroPyGUI, mp_uros_cam_user_cmodule);
+  MP_REGISTER_MODULE(MP_QSTR_ROSMicroPyCAM, mp_uros_cam_user_cmodule);
