@@ -4,6 +4,7 @@ from rostype.Twist import Twist
 
 import gc
 import time
+import wifi
 
 print("\r\nInit ROS Stack\r\n")
 init_ROS_Stack()
