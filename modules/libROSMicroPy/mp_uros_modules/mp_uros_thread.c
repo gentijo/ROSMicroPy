@@ -33,7 +33,7 @@ mp_obj_t start_new_ROS_thread(void (*entry_point_fun)())
     th_args->dict_globals = mp_globals_get();
 
     // set the stack size to use
-    th_args->stack_size = 16000; //CONFIG_MICRO_ROS_APP_STACK;
+    th_args->stack_size = 20000; //CONFIG_MICRO_ROS_APP_STACK;
 
     // set the function for thread entry
     th_args->fun_ptr = entry_point_fun;

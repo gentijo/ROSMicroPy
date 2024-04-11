@@ -10,7 +10,7 @@ ROSMicroPy has two goals.
 
 * #### [Get Started](docs/LearnMore.md)
 * #### [Learn more about the core SDK](docs/rosmicropy-sdk/README.md)
-* #### [Learn more about MicroROS Type support](docs/rosmicropy-sdk/docs/mp_uros_dataTypeParser.md)
+* #### [Learn more about MicroROS Type support](docs/implementation/typeSupport.md)
 * #### [Python Example Code](./python_example_code/README.md)
 
 ### Current Build Profiles supported by ROSMicroPy

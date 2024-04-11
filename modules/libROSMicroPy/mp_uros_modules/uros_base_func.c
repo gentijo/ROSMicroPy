@@ -12,9 +12,8 @@
 
 #include "esp_wifi.h"
 #include "esp_netif.h"
+#include "uros_network_interfaces.h"
 
-
-esp_err_t uros_network_interface_initialize(void);
 
 rclc_executor_t		rmp_rclc_executor;
 rcl_node_t 			rmp_rcl_node;
@@ -148,11 +147,14 @@ mp_obj_t init_ROS_Stack()
 	init_ROS_Publishers();
     init_mpy_ROS_TypeSupport();
 
+#if defined(CONFIG_MICRO_ROS_ESP_NETIF_WLAN) || defined(CONFIG_MICRO_ROS_ESP_NETIF_ENET)
+	ESP_ERROR_CHECK(uros_network_interface_initialize());
+#endif	
+
 	rmp_rcl_allocator = rcl_get_default_allocator();
 
 	init_options= rcl_get_zero_initialized_init_options();
 	RCCHECK(rcl_init_options_init(&init_options, rmp_rcl_allocator));
-	RCCHECK(rcl_init_options_set_domain_id(&init_options, rmp_domain_id));
 
 #ifdef CONFIG_MICRO_ROS_ESP_XRCE_DDS_MIDDLEWARE
 	rmw_options = rcl_init_options_get_rmw_init_options(&init_options);
@@ -198,7 +200,11 @@ mp_obj_t mp_run_ROS_Stack()
 void run_ROS_Stack() {
 
 	printf("\r\nROS Task running task\r\n");
-	rclc_executor_spin(&rmp_rclc_executor);
+	while(1) {
+		rclc_executor_spin_some(&rmp_rclc_executor, RCL_MS_TO_NS(2000) );
+		printf("MicroRos Spinning\r\n");
+	}
+
 }
 
 
