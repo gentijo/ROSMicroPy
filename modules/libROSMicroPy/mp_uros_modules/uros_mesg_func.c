@@ -288,7 +288,7 @@ mp_obj_t  registerROSPublisher(
  */
  mp_obj_t publishMsg(mp_obj_t topicName, mp_obj_t data)
 {		
-    
+//    printf("In Publish Mesg\r\n");
     if (&mp_type_str != mp_obj_get_type(topicName)) {
 		mp_raise_TypeError(MP_ERROR_TEXT("Topic Name must be of type str"));
         return mp_const_none;
