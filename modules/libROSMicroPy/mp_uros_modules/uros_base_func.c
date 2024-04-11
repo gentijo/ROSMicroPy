@@ -25,9 +25,59 @@ rmw_init_options_t *rmw_options;
 size_t				rmp_domain_id = DOMAIN_ID;
 char				rmp_node_name[64] = "turtle2";
 char				rmp_namespace[64] = "";
+size_t				rmp_domain_id = DOMAIN_ID;
+char				rmp_node_name[64] = "turtle2";
+char				rmp_namespace[64] = "";
 
 char				ROS_AgentIP[64] = "192.168.8.100"; //CONFIG_MICRO_ROS_AGENT_IP;
+char				ROS_AgentIP[64] = "192.168.8.100"; //CONFIG_MICRO_ROS_AGENT_IP;
 char				ROS_AgentPort[64] = "8888"; //CONFIG_MICRO_ROS_AGENT_PORT;
+
+
+
+/** 
+ * 
+ * 
+*/
+mp_obj_t setAgentIP(mp_obj_t obj_in)
+{
+    if (&mp_type_str != mp_obj_get_type(obj_in)) {
+		mp_raise_TypeError(MP_ERROR_TEXT("Agent IP must be a str"));
+		return obj_in;
+    }
+
+    const char* cstr = mp_obj_str_get_str(obj_in);
+    if ((cstr == NULL) || strlen(cstr)==0) {
+		mp_raise_ValueError(MP_ERROR_TEXT("AgentIP must be a string"));
+		return obj_in;
+    }
+
+	strncpy(ROS_AgentIP, cstr, 63);
+	return obj_in;
+}
+
+/** 
+ * 
+ * 
+*/
+mp_obj_t setAgentPort(mp_obj_t obj_in)
+{
+    if (&mp_type_str != mp_obj_get_type(obj_in)) {
+		mp_raise_TypeError(MP_ERROR_TEXT("Agent Port must be a str"));
+		return obj_in;
+    }
+
+    const char* cstr = mp_obj_str_get_str(obj_in);
+    if ((cstr == NULL) || strlen(cstr)==0) {
+		mp_raise_ValueError(MP_ERROR_TEXT("Agent Port must be a string"));
+		return obj_in;
+    }
+
+	strncpy(ROS_AgentPort, cstr, 63);
+	return obj_in;
+}
+
+
 
 
 
@@ -131,6 +181,7 @@ mp_obj_t setNodeName(mp_obj_t obj_in)
     }
 
 	strncpy(rmp_node_name, cstr, 63);
+	strncpy(rmp_node_name, cstr, 63);
 
 	return obj_in;
 }
@@ -166,11 +217,14 @@ mp_obj_t init_ROS_Stack()
 
 	// create init_options
 	RCCHECK(rclc_support_init_with_options(&rmp_rclc_support, 0, NULL, &init_options, &rmp_rcl_allocator));
+	RCCHECK(rclc_support_init_with_options(&rmp_rclc_support, 0, NULL, &init_options, &rmp_rcl_allocator));
 	
 	// create node
 	RCCHECK(rclc_node_init_default(&rmp_rcl_node, rmp_node_name, rmp_namespace, &rmp_rclc_support));
+	RCCHECK(rclc_node_init_default(&rmp_rcl_node, rmp_node_name, rmp_namespace, &rmp_rclc_support));
 	
 	// create executor
+	RCCHECK(rclc_executor_init(&rmp_rclc_executor, &rmp_rclc_support.context, 20, &rmp_rcl_allocator));
 	RCCHECK(rclc_executor_init(&rmp_rclc_executor, &rmp_rclc_support.context, 20, &rmp_rcl_allocator));
 
 
