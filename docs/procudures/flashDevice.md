@@ -4,7 +4,7 @@
 
 ## ESP Devices
  The release directory will contain the latest binary build for that version.
- If you have idf.py or esptool.py (components of the ESP-IDF SDK) then you can flash directly to your device. If you rather not install the ESP SDK, you can use the [Development Container](./containerDevEnv.md) to flash the code to your device as it provides all the required tools.
+ If you have idf.py or esptool.py (components of the ESP-IDF SDK) then you can flash directly to your device. If you rather not install the ESP SDK, you can use the [Development Container](../containerSuppoert/containerDevEnv.md) to flash the code to your device as it provides all the required tools.
 
 In either container, change directories to the root of the project.
 
