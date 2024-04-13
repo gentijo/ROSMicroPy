@@ -4,14 +4,11 @@
 #include "uros_mesg_func.h"
 #include "rosidl_runtime_c/message_type_support_struct.h"
 
-
 #include "std_msgs/std_msgs/msg/detail/byte__struct.h"
 #include "std_msgs/std_msgs/msg/detail/int16__struct.h"
 #include "std_msgs/std_msgs/msg/detail/int32__struct.h"
 #include "std_msgs/std_msgs/msg/detail/float32__struct.h"
 #include "std_msgs/std_msgs/msg/detail/float64__struct.h"
-
-
 
 bool mpy_uros_typesupport_cdr_serialize(int slot, const void *untyped_ros_message, ucdrBuffer *cdr);
 bool mpy_uros_typesupport_cdr_deserialize(int slot, ucdrBuffer *cdr, void *untyped_ros_message);
@@ -29,35 +26,59 @@ dxc_cb_t *g_typeSupportCtrlBlks[mpy_uros_type_support_slots];
  * slot number allowing the type support functions to have access to the schema data needed to process
  * data from Micropython to ROS
  */
+#define typeSupportFunc(n)                                                                      \
+  bool mpy_uros_ts##n##_serialize(const void *untyped_ros_message, ucdrBuffer *cdr)             \
+  {                                                                                             \
+    return mpy_uros_typesupport_cdr_serialize(n, untyped_ros_message, cdr);                     \
+  }                                                                                             \
+  bool mpy_uros_ts##n##_deserialize(ucdrBuffer *cdr, void *untyped_ros_message)                 \
+  {                                                                                             \
+    return mpy_uros_typesupport_cdr_deserialize(n, cdr, untyped_ros_message);                   \
+  }                                                                                             \
+  size_t mpy_uros_ts##n##_get_serialized_size(const void *mp_obj, size_t current_alignment)     \
+  {                                                                                             \
+    return mpy_uros_typesupport_get_serialized_size(n, mp_obj, current_alignment);              \
+  }                                                                                             \
+  uint32_t mpy_uros_ts##n##_get_initial_serialized_size(const void *mp_obj)                     \
+  {                                                                                             \
+    return mpy_uros_typesupport_get_initial_serialized_size(n, mp_obj);                         \
+  }                                                                                             \
+  size_t mpy_uros_ts##n##_get_max_serialized_size(bool *full_bounded, size_t current_alignment) \
+  {                                                                                             \
+    return mpy_uros_typesupport_get_max_serialized_size(n, full_bounded, current_alignment);    \
+  }
+
+/**************************************************************************************/
+bool mpy_uros_ts0_serialize(const void *untyped_ros_message, ucdrBuffer *cdr)
+{
+  return mpy_uros_typesupport_cdr_serialize(0, untyped_ros_message, cdr);
+}
+bool mpy_uros_ts0_deserialize(ucdrBuffer *cdr, void *untyped_ros_message)
+{
+  return mpy_uros_typesupport_cdr_deserialize(0, cdr, untyped_ros_message);
+}
+size_t mpy_uros_ts0_get_serialized_size(const void *mp_obj, size_t current_alignment)
+{
+  return mpy_uros_typesupport_get_serialized_size(0, mp_obj, current_alignment);
+}
+uint32_t mpy_uros_ts0_get_initial_serialized_size(const void *mp_obj)
+{
+  return mpy_uros_typesupport_get_initial_serialized_size(0, mp_obj);
+}
+size_t mpy_uros_ts0_get_max_serialized_size(bool *full_bounded, size_t current_alignment)
+{
+  return mpy_uros_typesupport_get_max_serialized_size(0, full_bounded, current_alignment);
+}
+
+/***********************************************************************************************/
+
 #define typeSupportEntry(n)                                                                                                            \
-  bool mpy_uros_ts##n##_serialize(const void *untyped_ros_message, ucdrBuffer *cdr)                                                    \
-  {                                                                                                                                    \
-    return mpy_uros_typesupport_cdr_serialize(n, untyped_ros_message, cdr);                                                            \
-  }                                                                                                                                    \
-  bool mpy_uros_ts##n##_deserialize(ucdrBuffer *cdr, void *untyped_ros_message)                                                        \
-  {                                                                                                                                    \
-    return mpy_uros_typesupport_cdr_deserialize(n, cdr, untyped_ros_message);                                                          \
-  }                                                                                                                                    \
-  size_t mpy_uros_ts##n##_get_serialized_size(const void *mp_obj, size_t current_alignment)                                            \
-  {                                                                                                                                    \
-    return mpy_uros_typesupport_get_serialized_size(n, mp_obj, current_alignment);                                                     \
-  }                                                                                                                                    \
-  uint32_t mpy_uros_ts##n##_get_initial_serialized_size(const void *mp_obj)                                                            \
-  {                                                                                                                                    \
-    return mpy_uros_typesupport_get_initial_serialized_size(n, mp_obj);                                                                \
-  }                                                                                                                                    \
-  size_t mpy_uros_ts##n##_get_max_serialized_size(bool *full_bounded, size_t current_alignment)                                        \
-  {                                                                                                                                    \
-    return mpy_uros_typesupport_get_max_serialized_size(n, full_bounded, current_alignment);                                           \
-  }                                                                                                                                    \
                                                                                                                                        \
   dxc_cb_t *typeSupportCtrlBlk_##n = malloc(sizeof(dxc_cb_t));                                                                         \
                                                                                                                                        \
-  typeSupportCtrlBlk_##n->ros_mesg_type_support = malloc(sizeof(rosidl_message_type_support_t));                                       \   
-                                                                                                                                       \
+  typeSupportCtrlBlk_##n->ros_mesg_type_support = malloc(sizeof(rosidl_message_type_support_t));                                       \                                                                                                                                     
   /* The DXIL will be allocated when a type is registered */                                                                           \
-                                                                                                                                       \
-  message_type_support_callbacks_t *mpy_uros_ts##n##_cb = malloc(sizeof(message_type_support_callbacks_t));                            \
+      message_type_support_callbacks_t *mpy_uros_ts##n##_cb = malloc(sizeof(message_type_support_callbacks_t));                        \
                                                                                                                                        \
   mpy_uros_ts##n##_cb->cdr_serialize = mpy_uros_ts##n##_serialize;                                                                     \
   mpy_uros_ts##n##_cb->cdr_deserialize = mpy_uros_ts##n##_deserialize;                                                                 \
@@ -67,9 +88,29 @@ dxc_cb_t *g_typeSupportCtrlBlks[mpy_uros_type_support_slots];
                                                                                                                                        \
   typeSupportCtrlBlk_##n->ros_mesg_type_support->typesupport_identifier = strdup(ROSIDL_TYPESUPPORT_MICROXRCEDDS_C__IDENTIFIER_VALUE); \
   typeSupportCtrlBlk_##n->ros_mesg_type_support->data = mpy_uros_ts##n##_cb;                                                           \
-  typeSupportCtrlBlk_##n->ros_mesg_type_support->func = get_message_typesupport_handle_function; \
-  g_typeSupportCtrlBlks[n] = typeSupportCtrlBlk_##n; 
+  typeSupportCtrlBlk_##n->ros_mesg_type_support->func = get_message_typesupport_handle_function;                                       \
+  g_typeSupportCtrlBlks[n] = typeSupportCtrlBlk_##n;
 
+// typeSupportFunc(0);
+typeSupportFunc(1);
+typeSupportFunc(2);
+typeSupportFunc(3);
+typeSupportFunc(4);
+typeSupportFunc(5);
+typeSupportFunc(6);
+typeSupportFunc(7);
+typeSupportFunc(8);
+typeSupportFunc(9);
+typeSupportFunc(10);
+typeSupportFunc(11);
+typeSupportFunc(12);
+typeSupportFunc(13);
+typeSupportFunc(14);
+typeSupportFunc(15);
+typeSupportFunc(16);
+typeSupportFunc(17);
+typeSupportFunc(18);
+typeSupportFunc(19);
 
 void init_mpy_ROS_TypeSupport(void)
 {
@@ -105,7 +146,6 @@ void init_mpy_ROS_TypeSupport(void)
     g_typeSupportCtrlBlks[x]->componentCount = 0;
     g_typeSupportCtrlBlks[x]->index = 0;
   }
-
 }
 
 dxc_cb_t *findTypeByName(const char *type)
@@ -142,8 +182,6 @@ dxc_cb_t *findAvailTypeSlot()
   return NULL;
 }
 
-
-
 /**
  *
  *
@@ -151,48 +189,51 @@ dxc_cb_t *findAvailTypeSlot()
 bool mpy_uros_typesupport_cdr_serialize(int slot, const void *untyped_ros_message, ucdrBuffer *cdr)
 {
   (void)cdr;
-  
-  if (!untyped_ros_message) {return false;}
+
+  if (!untyped_ros_message)
+  {
+    return false;
+  }
 
   dxc_cb_t *dataTypeCtrlBlk = g_typeSupportCtrlBlks[slot];
   dxil_t *dxil = dataTypeCtrlBlk->dxil;
 
-  mp_obj_t obj_in = (mp_obj_t) untyped_ros_message;
+  mp_obj_t obj_in = (mp_obj_t)untyped_ros_message;
   mp_map_t *root_obj = mp_obj_dict_get_map(obj_in);
 
-  
   mp_obj_stk_t obj_stack;
   obj_stack.objects[0] = root_obj;
   obj_stack.stkPtr = 1;
 
   // Index 0 is the root object, do not process
-  for (int x=1;  x < dataTypeCtrlBlk->componentCount+1; x++)  {
+  for (int x = 1; x < dataTypeCtrlBlk->componentCount + 1; x++)
+  {
 
-
-    dxi_t*   instruction = &dxil->instructionList[x];
-    const char * cstr_Name = instruction->name;
-    mp_obj_t mpMap = obj_stack.objects[obj_stack.stkPtr-1];
+    dxi_t *instruction = &dxil->instructionList[x];
+    const char *cstr_Name = instruction->name;
+    mp_obj_t mpMap = obj_stack.objects[obj_stack.stkPtr - 1];
 
     mp_obj_t mpName = mp_obj_new_str(cstr_Name, strlen(cstr_Name));
     mp_map_elem_t *element = mp_map_lookup(mpMap, mpName, MP_MAP_LOOKUP);
     mp_obj_t value = element->value;
 
-    if (instruction->isROSType) {
+    if (instruction->isROSType)
+    {
       mp_map_t *mobj = mp_obj_dict_get_map(value);
       obj_stack.objects[obj_stack.stkPtr++] = mobj;
     }
-    else {
+    else
+    {
       const char *type = mp_obj_get_type_str(value);
       instruction->serialize(cdr, value, instruction);
     }
 
-    if (dxil->instructionList[x].islastBlk) obj_stack.stkPtr--;
-
+    if (dxil->instructionList[x].islastBlk)
+      obj_stack.stkPtr--;
   }
 
   return true;
 }
-
 
 /**
  *
@@ -201,10 +242,13 @@ bool mpy_uros_typesupport_cdr_serialize(int slot, const void *untyped_ros_messag
 bool mpy_uros_typesupport_cdr_deserialize(int slot, ucdrBuffer *cdr, void *untyped_ros_message)
 {
   (void)cdr;
- 
+
   mp_obj_stk_t obj_stack;
 
-  if (!untyped_ros_message) {return false;}
+  if (!untyped_ros_message)
+  {
+    return false;
+  }
 
   void **ros_mesg = untyped_ros_message;
 
@@ -212,13 +256,14 @@ bool mpy_uros_typesupport_cdr_deserialize(int slot, ucdrBuffer *cdr, void *untyp
   dxil_t *dxil = rsub->dataTypeCtrlBlk->dxil;
   mp_obj_t root_obj = mp_obj_new_dict(dxil->instructionList[0].shallowComponentCount);
   obj_stack.objects[0] = root_obj;
-  obj_stack.stkPtr=1;
+  obj_stack.stkPtr = 1;
 
   // Index 0 is the root object, do not process
-  for (int x=1;  x < rsub->dataTypeCtrlBlk->componentCount+1; x++)  {
+  for (int x = 1; x < rsub->dataTypeCtrlBlk->componentCount + 1; x++)
+  {
     dxil->instructionList[x].deserialize(cdr, &dxil->instructionList[x], &obj_stack);
-      if (dxil->instructionList[x].islastBlk) obj_stack.stkPtr--;
-
+    if (dxil->instructionList[x].islastBlk)
+      obj_stack.stkPtr--;
   }
 
   *ros_mesg = root_obj;
@@ -233,7 +278,8 @@ bool mpy_uros_typesupport_cdr_deserialize(int slot, ucdrBuffer *cdr, void *untyp
  */
 size_t mpy_uros_typesupport_get_serialized_size(int slot, const void *mp_obj, size_t current_alignment)
 {
-  if (!mp_obj) return 0;
+  if (!mp_obj)
+    return 0;
 
   const size_t initial_alignment = current_alignment;
 
@@ -241,8 +287,9 @@ size_t mpy_uros_typesupport_get_serialized_size(int slot, const void *mp_obj, si
   dxil_t *dxil = dataTypeCtrlBlk->dxil;
 
   // Index 0 is the root object, do not process
-  for (int x=1;  x < dataTypeCtrlBlk->componentCount+1; x++)  {
-   current_alignment += dxil->instructionList[x].serializedSize( mp_obj, current_alignment);
+  for (int x = 1; x < dataTypeCtrlBlk->componentCount + 1; x++)
+  {
+    current_alignment += dxil->instructionList[x].serializedSize(mp_obj, current_alignment);
   }
 
   return current_alignment - initial_alignment;
@@ -273,45 +320,49 @@ size_t mpy_uros_typesupport_get_max_serialized_size(int slot, bool *full_bounded
   return current_alignment - initial_alignment;
 }
 
-
 /**
- * 
- * 
- * 
-*/
-void deserializeROSType(ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack)
+ *
+ *
+ *
+ */
+void deserializeROSType(ucdrBuffer *cdr, dxi_t *inst, mp_obj_stk_t *obj_stack)
 {
   mp_obj_t dict = mp_obj_new_dict(inst->shallowComponentCount);
-  mp_obj_t parent_obj = obj_stack->objects[obj_stack->stkPtr-1];
+  mp_obj_t parent_obj = obj_stack->objects[obj_stack->stkPtr - 1];
   mp_obj_dict_store(parent_obj, mp_obj_new_str(inst->name, strlen(inst->name)), dict);
-  obj_stack->objects[obj_stack->stkPtr++]=dict;
+  obj_stack->objects[obj_stack->stkPtr++] = dict;
 }
-
 
 size_t serializedSizeROSType(const void *mp_obj, size_t current_alignment)
 {
   return 0;
 }
 
-void serializeROSType(ucdrBuffer *cdr,  mp_obj_t value, dxi_t* inst)
+void serializeROSType(ucdrBuffer *cdr, mp_obj_t value, dxi_t *inst)
 {
 }
 
-
 /**
- * 
- * 
- * 
- * 
-*/
-void serializeBool(ucdrBuffer *cdr,  mp_obj_t value, dxi_t* inst)
+ *
+ *
+ *
+ *
+ */
+void serializeBool(ucdrBuffer *cdr, mp_obj_t value, dxi_t *inst)
 {
-    bool bVal = true;
-    if (value == mp_const_none) {	return;}
-    if (&mp_type_bool != mp_obj_get_type(value) ) { return; }
-    int iVal = mp_obj_get_int(value);
-    if (iVal == 0) bVal=false;
-    ucdr_serialize_bool(cdr, bVal);
+  bool bVal = true;
+  if (value == mp_const_none)
+  {
+    return;
+  }
+  if (&mp_type_bool != mp_obj_get_type(value))
+  {
+    return;
+  }
+  int iVal = mp_obj_get_int(value);
+  if (iVal == 0)
+    bVal = false;
+  ucdr_serialize_bool(cdr, bVal);
 }
 
 size_t serializedSizeBool(const void *mp_obj, size_t current_alignment)
@@ -323,23 +374,28 @@ size_t serializedSizeBool(const void *mp_obj, size_t current_alignment)
   return current_alignment - initial_alignment;
 }
 
-void deserializeBool(ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack)
+void deserializeBool(ucdrBuffer *cdr, dxi_t *inst, mp_obj_stk_t *obj_stack)
 {
 }
 
-
 /**
- * 
- * 
- * 
-*/
-void serializeInt(ucdrBuffer *cdr,  mp_obj_t value, dxi_t* inst)
-{  
-    int iVal;
-    if (value == mp_const_none) {	return;}
-    if (&mp_type_int != mp_obj_get_type(value) ) { return; }
-    iVal = mp_obj_get_int(value);
-    ucdr_serialize_int32_t(cdr, iVal);
+ *
+ *
+ *
+ */
+void serializeInt(ucdrBuffer *cdr, mp_obj_t value, dxi_t *inst)
+{
+  int iVal;
+  if (value == mp_const_none)
+  {
+    return;
+  }
+  if (&mp_type_int != mp_obj_get_type(value))
+  {
+    return;
+  }
+  iVal = mp_obj_get_int(value);
+  ucdr_serialize_int32_t(cdr, iVal);
 }
 
 size_t serializedSizeInt(const void *mp_obj, size_t current_alignment)
@@ -351,40 +407,43 @@ size_t serializedSizeInt(const void *mp_obj, size_t current_alignment)
   return current_alignment - initial_alignment;
 }
 
-void deserializeInt(ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack)
+void deserializeInt(ucdrBuffer *cdr, dxi_t *inst, mp_obj_stk_t *obj_stack)
 {
 }
 
 /**
- * 
- * 
- * 
- * 
-*/
-void serializeFloat(ucdrBuffer *cdr,  mp_obj_t value, dxi_t* inst)
+ *
+ *
+ *
+ *
+ */
+void serializeFloat(ucdrBuffer *cdr, mp_obj_t value, dxi_t *inst)
 {
-    if (value == mp_const_none) {	return;}
+  if (value == mp_const_none)
+  {
+    return;
+  }
 
-    const mp_obj_type_t* mpType = mp_obj_get_type(value);
+  const mp_obj_type_t *mpType = mp_obj_get_type(value);
 
-    if (&mp_type_float ==  mpType) 
-    { 
-      double dVal = mp_obj_get_float_to_d(value);
-      ucdr_serialize_double(cdr, dVal);
-    } 
-    else if (&mp_type_int == mpType)  
-    {
-      int iVal = mp_obj_get_int(value);
-      double dVal = (double) iVal;
-      ucdr_serialize_double(cdr, dVal);
-    } 
+  if (&mp_type_float == mpType)
+  {
+    double dVal = mp_obj_get_float_to_d(value);
+    ucdr_serialize_double(cdr, dVal);
+  }
+  else if (&mp_type_int == mpType)
+  {
+    int iVal = mp_obj_get_int(value);
+    double dVal = (double)iVal;
+    ucdr_serialize_double(cdr, dVal);
+  }
 }
 
-void deserializeFloat(ucdrBuffer *cdr,   dxi_t* inst, mp_obj_stk_t *obj_stack)
+void deserializeFloat(ucdrBuffer *cdr, dxi_t *inst, mp_obj_stk_t *obj_stack)
 {
   double doubleVal;
   ucdr_deserialize_double(cdr, &doubleVal);
-  mp_obj_dict_store(obj_stack->objects[obj_stack->stkPtr-1], mp_obj_new_str(inst->name, strlen(inst->name)), mp_obj_new_float(doubleVal));
+  mp_obj_dict_store(obj_stack->objects[obj_stack->stkPtr - 1], mp_obj_new_str(inst->name, strlen(inst->name)), mp_obj_new_float(doubleVal));
 }
 
 size_t serializedSizeFloat(const void *mp_obj, size_t current_alignment)
@@ -397,27 +456,32 @@ size_t serializedSizeFloat(const void *mp_obj, size_t current_alignment)
   return current_alignment - initial_alignment;
 }
 
-
 /**
- * 
- * 
- * 
- * 
-*/
-void deserializeDouble(ucdrBuffer *cdr, dxi_t* inst, mp_obj_stk_t *obj_stack)
+ *
+ *
+ *
+ *
+ */
+void deserializeDouble(ucdrBuffer *cdr, dxi_t *inst, mp_obj_stk_t *obj_stack)
 {
   double doubleVal;
   ucdr_deserialize_double(cdr, &doubleVal);
-  mp_obj_dict_store(obj_stack->objects[obj_stack->stkPtr-1], mp_obj_new_str(inst->name, strlen(inst->name)), mp_obj_new_float(doubleVal));
+  mp_obj_dict_store(obj_stack->objects[obj_stack->stkPtr - 1], mp_obj_new_str(inst->name, strlen(inst->name)), mp_obj_new_float(doubleVal));
 }
 
-void serializeDouble(ucdrBuffer *cdr,  mp_obj_t value, dxi_t* inst)
+void serializeDouble(ucdrBuffer *cdr, mp_obj_t value, dxi_t *inst)
 {
-    double dVal;
-    if (value == mp_const_none) {	return;}
-    if (&mp_type_float != mp_obj_get_type(value) ) { NULL; }
-    dVal = mp_obj_get_float_to_d(value);
-    ucdr_serialize_double(cdr, dVal);
+  double dVal;
+  if (value == mp_const_none)
+  {
+    return;
+  }
+  if (&mp_type_float != mp_obj_get_type(value))
+  {
+    NULL;
+  }
+  dVal = mp_obj_get_float_to_d(value);
+  ucdr_serialize_double(cdr, dVal);
 }
 
 size_t serializedSizeDouble(const void *mp_obj, size_t current_alignment)
@@ -428,9 +492,6 @@ size_t serializedSizeDouble(const void *mp_obj, size_t current_alignment)
   current_alignment += ucdr_alignment(current_alignment, item_size) + item_size;
   return current_alignment - initial_alignment;
 }
-
-
-
 
 // ROSIDL_TYPESUPPORT_MICROXRCEDDS_C_PUBLIC_example_interfaces
 // size_t get_serialized_size_example_interfaces__msg__String(
