@@ -12,7 +12,6 @@
 
 #include "esp_wifi.h"
 #include "esp_netif.h"
-#include "uros_network_interfaces.h"
 
 
 rclc_executor_t		rmp_rclc_executor;
@@ -147,10 +146,6 @@ mp_obj_t init_ROS_Stack()
 	init_ROS_Publishers();
     init_mpy_ROS_TypeSupport();
 
-#if defined(CONFIG_MICRO_ROS_ESP_NETIF_WLAN) || defined(CONFIG_MICRO_ROS_ESP_NETIF_ENET)
-//	ESP_ERROR_CHECK(uros_network_interface_initialize());
-#endif	
-
 	rmp_rcl_allocator = rcl_get_default_allocator();
 
 	init_options= rcl_get_zero_initialized_init_options();
@@ -161,7 +156,7 @@ mp_obj_t init_ROS_Stack()
 
 	// Static Agent IP and port can be used instead of auto disvery.
 	RCCHECK(rmw_uros_options_set_udp_address((const char*)ROS_AgentIP, (const char *)ROS_AgentPort, rmw_options));
-	// RCCHECK(rmw_uros_discover_agent(rmw_options));
+	//## RCCHECK(rmw_uros_discover_agent(rmw_options));
 #endif
 
 	// create init_options
@@ -170,9 +165,6 @@ mp_obj_t init_ROS_Stack()
 	// create node
 	RCCHECK(rclc_node_init_default(&rmp_rcl_node, rmp_node_name, rmp_namespace, &rmp_rclc_support));
 	
-	// create executor
-	RCCHECK(rclc_executor_init(&rmp_rclc_executor, &rmp_rclc_support.context, 20, &rmp_rcl_allocator));
-
 
 	return mp_const_none;
 }
@@ -187,6 +179,9 @@ mp_obj_t init_ROS_Stack()
   
 mp_obj_t mp_run_ROS_Stack()
 {
+		// create executor
+	RCCHECK(rclc_executor_init(&rmp_rclc_executor, &rmp_rclc_support.context, 20, &rmp_rcl_allocator));
+
     start_new_ROS_thread(run_ROS_Stack);
     return mp_const_none;
 }
@@ -201,8 +196,12 @@ void run_ROS_Stack() {
 
 	printf("\r\nROS Task running task\r\n");
 	while(1) {
-		rclc_executor_spin_some(&rmp_rclc_executor, RCL_MS_TO_NS(2000) );
+		RCSOFTCHECK(rclc_executor_spin_some(&rmp_rclc_executor, RCL_MS_TO_NS(2000) ));
+
 		printf("MicroRos Spinning\r\n");
+		const TickType_t xDelay = 2000 / portTICK_PERIOD_MS;
+		vTaskDelay( xDelay );
+	
 	}
 
 }
