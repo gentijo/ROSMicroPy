@@ -5,12 +5,12 @@
   "version": "0.2.0",
   "configurations": [
       {
-          "name": "OpenOCD Debug WRover",
+          "name": "OpenOCD Debug ESP Cam",
           "type": "cppdbg",
           "request": "launch",
           "gdbpath": "/opt/esp/tools/xtensa-esp-elf-gdb/12.1_20231023/xtensa-esp-elf-gdb/bin/xtensa-esp32-elf-gdb",
           "miDebuggerPath": "/opt/esp/tools/xtensa-esp-elf-gdb/12.1_20231023/xtensa-esp-elf-gdb/bin/xtensa-esp32-elf-gdb",
-          "program": "${workspaceFolder}/micropython/ports/esp32/build/micropython_RMP_WROVER_B.elf",
+          "program": "${workspaceFolder}/micropython/ports/esp32/build/micropython_RMP_ESPCAM.elf",
 
           "setupCommands": [
               {
@@ -19,7 +19,7 @@
                   "ignoreFailures": true
               },
               {
-                  "text": "file '${workspaceFolder}/micropython/ports/esp32/build/micropython_RMP_WROVER_B.elf'"
+                  "text": "file '${workspaceFolder}/micropython/ports/esp32/build/micropython_RMP_ESPCAM.elf'"
               },
               {
                   "text": "target remote :3333"
