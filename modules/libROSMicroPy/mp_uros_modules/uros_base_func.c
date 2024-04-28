@@ -21,6 +21,8 @@ rclc_support_t		rmp_rclc_support;
 rcl_init_options_t  init_options;
 rmw_init_options_t *rmw_options;
 
+rcl_timer_t       	main_timer;
+
 size_t				rmp_domain_id = DOMAIN_ID;
 char				rmp_node_name[64] = "turtle2";
 char				rmp_namespace[64] = "";
@@ -134,6 +136,11 @@ mp_obj_t setNodeName(mp_obj_t obj_in)
 	return obj_in;
 }
 
+void main_timer_callback(rcl_timer_t * timer, int64_t last_call_time)
+{
+	printf("main Timer:\n");
+}
+
 /**
  * 
  * INitialize the ROS Stack creating the base objects needed
@@ -165,6 +172,18 @@ mp_obj_t init_ROS_Stack()
 	// create node
 	RCCHECK(rclc_node_init_default(&rmp_rcl_node, rmp_node_name, rmp_namespace, &rmp_rclc_support));
 	
+	// create executor
+	RCCHECK(rclc_executor_init(&rmp_rclc_executor, &rmp_rclc_support.context, 20, &rmp_rcl_allocator));
+	
+ // create timer,
+  	// printf("Main Timer Init\r\n");
+  	// const unsigned int timer_timeout = 1000;
+  	// int rc = rclc_timer_init_default(&main_timer, &rmp_rclc_support, RCL_MS_TO_NS(timer_timeout), main_timer_callback);
+  	// if (rc != RCL_RET_OK)
+  	// {
+   	// 	printf("Failed to init Timer\r\n");
+  	// }
+  	// RCCHECK(rclc_executor_add_timer(&rmp_rclc_executor, &main_timer));
 
 	return mp_const_none;
 }
@@ -179,9 +198,6 @@ mp_obj_t init_ROS_Stack()
   
 mp_obj_t mp_run_ROS_Stack()
 {
-		// create executor
-	RCCHECK(rclc_executor_init(&rmp_rclc_executor, &rmp_rclc_support.context, 20, &rmp_rcl_allocator));
-
     start_new_ROS_thread(run_ROS_Stack);
     return mp_const_none;
 }
@@ -196,7 +212,7 @@ void run_ROS_Stack() {
 
 	printf("\r\nROS Task running task\r\n");
 	while(1) {
-		RCSOFTCHECK(rclc_executor_spin_some(&rmp_rclc_executor, RCL_MS_TO_NS(2000) ));
+		RCSOFTCHECK(rclc_executor_spin(&rmp_rclc_executor ));
 
 		printf("MicroRos Spinning\r\n");
 		const TickType_t xDelay = 2000 / portTICK_PERIOD_MS;

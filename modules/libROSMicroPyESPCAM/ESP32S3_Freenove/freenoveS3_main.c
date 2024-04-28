@@ -22,10 +22,9 @@
 
 #define ledPin 4
 
-rcl_timer_t timer;
+rcl_timer_t espcam_timer;
 rcl_publisher_t img_publisher;
 sensor_msgs__msg__CompressedImage img_msg;
-
 
 struct timespec ts;
 extern int clock_gettime(clockid_t unused, struct timespec *tp);
@@ -34,7 +33,8 @@ unsigned int num_handles = 1; // 1 subscriber, 1 publisher, 1 server
 
 camera_config_t config;
 
-mp_obj_t rmp_cam_init(void) {
+mp_obj_t rmp_cam_init(void)
+{
   config.ledc_channel = LEDC_CHANNEL_0;
   config.ledc_timer = LEDC_TIMER_0;
   config.pin_d0 = Y2_GPIO_NUM;
@@ -60,24 +60,24 @@ mp_obj_t rmp_cam_init(void) {
   config.fb_location = CAMERA_FB_IN_PSRAM;
   config.jpeg_quality = 12;
   config.fb_count = 1;
-  
+
   config.jpeg_quality = 10;
   config.fb_count = 2;
   config.grab_mode = CAMERA_GRAB_LATEST;
 
   // camera init
   esp_err_t err = esp_camera_init(&config);
-  if (err != ESP_OK) {
+  if (err != ESP_OK)
+  {
     printf("Camera init failed with error 0x%x", err);
     return mp_const_none;
   }
 
-  sensor_t * s = esp_camera_sensor_get();
+  sensor_t *s = esp_camera_sensor_get();
   // initial sensors are flipped vertically and colors are a bit saturated
-  s->set_vflip(s, 1); // flip it back
+  s->set_vflip(s, 1);      // flip it back
   s->set_brightness(s, 1); // up the brightness just a bit
   s->set_saturation(s, 0); // lower the saturation
-
 
   printf("Camera configuration complete!\r\n");
   return mp_const_none;
@@ -94,39 +94,52 @@ void blink_esp32_led()
 size_t _jpg_buf_len = 0;
 uint8_t *_jpg_buf = NULL;
 
-void timer_callback(rcl_timer_t *timer, int64_t last_call_time)
+void publish_cam_image()
 {
-  printf("Timer callback\r\n");
-  RCLC_UNUSED(last_call_time);
-  if (timer != NULL)
+
+  camera_fb_t *img = esp_camera_fb_get();
+
+  if (img != NULL)
   {
-    camera_fb_t *img = esp_camera_fb_get();
+    img_msg.data.size = img->len;
+    clock_gettime(CLOCK_REALTIME, &ts);
+    img_msg.header.stamp.sec = ts.tv_sec;
+    img_msg.header.stamp.nanosec = ts.tv_nsec;
+    img_msg.header.frame_id = micro_ros_string_utilities_set(img_msg.header.frame_id, "cam_frame");
+    img_msg.format = micro_ros_string_utilities_set(img_msg.format, "jpeg");
+    memcpy(img_msg.data.data, img->buf, img->len);
 
-    if (img != NULL)
-    {
-      img_msg.data.size = img->len;
-      clock_gettime(CLOCK_REALTIME, &ts);
-      img_msg.header.stamp.sec = ts.tv_sec;
-      img_msg.header.stamp.nanosec = ts.tv_nsec;
-      img_msg.header.frame_id = micro_ros_string_utilities_set(img_msg.header.frame_id, "cam_frame");
-      img_msg.format = micro_ros_string_utilities_set(img_msg.format, "jpeg");
-      memcpy(img_msg.data.data, img->buf, img->len);
+    // bool jpeg_converted = frame2jpg(img, 80, &_jpg_buf, &_jpg_buf_len);
+    // if (jpeg_converted) {
+    //   uint8_t (*ptr)[_jpg_buf_len];
+    //   ptr = (uint8_t(*)[_jpg_buf_len])_jpg_buf;
+    //   img_msg.data.data = *ptr;
+    // }
+    // img_msg.data.data = (uint8_t *) img->buf;
 
-      // bool jpeg_converted = frame2jpg(img, 80, &_jpg_buf, &_jpg_buf_len);
-      // if (jpeg_converted) {
-      //   uint8_t (*ptr)[_jpg_buf_len];
-      //   ptr = (uint8_t(*)[_jpg_buf_len])_jpg_buf;
-      //   img_msg.data.data = *ptr;
-      // }
-      // img_msg.data.data = (uint8_t *) img->buf;
-      printf("Publish Image\r\n");
-      RCSOFTCHECK(rcl_publish(&img_publisher, &img_msg, NULL));
-      esp_camera_fb_return(img);
-      free(_jpg_buf);
-    }
+    RCSOFTCHECK(rcl_publish(&img_publisher, &img_msg, NULL));
+
+    printf("Image published Its size was: %zu bytes\r\n", img->len);
+    esp_camera_fb_return(img);
+    free(_jpg_buf);
   }
 }
 
+void cam_timer_callback(rcl_timer_t *timer, int64_t last_call_time)
+{
+  printf("Cam Timer callback\r\n");
+  RCLC_UNUSED(last_call_time);
+  if (timer != NULL)
+  {
+    publish_cam_image();
+  }
+}
+
+mp_obj_t rmp_publish_cam_image()
+{
+  publish_cam_image();
+  return mp_const_none;
+}
 
 mp_obj_t rmp_cam_takepic(void)
 {
@@ -146,7 +159,7 @@ mp_obj_t rmp_cam_start()
   // create publisher and subscriber
   printf("Pub Init\r\n");
   rc = rclc_publisher_init_default(&img_publisher, &rmp_rcl_node,
-    ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, CompressedImage), "image/compressed");
+                                   ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, CompressedImage), "image/compressed");
   if (rc != RCL_RET_OK)
   {
     printf("Failed to init pub %d\r\n", rc);
@@ -154,12 +167,13 @@ mp_obj_t rmp_cam_start()
 
   // create timer,
   printf("Timer Init\r\n");
-  const unsigned int timer_timeout = 1000;
-  rc = rclc_timer_init_default(&timer, &rmp_rclc_support, RCL_MS_TO_NS(timer_timeout), timer_callback);
+  const unsigned int timer_timeout = 200;
+  rc = rclc_timer_init_default(&espcam_timer, &rmp_rclc_support, RCL_MS_TO_NS(timer_timeout), cam_timer_callback);
   if (rc != RCL_RET_OK)
   {
     printf("Failed to init Timer\r\n");
   }
+  RCCHECK(rclc_executor_add_timer(&rmp_rclc_executor, &espcam_timer));
 
   printf("\r\nESP Sensor get\r\n");
   sensor_t *s = esp_camera_sensor_get();
@@ -214,6 +228,7 @@ mp_obj_t rmp_cam_start()
 
 MP_DEFINE_CONST_FUN_OBJ_0(rmp_cam_init_obj, rmp_cam_init);
 MP_DEFINE_CONST_FUN_OBJ_0(rmp_cam_start_obj, rmp_cam_start);
+MP_DEFINE_CONST_FUN_OBJ_0(rmp_publish_cam_image_obj, rmp_publish_cam_image);
 MP_DEFINE_CONST_FUN_OBJ_0(rmp_cam_takepic_obj, rmp_cam_takepic);
 
 /**
@@ -224,7 +239,10 @@ const mp_rom_map_elem_t mp_uros_cam_module_globals_table[] = {
 
     {MP_ROM_QSTR(MP_QSTR_rmp_cam_init), MP_ROM_PTR(&rmp_cam_init_obj)},
     {MP_ROM_QSTR(MP_QSTR_rmp_cam_takepic), MP_ROM_PTR(&rmp_cam_takepic_obj)},
-    {MP_ROM_QSTR(MP_QSTR_rmp_cam_start), MP_ROM_PTR(&rmp_cam_start_obj)}};
+    {MP_ROM_QSTR(MP_QSTR_rmp_publish_cam_image), MP_ROM_PTR(&rmp_publish_cam_image_obj)},
+    {MP_ROM_QSTR(MP_QSTR_rmp_cam_start), MP_ROM_PTR(&rmp_cam_start_obj)}
+
+};
 
 MP_DEFINE_CONST_DICT(mp_uros_cam_module_globals, mp_uros_cam_module_globals_table);
 

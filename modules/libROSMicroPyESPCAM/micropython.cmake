@@ -8,7 +8,7 @@ message("MicroRos ${MICROROS_INC_DIR}")
 get_filename_component(ESP32_CAMERA_INC_DIR ../../../../components/espressif__esp32-camera/driver/include ABSOLUTE)
 
 set (ROS_MICROPY_ESPCAM_SRC
-    ${MOD_ROS_MICROPY_ESPCAM_DIR}/freenoveS3_main.c
+    ${MOD_ROS_MICROPY_ESPCAM_DIR}/ESP32S3_Freenove/freenoveS3_main.c
 
 )
 
