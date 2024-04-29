@@ -9,6 +9,8 @@ get_filename_component(ESP32_CAMERA_INC_DIR ../../../../components/espressif__es
 
 set (ROS_MICROPY_ESPCAM_SRC
     ${MOD_ROS_MICROPY_ESPCAM_DIR}/ESP32S3_Freenove/freenoveS3_main.c
+    ${MOD_ROS_MICROPY_ESPCAM_DIR}/rmp_cam_main.c
+
 
 )
 
