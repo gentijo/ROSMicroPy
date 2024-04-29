@@ -1,3 +1,5 @@
+#include "rmp_cam_main.h"
+
 
 /**
  * Create MP objects that can be registered with Micropython from MicroROS
@@ -20,7 +22,7 @@ const mp_rom_map_elem_t mp_uros_cam_module_globals_table[] = {
     {MP_ROM_QSTR(MP_QSTR_rmp_cam_init), MP_ROM_PTR(&rmp_cam_init_obj)},
     {MP_ROM_QSTR(MP_QSTR_rmp_cam_takepic), MP_ROM_PTR(&rmp_cam_takepic_obj)},
     {MP_ROM_QSTR(MP_QSTR_rmp_publish_cam_image), MP_ROM_PTR(&rmp_publish_cam_image_obj)},
-    {MP_ROM_QSTR(MP_QSTR_rmp_cam_start), MP_ROM_PTR(&rmp_cam_start_obj)}
+    {MP_ROM_QSTR(MP_QSTR_rmp_cam_start), MP_ROM_PTR(&rmp_cam_start_obj)},
     {MP_ROM_QSTR(MP_QSTR_rmp_cam_set_topic_name), MP_ROM_PTR(&rmp_cam_set_topic_name_obj)}
 
 };

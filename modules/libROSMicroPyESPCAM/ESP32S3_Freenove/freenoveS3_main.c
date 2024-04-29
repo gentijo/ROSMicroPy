@@ -26,7 +26,7 @@ rcl_timer_t espcam_timer;
 rcl_publisher_t img_publisher;
 sensor_msgs__msg__CompressedImage img_msg;
 
-char    CAM_TopicName[32] "image/compressed";
+char    CAM_TopicName[32] = "image/compressed";
 
 struct timespec ts;
 extern int clock_gettime(clockid_t unused, struct timespec *tp);
