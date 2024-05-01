@@ -1,6 +1,5 @@
 
 #include "mp_uros_sdk.h"
-#include "mp_uros_sdk.h"
 #include "uros_base_func.h"
 #include "uros_mesg_func.h"
 #include "mp_uros_type_support.h"
@@ -177,7 +176,8 @@ void service_callback(const void *response, void *context) {
 
     const void **mp_data = response;
     ros_subscription* ros_sub = (ros_subscription *)context;
- 
+    typedef struct sensor_msgs__msg__CompressedImage
+
     MP_THREAD_GIL_ENTER();
     // mp_obj_t data = createObjFromThread();
     mp_call_function_1(ros_sub->mpEventCallback, *mp_data);
