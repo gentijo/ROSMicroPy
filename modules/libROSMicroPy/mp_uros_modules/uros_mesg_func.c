@@ -176,7 +176,6 @@ void service_callback(const void *response, void *context) {
 
     const void **mp_data = response;
     ros_subscription* ros_sub = (ros_subscription *)context;
-    typedef struct sensor_msgs__msg__CompressedImage
 
     MP_THREAD_GIL_ENTER();
     // mp_obj_t data = createObjFromThread();

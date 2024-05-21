@@ -123,6 +123,7 @@ mp_obj_t rmp_cam_set_topic_name(mp_obj_t obj_in)
 */
 size_t _jpg_buf_len = 0;
 uint8_t *_jpg_buf = NULL;
+int x = 0;
 
 void publish_cam_image()
 {
@@ -150,6 +151,9 @@ void publish_cam_image()
     RCSOFTCHECK(rcl_publish(&img_publisher, &img_msg, NULL));
 
     printf(".");
+    x++; 
+    if ((x%20) == 0) printf("\r\n");
+    
     esp_camera_fb_return(img);
     free(_jpg_buf);
   }

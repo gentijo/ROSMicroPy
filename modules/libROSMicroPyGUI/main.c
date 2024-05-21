@@ -17,6 +17,7 @@
 #include "py/runtime.h"
 #include "py/mpconfig.h"
 #include "mpconfigport.h"
+#include "widgets/rmp_widget_mgr.h"
 
 lv_disp_t *init_lcd_display();
 
@@ -65,21 +66,35 @@ mp_obj_t mp_init_lcd_display()
  */
 MP_DEFINE_CONST_FUN_OBJ_0(init_lcd_display_obj, mp_init_lcd_display);
 
-/**
- * Register the microros class and map the functions from Micropython to MicroROS
- */
 const mp_rom_map_elem_t mp_uros_gui_module_globals_table[] = {
     {MP_ROM_QSTR(MP_QSTR___name__), MP_ROM_QSTR(MP_QSTR_ROSMicroPyGUI)},
-
     {MP_ROM_QSTR(MP_QSTR_rmp_init_lcd_display), MP_ROM_PTR(&init_lcd_display_obj)}};
 
 MP_DEFINE_CONST_DICT(mp_uros_gui_module_globals, mp_uros_gui_module_globals_table);
 
-// Define module object.
 const mp_obj_module_t mp_uros_gui_user_cmodule = {
     .base = {&mp_type_module},
     .globals = (mp_obj_dict_t *)&mp_uros_gui_module_globals,
 };
 
-// Register the module to make it available in Python.
 MP_REGISTER_MODULE(MP_QSTR_ROSMicroPyGUI, mp_uros_gui_user_cmodule);
+
+/**
+ * 
+ * 
+ * 
+*/
+const mp_rom_map_elem_t rmp_widget_types_table[] = {
+    {MP_ROM_QSTR(MP_QSTR___name__), MP_ROM_QSTR(MP_QSTR_RMP_GUI_Widgets)},
+    {MP_ROM_QSTR(MP_QSTR_RMP_ROS_VIDEO), MP_ROM_INT(RMP_ROS_VIDEO_WIDGET) },
+    {MP_ROM_QSTR(MP_QSTR_RMP_BUTTON), MP_ROM_INT(RMP_BUTTON_WIDGET) },
+
+};
+MP_DEFINE_CONST_DICT(rmp_widget_types, rmp_widget_types_table);
+// Define module object.
+const mp_obj_module_t rmp_widget_types_cmodule = {
+    .base = {&mp_type_module},
+    .globals = (mp_obj_dict_t *)&rmp_widget_types,
+};
+MP_REGISTER_MODULE(MP_QSTR_RMP_GUI_Widgets, rmp_widget_types_cmodule);
+

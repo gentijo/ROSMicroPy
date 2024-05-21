@@ -15,13 +15,8 @@ set (ROS_MICROPY_GUI_SRC
     ${ROS_MICROPY_GUI_DIR}/ui/ui.c 
     ${ROS_MICROPY_GUI_DIR}/ui/ui_helpers.c 
     ${ROS_MICROPY_GUI_DIR}/ui/screens/ui_Screen1.c
-#    ${ROS_MICROPY_GUI_DIR}/ui/widgets/rmp_video_widget.c
-
-   # ${ROS_MICROPY_LCD_DRIVER_DIR}/bsp.c
-   # ${ROS_MICROPY_LCD_DRIVER_DIR}/disp_backlight.c
-
-#    ${ROS_MICROPY_GUI_DIR}/mp/lv_mp.c
-#    ${ROS_MICROPY_GUI_DIR}/mp/lv_espidf.c
+    ${ROS_MICROPY_GUI_DIR}/widgets/ros-video/rmp_video_widget.cpp
+    ${ROS_MICROPY_GUI_DIR}/widgets/rmp_widget_mgr.cpp
 
 )
 
