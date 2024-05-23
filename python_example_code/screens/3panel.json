@@ -1,0 +1,39 @@
+{
+    "style": {},
+    "object": {
+        "type": "HorizontalLayout",
+        "height": 0,
+        "width": 0,
+        "style": "Style Name",
+        "elements": [
+            {
+                "name": "Name ref, if not present random name will be generated",
+                "type": "VerticalLayout",
+                "height": 0,
+                "width": 0,
+                "align": "flow type",
+                "style": "Style Name",
+                "elements": [
+                    {
+                        "name": "lbutton1",
+                        "type": "Container",
+                        "height": 0,
+                        "width": 0,
+                        "align": "flow type"
+                    }
+                ]
+            }
+        ]
+    }
+},
+
+
+{
+    "elements": [ {
+        "type": "ButtonControl",
+        "placement": "lbutton1",
+        "callback": "function name"
+    },
+
+    ],
+}

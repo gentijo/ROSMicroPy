@@ -1,0 +1,29 @@
+
+// https: //jsonforms-editor.netlify.app/
+
+{
+    "type": "HorizontalLayout",
+    "elements": [
+      {
+        "type": "VerticalLayout",
+        "elements": [
+          {
+            "type": "Container",
+            "scope": "#/properties/name"
+          },
+          {
+            "type": "Container",
+            "scope": "#/properties/birthDate"
+          },
+          {
+            "type": "Container",
+            "scope": "#/properties/occupation"
+          }
+        ]
+      },
+      {
+        "type": "VerticalLayout",
+        "elements": []
+      }
+    ]
+  }

@@ -26,6 +26,11 @@ rcl_timer_t espcam_timer;
 rcl_publisher_t img_publisher;
 sensor_msgs__msg__CompressedImage img_msg;
 
+<<<<<<< HEAD
+=======
+char    CAM_TopicName[32] = "image/compressed";
+
+>>>>>>> rmp_cam
 struct timespec ts;
 extern int clock_gettime(clockid_t unused, struct timespec *tp);
 
@@ -91,8 +96,42 @@ void blink_esp32_led()
   // digitalWrite(ledPin, LOW);
 }
 
+<<<<<<< HEAD
 size_t _jpg_buf_len = 0;
 uint8_t *_jpg_buf = NULL;
+=======
+
+/** 
+ * 
+ * 
+*/
+mp_obj_t rmp_cam_set_topic_name(mp_obj_t obj_in)
+{
+    if (&mp_type_str != mp_obj_get_type(obj_in)) {
+		mp_raise_TypeError(MP_ERROR_TEXT("Topic name must be a str"));
+		return obj_in;
+    }
+
+    const char* cstr = mp_obj_str_get_str(obj_in);
+    if ((cstr == NULL) || strlen(cstr)==0) {
+		mp_raise_ValueError(MP_ERROR_TEXT("Topic must be a string"));
+		return obj_in;
+    }
+
+	strncpy(CAM_TopicName, cstr, 31);
+	return obj_in;
+}
+
+
+/***
+ * 
+ * 
+ * 
+*/
+size_t _jpg_buf_len = 0;
+uint8_t *_jpg_buf = NULL;
+int x = 0;
+>>>>>>> rmp_cam
 
 void publish_cam_image()
 {
@@ -119,15 +158,34 @@ void publish_cam_image()
 
     RCSOFTCHECK(rcl_publish(&img_publisher, &img_msg, NULL));
 
+<<<<<<< HEAD
     printf("Image published Its size was: %zu bytes\r\n", img->len);
+=======
+    printf(".");
+    x++; 
+    if ((x%20) == 0) printf("\r\n");
+    
+>>>>>>> rmp_cam
     esp_camera_fb_return(img);
     free(_jpg_buf);
   }
 }
 
+<<<<<<< HEAD
 void cam_timer_callback(rcl_timer_t *timer, int64_t last_call_time)
 {
   printf("Cam Timer callback\r\n");
+=======
+
+
+/***
+ * 
+ * 
+ * 
+*/
+void cam_timer_callback(rcl_timer_t *timer, int64_t last_call_time)
+{
+>>>>>>> rmp_cam
   RCLC_UNUSED(last_call_time);
   if (timer != NULL)
   {
@@ -135,12 +193,29 @@ void cam_timer_callback(rcl_timer_t *timer, int64_t last_call_time)
   }
 }
 
+<<<<<<< HEAD
+=======
+
+/**
+ * 
+ * 
+ * 
+*/
+>>>>>>> rmp_cam
 mp_obj_t rmp_publish_cam_image()
 {
   publish_cam_image();
   return mp_const_none;
 }
 
+<<<<<<< HEAD
+=======
+/**
+ * 
+ * 
+ * 
+*/
+>>>>>>> rmp_cam
 mp_obj_t rmp_cam_takepic(void)
 {
   printf("Taking picture...\r\n");
@@ -153,20 +228,37 @@ mp_obj_t rmp_cam_takepic(void)
   return mp_const_none;
 }
 
+<<<<<<< HEAD
+=======
+/**
+ * 
+ * 
+ * 
+ * 
+*/
+>>>>>>> rmp_cam
 mp_obj_t rmp_cam_start()
 {
   int rc;
   // create publisher and subscriber
+<<<<<<< HEAD
   printf("Pub Init\r\n");
   rc = rclc_publisher_init_default(&img_publisher, &rmp_rcl_node,
                                    ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, CompressedImage), "image/compressed");
+=======
+  rc = rclc_publisher_init_default(&img_publisher, &rmp_rcl_node,
+    ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, CompressedImage), CAM_TopicName);
+>>>>>>> rmp_cam
   if (rc != RCL_RET_OK)
   {
     printf("Failed to init pub %d\r\n", rc);
   }
 
   // create timer,
+<<<<<<< HEAD
   printf("Timer Init\r\n");
+=======
+>>>>>>> rmp_cam
   const unsigned int timer_timeout = 200;
   rc = rclc_timer_init_default(&espcam_timer, &rmp_rclc_support, RCL_MS_TO_NS(timer_timeout), cam_timer_callback);
   if (rc != RCL_RET_OK)
@@ -219,6 +311,7 @@ mp_obj_t rmp_cam_start()
 
   return mp_const_none;
 }
+<<<<<<< HEAD
 
 /**
  * Create MP objects that can be registered with Micropython from MicroROS
@@ -254,3 +347,5 @@ const mp_obj_module_t mp_uros_cam_user_cmodule = {
 
 // Register the module to make it available in Python.
 MP_REGISTER_MODULE(MP_QSTR_ROSMicroPyCAM, mp_uros_cam_user_cmodule);
+=======
+>>>>>>> rmp_cam

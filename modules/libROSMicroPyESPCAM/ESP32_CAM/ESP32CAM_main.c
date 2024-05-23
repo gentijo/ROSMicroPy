@@ -286,6 +286,7 @@ mp_obj_t rmp_cam_start()
 
   return mp_const_none;
 }
+<<<<<<< HEAD
 
 /**
  * Create MP objects that can be registered with Micropython from MicroROS
@@ -317,3 +318,5 @@ const mp_obj_module_t mp_uros_cam_user_cmodule = {
 
 // Register the module to make it available in Python.
 MP_REGISTER_MODULE(MP_QSTR_ROSMicroPyCAM, mp_uros_cam_user_cmodule);
+=======
+>>>>>>> rmp_cam
