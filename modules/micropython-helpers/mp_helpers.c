@@ -12,7 +12,7 @@ mp_map_elem_t* getElementFromMap(mp_map_t *dataMap, mp_obj_t fieldName) {
  * list, then return a NULL value
  * 
 */
-mp_obj_t getListFieldFromMap(mp_map_t *dataMap, mp_obj_t fieldName) {
+mp_obj_list_t* getListFieldFromMap(mp_map_t *dataMap, mp_obj_t fieldName) {
     mp_map_elem_t *obComponents = getElementFromMap(dataMap, fieldName);   
     if (obComponents == NULL) {	
         return NULL;

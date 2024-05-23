@@ -5,6 +5,4 @@
 #include "py/runtime.h"
 #include "py/obj.h"
 
-
-mp_obj_t     getListFieldFromMap(mp_map_t *dataMap, mp_obj_t fieldName);
-const char * getStrFieldFromMap(mp_map_t *dataMap, mp_obj_t fieldName);
+mp_obj_t parseLayoutDefinition(mp_obj_t obj_in, bool debug);
