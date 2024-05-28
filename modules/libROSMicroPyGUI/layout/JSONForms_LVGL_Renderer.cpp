@@ -77,6 +77,7 @@ mp_obj_t processLvObject(mp_obj_t objIn, bool debug) {
     }
 
     lv_obj_t lv_parent = NULL; 
+    
     if (!g_last_parent_lvobj.empty()) lv_parent = g_last_parent_lvobj.front();
     rmp_widget_t widget = rmp_load_widget(name, widget_type,  lv_parent);
     g_last_parent_lv_obj.push_front(widget);

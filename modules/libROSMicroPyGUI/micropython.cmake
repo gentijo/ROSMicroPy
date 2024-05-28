@@ -17,8 +17,16 @@ set (ROS_MICROPY_GUI_SRC
     ${ROS_MICROPY_GUI_DIR}/ui/screens/ui_Screen1.c
     ${ROS_MICROPY_GUI_DIR}/widgets/ros-video/rmp_video_widget.cpp
     ${ROS_MICROPY_GUI_DIR}/widgets/rmp_widget_mgr.cpp
+ 
 
 )
+
+list(APPEND MICROPY_FROZEN_MANIFEST
+    ${ROS_MICROPY_GUI_DIR}/manifest.py
+)
+
+message("FROZEN CONTENT: ${MICROPY_FROZEN_MANIFEST}")
+
 
 set (ROS_MICROPY_GUI_INC  
     "."

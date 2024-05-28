@@ -7,12 +7,12 @@ typedef void* widget_t;
 
 typedef enum WIDGET_TYPE_
 {
-    UNKNOWN=0,
+    UnknownWidgetType=0,
     HorizontalLayout=1,
     VerticalLayout =2,
     NamedContainer=3,
     ROSVideo=4,
-    ROSAttitude=5.
+    ROSAttitude=5,
     ROSHeading=6,
     Button=7
 

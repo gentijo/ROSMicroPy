@@ -88,8 +88,8 @@ MP_REGISTER_MODULE(MP_QSTR_ROSMicroPyGUI, mp_uros_gui_user_cmodule);
 */
 const mp_rom_map_elem_t rmp_widget_types_table[] = {
     {MP_ROM_QSTR(MP_QSTR___name__), MP_ROM_QSTR(MP_QSTR_RMP_GUI_Widgets)},
-    {MP_ROM_QSTR(MP_QSTR_RMP_ROS_VIDEO), MP_ROM_INT(RMP_ROS_VIDEO_WIDGET) },
-    {MP_ROM_QSTR(MP_QSTR_RMP_BUTTON), MP_ROM_INT(RMP_BUTTON_WIDGET) },
+//    {MP_ROM_QSTR(MP_QSTR_RMP_ROS_VIDEO), MP_ROM_INT(RMP_ROS_VIDEO_WIDGET) },
+//    {MP_ROM_QSTR(MP_QSTR_RMP_BUTTON), MP_ROM_INT(RMP_BUTTON_WIDGET) },
 
 };
 MP_DEFINE_CONST_DICT(rmp_widget_types, rmp_widget_types_table);
