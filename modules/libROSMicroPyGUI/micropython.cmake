@@ -15,17 +15,24 @@ set (ROS_MICROPY_GUI_SRC
     ${ROS_MICROPY_GUI_DIR}/ui/ui.c 
     ${ROS_MICROPY_GUI_DIR}/ui/ui_helpers.c 
     ${ROS_MICROPY_GUI_DIR}/ui/screens/ui_Screen1.c
-   # ${ROS_MICROPY_LCD_DRIVER_DIR}/bsp.c
-   # ${ROS_MICROPY_LCD_DRIVER_DIR}/disp_backlight.c
-
-#    ${ROS_MICROPY_GUI_DIR}/mp/lv_mp.c
-#    ${ROS_MICROPY_GUI_DIR}/mp/lv_espidf.c
+    ${ROS_MICROPY_GUI_DIR}/widgets/ros-video/rmp_video_widget.cpp
+    ${ROS_MICROPY_GUI_DIR}/widgets/rmp_widget_mgr.cpp
+ 
 
 )
 
+list(APPEND MICROPY_FROZEN_MANIFEST
+    ${ROS_MICROPY_GUI_DIR}/manifest.py
+)
+
+message("FROZEN CONTENT: ${MICROPY_FROZEN_MANIFEST}")
+
+
 set (ROS_MICROPY_GUI_INC  
     "."
-#    ${ROS_MICROPY_GUI_DIR}/lcd-display-drivers/
+    ${MICROROS_INC_DIR}/std_msgs
+    ${MICROROS_INC_DIR}/sensor_msgs
+    ${MICROROS_INC_DIR}/rosidl_typesupport_introspection_c
 )
 
 # Add our source files to the lib

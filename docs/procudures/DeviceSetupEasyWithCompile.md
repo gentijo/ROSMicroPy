@@ -21,13 +21,14 @@ Run the following commands in the container
 **source /opt/esp/idf/export.sh**
 
 
-**cd devices/mbits-esp32s2-wrover**
+**cd micropython/ports/esp32**
 
-**sh compile**
+**idf.py -D MICROPY_BOARD=RMP_ESPCAM_S3 -DUSER_C_MODULES=../../../../modules build**
+
+**Replace the MICROPY_BOARD variable to the target board you want to build**
 
 If you get an error, cd back to project directory then run
 **pip -r pip-requirments.txt**
-the cd back to devices/mbits-esp32s2-wrover
 
 if you get a successful compile, you will see the message
 
