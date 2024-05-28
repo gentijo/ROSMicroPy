@@ -26,11 +26,8 @@ rcl_timer_t espcam_timer;
 rcl_publisher_t img_publisher;
 sensor_msgs__msg__CompressedImage img_msg;
 
-<<<<<<< HEAD
-=======
 char    CAM_TopicName[32] = "image/compressed";
 
->>>>>>> rmp_cam
 struct timespec ts;
 extern int clock_gettime(clockid_t unused, struct timespec *tp);
 
@@ -96,10 +93,6 @@ void blink_esp32_led()
   // digitalWrite(ledPin, LOW);
 }
 
-<<<<<<< HEAD
-size_t _jpg_buf_len = 0;
-uint8_t *_jpg_buf = NULL;
-=======
 
 /** 
  * 
@@ -131,7 +124,6 @@ mp_obj_t rmp_cam_set_topic_name(mp_obj_t obj_in)
 size_t _jpg_buf_len = 0;
 uint8_t *_jpg_buf = NULL;
 int x = 0;
->>>>>>> rmp_cam
 
 void publish_cam_image()
 {
@@ -158,24 +150,15 @@ void publish_cam_image()
 
     RCSOFTCHECK(rcl_publish(&img_publisher, &img_msg, NULL));
 
-<<<<<<< HEAD
-    printf("Image published Its size was: %zu bytes\r\n", img->len);
-=======
     printf(".");
     x++; 
     if ((x%20) == 0) printf("\r\n");
     
->>>>>>> rmp_cam
     esp_camera_fb_return(img);
     free(_jpg_buf);
   }
 }
 
-<<<<<<< HEAD
-void cam_timer_callback(rcl_timer_t *timer, int64_t last_call_time)
-{
-  printf("Cam Timer callback\r\n");
-=======
 
 
 /***
@@ -185,7 +168,6 @@ void cam_timer_callback(rcl_timer_t *timer, int64_t last_call_time)
 */
 void cam_timer_callback(rcl_timer_t *timer, int64_t last_call_time)
 {
->>>>>>> rmp_cam
   RCLC_UNUSED(last_call_time);
   if (timer != NULL)
   {
@@ -193,29 +175,23 @@ void cam_timer_callback(rcl_timer_t *timer, int64_t last_call_time)
   }
 }
 
-<<<<<<< HEAD
-=======
 
 /**
  * 
  * 
  * 
 */
->>>>>>> rmp_cam
 mp_obj_t rmp_publish_cam_image()
 {
   publish_cam_image();
   return mp_const_none;
 }
 
-<<<<<<< HEAD
-=======
 /**
  * 
  * 
  * 
 */
->>>>>>> rmp_cam
 mp_obj_t rmp_cam_takepic(void)
 {
   printf("Taking picture...\r\n");
@@ -228,37 +204,24 @@ mp_obj_t rmp_cam_takepic(void)
   return mp_const_none;
 }
 
-<<<<<<< HEAD
-=======
 /**
  * 
  * 
  * 
  * 
 */
->>>>>>> rmp_cam
 mp_obj_t rmp_cam_start()
 {
   int rc;
   // create publisher and subscriber
-<<<<<<< HEAD
-  printf("Pub Init\r\n");
-  rc = rclc_publisher_init_default(&img_publisher, &rmp_rcl_node,
-                                   ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, CompressedImage), "image/compressed");
-=======
   rc = rclc_publisher_init_default(&img_publisher, &rmp_rcl_node,
     ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, CompressedImage), CAM_TopicName);
->>>>>>> rmp_cam
   if (rc != RCL_RET_OK)
   {
     printf("Failed to init pub %d\r\n", rc);
   }
 
   // create timer,
-<<<<<<< HEAD
-  printf("Timer Init\r\n");
-=======
->>>>>>> rmp_cam
   const unsigned int timer_timeout = 200;
   rc = rclc_timer_init_default(&espcam_timer, &rmp_rclc_support, RCL_MS_TO_NS(timer_timeout), cam_timer_callback);
   if (rc != RCL_RET_OK)
@@ -311,41 +274,3 @@ mp_obj_t rmp_cam_start()
 
   return mp_const_none;
 }
-<<<<<<< HEAD
-
-/**
- * Create MP objects that can be registered with Micropython from MicroROS
- * This will represent the microros builtin class, with the functions that make up the MicroROS SDK
- *
- */
-
-MP_DEFINE_CONST_FUN_OBJ_0(rmp_cam_init_obj, rmp_cam_init);
-MP_DEFINE_CONST_FUN_OBJ_0(rmp_cam_start_obj, rmp_cam_start);
-MP_DEFINE_CONST_FUN_OBJ_0(rmp_publish_cam_image_obj, rmp_publish_cam_image);
-MP_DEFINE_CONST_FUN_OBJ_0(rmp_cam_takepic_obj, rmp_cam_takepic);
-
-/**
- * Register the microros class and map the functions from Micropython to MicroROS
- */
-const mp_rom_map_elem_t mp_uros_cam_module_globals_table[] = {
-    {MP_ROM_QSTR(MP_QSTR___name__), MP_ROM_QSTR(MP_QSTR_ROSMicroPyCAM)},
-
-    {MP_ROM_QSTR(MP_QSTR_rmp_cam_init), MP_ROM_PTR(&rmp_cam_init_obj)},
-    {MP_ROM_QSTR(MP_QSTR_rmp_cam_takepic), MP_ROM_PTR(&rmp_cam_takepic_obj)},
-    {MP_ROM_QSTR(MP_QSTR_rmp_publish_cam_image), MP_ROM_PTR(&rmp_publish_cam_image_obj)},
-    {MP_ROM_QSTR(MP_QSTR_rmp_cam_start), MP_ROM_PTR(&rmp_cam_start_obj)}
-
-};
-
-MP_DEFINE_CONST_DICT(mp_uros_cam_module_globals, mp_uros_cam_module_globals_table);
-
-// Define module object.
-const mp_obj_module_t mp_uros_cam_user_cmodule = {
-    .base = {&mp_type_module},
-    .globals = (mp_obj_dict_t *)&mp_uros_cam_module_globals,
-};
-
-// Register the module to make it available in Python.
-MP_REGISTER_MODULE(MP_QSTR_ROSMicroPyCAM, mp_uros_cam_user_cmodule);
-=======
->>>>>>> rmp_cam
