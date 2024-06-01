@@ -1,0 +1,14 @@
+{ 
+  "BUTTON": {
+    "properties": {
+      "size": {
+        "height": 1,
+        "width": 3
+      },
+      "offset": {
+        "type": "string",
+        "format": "date"
+      }
+    }
+  }
+}
