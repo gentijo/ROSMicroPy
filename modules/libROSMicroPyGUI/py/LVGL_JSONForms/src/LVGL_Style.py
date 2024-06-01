@@ -5,42 +5,48 @@ class LVGL_Style:
 
     styles:dict = {}
 
-    def __init__(self):
-        self.properties:dict = {}
-        pass
+    @staticmethod
+    def parseStyleDefinition(definitionIn:dict) -> None:
+        for name in definitionIn:
+            styleDef=definitionIn[name]
+            if ("properties" in styleDef):
+                properties = styleDef["properties"]
+                styles = styleDef["properties"]
+                LVGL_Style.styles[name]=styles
 
-    def parseStyleDefinition(self, definition:dict) -> None:
-        for key in definition:
-            self.styles[key]=definition[key]
-
-    def parseStyleDefinitionFromJSONFile(self, filename:str) -> None:
+    @staticmethod
+    def parseStyleDefinitionFromJSONFile(filename:str) -> None:
         with open(filename) as f:
             definition = json.load(f)
-        self.parseStyleDefinition(definition)
+            LVGL_Style.parseStyleDefinition(definition)
+
+    @staticmethod
+    def addStyleToDict(properties:dict, style:dict) -> None:
+        for key in style:
+            properties[key]=style[key]
+
+    @staticmethod
+    def buildCompositeStyle(type:str=None, scope:str=None, name:str=None, propertiesIn:dict={} ) -> dict:
         
-    def applyProperties(self, properties:dict):
-        for key in properties:
-            self.properties[key]=properties[key];
+        properties = {}
 
-    def buildCompositeStyle(self, type:str, scope:str, name:str, properties:dict ) -> dict:
-        
-        self.properties = {}
+        if type and (type in LVGL_Style.styles):
+            LVGL_Style.addStyleToDict(properties, LVGL_Style.styles[type])
 
-        if type in self.styles:
-            self.applyStyles(self.styles[type])
+        if scope and (scope in LVGL_Style.styles):
+            LVGL_Style.addStyleToDict(properties, LVGL_Style.styles[scope])
 
-        if scope in self.styles:
-            self.applyStyles(self.styles[scope])
+        if name and (name in LVGL_Style.styles) :
+            LVGL_Style.addStyleToDict(properties, LVGL_Style.styles[name])
 
-        if name in self.styles:
-            self.applyStyles(self.styles[type])
+        if propertiesIn and len(propertiesIn):
+            for key in propertiesIn:
+                properties[key]=propertiesIn[key];
 
-        if properties and len(properties):
-            self.applyProperties(properties)
-
-        return self.properties;
+        return properties;
 
 
-    def dump(self):
-        print (self.properties)
+    @classmethod
+    def dumpParsedStyles():
+        print (LVGL_Style.styles)
 

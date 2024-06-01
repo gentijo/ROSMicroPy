@@ -1,56 +1,32 @@
-import LVGL_MockDriver
-import LVGL_Driver
-import LVGL_Style
+import json
+from LVGL_MockDriver   import LVGL_MockDriver
+from LVGL_Driver       import LVGL_Driver
 
-schema = {
-    "type": "HorizontalLayout",
-    "elements": [
-      {
-        "type": "VerticalLayout",
-        "elements": [
-          {
-            "type": "Container",
-            "scope": "#/properties/name"
-          },
-          {
-            "type": "Container",
-            "scope": "#/properties/birthDate"
-          },
-          {
-            "type": "Container",
-            "scope": "#/properties/occupation"
-          }
-        ]
-      },
-      {
-        "type": "VerticalLayout",
-        "elements": []
-      }
-    ]
-  }
 
 class JSONFormRenderer:
 
-    def __init__(self, isTest:bool):
-        self.type:str = ""
-        self.scope:str = ""
-        self.name:str = ""
-        self.properties:dict = {}
-        self.parentlvObjects:list = []
-        self.elements:list = []
-        self.isTest:bool = False
-        self.driver:LVGL_Driver = None
-
-        if isTest:
-            self.driver = LVGL_MockDriver()
-            self.isTest = True
+    driver:LVGL_Driver = LVGL_Driver
 
 
-    def parseLayoutDefinition(self, map:dict):
+    @staticmethod
+    def enableTestMode():
+        print("Entering test mode")
+        JSONFormRenderer.driver = LVGL_MockDriver
 
-        screen = self.driver.init_lvgl_screen()
-        self.parentlvObjects.append(screen)
-        self.parseFormObject(dict)
+
+    @staticmethod
+    def parseLayoutDefinitionFromJSONFile(filename:str) -> None:
+        with open(filename) as f:
+            definition = json.load(f)
+            JSONFormRenderer.parseLayoutDefinition(definition)
+    
+    @staticmethod
+    def parseLayoutDefinition(map:dict):
+        
+        screen = JSONFormRenderer.driver.init_lvgl_screen()
+        parentObjects:list = []
+        parentObjects.append(screen);
+        JSONFormRenderer.parseFormObject(map, parentObjects)
 
         #ui_Screen1 = lv_obj_create(NULL);
         #lv_obj_clear_flag(ui_Screen1, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
@@ -59,27 +35,38 @@ class JSONFormRenderer:
         pass
 
 
-    def parseFormObject(self, schema:dict, parent:object=None) -> object:
+    @staticmethod
+    def parseFormObject(schema:dict, parentLvObjects:list=None) -> object:
+
+        type:str = None
+        name:str = None
+        scope:str = None
+        properties:dict = {}
+        elements:dict = {}
 
         if 'type' in schema:
-            self.type= schema.type
+            type= schema['type']
 
         if 'name' in schema:
-            self.name= schema.name
+            name= schema['name']
         
         if 'scope' in schema:
-            self.scope= schema.scope
+            scope= schema['scope']
             
         if 'properties' in schema:
-            self.properties= schema.properties
+            properties= schema['properties']
 
         if 'elements' in schema:
-            self.elements= schema.elements
+            elements= schema['elements']
 
-        styles:dict = LVGL_Style(self.type, self.scope, self.name, self.properties )
-        lvObject = self.driver.createLvObject(self, styles)
+        parent = None
+        if len(parentLvObjects) > 0:
+            parent = parentLvObjects[-1]
 
-        for element in self.elements:
-            self.parseFormObject(element, self.parentlvObjects[-1])
+        lvObject = JSONFormRenderer.driver.createLvObject(type, scope, name, properties, parent)
+        parentLvObjects.append(lvObject)
 
-        del self.parentlvObjects[-1]
+        for element in elements:
+            JSONFormRenderer.parseFormObject(element, parentLvObjects)
+
+        del parentLvObjects[-1]

@@ -1,28 +1,30 @@
-import LVGL_Driver
-import LVGL_Style
+from LVGL_Driver import LVGL_Driver
+from LVGL_Style import LVGL_Style
 
 class LVGL_MockDriver(LVGL_Driver):
 
     def __init__():
         pass
 
-    def init_lvgl_screen(self)->object:
-#     lv_theme_t *theme = lv_theme_default_init(
-#       disp, 
-#       lv_palette_main(LV_PALETTE_BLUE), 
-#       lv_palette_main(LV_PALETTE_RED),
-#       false, LV_FONT_DEFAULT);
-  
-#     lv_disp_set_theme(disp, theme);
-#   ui_Screen1_screen_init();
-#   ui____initial_actions0 = lv_obj_create(NULL);
-#   lv_disp_load_scr(ui_Screen1);
-        pass
+    def init_lvgl_screen()->object:
+        print("Init LVGL Screen")
+        return "root-screen"
 
-    def create_FormObject(self, name:str, parent):
-        pass
 
-    def set_FormObject_Style(self, style:LVGL_Style):
+    def createLvObject(type, scope, name, properties, parent) -> object:
+        styles:dict = LVGL_Style.buildCompositeStyle(type, scope, name, properties )
+
+        fqon:str = f"Type:{type}-Scope:{scope}-Name:{name}"
+        
+        print(f"\r\n---------------------------------------------------")
+        print(f"Creating LV Object, {fqon}")
+        print(f"Style Data: {styles}")
+        print(f"---------------------------------------------------\r\n")
+        return fqon
+
+        
+
+    def set_FormObject_Style(self, style:dict):
         pass
 
 

@@ -1,9 +1,9 @@
 { 
-  "leftButton1Container": {
+  "BUTTON": {
     "properties": {
       "size": {
-        "height": 1,
-        "width": 3
+        "height": 25,
+        "width": 100
       },
       "offset": {
         "type": "string", 
@@ -11,18 +11,13 @@
       }
     }
   },
-  "5ButtonContainer": {
+  "HorizontalLayout": {
     "properties": {
       "offset": {
         "top": 5,
         "left": 0
       }
-    },
-    "size": {
-        "height": 75,
-        "width": 125
     }
-
   },
   "VerticalLayout": {
     "properties": {

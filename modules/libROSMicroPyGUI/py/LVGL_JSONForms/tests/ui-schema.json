@@ -1,29 +1,41 @@
-
-// https: //jsonforms-editor.netlify.app/
-
 {
-    "type": "HorizontalLayout",
-    "elements": [
-      {
-        "type": "VerticalLayout",
-        "elements": [
-          {
-            "type": "Container",
-            "scope": "#/properties/name"
-          },
-          {
-            "type": "Container",
-            "scope": "#/properties/birthDate"
-          },
-          {
-            "type": "Container",
-            "scope": "#/properties/occupation"
-          }
-        ]
-      },
-      {
-        "type": "VerticalLayout",
-        "elements": []
-      }
-    ]
-  }
+  "type": "HorizontalLayout",
+  "properties": {
+    "size": {
+      "height": 480,
+      "width": 800
+    }
+  },
+  "elements": [
+    {
+      "type": "VerticalLayout",
+      "elements": [
+        {
+          "type": "Container",
+          "scope": "5ButtonContainer",
+          "name": "leftButton1Container"
+        },
+        {
+          "type": "Container",
+          "scope": "5ButtonContainer",
+          "name": "leftButton2Container"
+        },
+        {
+          "type": "Container",
+          "scope": "5ButtonContainer",
+          "name": "leftButton3Container"
+        },
+        {
+          "type": "Container",
+          "scope": "5ButtonContainer",
+          "name": "leftButton4Container"
+        },
+        {
+          "type": "Container",
+          "scope": "5ButtonContainer",
+          "name": "leftButton5Container"
+        }
+      ]
+    }
+  ]
+}

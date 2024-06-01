@@ -1,7 +1,13 @@
+#From LVGL_C_Driver import LVGL_C_Driver
+
 class LVGL_Driver:
+    
+    #c_driver = LVGL_C_Driver()
 
     def init_lvgl_screen(self)->object:
-        pass
+        return None #LVGL_C_Driver.init_lvgl_screen()
 
-    def create_FormObject(self, name:str, parent)->object:
-        pass
+
+    def createLvObject(type, scope, name, properties, parent) -> object:
+        styles:dict = LVGL_Style.buildCompositeStyle(type, scope, name, properties )
+        #c_Driver.createLvObject(type, scope, name, styles, parent)
