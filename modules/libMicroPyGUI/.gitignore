@@ -1,0 +1,5 @@
+build
+sdkconfig.old
+managed-components
+__pycache__
+archive
