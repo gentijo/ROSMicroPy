@@ -1,0 +1,37 @@
+{ 
+  "leftButton1Container": {
+    "properties": {
+      "size": {
+        "height": 1,
+        "width": 3
+      },
+      "offset": {
+        "type": "string", 
+        "format": "date"
+      }
+    }
+  },
+  "5ButtonContainer": {
+    "properties": {
+      "offset": {
+        "top": 5,
+        "left": 0
+      }
+    },
+    "size": {
+        "height": 75,
+        "width": 125
+    }
+
+  },
+  "VerticalLayout": {
+    "properties": {
+      "offset": {
+        "top": 5,
+        "left": 5
+      }
+    }
+  }
+
+
+}
