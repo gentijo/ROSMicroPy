@@ -7,7 +7,6 @@
 #include <algorithm>
 
 #include "mpy_lv_functions.h"
-
 //
 //
 std::list<mpy_LvObjectFactory *> lvObjectFactories;

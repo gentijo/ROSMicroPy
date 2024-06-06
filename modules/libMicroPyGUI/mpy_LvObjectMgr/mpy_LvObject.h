@@ -14,10 +14,14 @@ class mpy_LvObject {
             lvObject = lv_obj_create(parent->lvObject);
         };
 
-        void addLvObjectStyle(cJSON* Properties) {
+        void  addLvObjectStyle(cJSON* properties);
 
-        };
+        void  setSize(cJSON* properties);
 
+
+        int   getIntStyleProperty(const cJSON *properties, const char *name);
+        char* getStringStyleProperty(const cJSON *properties, const char *name );
+    
     public: 
         lv_obj_t *lvObject;
 };

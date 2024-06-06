@@ -20,9 +20,11 @@
 
 lv_disp_t *init_lcd_display();
 
-#define MP_TASK_PRIORITY        (ESP_TASK_PRIO_MIN + 1)
+#define MP_TASK_PRIORITY        (ESP_TASK_PRIO_MIN)
 TaskHandle_t                    mp_lcd_display_task_handle;
 lv_disp_t*                      g_lcd_display = NULL;
+
+
 void  run_lcd_display_loop()
 {
   mp_thread_init(pxTaskGetStackStart(NULL), MICROPY_TASK_STACK_SIZE / sizeof(uintptr_t));
@@ -48,7 +50,6 @@ void  run_lcd_display_loop()
 
 mp_obj_t mp_init_lcd_display()
 {  
-  
   //
   // init_lcd_display comes from the lvgl driver component
   g_lcd_display = init_lcd_display();

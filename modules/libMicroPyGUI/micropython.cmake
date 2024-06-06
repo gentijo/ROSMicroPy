@@ -13,6 +13,8 @@ set (MICROPY_GUI_SRC
     ${MICROPY_GUI_DIR}/main.c
     ${MICROPY_GUI_DIR}/mpy_lv_functions.cpp
     ${MICROPY_GUI_DIR}/mpy_LvObjectMgr/mpy_LvObjectFactory.cpp
+    ${MICROPY_GUI_DIR}/mpy_LvObjectMgr/mpy_LvObject.cpp
+
 )
 
 list(APPEND MICROPY_FROZEN_MANIFEST
