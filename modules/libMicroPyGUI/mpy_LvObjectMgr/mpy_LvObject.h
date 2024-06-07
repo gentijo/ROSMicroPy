@@ -3,9 +3,16 @@
 
 #include "lvgl.h"
 
+#ifdef __cplusplus
 extern "C" {
+#endif
+
 #include "cJSON.h"
+
+#ifdef __cplusplus
 }
+#endif
+
 
 class mpy_LvObject {
 

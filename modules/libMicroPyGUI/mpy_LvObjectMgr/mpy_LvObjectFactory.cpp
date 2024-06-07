@@ -6,19 +6,13 @@
 
 
 extern "C" {
+
 #include "cJSON.h"
+
 }
 
 #include "mpy_LvObjectFactory.h"
 #include "mpy_LvBaseObjects.h"
-
-//
-// For objects that have a name tag, store a pointer to that element here
-std::map<const char *, mpy_LvObject *> g_namedObject;
-
-// 
-// List of all objects created named or not.
-std::vector<mpy_LvObject *> g_lvObjectList;
 
 
 /**
