@@ -17,15 +17,22 @@ void mpy_LvObject::addLvObjectStyle(cJSON *properties)
 {
     cJSON *iterator = NULL;
 
+    printf("Properties: %s\r\n", cJSON_Print(properties));
+
     cJSON_ArrayForEach(iterator, properties)
     {
+        printf("Property %s\r\n", iterator->string);
+        
         if (cJSON_IsObject(iterator))
         {
-
-            if (strcmp(iterator->valuestring, "size"))
+            if (strcmp(iterator->string, "size")==0)
             {
                 this->setSize(iterator);
-                return;
+            }
+
+            if (strcmp(iterator->string, "pad-all")==0)
+            {
+                this->setPadAll(iterator);
             }
         }
     }
@@ -38,11 +45,27 @@ void mpy_LvObject::addLvObjectStyle(cJSON *properties)
 */
 void mpy_LvObject::setSize(cJSON *properties)
 {
+    // printf("Set Size: %s\r\n", cJSON_Print(properties));
+
     int height = this->getIntStyleProperty(properties, "height");
     int width = this->getIntStyleProperty(properties, "width");
-    lv_obj_set_size(lvObject, height, width);
+    
+    //printf("Found Style height:%d x width:%d\r\n", height, width );
+    // printf("lv_obj_set_size(%p, %d, %d);\r\n", lvObject, width,  height);
+    lv_obj_set_size(lvObject, width,  height);
 };
 
+/**
+ * 
+ * 
+ * 
+*/
+void mpy_LvObject::setPadAll(cJSON *properties)
+{
+    int size = this->getIntStyleProperty(properties, "size");
+    lv_style_set_pad_all(&style, size);
+    lv_obj_add_style(lvObject, &style, 0);
+};
 /**
  * 
  * 

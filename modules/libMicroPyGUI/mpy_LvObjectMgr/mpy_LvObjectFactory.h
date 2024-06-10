@@ -8,7 +8,7 @@
 class mpy_LvObjectFactory {
 
     public:
-        mpy_LvObject* create(const char * type, mpy_LvObject* parent);
+        static mpy_LvObject* create(const char * type, mpy_LvObject* parent);
 };
 
 #endif

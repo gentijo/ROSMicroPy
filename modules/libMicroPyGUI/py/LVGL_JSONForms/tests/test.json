@@ -1,0 +1,9 @@
+{'elements': [
+        {'type': 'Container', 'name': 'leftButton1Container', 'scope': 'sideButtonContainer'
+        },
+        {'properties': {'size': {'height': 250, 'width': 200
+                }
+            }, 'type': 'Container', 'name': 'leftButton2Container', 'scope': 'sideButtonContainer'
+        }
+    ], 'type': 'VerticalLayout', 'scope': 'sideButtonPanel'
+}

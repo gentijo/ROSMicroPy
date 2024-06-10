@@ -18,7 +18,6 @@
 lv_disp_t *init_lcd_display();
 
 TaskHandle_t mp_lcd_display_task_handle;
-lv_disp_t *g_lcd_display = NULL;
 
 
 /***
@@ -68,19 +67,30 @@ mp_obj_t mp_init_lcd_display()
   return mp_const_none;
 }
 
+mp_obj_t mp_init_lvgl_screen() {
+  return(init_lvgl_screen());
+}
 /**
  * Create MP objects that can be registered with Micropython from MicroROS
  * This will represent the microros builtin class, with the functions that make up the MicroROS SDK
  *
  */
 MP_DEFINE_CONST_FUN_OBJ_0(init_lcd_display_obj, mp_init_lcd_display);
-MP_DEFINE_CONST_FUN_OBJ_VAR(create_LvObject_obj, 5, create_LvObject);
+MP_DEFINE_CONST_FUN_OBJ_3(create_LvObject_obj, create_LvObject);
 MP_DEFINE_CONST_FUN_OBJ_1(add_LvObjectFactory_obj, add_LvObjectFactory);
+MP_DEFINE_CONST_FUN_OBJ_0(init_lvgl_screen_obj, mp_init_lvgl_screen);
+MP_DEFINE_CONST_FUN_OBJ_0(display_lvgl_screen_obj, display_lvgl_screen);
+MP_DEFINE_CONST_FUN_OBJ_0(lv_example_flex_1_obj, lv_example_flex_1);
+
+
 
 const mp_rom_map_elem_t mp_gui_module_globals_table[] = {
     {MP_ROM_QSTR(MP_QSTR___name__), MP_ROM_QSTR(MP_QSTR_MicroPyGUI)},
     {MP_ROM_QSTR(MP_QSTR_init_lcd_display), MP_ROM_PTR(&init_lcd_display_obj)},
     {MP_ROM_QSTR(MP_QSTR_create_LvObject), MP_ROM_PTR(&create_LvObject_obj)},
+    {MP_ROM_QSTR(MP_QSTR_init_lvgl_screen), MP_ROM_PTR(&init_lvgl_screen_obj)},
+    {MP_ROM_QSTR(MP_QSTR_display_lvgl_screen), MP_ROM_PTR(&display_lvgl_screen_obj)},
+    {MP_ROM_QSTR(MP_QSTR_lv_example_flex_1), MP_ROM_PTR(&lv_example_flex_1_obj)},
     {MP_ROM_QSTR(MP_QSTR_add_LvObjectFactory), MP_ROM_PTR(&add_LvObjectFactory_obj)}
 };
 

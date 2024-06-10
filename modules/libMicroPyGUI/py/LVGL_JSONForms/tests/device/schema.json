@@ -5,12 +5,17 @@
         "height": 25,
         "width": 100
       },
+      "pad-all": {
+        "size": 0
+      }
     }
   },
+  
   "HorizontalLayout": {
     "properties": {
     }
   },
+  
   "VerticalLayout": {
     "properties": {
     }

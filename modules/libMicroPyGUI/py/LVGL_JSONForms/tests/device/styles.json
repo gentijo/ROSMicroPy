@@ -5,6 +5,9 @@
         "height": 480,
         "width": 200
       },
+      "pad-all": {
+        "size": 0
+      }
     }
   },
   "centerPanel": {
@@ -12,14 +15,14 @@
         "size": {
          "height": 480,
          "width": 400
-       },
+       }
       }
   },
   "sideButtonContainer": {
     "properties": {
       "size": {
-        "height": 94,
-        "width": 200
+        "height": 90,
+        "width": 190
       }
     },
 
@@ -29,6 +32,15 @@
       "offset": {
         "top": 5,
         "left": 5
+      }
+    }
+  },
+  
+  "leftButton1XXContainer": {
+    "properties": {
+      "size": {
+        "height": 150,
+        "width": 180
       }
     }
   }

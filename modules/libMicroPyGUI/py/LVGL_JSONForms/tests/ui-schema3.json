@@ -37,7 +37,37 @@
           "name": "leftButton5Container"
         }
       ]
+    },
+    {
+      "type": "VerticalLayout",
+      "scope": "sideButtonPanel",
+      "elements": [
+        {
+          "type": "Container",
+          "scope": "sideButtonContainer",
+          "name": "leftButton1Container"
+        },
+        {
+          "type": "Container",
+          "scope": "sideButtonContainer",
+          "name": "leftButton2Container"
+        },
+        {
+          "type": "Container",
+          "scope": "sideButtonContainer",
+          "name": "leftButton3Container"
+        },
+        {
+          "type": "Container",
+          "scope": "sideButtonContainer",
+          "name": "leftButton4Container"
+        },
+        {
+          "type": "Container",
+          "scope": "5ButtonContainer",
+          "name": "leftButton5Container"
+        }
+      ]
     }
-
   ]
 }

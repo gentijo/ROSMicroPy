@@ -1,4 +1,3 @@
-
 #include <map>
 #include <string>
 #include <vector>
@@ -23,17 +22,17 @@ extern "C" {
 mpy_LvObject *mpy_LvObjectFactory::create(const char *type, mpy_LvObject *parent)
 {
 
-    if (strcmp(type, "HorizontalLayout"))
+    if (strcmp(type, "HorizontalLayout")==0)
     {
         return new mpy_LvHorizontalLayout(parent);
     }
 
-    if (strcmp(type, "VerticalLayout"))
+    if (strcmp(type, "VerticalLayout")==0)
     {
         return new mpy_LvVerticalLayout(parent);
     }
 
-    if (strcmp(type, "Container"))
+    if (strcmp(type, "Container")==0)
     {
         return new mpy_LvContainer(parent);
     }

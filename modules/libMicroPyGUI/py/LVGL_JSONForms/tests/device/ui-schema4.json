@@ -1,0 +1,24 @@
+
+    {
+      "type": "VerticalLayout",
+      "scope": "sideButtonPanel",
+      "elements": [
+        {
+          "type": "Container",
+          "scope": "sideButtonContainer",
+          "name": "leftButton1Container"
+        },
+        {
+          "type": "Container",
+          "scope": "sideButtonContainer",
+          "name": "leftButton2Container",
+          "properties": {
+            "size": {
+              "height": 250,
+              "width": 180
+            }
+          }
+        },
+      ]
+ 
+    }
