@@ -19,25 +19,15 @@
         {
           "type": "Container",
           "scope": "sideButtonContainer",
-          "name": "leftButton2Container"
+          "name": "leftButton2Container",
+          "properties": {
+            "size": {
+              "height": 150,
+              "width": 200
+            }
+          }
         },
-        {
-          "type": "Container",
-          "scope": "sideButtonContainer",
-          "name": "leftButton3Container"
-        },
-        {
-          "type": "Container",
-          "scope": "sideButtonContainer",
-          "name": "leftButton4Container"
-        },
-        {
-          "type": "Container",
-          "scope": "5ButtonContainer",
-          "name": "leftButton5Container"
-        }
       ]
+ 
     }
-
-  ]
 }

@@ -1,0 +1,9 @@
+{
+  "type": "HorizontalLayout",
+  "properties": {
+    "size": {
+      "height": 480,
+      "width": 800
+    }
+  }
+}

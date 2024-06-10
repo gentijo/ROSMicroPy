@@ -4,6 +4,9 @@
     "size": {
       "height": 480,
       "width": 800
+    },
+    "pad-all": {
+        "size": 0
     }
   },
   "elements": [
@@ -33,7 +36,7 @@
         },
         {
           "type": "Container",
-          "scope": "5ButtonContainer",
+          "scope": "sideButtonContainer",
           "name": "leftButton5Container"
         }
       ]
