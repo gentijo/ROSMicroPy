@@ -12,10 +12,9 @@ get_filename_component(MICROPY_GUI_DIR ../../../../modules/libMicroPyGUI ABSOLUT
 set (MICROPY_GUI_SRC
     ${MICROPY_GUI_DIR}/main.c
     ${MICROPY_GUI_DIR}/mpy_lv_functions.cpp
-    ${MICROPY_GUI_DIR}/mpy_LvObjectMgr/mpy_LvObjectFactory.cpp
-    ${MICROPY_GUI_DIR}/mpy_LvObjectMgr/mpy_LvObject.cpp
-    ${MICROPY_GUI_DIR}/mpy_LvObjectMgr/cJSON_helpers.cpp
-
+    ${MICROPY_GUI_DIR}/object-mgr/mpy_LvObjectFactory.cpp
+    ${MICROPY_GUI_DIR}/object-mgr/mpy_LvObject.cpp
+    ${MICROPY_GUI_DIR}/object-mgr/cJSON_helpers.cpp
 
 )
 
@@ -28,7 +27,7 @@ message("FROZEN CONTENT: ${MICROPY_FROZEN_MANIFEST}")
 
 set (MICROPY_GUI_INC  
     "."
-    ${MICROPY_GUI_DIR}/mpy_LvObjectMgr
+    ${MICROPY_GUI_DIR}/object-mgr
     ${MICROROS_INC_DIR}/std_msgs
     ${MICROROS_INC_DIR}/sensor_msgs
     ${MICROROS_INC_DIR}/rosidl_typesupport_introspection_c

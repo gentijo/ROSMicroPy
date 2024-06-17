@@ -38,4 +38,6 @@ mpy_LvObject *mpy_LvObjectFactory::create(const char *type, mpy_LvObject *parent
     }
 
     return NULL;
-}
+};
+
+

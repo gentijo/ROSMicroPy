@@ -45,13 +45,8 @@ void mpy_LvObject::addLvObjectStyle(cJSON *properties)
 */
 void mpy_LvObject::setSize(cJSON *properties)
 {
-    // printf("Set Size: %s\r\n", cJSON_Print(properties));
-
     int height = this->getIntStyleProperty(properties, "height");
     int width = this->getIntStyleProperty(properties, "width");
-    
-    //printf("Found Style height:%d x width:%d\r\n", height, width );
-    // printf("lv_obj_set_size(%p, %d, %d);\r\n", lvObject, width,  height);
     lv_obj_set_size(lvObject, width,  height);
 };
 
@@ -66,6 +61,8 @@ void mpy_LvObject::setPadAll(cJSON *properties)
     lv_style_set_pad_all(&style, size);
     lv_obj_add_style(lvObject, &style, 0);
 };
+
+
 /**
  * 
  * 

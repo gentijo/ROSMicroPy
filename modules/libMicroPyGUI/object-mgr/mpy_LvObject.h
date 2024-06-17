@@ -20,6 +20,10 @@ class mpy_LvObject
 {
 
 public:
+    mpy_LvObject() {
+    };
+
+
     mpy_LvObject(mpy_LvObject *parent)
     {
 
@@ -30,10 +34,7 @@ public:
         }
         else
         {
-            // printf("Creating LvObject parent mpyObj:[%p]  parent lvObj:[%p]\r\n", parent, parent->lvObject);
             lvObject = lv_obj_create(parent->lvObject);
-            printf("lv_obj_create(%p) = [%p]\r\n", parent->lvObject, lvObject);
-
         }
 
         lv_obj_clear_flag(this->lvObject, LV_OBJ_FLAG_SCROLLABLE); 
@@ -53,11 +54,7 @@ public:
 
         lv_obj_set_style_border_color(lvObject, lv_color_black(), LV_PART_MAIN);
         lv_obj_set_style_border_width(lvObject, 1, LV_PART_MAIN);
-
-
-        //printf("LvObject Created Object: mpy[%p] lv[%p] \r\n", this, lvObject);
     }
-
     //
     // Create an mpy_LvObject from existing lv_obj
     mpy_LvObject(lv_obj_t *node)
@@ -65,15 +62,15 @@ public:
         lvObject = node;
     }
 
+public:
     void addLvObjectStyle(cJSON *properties);
-
+    
     void setSize(cJSON *properties);
     void setPadAll(cJSON *properties);
 
     int getIntStyleProperty(const cJSON *properties, const char *name);
     char *getStringStyleProperty(const cJSON *properties, const char *name);
 
-public:
     lv_obj_t *lvObject;
     lv_style_t style;
 };

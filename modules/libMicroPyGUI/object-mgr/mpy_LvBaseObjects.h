@@ -35,4 +35,24 @@ class mpy_LvContainer : public mpy_LvObject {
         };
 };
 
+
+class mpy_LvButton: public  mpy_LvObject {
+
+    protected:
+        mpy_LvButton() {
+
+        };
+
+    public:
+        mpy_LvButton(mpy_LvObject *parent) {
+
+            lvObject = lv_btn_create(parent->lvObject);
+            lv_obj_set_align(lvObject, LV_ALIGN_CENTER);
+            lv_obj_add_flag(lvObject, LV_OBJ_FLAG_CHECKABLE | LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+            lv_obj_clear_flag(lvObject, LV_OBJ_FLAG_SCROLLABLE);  
+            lv_obj_set_size(lvObject, lv_pct(100), lv_pct(100));
+        };
+
+};
+
 #endif
