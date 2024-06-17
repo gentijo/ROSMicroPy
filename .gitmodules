@@ -8,6 +8,3 @@
 [submodule "components/jpegdec"]
 	path = components/jpegdec
 	url = https://github.com/bitbank2/JPEGDEC.git
-[submodule "modules/mp-mg"]
-	path = modules/mp-mg
-	url = https://github.com/gentijo/mp-mg
