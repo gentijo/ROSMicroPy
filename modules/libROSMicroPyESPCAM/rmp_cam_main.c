@@ -11,7 +11,7 @@ MP_DEFINE_CONST_FUN_OBJ_0(rmp_cam_init_obj, rmp_cam_init);
 MP_DEFINE_CONST_FUN_OBJ_0(rmp_cam_start_obj, rmp_cam_start);
 MP_DEFINE_CONST_FUN_OBJ_0(rmp_publish_cam_image_obj, rmp_publish_cam_image);
 MP_DEFINE_CONST_FUN_OBJ_0(rmp_cam_takepic_obj, rmp_cam_takepic);
-MP_DEFINE_CONST_FUN_OBJ_0(rmp_cam_set_topic_name_obj, rmp_cam_set_topic_name);
+MP_DEFINE_CONST_FUN_OBJ_1(rmp_cam_set_topic_name_obj, rmp_cam_set_topic_name);
 
 /**
  * Register the microros class and map the functions from Micropython to MicroROS

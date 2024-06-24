@@ -1,5 +1,9 @@
 #define CAMERA_MODEL_ESP32S3_EYE 1
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
 #include "esp_camera.h"
 
 #include <rcl/rcl.h>
@@ -9,29 +13,33 @@
 #include <micro_ros_utilities/string_utilities.h>
 #include <micro_ros_utilities/type_utilities.h>
 
-#include <rosidl_typesupport_introspection_c/message_introspection.h>
 
-#include <std_msgs/msg/int32.h>
 #include <sensor_msgs/msg/compressed_image.h>
+#include <std_msgs/msg/header.h>
+#include <rosidl_typesupport_introspection_c/message_introspection.h>
 
 #include "py/runtime.h"
 #include "py/mpconfig.h"
 #include "mp_uros_sdk.h"
-
+#include "sdkconfig.h"
 #include "freenoveS3_pins.h"
 
 #define ledPin 4
 
-rcl_timer_t espcam_timer;
-rcl_publisher_t img_publisher;
+rcl_timer_t                       espcam_timer;
+rcl_publisher_t                   img_publisher;
 sensor_msgs__msg__CompressedImage img_msg;
+micro_ros_utilities_memory_conf_t conf = {};
+rcl_service_t                    service;
+std_msgs__msg__Header            req_header;
+std_msg__srv__Header_Response    a;
 
 char    CAM_TopicName[32] = "image/compressed";
 
 struct timespec ts;
 extern int clock_gettime(clockid_t unused, struct timespec *tp);
 
-unsigned int num_handles = 1; // 1 subscriber, 1 publisher, 1 server
+void init_camera_service();
 
 camera_config_t config;
 
@@ -56,7 +64,7 @@ mp_obj_t rmp_cam_init(void)
   config.pin_pwdn = PWDN_GPIO_NUM;
   config.pin_reset = RESET_GPIO_NUM;
   config.xclk_freq_hz = 20000000;
-  config.frame_size = FRAMESIZE_UXGA;
+  config.frame_size = FRAMESIZE_QVGA;
   config.pixel_format = PIXFORMAT_JPEG; // for streaming
   config.grab_mode = CAMERA_GRAB_WHEN_EMPTY;
   config.fb_location = CAMERA_FB_IN_PSRAM;
@@ -122,7 +130,7 @@ mp_obj_t rmp_cam_set_topic_name(mp_obj_t obj_in)
  * 
 */
 size_t _jpg_buf_len = 0;
-uint8_t *_jpg_buf = NULL;
+//uint8_t *_jpg_buf = NULL;
 int x = 0;
 
 void publish_cam_image()
@@ -132,13 +140,15 @@ void publish_cam_image()
 
   if (img != NULL)
   {
-    img_msg.data.size = img->len;
+    int len = img->len;
+    //  len=20;
+    img_msg.data.size = len;
     clock_gettime(CLOCK_REALTIME, &ts);
     img_msg.header.stamp.sec = ts.tv_sec;
     img_msg.header.stamp.nanosec = ts.tv_nsec;
     img_msg.header.frame_id = micro_ros_string_utilities_set(img_msg.header.frame_id, "cam_frame");
     img_msg.format = micro_ros_string_utilities_set(img_msg.format, "jpeg");
-    memcpy(img_msg.data.data, img->buf, img->len);
+    memcpy(img_msg.data.data, img->buf, len);
 
     // bool jpeg_converted = frame2jpg(img, 80, &_jpg_buf, &_jpg_buf_len);
     // if (jpeg_converted) {
@@ -150,12 +160,11 @@ void publish_cam_image()
 
     RCSOFTCHECK(rcl_publish(&img_publisher, &img_msg, NULL));
 
-    printf(".");
     x++; 
-    if ((x%20) == 0) printf("\r\n");
+    if ((x%20) == 0) printf("20 Frames Size: %d\r\n", img->len);
     
     esp_camera_fb_return(img);
-    free(_jpg_buf);
+    // free(_jpg_buf);
   }
 }
 
@@ -212,24 +221,6 @@ mp_obj_t rmp_cam_takepic(void)
 */
 mp_obj_t rmp_cam_start()
 {
-  int rc;
-  // create publisher and subscriber
-  rc = rclc_publisher_init_default(&img_publisher, &rmp_rcl_node,
-    ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, CompressedImage), CAM_TopicName);
-  if (rc != RCL_RET_OK)
-  {
-    printf("Failed to init pub %d\r\n", rc);
-  }
-
-  // create timer,
-  const unsigned int timer_timeout = 200;
-  rc = rclc_timer_init_default(&espcam_timer, &rmp_rclc_support, RCL_MS_TO_NS(timer_timeout), cam_timer_callback);
-  if (rc != RCL_RET_OK)
-  {
-    printf("Failed to init Timer\r\n");
-  }
-  RCCHECK(rclc_executor_add_timer(&rmp_rclc_executor, &espcam_timer));
-
   printf("\r\nESP Sensor get\r\n");
   sensor_t *s = esp_camera_sensor_get();
   // initial sensors are flipped vertically and colors are a bit saturated
@@ -242,10 +233,10 @@ mp_obj_t rmp_cam_start()
   // drop down frame size for higher initial frame rate
   if (config.pixel_format == PIXFORMAT_JPEG)
   {
-    s->set_framesize(s, FRAMESIZE_QVGA);
+    s->set_framesize(s, FRAMESIZE_96X96); //FRAMESIZE_QVGA);
   }
 
-  static micro_ros_utilities_memory_conf_t conf = {};
+ 
 
   // OPTIONALLY this struct can configure the default size of strings, basic sequences and composed sequences
 
@@ -269,8 +260,76 @@ mp_obj_t rmp_cam_start()
       &img_msg,
       conf);
 
-  // Blink LED once the server is up
-  blink_esp32_led();
+  init_camera_service();
 
   return mp_const_none;
+}
+
+
+void service_callback(const void *req, void *res)
+{
+  const std_msgs__msg__Header *request = (const std_msgs__msg__Header *)req;
+  sensor_msgs__msg__CompressedImage *response = &img_msg;
+
+  printf("Received request with frame_id: %s\n", request->frame_id.data);
+
+  camera_fb_t *img = esp_camera_fb_get();
+
+  if (img != NULL)
+  {
+    int len = img->len;
+    //  len=20;
+    img_msg.data.size = len;
+    clock_gettime(CLOCK_REALTIME, &ts);
+    img_msg.header.stamp.sec = ts.tv_sec;
+    img_msg.header.stamp.nanosec = ts.tv_nsec;
+    img_msg.header.frame_id = micro_ros_string_utilities_set(img_msg.header.frame_id, "cam_frame");
+    img_msg.format = micro_ros_string_utilities_set(img_msg.format, "jpeg");
+    memcpy(img_msg.data.data, img->buf, len);
+
+  }
+}
+
+void init_camera_service()
+{
+
+  service = rcl_get_zero_initialized_service();
+  rclc_service_init_default(
+    &service,
+    &rmp_rcl_node,
+    ROSIDL_GET_SRV_TYPE_SUPPORT(std_msgs, msg, Header),
+    CAM_TopicName);
+  
+  rclc_executor_add_service(
+    &rmp_rclc_executor, &service, 
+    &req_header,
+    &img_msg, 
+    service_callback);
+
+  printf("Image service server is ready.\n");
+}
+
+void init_image_Publisher()
+{
+  int rc;
+
+  // create timer,
+  const unsigned int timer_timeout = 2000;
+  rc = rclc_timer_init_default(&espcam_timer, &rmp_rclc_support, RCL_MS_TO_NS(timer_timeout), cam_timer_callback);
+  if (rc != RCL_RET_OK)
+  {
+    printf("Failed to init Timer\r\n");
+  }
+  RCCHECK(rclc_executor_add_timer(&rmp_rclc_executor, &espcam_timer));
+
+
+  // create publisher 
+  rc = rclc_publisher_init_default(&img_publisher, &rmp_rcl_node,
+          ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, CompressedImage), 
+          CAM_TopicName);
+  
+  if (rc != RCL_RET_OK)
+  {
+    printf("Failed to init pub %d\r\n", rc);
+  }
 }

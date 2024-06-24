@@ -8,7 +8,7 @@
 #include "mp_uros_thread.h"
 #include "mp_uros_dataTypeParser.h"
 #include "uros_mesg_func.h"
-
+#include "sdkconfig.h"
 
 #include "esp_wifi.h"
 #include "esp_netif.h"
@@ -174,7 +174,9 @@ mp_obj_t init_ROS_Stack()
 	
 	// create executor
 	RCCHECK(rclc_executor_init(&rmp_rclc_executor, &rmp_rclc_support.context, 20, &rmp_rcl_allocator));
-	
+	uint64_t timeout = 500*1000*1000;
+	RCCHECK(rclc_executor_set_timeout(&rmp_rclc_executor, timeout ));
+
  // create timer,
   	// printf("Main Timer Init\r\n");
   	// const unsigned int timer_timeout = 1000;
