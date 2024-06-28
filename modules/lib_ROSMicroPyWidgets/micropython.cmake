@@ -9,6 +9,8 @@ set (RMP_WIDGET_SRC
     ${RMP_WIDGET_DIR}/main.c
     ${RMP_WIDGET_DIR}/rosWidgetFactory.cpp
     ${RMP_WIDGET_DIR}/widgets/ros-video/ros_video_widget.cpp
+    ${RMP_WIDGET_DIR}/widgets/attitude/AttitudeIndicator.cpp
+
 )
 
 
