@@ -13,10 +13,19 @@ get_filename_component(ESP32_CAMERA_INC_DIR ../../../../components/espressif__es
 
 get_filename_component(ROS_MICROPY_ESPCAM_DIR ../../../../modules/libROSMicroPyESPCAM ABSOLUTE)
 
-set (ROS_MICROPY_ESPCAM_SRC
+set(RMP_SERVER_SRC 
     ${MOD_ROS_MICROPY_ESPCAM_DIR}/server/rmp_cam_server.c
+)
+
+set (RMP_PUBLISHER_SRC
+    ${MOD_ROS_MICROPY_ESPCAM_DIR}/publisher/rmp_cam_publisher.c
+)
+
+set (ROS_MICROPY_ESPCAM_SRC
     ${MOD_ROS_MICROPY_ESPCAM_DIR}/rmp_cam_main.c
     ${MOD_ROS_MICROPY_ESPCAM_DIR}/rmp_cam_common.c
+    ${RMP_PUBLISHER_SRC}
+    #${RMP_SERVER_SRC}
 )
 
 set (ROS_MICROPY_ESPCAM_INC  
@@ -49,26 +58,26 @@ list(APPEND CMAKE_MODULE_PATH
 )
 message("CMake Module ${CMAKE_MODULE_PATH}")
 
-list( APPEND ament_cmake_libraries_DIR
-    ${MICROROS_DIR}/micro_ros_dev/install/ament_cmake_libraries/share/ament_cmake_libraries/cmake
-)
+# list( APPEND ament_cmake_libraries_DIR
+#     ${MICROROS_DIR}/micro_ros_dev/install/ament_cmake_libraries/share/ament_cmake_libraries/cmake
+# )
 
-list( APPEND ament_cmake_core_DIR 
-    ${MICROROS_DIR}/micro_ros_dev/install/ament_cmake_core/share/ament_cmake_core/cmake
-)
+# list( APPEND ament_cmake_core_DIR 
+#     ${MICROROS_DIR}/micro_ros_dev/install/ament_cmake_core/share/ament_cmake_core/cmake
+# )
 
-list( APPEND ament_cmake_DIR
-    ${MICROROS_DIR}/micro_ros_dev/install/ament_cmake/share/ament_cmake/cmake/
-)
+# list( APPEND ament_cmake_DIR
+#     ${MICROROS_DIR}/micro_ros_dev/install/ament_cmake/share/ament_cmake/cmake/
+# )
 
-message("Ament CMake ${ament_cmake_DIR}")
+# message("Ament CMake ${ament_cmake_DIR}")
 
-find_package(ament_package REQUIRED)
-find_package(ament_cmake REQUIRED)
-find_package(rosidl_default_generators REQUIRED)
-rosidl_generate_interfaces(libROSMicroPyESPCAM
-    "interfaces/srv/Image.srv"
-)
+# find_package(ament_package REQUIRED)
+# find_package(ament_cmake REQUIRED)
+# find_package(rosidl_default_generators REQUIRED)
+# rosidl_generate_interfaces(libROSMicroPyESPCAM
+#     "interfaces/srv/Image.srv"
+# )
 
 
 #ament_export_dependencies(rosidl_default_runtime)

@@ -2,6 +2,7 @@
 #define CAMERA_MODEL_ESP32S3_EYE 1
 
 #include "esp_camera.h"
+#include "sdkconfig.h"
 
 #include <micro_ros_utilities/string_utilities.h>
 #include <micro_ros_utilities/type_utilities.h>
@@ -12,10 +13,11 @@
 
 #include "py/runtime.h"
 #include "py/mpconfig.h"
-#include "mp_uros_sdk.h"
-#include "sdkconfig.h"
 
+#include "mp_uros_sdk.h"
 #include "freenoveS3_pins.h"
+
+#include "publisher/rmp_cam_publisher.h"
 
 char    CAM_TopicName[32] = "image/compressed";
 
@@ -53,6 +55,7 @@ mp_obj_t rmp_cam_init(void)
   config.fb_count = 2;
   config.grab_mode = CAMERA_GRAB_LATEST;
 
+  
   // camera init
   esp_err_t err = esp_camera_init(&config);
   if (err != ESP_OK)
@@ -61,12 +64,32 @@ mp_obj_t rmp_cam_init(void)
     return mp_const_none;
   }
 
+  printf("\r\nESP Sensor get\r\n");
   sensor_t *s = esp_camera_sensor_get();
+
   // initial sensors are flipped vertically and colors are a bit saturated
   s->set_vflip(s, 1);      // flip it back
   s->set_brightness(s, 1); // up the brightness just a bit
   s->set_saturation(s, 0); // lower the saturation
 
+
+  // initial sensors are flipped vertically and colors are a bit saturated
+  if (s->id.PID == OV3660_PID)
+  {
+    s->set_vflip(s, 1);       // flip it back
+    s->set_brightness(s, 1);  // up the brightness just a bit
+    s->set_saturation(s, -2); // lower the saturation
+  }
+  
+  // drop down frame size for higher initial frame rate
+  if (config.pixel_format == PIXFORMAT_JPEG)
+  {
+    s->set_framesize(s, FRAMESIZE_96X96); //FRAMESIZE_QVGA);
+  }
+
+
+
+  init_image_Publisher();
   printf("Camera configuration complete!\r\n");
   return mp_const_none;
 }
