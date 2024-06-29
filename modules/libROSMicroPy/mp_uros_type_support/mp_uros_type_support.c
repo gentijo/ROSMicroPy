@@ -2,7 +2,7 @@
 #include "mp_uros_type_support.h"
 #include "mp_uros_dataTypeParser.h"
 #include "uros_mesg_func.h"
-#include "rosidl_runtime_c/message_type_support_struct.h"
+//#include "rosidl_runtime_c/message_type_support_struct.h"
 
 #include "std_msgs/std_msgs/msg/detail/byte__struct.h"
 #include "std_msgs/std_msgs/msg/detail/int16__struct.h"

@@ -4,8 +4,8 @@
 #include "esp_camera.h"
 #include "sdkconfig.h"
 
-#include <micro_ros_utilities/string_utilities.h>
-#include <micro_ros_utilities/type_utilities.h>
+//#include <micro_ros_utilities/string_utilities.h>
+//#include <micro_ros_utilities/type_utilities.h>
 
 #include <sensor_msgs/msg/compressed_image.h>
 #include <std_msgs/msg/header.h>
@@ -84,12 +84,10 @@ mp_obj_t rmp_cam_init(void)
   // drop down frame size for higher initial frame rate
   if (config.pixel_format == PIXFORMAT_JPEG)
   {
-    s->set_framesize(s, FRAMESIZE_96X96); //FRAMESIZE_QVGA);
+    s->set_framesize(s, FRAMESIZE_QVGA);
   }
 
 
-
-  init_image_Publisher();
   printf("Camera configuration complete!\r\n");
   return mp_const_none;
 }

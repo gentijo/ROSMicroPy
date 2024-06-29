@@ -94,7 +94,7 @@ void cam_timer_callback(rcl_timer_t *timer, int64_t last_call_time)
 
 
 
-void init_image_Publisher()
+mp_obj_t init_image_Publisher()
 {
   int rc;
  
@@ -138,4 +138,6 @@ void init_image_Publisher()
   {
     printf("Failed to init pub %d\r\n", rc);
   }
+
+  return mp_const_none;
 }
