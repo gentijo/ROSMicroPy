@@ -2,11 +2,17 @@ from ROSMicroPy import registerDataType, dumpDataType,  registerEventSubscriptio
 import gc
 import time
 from rostype.Twist import Twist
+import wifi
 
 def ros_event_callback(data):
     print("Ros did something")
     print(data)
- 
+
+#setNamespace("")
+setNodeName("Turtle1")
+setAgentIP("192.168.8.150")
+setAgentPort("8888")
+
 print("\r\nInit ROS Stack\r\n")
 init_ROS_Stack()
 

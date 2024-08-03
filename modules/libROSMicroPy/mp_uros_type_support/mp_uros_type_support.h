@@ -6,7 +6,7 @@
 #include <string.h>
 
 #include "rosidl_typesupport_microxrcedds_c/identifier.h"
-#include "rosidl_typesupport_microxrcedds_c/message_type_support.h"
+//#include "rosidl_typesupport_microxrcedds_c/message_type_support.h"
 #include "mp_uros_type_support_visibility_control.h"
 
 #include "mp_uros_sdk.h"
