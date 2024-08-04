@@ -1,1 +1,0 @@
-include (ESP32S3_8048S050C/CMakeLists.txt)

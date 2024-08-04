@@ -8,7 +8,9 @@
         "esp_camera.h": "c",
         "types.h": "c",
         "compressed_image__struct.h": "c",
-        "rmp_video_widget.h": "c"
+        "rmp_video_widget.h": "c",
+        "mptask.h": "c",
+        "esp_task.h": "c"
     },
     "cmake.configureOnOpen": false,
     "cmake.sourceDirectory": "/opt/rosmicropy/extra_packages/libmicroros/examples/handle_static_types/main"
