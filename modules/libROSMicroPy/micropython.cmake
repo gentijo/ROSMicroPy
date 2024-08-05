@@ -35,9 +35,9 @@ set(ROS_MICROPY_INC_DIRS
     ${MICROROS_INC_DIR}/rmw
     ${MICROROS_INC_DIR}/rosidl_runtime_c
     ${MICROROS_INC_DIR}/rosidl_typesupport_interface
- #   ${MICROROS_INC_DIR}/type_description_interfaces
- #   ${MICROROS_INC_DIR}/service_msgs
- #   ${MICROROS_INC_DIR}/rosidl_dynamic_typesupport
+    ${MICROROS_INC_DIR}/type_description_interfaces
+    ${MICROROS_INC_DIR}/service_msgs
+    ${MICROROS_INC_DIR}/rosidl_dynamic_typesupport
     ${ROS_MICROPY_DIR}/mp_uros_modules
     ${ROS_MICROPY_DIR}/mp_uros_type_support
 )
