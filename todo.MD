@@ -1,9 +1,9 @@
 
  
 ## Core
-* Refresh demo (ROSBuyTheBay Sept)
+* Refresh demo (ROSByTheBay Sept)
 * Make MCqueen bot loco work (interface mip package)
-* Upgrade to Jazzy
+* <s>Upgrade to Jazzy</s>
 
 ## LCD
 * <s>Clean up ESP32</s>
@@ -20,6 +20,7 @@
 
 ## CAM
 * find bug in the agent
+- try Jazzy Agent
 
 ## GPS
 * Find RTK Library
